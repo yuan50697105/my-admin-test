@@ -1,0 +1,5 @@
+include 'shower-commons'
+include 'shower-commons-web'
+include 'shower-commons-db'
+include 'shower-commons-db-mybatis-with-pagehelper'
+
