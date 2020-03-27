@@ -6,7 +6,6 @@ import com.example.commons.db.mybatis.plus.sqlhelper.dao.BaseDao;
 import com.example.commons.db.mybatis.plus.sqlhelper.mapper.BaseMapper;
 import com.example.commons.db.mybatis.plus.sqlhelper.pojo.PageResult;
 import com.github.pagehelper.PageInfo;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
