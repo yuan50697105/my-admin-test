@@ -1,7 +1,6 @@
 package com.example.commons.web.controller;
 
 import com.example.commons.web.exception.ResultRuntimeException;
-import com.example.commons.web.pojo.Result;
 import com.example.commons.web.utils.ResultUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
