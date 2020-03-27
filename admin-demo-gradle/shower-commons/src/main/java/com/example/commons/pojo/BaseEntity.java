@@ -1,6 +1,7 @@
 package com.example.commons.pojo;
 
 import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.bean.copier.CopyOptions;
 import lombok.Data;
 
 /**
@@ -13,5 +14,9 @@ import lombok.Data;
 public class BaseEntity {
     public void copyFrom(Object object, String... ignoreProperties) {
         BeanUtil.copyProperties(object, this, ignoreProperties);
+    }
+
+    public void copyFromIgnoreNull(Object object, String... ignoreProperties) {
+        BeanUtil.copyProperties(object, this, CopyOptions.create().ignoreNullValue().setIgnoreProperties(ignoreProperties));
     }
 }
