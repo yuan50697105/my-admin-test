@@ -1,6 +1,5 @@
-package com.example.commons.db.es.pojo;
+package com.example.commons.db.pojo;
 
-import com.example.commons.pojo.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -12,5 +11,5 @@ import lombok.EqualsAndHashCode;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public abstract class BaseDbEsEntity extends BaseEntity {
+public abstract class BaseDbEntity extends com.example.commons.pojo.BaseEntity {
 }

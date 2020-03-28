@@ -2,10 +2,11 @@ package com.example.commons.db.es.dao.impl;
 
 import com.example.commons.db.es.dao.BaseEsDao;
 import com.example.commons.db.es.repository.BaseEsRespository;
-import com.github.vanroy.springdata.jest.JestElasticsearchTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
+import org.springframework.data.elasticsearch.core.ReactiveElasticsearchTemplate;
 
 /**
  * @program: admin-demo-gradle
@@ -19,8 +20,9 @@ public class BaseEsDaoImpl<T, ID, R extends BaseEsRespository<T, ID>> implements
     @Autowired
     protected ElasticsearchTemplate elasticsearchTemplate;
     @Autowired
-    protected ElasticsearchRestTemplate elasticsearchRestTemplate;
+    private ElasticsearchRestTemplate elasticsearchRestTemplate;
     @Autowired
-    protected JestElasticsearchTemplate jestElasticsearchTemplate;
+    private ReactiveElasticsearchTemplate reactiveElasticsearchTemplate;
+
 
 }

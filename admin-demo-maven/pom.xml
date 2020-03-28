@@ -21,6 +21,7 @@
         <module>shower-commons-db-solr</module>
         <module>shower-commons-db-es</module>
         <module>shower-commons-db-es-jest</module>
+        <module>shower-amqp</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

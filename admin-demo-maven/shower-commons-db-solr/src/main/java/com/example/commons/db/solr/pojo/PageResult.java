@@ -1,14 +1,14 @@
-package com.example.commons.db.es.pojo;
+package com.example.commons.db.solr.pojo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.data.domain.Page;
 
 /**
- * @program: admin-demo
+ * @program: admin-demo-gradle
  * @description:
  * @author: yuane
- * @create: 2020-03-26 23:35
+ * @create: 2020-03-28 15:49
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

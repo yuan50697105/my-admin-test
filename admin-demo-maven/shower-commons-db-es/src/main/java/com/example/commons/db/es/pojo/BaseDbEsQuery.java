@@ -8,9 +8,11 @@ import lombok.EqualsAndHashCode;
  * @program: admin-demo
  * @description:
  * @author: yuane
- * @create: 2020-03-26 23:33
+ * @create: 2020-03-26 23:34
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public abstract class BaseDbEsEntity extends BaseEntity {
+public abstract class BaseDbEsQuery extends BaseEntity {
+    private Integer page = 1;
+    private Integer size = 20;
 }

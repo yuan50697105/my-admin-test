@@ -49,6 +49,10 @@ subprojects {
         useJUnitPlatform()
     }
 
+    jar {
+        enabled = true
+    }
+
 }
 
 bootJar {
