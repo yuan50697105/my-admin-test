@@ -1,7 +1,7 @@
-package com.example.commons.db.es.dao.impl;
+package com.example.commons.db.solr.dao.impl;
 
-import com.example.commons.db.es.dao.BaseSolrDao;
-import com.example.commons.db.es.repository.BaseSolrRespository;
+import com.example.commons.db.solr.dao.BaseSolrDao;
+import com.example.commons.db.solr.repository.BaseSolrRespository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.solr.core.SolrTemplate;
 

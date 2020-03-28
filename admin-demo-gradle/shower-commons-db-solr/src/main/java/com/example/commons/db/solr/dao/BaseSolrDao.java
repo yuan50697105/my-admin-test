@@ -1,4 +1,4 @@
-package com.example.commons.db.es.dao;
+package com.example.commons.db.solr.dao;
 
 import java.io.Serializable;
 

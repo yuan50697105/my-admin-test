@@ -1,4 +1,4 @@
-package com.example.commons.db.mybatis.plus.sqlhelper.pojo;
+package com.example.commons.db.pojo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -7,9 +7,9 @@ import lombok.EqualsAndHashCode;
  * @program: admin-demo
  * @description:
  * @author: yuane
- * @create: 2020-03-26 23:39
+ * @create: 2020-03-26 23:33
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class BaseQuery extends com.example.commons.db.pojo.BaseQuery {
+public abstract class BaseDbEntity extends com.example.commons.pojo.BaseEntity {
 }

@@ -1,4 +1,4 @@
-package com.example.commons.db.mybatis.sqlhelper.pojo;
+package com.example.commons.db.mybatis.jpa.sqlhelper.pojo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -11,5 +11,5 @@ import lombok.EqualsAndHashCode;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class BaseQuery extends com.example.commons.db.pojo.BaseQuery {
+public class BaseDbQuery extends com.example.commons.db.pojo.BaseDbQuery {
 }

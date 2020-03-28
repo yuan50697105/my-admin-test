@@ -1,4 +1,4 @@
-package com.example.commons.db.pojo;
+package com.example.commons.db.es.pojo;
 
 import com.example.commons.pojo.BaseEntity;
 import lombok.Data;
@@ -12,7 +12,7 @@ import lombok.EqualsAndHashCode;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public abstract class BaseQuery extends BaseEntity {
+public abstract class BaseDbEsQuery extends BaseEntity {
     private Integer page = 1;
     private Integer size = 20;
 }
