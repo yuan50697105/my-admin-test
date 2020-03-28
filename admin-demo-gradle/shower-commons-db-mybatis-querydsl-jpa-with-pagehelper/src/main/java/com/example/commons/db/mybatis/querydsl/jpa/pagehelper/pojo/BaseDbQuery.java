@@ -1,4 +1,4 @@
-package com.example.commons.db.mybatis.sqlhelper.pojo;
+package com.example.commons.db.mybatis.querydsl.jpa.pagehelper.pojo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
