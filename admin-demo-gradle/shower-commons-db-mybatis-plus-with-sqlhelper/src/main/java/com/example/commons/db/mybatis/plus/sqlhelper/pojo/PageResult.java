@@ -1,7 +1,6 @@
 package com.example.commons.db.mybatis.plus.sqlhelper.pojo;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.example.commons.db.pojo.BaseDbPageResult;
 import com.github.pagehelper.PageInfo;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -14,7 +13,7 @@ import lombok.EqualsAndHashCode;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class PageResult<T> extends BaseDbPageResult<T> {
+public class PageResult<T> extends com.example.commons.db.pojo.PageResult<T> {
     public PageResult(Long page, Long size, Long totalNumberOfRows, Long totalPages, Iterable<T> data) {
         super(page, size, totalNumberOfRows, totalPages, data);
     }
