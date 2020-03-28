@@ -1,14 +1,14 @@
-package com.example.commons.db.mybatis.mapper.sqlhelper.dao.impl;
+package com.example.commons.db.mybatis.jpa.pagehelper.dao.impl;
 
-import com.example.commons.db.mybatis.mapper.sqlhelper.dao.BaseDao;
-import com.example.commons.db.mybatis.mapper.sqlhelper.mapper.BaseMapper;
-import com.example.commons.db.mybatis.mapper.sqlhelper.pojo.PageResult;
+import com.example.commons.db.mybatis.jpa.pagehelper.dao.BaseDao;
+import com.example.commons.db.mybatis.jpa.pagehelper.mapper.BaseMapper;
+import com.example.commons.db.mybatis.jpa.pagehelper.pojo.PageResult;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-public class BaseDaoImpl<T, ID, M extends BaseMapper<T>> implements BaseDao<T, ID> {
+public class BaseDaoImpl<T, M extends BaseMapper<T>> implements BaseDao<T> {
     @Autowired
     protected M baseMapper;
 

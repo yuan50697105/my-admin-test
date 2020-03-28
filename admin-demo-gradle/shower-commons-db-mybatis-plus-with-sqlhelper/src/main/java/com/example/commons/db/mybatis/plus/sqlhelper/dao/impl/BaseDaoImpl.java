@@ -9,7 +9,7 @@ import com.github.pagehelper.PageInfo;
 
 import java.util.List;
 
-public class BaseDaoImpl<T, M extends BaseMapper<T>> extends ServiceImpl<M, T> implements BaseDao<T> {
+public class BaseDaoImpl<T, ID, M extends BaseMapper<T>> extends ServiceImpl<M, T> implements BaseDao<T, ID> {
 
     public String likeContains(String str) {
         return "%" + str + "%";

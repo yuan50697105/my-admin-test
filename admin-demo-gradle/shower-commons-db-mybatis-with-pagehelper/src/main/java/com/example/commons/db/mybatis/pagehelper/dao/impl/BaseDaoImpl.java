@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-public class BaseDaoImpl<T, M extends BaseMapper<T>> implements BaseDao<T> {
+public class BaseDaoImpl<T, ID, M extends BaseMapper<T>> implements BaseDao<T, ID> {
     @Autowired
     protected M baseMapper;
 

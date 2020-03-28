@@ -1,12 +1,17 @@
 package com.example.commons.db.mybatis.mapper.pagehelper.dao.impl;
 
 import com.example.commons.db.mybatis.mapper.pagehelper.dao.BaseDao;
+import com.example.commons.db.mybatis.mapper.pagehelper.mapper.BaseMapper;
 import com.example.commons.db.mybatis.mapper.pagehelper.pojo.PageResult;
 import com.github.pagehelper.PageInfo;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-public class BaseDaoImpl<T> implements BaseDao<T> {
+public class BaseDaoImpl<T, ID, M extends BaseMapper<T>> implements BaseDao<T, ID> {
+    @Autowired
+    protected M baseMapper;
+
     public String likeContains(String str) {
         return "%" + str + "%";
     }
