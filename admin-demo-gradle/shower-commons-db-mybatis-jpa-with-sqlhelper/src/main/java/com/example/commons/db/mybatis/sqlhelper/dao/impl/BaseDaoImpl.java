@@ -1,9 +1,9 @@
-package com.example.commons.db.mybatis.jpa.pagehelper.dao.impl;
+package com.example.commons.db.mybatis.sqlhelper.dao.impl;
 
-import com.example.commons.db.mybatis.jpa.pagehelper.dao.BaseDao;
-import com.example.commons.db.mybatis.jpa.pagehelper.mapper.BaseMapper;
-import com.example.commons.db.mybatis.jpa.pagehelper.pojo.PageResult;
-import com.example.commons.db.mybatis.jpa.pagehelper.repository.BaseRepository;
+import com.example.commons.db.mybatis.sqlhelper.dao.BaseDao;
+import com.example.commons.db.mybatis.sqlhelper.mapper.BaseMapper;
+import com.example.commons.db.mybatis.sqlhelper.pojo.PageResult;
+import com.example.commons.db.mybatis.sqlhelper.repository.BaseRepository;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 

@@ -1,0 +1,16 @@
+plugins {
+    id 'java'
+}
+
+dependencies {
+    compile project(':shower-commons-db')
+    compile group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '2.1.2'
+    compile group: 'com.github.fangjinuo.sqlhelper', name: 'sqlhelper-mybatis-over-pagehelper', version: '3.0.2'
+    compile group: 'com.github.fangjinuo.sqlhelper', name: 'sqlhelper-mybatis-spring-boot-starter', version: '3.0.2'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+bootJar {
+    enabled = false
+}
