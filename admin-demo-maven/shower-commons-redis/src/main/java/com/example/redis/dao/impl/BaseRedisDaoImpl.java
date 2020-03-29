@@ -8,6 +8,8 @@ import org.springframework.data.redis.core.RedisKeyValueTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 /**
  * @program: admin-demo-gradle
  * @description:
@@ -29,19 +31,17 @@ public class BaseRedisDaoImpl<T, KEY> implements BaseRedisDao<T, KEY> {
     }
 
     @Override
-    @Transactional(rollbackFor = Exception.class)
-    public void insert(BaseRedisEntity<KEY, T> entity) {
-        redisKeyValueTemplate.insert(entity.getKey(), entity.getData());
+    public void insert(T t) {
+        redisKeyValueTemplate.insert(t);
     }
 
     @Override
-    @Transactional(rollbackFor = Exception.class)
-    public void update(BaseRedisEntity<KEY, T> entity) {
-        redisKeyValueTemplate.update(entity.getKey(), entity.getData());
+    public void update(T t) {
+        redisKeyValueTemplate.update(t);
     }
 
     @Override
-    public BaseRedisEntity<KEY, T> find(KEY key) {
-        return new BaseRedisEntity<KEY, T>(key, redisKeyValueTemplate.findById(key, type).orElse(null));
+    public Optional<T> find(KEY key) {
+        return redisKeyValueTemplate.findById(key, type);
     }
 }

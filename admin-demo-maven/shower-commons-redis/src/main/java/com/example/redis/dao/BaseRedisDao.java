@@ -2,6 +2,8 @@ package com.example.redis.dao;
 
 import com.example.redis.pojo.BaseRedisEntity;
 
+import java.util.Optional;
+
 /**
  * @program: admin-demo-gradle
  * @description:
@@ -10,9 +12,9 @@ import com.example.redis.pojo.BaseRedisEntity;
  */
 public interface BaseRedisDao<T, KEY> {
 
-    void insert(BaseRedisEntity<KEY, T> entity);
+    void insert(T t);
 
-    void update(BaseRedisEntity<KEY, T> entity);
+    void update(T t);
 
-    BaseRedisEntity<KEY, T> find(KEY key);
+    Optional<T> find(KEY key);
 }
