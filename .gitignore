@@ -6,3 +6,5 @@ build
 *.ipr
 *.iws
 /admin-demo-gradle/.gradle/
+node_modules
+.next
