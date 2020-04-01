@@ -1,5 +1,3 @@
 spring:
-  rabbitmq:
-    addresses: 123.56.78.153
-    username: root
-    password: root
+  profiles:
+    active: amqp
