@@ -17,8 +17,15 @@ public class EsApplicationTests {
 
     @Test
     void name() {
-        SysUser save = sysUserRepo.save(new SysUser());
+        SysUser sysUser = SysUser.builder().content("asdasd").build();
+        SysUser save = sysUserRepo.save(sysUser);
         System.out.println("save = " + save);
 
+    }
+
+    @Test
+    void t2() {
+        Iterable<SysUser> sysUsers = sysUserRepo.findAll();
+        System.out.println("sysUsers = " + sysUsers);
     }
 }
