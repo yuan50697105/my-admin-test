@@ -1,0 +1,10 @@
+spring:
+  elasticsearch:
+    rest:
+      uris: 123.56.78.153:9200
+#  data:
+#    elasticsearch:
+#      repositories:
+#        enabled: true
+#      cluster-name: docker-cluster
+#      cluster-nodes: 123.56.78.153:9200
