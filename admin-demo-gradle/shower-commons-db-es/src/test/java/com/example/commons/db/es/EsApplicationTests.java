@@ -26,6 +26,6 @@ public class EsApplicationTests {
     @Test
     void t2() {
         Iterable<SysUser> sysUsers = sysUserRepo.findAll();
-        System.out.println("sysUsers = " + sysUsers);
+        sysUsers.forEach(sysUser -> System.out.println("sysUser = " + sysUser));
     }
 }
