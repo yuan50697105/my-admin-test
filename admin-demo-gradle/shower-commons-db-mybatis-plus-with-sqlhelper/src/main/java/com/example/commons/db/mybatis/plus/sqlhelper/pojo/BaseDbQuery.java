@@ -11,5 +11,5 @@ import lombok.EqualsAndHashCode;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class BaseDbQuery extends com.example.commons.db.pojo.BaseDbQuery {
+public class BaseDbQuery extends com.example.commons.db.es.pojo.BaseDbQuery {
 }
