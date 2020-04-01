@@ -1,6 +1,6 @@
 package com.example.amqp;
 
-import com.example.amqp.provider.Provider;
+import com.example.amqp.provider.BaseSenderImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,14 +13,14 @@ public class AmapApplicationTests {
 
     @Test
     void t1() {
-        Provider provider = context.getBean(Provider.class);
-        provider.send();
+        BaseSenderImpl providerImpl = context.getBean(BaseSenderImpl.class);
+        providerImpl.send();
 
     }
 
     @Test
     void t2() {
-        Provider provider = context.getBean(Provider.class);
-        provider.sendTopic();
+        BaseSenderImpl providerImpl = context.getBean(BaseSenderImpl.class);
+        providerImpl.sendTopic();
     }
 }

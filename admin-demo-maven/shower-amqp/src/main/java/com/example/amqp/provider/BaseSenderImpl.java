@@ -9,9 +9,29 @@ import org.springframework.stereotype.Component;
 
 @Component
 @AllArgsConstructor
-public class Provider {
+public class BaseSenderImpl implements BaseSender {
     private RabbitTemplate rabbitTemplate;
     private RabbitMessagingTemplate rabbitMessagingTemplate;
+
+    @Override
+    public void send(String routingKey, Object object) {
+        rabbitTemplate.convertAndSend(routingKey, object);
+    }
+
+    @Override
+    public void send(String exchange, String routingKey, Object object) {
+        rabbitTemplate.convertAndSend(exchange, routingKey, object);
+    }
+
+    @Override
+    public Object sendAndRecive(String routingKey, Object object) {
+        return rabbitTemplate.convertSendAndReceive(routingKey, object);
+    }
+
+    @Override
+    public Object sendAndRecive(String exchange, String routingKey, Object object) {
+        return rabbitTemplate.convertSendAndReceive(exchange, routingKey, object);
+    }
 
     public void send() {
         Object receive = rabbitTemplate.convertSendAndReceive("a", new GenericMessage<>("aaaa"));
