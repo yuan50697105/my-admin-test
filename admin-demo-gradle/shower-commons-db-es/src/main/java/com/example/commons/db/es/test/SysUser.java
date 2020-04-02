@@ -19,9 +19,9 @@ public class SysUser {
     @Field(type = FieldType.Long, index = true, store = true)//index 默认为true，可以不写
     private long id;
 
-    @Field(type = FieldType.Text, index = true, store = true, analyzer = "ik_smart", searchAnalyzer = "ik_max_word")
+    @Field(type = FieldType.Text, index = true, store = true, analyzer = "ik_pinyin_analyzer", searchAnalyzer = "ik_pinyin_analyzer")
     private String title;
 
-    @Field(type = FieldType.Text, index = true, store = true, analyzer = "ik_smart", searchAnalyzer = "ik_max_word")
+    @Field(type = FieldType.Text, index = true, store = true, analyzer = "ik_pinyin_analyzer", searchAnalyzer = "ik_pinyin_analyzer")
     private String content;
 }
