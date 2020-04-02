@@ -1,4 +1,4 @@
-package com.example.commons.db.es.pojo;
+package com.example.commons.db.pojo;
 
 import com.example.commons.pojo.BaseEntity;
 import lombok.Data;
