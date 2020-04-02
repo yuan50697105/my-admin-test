@@ -17,7 +17,7 @@ public class EsApplicationTests {
 
     @Test
     void name() {
-        SysUser sysUser = SysUser.builder().content("asdasd").build();
+        SysUser sysUser = SysUser.builder().content("济南机场平台").title("济南机场平台").build();
         SysUser save = sysUserRepo.save(sysUser);
         System.out.println("save = " + save);
 

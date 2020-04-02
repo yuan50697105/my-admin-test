@@ -6,23 +6,27 @@
     <modules>
         <module>shower-commons</module>
         <module>shower-commons-web</module>
+        <module>shower-commons-web-hateoas</module>
+        <module>shower-amqp</module>
+        <module>shower-commons-redis</module>
         <module>shower-commons-db</module>
         <module>shower-commons-db-mybatis-with-pagehelper</module>
         <module>shower-commons-db-mybatis-with-sqlhelper</module>
+        <module>shower-commons-db-mybatis-ext-with-pagehelper</module>
+        <module>shower-commons-db-mybatis-ext-with-sqlhelper</module>
         <module>shower-commons-db-mybatis-mapper-with-pagehelper</module>
         <module>shower-commons-db-mybatis-mapper-with-sqlhelper</module>
+        <module>shower-commons-db-mybatis-mapper-ext-with-pagehelper</module>
+        <module>shower-commons-db-mybatis-mapper-ext-with-sqlhelper</module>
         <module>shower-commons-db-mybatis-plus-with-pagehelper</module>
         <module>shower-commons-db-mybatis-plus-with-sqlhelper</module>
         <module>shower-commons-db-mybatis-jpa-with-pagehelper</module>
         <module>shower-commons-db-mybatis-jpa-with-sqlhelper</module>
         <module>shower-commons-db-mybatis-jpa-querydsl-with-pagehelper</module>
         <module>shower-commons-db-mybatis-jpa-querydsl-with-sqlhelper</module>
-        <module>shower-commons-redis</module>
         <module>shower-commons-db-solr</module>
         <module>shower-commons-db-es</module>
         <module>shower-commons-db-es-jest</module>
-        <module>shower-amqp</module>
-        <module>shower-commons-web-hateoas</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
