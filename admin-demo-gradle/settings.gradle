@@ -22,4 +22,5 @@ include 'shower-commons-db-es'
 include 'shower-commons-db-es-jest'
 include 'shower-commons-db-solr'
 include 'shower-commons-batch'
+include 'shower-commons-batch-quartz'
 
