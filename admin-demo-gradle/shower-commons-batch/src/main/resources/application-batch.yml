@@ -5,4 +5,4 @@ spring:
     url: jdbc:mysql:///demo_java_01?serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
   batch:
-    initialize-schema: embedded
+    initialize-schema: always
