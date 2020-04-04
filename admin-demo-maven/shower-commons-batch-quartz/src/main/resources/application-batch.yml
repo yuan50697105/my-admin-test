@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql:///demo_java_02?serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  batch:
+    initialize-schema: always
+  quartz:
+    job-store-type: jdbc
+    jdbc:
+      initialize-schema: always

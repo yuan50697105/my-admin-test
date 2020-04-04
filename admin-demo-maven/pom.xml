@@ -27,6 +27,8 @@
         <module>shower-commons-db-solr</module>
         <module>shower-commons-db-es</module>
         <module>shower-commons-db-es-jest</module>
+        <module>shower-commons-batch</module>
+        <module>shower-commons-batch-quartz</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
