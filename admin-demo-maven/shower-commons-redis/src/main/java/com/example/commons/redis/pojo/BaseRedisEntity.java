@@ -1,4 +1,4 @@
-package com.example.redis.pojo;
+package com.example.commons.redis.pojo;
 
 import com.example.commons.pojo.BaseEntity;
 import lombok.Data;
