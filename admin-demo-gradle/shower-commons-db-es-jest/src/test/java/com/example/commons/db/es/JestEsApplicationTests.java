@@ -17,7 +17,7 @@ public class JestEsApplicationTests {
 
     @Test
     void name() {
-        SysUser sysUser = SysUser.builder().content("asdasd").build();
+        SysUser sysUser = SysUser.builder().title("asdsad").content("asdasd").build();
         SysUser save = sysUserRepo.save(sysUser);
         System.out.println("save = " + save);
 

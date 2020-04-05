@@ -16,8 +16,8 @@ public class EsApplicationTests {
     private SysUserRepo sysUserRepo;
 
     @Test
-    void name() {
-        SysUser sysUser = SysUser.builder().content("asdasd").build();
+    void  name() {
+        SysUser sysUser = SysUser.builder().content("济南").build();
         SysUser save = sysUserRepo.save(sysUser);
         System.out.println("save = " + save);
 
@@ -25,7 +25,8 @@ public class EsApplicationTests {
 
     @Test
     void t2() {
-        Iterable<SysUser> sysUsers = sysUserRepo.findAll();
-        sysUsers.forEach(sysUser -> System.out.println("sysUser = " + sysUser));
+
+        Iterable<SysUser> list = sysUserRepo.findAll();
+        list.forEach(sysUser -> System.out.println("sysUser = " + sysUser));
     }
 }
