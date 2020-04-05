@@ -11,21 +11,4 @@ import org.springframework.context.ApplicationContext;
 public class JestEsApplicationTests {
     @Autowired
     private ApplicationContext context;
-
-    @Autowired
-    private SysUserRepo sysUserRepo;
-
-    @Test
-    void name() {
-        SysUser sysUser = SysUser.builder().title("asdsad").content("asdasd").build();
-        SysUser save = sysUserRepo.save(sysUser);
-        System.out.println("save = " + save);
-
-    }
-
-    @Test
-    void t2() {
-        Iterable<SysUser> sysUsers = sysUserRepo.findAll();
-        sysUsers.forEach(sysUser -> System.out.println("sysUser = " + sysUser));
-    }
 }

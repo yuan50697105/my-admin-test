@@ -12,21 +12,4 @@ public class EsApplicationTests {
     @Autowired
     private ApplicationContext context;
 
-    @Autowired
-    private SysUserRepo sysUserRepo;
-
-    @Test
-    void  name() {
-        SysUser sysUser = SysUser.builder().content("济南").build();
-        SysUser save = sysUserRepo.save(sysUser);
-        System.out.println("save = " + save);
-
-    }
-
-    @Test
-    void t2() {
-
-        Iterable<SysUser> list = sysUserRepo.findAll();
-        list.forEach(sysUser -> System.out.println("sysUser = " + sysUser));
-    }
 }

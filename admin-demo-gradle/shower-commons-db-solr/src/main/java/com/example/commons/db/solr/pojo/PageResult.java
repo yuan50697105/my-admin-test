@@ -12,7 +12,7 @@ import org.springframework.data.domain.Page;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class PageResult<T> extends com.example.commons.db.es.pojo.PageResult<T> {
+public class PageResult<T> extends com.example.commons.db.pojo.PageResult<T> {
     public PageResult(long page, long size, long totalNumberOfRows, long totalPages, Iterable<T> data) {
         super(page, size, totalNumberOfRows, totalPages, data);
     }

@@ -23,5 +23,5 @@ include 'shower-commons-db-es-jest'
 include 'shower-commons-db-solr'
 include 'shower-commons-task-batch'
 include 'shower-commons-task-quartz'
-include 'shower-commons-task-batch-quartz'
+include 'shower-commons-task-quartz-batch'
 

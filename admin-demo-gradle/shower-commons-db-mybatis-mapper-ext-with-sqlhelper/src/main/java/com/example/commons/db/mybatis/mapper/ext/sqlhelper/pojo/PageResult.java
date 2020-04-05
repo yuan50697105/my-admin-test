@@ -12,7 +12,7 @@ import lombok.EqualsAndHashCode;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class PageResult<T> extends com.example.commons.db.es.pojo.PageResult<T> {
+public class PageResult<T> extends com.example.commons.db.pojo.PageResult<T> {
     public PageResult(Long page, Long size, Long totalNumberOfRows, Long totalPages, Iterable<T> data) {
         super(page, size, totalNumberOfRows, totalPages, data);
     }

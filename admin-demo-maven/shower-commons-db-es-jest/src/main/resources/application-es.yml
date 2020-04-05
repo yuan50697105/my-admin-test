@@ -1,12 +1,16 @@
 spring:
-  elasticsearch:
-    rest:
-      uris: 123.56.78.153:9200
+#  elasticsearch:
+#    rest:
+#      uris: 123.56.78.153:9200
   data:
-    elasticsearch:
-      properties:
-        path:
-          home: target/elastic
-        transport:
-          tcp:
-            connect_timeout: 120s
+    jest:
+      uris: http://123.56.78.153:9200
+      username: elastic
+      password: changeme
+#    elasticsearch:
+#      properties:
+#        path:
+#          home: target/elastic
+#        transport:
+#          tcp:
+#            connect_timeout: 120s

@@ -7,11 +7,11 @@
         <module>shower-commons</module>
         <module>shower-commons-web</module>
         <module>shower-commons-web-hateoas</module>
-        <module>shower-amqp</module>
+        <module>shower-commons-amqp</module>
         <module>shower-commons-redis</module>
         <module>shower-commons-db</module>
-        <module>shower-commons-db-mybatis-with-pagehelper</module>
-        <module>shower-commons-db-mybatis-with-sqlhelper</module>
+        <module>shower-commons-db-mybatis-base-with-pagehelper</module>
+        <module>shower-commons-db-mybatis-base-with-sqlhelper</module>
         <module>shower-commons-db-mybatis-ext-with-pagehelper</module>
         <module>shower-commons-db-mybatis-ext-with-sqlhelper</module>
         <module>shower-commons-db-mybatis-mapper-with-pagehelper</module>
@@ -27,8 +27,9 @@
         <module>shower-commons-db-solr</module>
         <module>shower-commons-db-es</module>
         <module>shower-commons-db-es-jest</module>
-        <module>shower-commons-batch</module>
-        <module>shower-commons-batch-quartz</module>
+        <module>shower-commons-task-batch</module>
+        <module>shower-commons-task-quartz-batch</module>
+        <module>shower-commons-task-quartz</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
