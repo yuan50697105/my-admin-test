@@ -1,10 +1,9 @@
-package com.example.commons.amqp.provider;
+package com.example.commons.amqp.sender.impl;
 
-import com.example.commons.amqp.queue.QueueConfiguration;
+import com.example.commons.amqp.sender.BaseSender;
 import lombok.AllArgsConstructor;
 import org.springframework.amqp.rabbit.core.RabbitMessagingTemplate;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.messaging.support.GenericMessage;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -33,13 +32,4 @@ public class BaseSenderImpl implements BaseSender {
         return rabbitTemplate.convertSendAndReceive(exchange, routingKey, object);
     }
 
-    public void send() {
-        Object receive = rabbitTemplate.convertSendAndReceive("a", new GenericMessage<>("aaaa"));
-        System.out.println("receive = " + receive);
-    }
-
-    public void sendTopic() {
-        Object receive = rabbitTemplate.convertSendAndReceive(QueueConfiguration.TOPIC_EXCHANGE_01, QueueConfiguration.TOPIC_01, QueueConfiguration.TOPIC_01);
-        System.out.println("receive = " + receive);
-    }
 }

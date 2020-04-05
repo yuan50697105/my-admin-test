@@ -28,32 +28,32 @@ public class QueueConfiguration {
     public static final String DIRECT_ROUTE_KEY = "DIRECT_ROUTE_KEY";
 
     @Bean(QUEUE_01)
-    public Queue queue_01() {
+    public Queue queue01() {
         return new Queue(QUEUE_01);
     }
 
     @Bean(QUEUE_02)
-    public Queue queue_02() {
+    public Queue queue02() {
         return new Queue(QUEUE_02);
     }
 
     @Bean(DIRECT_QUEUE_01)
-    public Queue direct_queue_01() {
+    public Queue directQueue01() {
         return new Queue(DIRECT_QUEUE_01);
     }
 
     @Bean(DIRECT_QUEUE_02)
-    public Queue direct_queue_02() {
+    public Queue directQueue02() {
         return new Queue(DIRECT_QUEUE_02);
     }
 
     @Bean(TOPIC_QUEUE_01)
-    public Queue topic_queue_01() {
+    public Queue topicQueue01() {
         return new Queue(TOPIC_QUEUE_01);
     }
 
     @Bean(TOPIC_QUEUE_02)
-    public Queue topic_queue_02() {
+    public Queue topicQueue02() {
         return new Queue(TOPIC_QUEUE_02);
     }
 
@@ -63,22 +63,22 @@ public class QueueConfiguration {
     }
 
     @Bean(DIRECT_BINDING_01)
-    public Binding direct_binding_01(@Qualifier(DIRECT_QUEUE_01) Queue queue, DirectExchange exchange) {
+    public Binding directBinding01(@Qualifier(DIRECT_QUEUE_01) Queue queue, DirectExchange exchange) {
         return BindingBuilder.bind(queue).to(exchange).with(DIRECT_ROUTE_KEY);
     }
 
     @Bean(TOPIC_EXCHANGE_01)
-    public TopicExchange exchange_01() {
+    public TopicExchange exchange01() {
         return new TopicExchange(TOPIC_EXCHANGE_01);
     }
 
     @Bean(TOPIC_BINDING_01)
-    public Binding topic_binding_01(@Qualifier(TOPIC_QUEUE_01) Queue queue, TopicExchange exchange) {
+    public Binding topicBinding01(@Qualifier(TOPIC_QUEUE_01) Queue queue, TopicExchange exchange) {
         return BindingBuilder.bind(queue).to(exchange).with(TOPIC_01);
     }
 
     @Bean(TOPIC_BINDIND_02)
-    public Binding topic_binding_02(@Qualifier(TOPIC_QUEUE_02) Queue queue, TopicExchange exchange) {
+    public Binding topicBinding02(@Qualifier(TOPIC_QUEUE_02) Queue queue, TopicExchange exchange) {
         return BindingBuilder.bind(queue).to(exchange).with(TOPIC_02);
     }
 

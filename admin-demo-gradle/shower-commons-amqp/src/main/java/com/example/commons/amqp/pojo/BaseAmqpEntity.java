@@ -12,14 +12,14 @@ import lombok.EqualsAndHashCode;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class BaseAmqpEntity<MSGID, T> extends BaseEntity {
-    private MSGID messageId;
+public class BaseAmqpEntity<T> extends BaseEntity {
+    private String messageId;
     private T data;
 
     public BaseAmqpEntity() {
     }
 
-    public BaseAmqpEntity(MSGID messageId, T data) {
+    public BaseAmqpEntity(String messageId, T data) {
         this.messageId = messageId;
         this.data = data;
     }
