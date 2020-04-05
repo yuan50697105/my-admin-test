@@ -1,6 +1,7 @@
-package com.example.redis.dao;
+package com.example.commons.redis.dao;
 
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @program: admin-demo-gradle
@@ -15,4 +16,10 @@ public interface BaseRedisDao<T, KEY> {
     void update(T t);
 
     Optional<T> find(KEY key);
+
+    void setValue(String key, T t);
+
+    void setValue(String key, T t, long time);
+
+    void setValue(String key, T t, long time, TimeUnit unit);
 }

@@ -1,6 +1,6 @@
-package com.example.amqp.provider;
+package com.example.commons.amqp.provider;
 
-import com.example.amqp.queue.QueueConfiguration;
+import com.example.commons.amqp.queue.QueueConfiguration;
 import lombok.AllArgsConstructor;
 import org.springframework.amqp.rabbit.core.RabbitMessagingTemplate;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;

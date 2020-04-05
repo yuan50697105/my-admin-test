@@ -1,4 +1,4 @@
-package com.example.amqp.queue;
+package com.example.commons.amqp.queue;
 
 import org.springframework.amqp.core.*;
 import org.springframework.beans.factory.annotation.Qualifier;

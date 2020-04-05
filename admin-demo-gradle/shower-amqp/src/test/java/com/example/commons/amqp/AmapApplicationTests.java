@@ -1,6 +1,6 @@
-package com.example.amqp;
+package com.example.commons.amqp;
 
-import com.example.amqp.provider.BaseSenderImpl;
+import com.example.commons.amqp.provider.BaseSenderImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
