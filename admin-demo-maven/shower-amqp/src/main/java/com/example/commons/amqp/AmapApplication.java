@@ -1,4 +1,4 @@
-package com.example.amqp;
+package com.example.commons.amqp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

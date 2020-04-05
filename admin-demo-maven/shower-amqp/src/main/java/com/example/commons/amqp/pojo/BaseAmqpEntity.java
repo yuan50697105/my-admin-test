@@ -1,4 +1,4 @@
-package com.example.amqp.pojo;
+package com.example.commons.amqp.pojo;
 
 import com.example.commons.pojo.BaseEntity;
 import lombok.Data;

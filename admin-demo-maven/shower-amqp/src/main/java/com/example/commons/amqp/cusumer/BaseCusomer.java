@@ -1,6 +1,6 @@
-package com.example.amqp.cusumer;
+package com.example.commons.amqp.cusumer;
 
-import com.example.amqp.queue.QueueConfiguration;
+import com.example.commons.amqp.queue.QueueConfiguration;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;

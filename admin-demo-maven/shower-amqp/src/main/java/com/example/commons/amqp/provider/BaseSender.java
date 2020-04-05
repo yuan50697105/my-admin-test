@@ -1,4 +1,4 @@
-package com.example.amqp.provider;
+package com.example.commons.amqp.provider;
 
 public interface BaseSender {
     void send(String routingKey, Object object);
