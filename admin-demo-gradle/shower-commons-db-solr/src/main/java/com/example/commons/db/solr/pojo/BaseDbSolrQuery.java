@@ -5,13 +5,14 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * @program: admin-demo-gradle
+ * @program: admin-demo
  * @description:
  * @author: yuane
- * @create: 2020-03-28 15:48
+ * @create: 2020-03-26 23:34
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class BaseDbEsEntity extends BaseEntity {
-
+public abstract class BaseDbSolrQuery extends BaseEntity {
+    private Integer page = 1;
+    private Integer size = 20;
 }
