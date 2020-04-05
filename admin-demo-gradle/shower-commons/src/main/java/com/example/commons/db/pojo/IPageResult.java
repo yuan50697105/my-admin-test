@@ -12,14 +12,14 @@ import lombok.EqualsAndHashCode;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public abstract class PageResult<T> extends BaseEntity {
+public abstract class IPageResult<T> extends BaseEntity {
     private long page;
     private long size;
     private long totalNumberOfRows;
     private long totalPages;
     private Iterable<T> data;
 
-    public PageResult(long page, long size, long totalNumberOfRows, long totalPages, Iterable<T> data) {
+    public IPageResult(long page, long size, long totalNumberOfRows, long totalPages, Iterable<T> data) {
         this.page = page;
         this.size = size;
         this.totalNumberOfRows = totalNumberOfRows;

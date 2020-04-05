@@ -1,5 +1,6 @@
 package com.example.commons.db.solr.pojo;
 
+import com.example.commons.db.pojo.IPageResult;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.data.domain.Page;
@@ -12,7 +13,7 @@ import org.springframework.data.domain.Page;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class PageResult<T> extends com.example.commons.db.pojo.PageResult<T> {
+public class PageResult<T> extends IPageResult<T> {
     public PageResult(long page, long size, long totalNumberOfRows, long totalPages, Iterable<T> data) {
         super(page, size, totalNumberOfRows, totalPages, data);
     }

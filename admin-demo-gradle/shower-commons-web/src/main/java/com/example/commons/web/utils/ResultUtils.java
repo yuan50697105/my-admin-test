@@ -1,5 +1,6 @@
 package com.example.commons.web.utils;
 
+import com.example.commons.db.pojo.IPageResult;
 import com.example.commons.web.pojo.Result;
 
 /**
@@ -26,7 +27,11 @@ public class ResultUtils {
         return result(OK_CODE, OK_MESSAGE);
     }
 
-    public static Result data(Object data) {
+    public static <T> Result data(T data) {
+        return result(OK_CODE, OK_MESSAGE, data);
+    }
+
+    public static <E, T extends IPageResult<E>> Result data(T data) {
         return result(OK_CODE, OK_MESSAGE, data);
     }
 

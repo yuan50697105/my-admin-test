@@ -1,4 +1,4 @@
-package com.example.commons.db.mybatis.pagehelper.test.pojo.example;
+package com.example.commons.db.mybatis.ext.pagehelper.test.pojo;
 
 import java.util.ArrayList;
 import java.util.Date;
