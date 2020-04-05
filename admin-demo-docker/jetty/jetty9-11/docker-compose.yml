@@ -1,0 +1,12 @@
+version: "2"
+services: 
+  jetty9_11:
+    image: jetty:9-jre11
+    ports: 
+      - 8080:8080
+    volumes: 
+      - ./data/webapps:/usr/local/tomcat/webapps
+      - ./data/logs:/usr/local/tomcat/logs
+    restart: always
+    privileged: true
+    

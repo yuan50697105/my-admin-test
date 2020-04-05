@@ -1,0 +1,12 @@
+version: "3"
+services: 
+  tomcat8_11:
+    image: tomcat:8-jdk11
+    ports: 
+      - 8080:8080
+    volumes: 
+      - ./data/webapps:/usr/local/tomcat/webapps
+      - ./data/logs:/usr/local/tomcat/logs
+    restart: always
+    privileged: true
+

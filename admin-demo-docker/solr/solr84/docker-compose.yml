@@ -1,0 +1,9 @@
+version: "2"
+services: 
+  solr84:
+    image: solr:8.4
+    ports: 
+      - 8983:8983
+    volumes: 
+      - ./data:/var/solr/data
+    privileged: true

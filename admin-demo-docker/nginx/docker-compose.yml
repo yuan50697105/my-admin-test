@@ -1,0 +1,14 @@
+version: "2"
+services: 
+  nginx80:
+    image: nginx
+    ports: 
+      - 80:80
+    restart: always
+    volumes: 
+      - ./conf:/etc/nginx/conf.d:rw
+      - ./log:/var/log/nginx:rw
+      - ./html:/usr/share/nginx/html
+    privileged: true
+    
+    
