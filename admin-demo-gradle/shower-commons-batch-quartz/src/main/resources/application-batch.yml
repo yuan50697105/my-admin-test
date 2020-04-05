@@ -11,6 +11,7 @@ spring:
   quartz:
     jdbc:
       initialize-schema: always
+    job-store-type: jdbc
   rabbitmq:
     addresses: 123.56.78.153
     username: root
