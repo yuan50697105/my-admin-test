@@ -1,4 +1,4 @@
-package com.example.commons.db.mybatis.pagehelper.test.dao.impl;
+package com.example.commons.db.mybatis.pagehelper.test.service.impl;
 
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
@@ -6,7 +6,7 @@ import java.util.List;
 import com.example.commons.db.mybatis.pagehelper.test.pojo.SysRoleExample;
 import com.example.commons.db.mybatis.pagehelper.test.mapper.SysRoleMapper;
 import com.example.commons.db.mybatis.pagehelper.test.pojo.SysRole;
-import com.example.commons.db.mybatis.pagehelper.test.dao.SysRoleService;
+import com.example.commons.db.mybatis.pagehelper.test.service.SysRoleService;
 @Service
 public class SysRoleServiceImpl implements SysRoleService{
 

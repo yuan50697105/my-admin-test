@@ -1,7 +1,7 @@
 package com.example.commons.db.mybatis.pagehelper.test.mapper;
 
 import com.example.commons.db.mybatis.pagehelper.test.pojo.SysUser;
-import com.example.commons.db.mybatis.pagehelper.test.pojo.example.SysUserExample;
+import com.example.commons.db.mybatis.pagehelper.test.pojo.SysUserExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;

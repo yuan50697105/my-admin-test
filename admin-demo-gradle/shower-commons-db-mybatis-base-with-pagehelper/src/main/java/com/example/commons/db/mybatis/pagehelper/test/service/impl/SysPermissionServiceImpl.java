@@ -1,12 +1,12 @@
-package com.example.commons.db.mybatis.pagehelper.test.dao.impl;
+package com.example.commons.db.mybatis.pagehelper.test.service.impl;
 
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.example.commons.db.mybatis.pagehelper.test.mapper.SysPermissionMapper;
 import java.util.List;
 import com.example.commons.db.mybatis.pagehelper.test.pojo.SysPermission;
-import com.example.commons.db.mybatis.pagehelper.test.pojo.example.SysPermissionExample;
-import com.example.commons.db.mybatis.pagehelper.test.dao.SysPermissionService;
+import com.example.commons.db.mybatis.pagehelper.test.pojo.SysPermissionExample;
+import com.example.commons.db.mybatis.pagehelper.test.service.SysPermissionService;
 @Service
 public class SysPermissionServiceImpl implements SysPermissionService{
 

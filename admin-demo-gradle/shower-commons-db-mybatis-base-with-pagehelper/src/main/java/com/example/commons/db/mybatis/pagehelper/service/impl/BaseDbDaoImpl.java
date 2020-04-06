@@ -1,6 +1,6 @@
-package com.example.commons.db.mybatis.pagehelper.dao.impl;
+package com.example.commons.db.mybatis.pagehelper.service.impl;
 
-import com.example.commons.db.mybatis.pagehelper.dao.BaseDbDao;
+import com.example.commons.db.mybatis.pagehelper.service.BaseDbDao;
 import com.example.commons.db.mybatis.pagehelper.mapper.BaseDbMapper;
 import com.example.commons.db.mybatis.pagehelper.pojo.PageResult;
 import com.github.pagehelper.PageInfo;

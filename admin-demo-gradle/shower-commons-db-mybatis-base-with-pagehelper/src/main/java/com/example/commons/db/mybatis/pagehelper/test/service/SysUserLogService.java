@@ -1,13 +1,14 @@
-package com.example.commons.db.mybatis.pagehelper.test.mapper;
+package com.example.commons.db.mybatis.pagehelper.test.service;
 
+import java.util.List;
 import com.example.commons.db.mybatis.pagehelper.test.pojo.SysUserLog;
 import com.example.commons.db.mybatis.pagehelper.test.pojo.SysUserLogExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
+import com.example.commons.db.mybatis.pagehelper.test.pojo.SysUserLogQuery;
+import com.example.commons.db.pojo.IPageResult;
 
-@Mapper
-public interface SysUserLogMapper {
+public interface SysUserLogService{
+
+
     long countByExample(SysUserLogExample example);
 
     int deleteByExample(SysUserLogExample example);
@@ -22,11 +23,15 @@ public interface SysUserLogMapper {
 
     SysUserLog selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(@Param("record") SysUserLog record, @Param("example") SysUserLogExample example);
+    int updateByExampleSelective(SysUserLog record,SysUserLogExample example);
 
-    int updateByExample(@Param("record") SysUserLog record, @Param("example") SysUserLogExample example);
+    int updateByExample(SysUserLog record,SysUserLogExample example);
 
     int updateByPrimaryKeySelective(SysUserLog record);
 
     int updateByPrimaryKey(SysUserLog record);
+
+    IPageResult<SysUserLog> selectPageByQuery(SysUserLogQuery query);
+
+    IPageResult<SysUserLog> selectPageByExample(SysUserLogExample example, int page, int size);
 }

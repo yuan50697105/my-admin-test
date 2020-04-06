@@ -1,8 +1,8 @@
-package com.example.commons.db.mybatis.pagehelper.test.dao;
+package com.example.commons.db.mybatis.pagehelper.test.service;
 
 import java.util.List;
 import com.example.commons.db.mybatis.pagehelper.test.pojo.SysPermission;
-import com.example.commons.db.mybatis.pagehelper.test.pojo.example.SysPermissionExample;
+import com.example.commons.db.mybatis.pagehelper.test.pojo.SysPermissionExample;
 public interface SysPermissionService{
 
 

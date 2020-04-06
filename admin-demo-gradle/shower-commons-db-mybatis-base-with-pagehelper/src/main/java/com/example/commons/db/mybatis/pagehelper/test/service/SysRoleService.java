@@ -1,4 +1,4 @@
-package com.example.commons.db.mybatis.pagehelper.test.dao;
+package com.example.commons.db.mybatis.pagehelper.test.service;
 
 import java.util.List;
 import com.example.commons.db.mybatis.pagehelper.test.pojo.SysRoleExample;

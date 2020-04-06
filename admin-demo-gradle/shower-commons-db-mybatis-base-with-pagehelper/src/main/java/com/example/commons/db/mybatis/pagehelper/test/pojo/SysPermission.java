@@ -1,5 +1,6 @@
 package com.example.commons.db.mybatis.pagehelper.test.pojo;
 
+import com.example.commons.db.mybatis.ext.sqlhelper.test.pojo.CommonsDbEntity;
 import java.io.Serializable;
 import java.util.Date;
 import com.example.commons.db.mybatis.pagehelper.test.constants.EnableConstants;import lombok.AllArgsConstructor;
@@ -33,4 +34,8 @@ public class SysPermission extends CommonsDbEntity implements Serializable {
     private String enabled;
 
     private static final long serialVersionUID = 1L;
+
+    public static SysPermissionBuilder builder() {
+        return new SysPermissionBuilder();
+    }
 }

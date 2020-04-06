@@ -75,7 +75,7 @@
     <!--@mbg.generated-->
     id, create_time, update_time, `name`, code, enabled
   </sql>
-  <select id="selectByExample" parameterType="com.example.commons.db.mybatis.pagehelper.test.pojo.example.SysPermissionExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.example.commons.db.mybatis.pagehelper.test.pojo.SysPermissionExample" resultMap="BaseResultMap">
     <!--@mbg.generated-->
     select
     <if test="distinct">
@@ -102,7 +102,7 @@
     delete from sys_permission
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.example.commons.db.mybatis.pagehelper.test.pojo.example.SysPermissionExample">
+  <delete id="deleteByExample" parameterType="com.example.commons.db.mybatis.pagehelper.test.pojo.SysPermissionExample">
     <!--@mbg.generated-->
     delete from sys_permission
     <if test="_parameter != null">
@@ -154,7 +154,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.example.commons.db.mybatis.pagehelper.test.pojo.example.SysPermissionExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.example.commons.db.mybatis.pagehelper.test.pojo.SysPermissionExample" resultType="java.lang.Long">
     <!--@mbg.generated-->
     select count(*) from sys_permission
     <if test="_parameter != null">

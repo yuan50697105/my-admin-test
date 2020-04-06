@@ -1,7 +1,7 @@
 package com.example.commons.db.mybatis.pagehelper.test.mapper;
 
 import com.example.commons.db.mybatis.pagehelper.test.pojo.SysPermission;
-import com.example.commons.db.mybatis.pagehelper.test.pojo.example.SysPermissionExample;
+import com.example.commons.db.mybatis.pagehelper.test.pojo.SysPermissionExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
