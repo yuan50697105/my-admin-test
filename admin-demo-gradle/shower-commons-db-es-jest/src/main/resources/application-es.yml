@@ -1,7 +1,6 @@
 spring:
-#  elasticsearch:
-#    rest:
-#      uris: 123.56.78.153:9200
+  profiles:
+    active: dbcomons
   data:
     jest:
       uris: http://123.56.78.153:9200
