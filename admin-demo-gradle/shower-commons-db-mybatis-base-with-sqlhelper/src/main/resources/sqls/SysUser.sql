@@ -1,5 +1,5 @@
 -- auto Generated on 2020-04-06
-DROP TABLE IF EXISTS sys_user;
+# DROP TABLE IF EXISTS sys_user;
 CREATE TABLE sys_user
 (
     id          BIGINT(15) NOT NULL AUTO_INCREMENT COMMENT '主键',
