@@ -14,7 +14,7 @@ import java.util.Date;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class CommonsDbEntity extends BaseDbEntity {
+public class CommonsEntity extends BaseDbEntity {
     /**
      * 主键
      */

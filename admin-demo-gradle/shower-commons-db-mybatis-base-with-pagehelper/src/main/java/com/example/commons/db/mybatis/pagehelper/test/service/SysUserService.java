@@ -3,7 +3,7 @@ package com.example.commons.db.mybatis.pagehelper.test.service;
 import java.util.List;
 import com.example.commons.db.mybatis.pagehelper.test.pojo.SysUserExample;
 import com.example.commons.db.mybatis.pagehelper.test.pojo.SysUser;
-import com.example.commons.db.mybatis.pagehelper.test.pojo.SysUserQuery;
+import com.example.commons.db.mybatis.pagehelper.test.pojo.query.SysUserQuery;
 import com.example.commons.db.pojo.IPageResult;
 
 public interface SysUserService{
@@ -14,6 +14,8 @@ public interface SysUserService{
     int deleteByExample(SysUserExample example);
 
     int deleteByPrimaryKey(Long id);
+
+    int deleteByIds(List<Long> ids);
 
     int insert(SysUser record);
 
@@ -34,4 +36,6 @@ public interface SysUserService{
     IPageResult<SysUser> selectPageByQuery(SysUserQuery query);
 
     IPageResult<SysUser> selectPageByExample(SysUserExample example, int page, int size);
+
+    List<SysUser> selectByQuery(SysUserQuery query);
 }

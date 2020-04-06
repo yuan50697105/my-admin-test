@@ -1,14 +1,22 @@
 package com.example.commons.db.mybatis.pagehelper.test.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import java.util.List;
-import com.example.commons.db.mybatis.pagehelper.test.pojo.SysRoleExample;
+import cn.hutool.core.util.ObjectUtil;
+import com.example.commons.db.mybatis.pagehelper.pojo.PageResult;
 import com.example.commons.db.mybatis.pagehelper.test.mapper.SysRoleMapper;
 import com.example.commons.db.mybatis.pagehelper.test.pojo.SysRole;
+import com.example.commons.db.mybatis.pagehelper.test.pojo.SysRoleExample;
+import com.example.commons.db.mybatis.pagehelper.test.pojo.query.SysRoleQuery;
 import com.example.commons.db.mybatis.pagehelper.test.service.SysRoleService;
+import com.example.commons.db.pojo.IPageResult;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
+
 @Service
-public class SysRoleServiceImpl implements SysRoleService{
+public class SysRoleServiceImpl implements SysRoleService {
 
     @Resource
     private SysRoleMapper sysRoleMapper;
@@ -26,6 +34,13 @@ public class SysRoleServiceImpl implements SysRoleService{
     @Override
     public int deleteByPrimaryKey(Long id) {
         return sysRoleMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public int deleteByIds(List<Long> ids) {
+        SysRoleExample example = new SysRoleExample();
+        example.or().andIdIn(ids);
+        return deleteByExample(example);
     }
 
     @Override
@@ -49,13 +64,13 @@ public class SysRoleServiceImpl implements SysRoleService{
     }
 
     @Override
-    public int updateByExampleSelective(SysRole record,SysRoleExample example) {
-        return sysRoleMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(SysRole record, SysRoleExample example) {
+        return sysRoleMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(SysRole record,SysRoleExample example) {
-        return sysRoleMapper.updateByExample(record,example);
+    public int updateByExample(SysRole record, SysRoleExample example) {
+        return sysRoleMapper.updateByExample(record, example);
     }
 
     @Override
@@ -68,4 +83,32 @@ public class SysRoleServiceImpl implements SysRoleService{
         return sysRoleMapper.updateByPrimaryKey(record);
     }
 
+    @Override
+    public IPageResult<SysRole> selectPageByQuery(SysRoleQuery query) {
+        SysRoleExample example = createExample(query);
+        return selectPageByExample(example, query.getPage(), query.getSize());
+    }
+
+    @Override
+    public IPageResult<SysRole> selectPageByExample(SysRoleExample example, int page, int size) {
+        PageHelper.startPage(page, size);
+        return new PageResult<>(new PageInfo<>(selectByExample(example)));
+    }
+
+    @Override
+    public List<SysRole> selectByQuery(SysRoleQuery query) {
+        SysRoleExample example = createExample(query);
+        return selectByExample(example);
+    }
+
+
+    public SysRoleExample createExample(SysRoleQuery query) {
+        SysRoleExample example = new SysRoleExample();
+        SysRoleExample.Criteria criteria = example.createCriteria();
+        if (ObjectUtil.isNotEmpty(query.getName())) {
+            criteria.andNameLike("%" + query.getName() + "%");
+        }
+        example.or(criteria);
+        return example;
+    }
 }

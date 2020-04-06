@@ -4,7 +4,7 @@ import com.example.commons.db.mybatis.pagehelper.pojo.PageResult;
 import com.example.commons.db.mybatis.pagehelper.test.mapper.SysUserMapper;
 import com.example.commons.db.mybatis.pagehelper.test.pojo.SysUser;
 import com.example.commons.db.mybatis.pagehelper.test.pojo.SysUserExample;
-import com.example.commons.db.mybatis.pagehelper.test.pojo.SysUserQuery;
+import com.example.commons.db.mybatis.pagehelper.test.pojo.query.SysUserQuery;
 import com.example.commons.db.mybatis.pagehelper.test.service.SysUserService;
 import com.example.commons.db.pojo.IPageResult;
 import com.github.pagehelper.PageHelper;
@@ -35,6 +35,13 @@ public class SysUserServiceImpl implements SysUserService {
     @Override
     public int deleteByPrimaryKey(Long id) {
         return sysUserMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public int deleteByIds(List<Long> ids) {
+        SysUserExample example = new SysUserExample();
+        example.or().andIdIn(ids);
+        return deleteByExample(example);
     }
 
     @Override
@@ -79,15 +86,7 @@ public class SysUserServiceImpl implements SysUserService {
 
     @Override
     public IPageResult<SysUser> selectPageByQuery(SysUserQuery query) {
-        SysUserExample example = new SysUserExample();
-        SysUserExample.Criteria criteria = example.createCriteria();
-        if (isNotEmpty(query.getUsername())) {
-            criteria.andUsernameLike("%" + query.getUsername() + "%");
-        }
-        if (isNotEmpty(query.getName())) {
-            criteria.andNameLike("%" + query.getEnabled() + "%");
-        }
-        example.or(criteria);
+        SysUserExample example = createExample(query);
         return selectPageByExample(example, query.getPage(), query.getSize());
     }
 
@@ -97,5 +96,29 @@ public class SysUserServiceImpl implements SysUserService {
         return new PageResult<>(new PageInfo<>(selectByExample(example)));
     }
 
+    @Override
+    public List<SysUser> selectByQuery(SysUserQuery query) {
+        SysUserExample example = createExample(query);
+        return selectByExample(example);
+    }
 
+
+    /**
+     * 创建查询条件
+     *
+     * @param query 实体
+     * @return 查询条件
+     */
+    public SysUserExample createExample(SysUserQuery query) {
+        SysUserExample example = new SysUserExample();
+        SysUserExample.Criteria criteria = example.createCriteria();
+        if (isNotEmpty(query.getUsername())) {
+            criteria.andUsernameLike("%" + query.getUsername() + "%");
+        }
+        if (isNotEmpty(query.getName())) {
+            criteria.andNameLike("%" + query.getEnabled() + "%");
+        }
+        example.or(criteria);
+        return example;
+    }
 }

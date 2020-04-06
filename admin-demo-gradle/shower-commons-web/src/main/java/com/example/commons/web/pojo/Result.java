@@ -1,6 +1,7 @@
 package com.example.commons.web.pojo;
 
 import com.example.commons.pojo.BaseEntity;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -12,6 +13,7 @@ import lombok.EqualsAndHashCode;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class Result extends BaseEntity {
     private Integer code;
     private String message;
