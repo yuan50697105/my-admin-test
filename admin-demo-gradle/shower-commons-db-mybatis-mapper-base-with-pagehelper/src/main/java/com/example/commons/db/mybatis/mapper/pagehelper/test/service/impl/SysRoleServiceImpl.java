@@ -82,7 +82,7 @@ public class SysRoleServiceImpl implements SysRoleService {
         Example.Builder builder = Weekend.builder(SysUser.class);
         WeekendSqls<SysRole> weekendSqls = WeekendSqls.custom();
         if (isNotEmpty(query.getName())) {
-            weekendSqls.andLike(SysRole::getName, query.getName());
+            weekendSqls.andLike(SysRole::getName, "%" + query.getName() + "%");
         }
         return builder.where(weekendSqls).build();
     }

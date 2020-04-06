@@ -79,7 +79,7 @@ public class SysUserServiceImpl implements SysUserService {
         Example.Builder builder = Weekend.builder(SysUser.class);
         WeekendSqls<SysUser> weekendSqls = WeekendSqls.custom();
         if (isNotEmpty(query.getUsername())) {
-            weekendSqls.andLike(SysUser::getUsername, query.getUsername());
+            weekendSqls.andLike(SysUser::getUsername, "%" + query.getUsername() + "%");
         }
         return builder.where(weekendSqls).build();
     }
