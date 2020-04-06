@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.commons.db.mybatis.mapper.pagehelper.test.mapper.SysUserLogMapper">
+  <resultMap id="BaseResultMap" type="com.example.commons.db.mybatis.mapper.pagehelper.test.pojo.SysUserLog">
+    <!--@mbg.generated generated on Mon Apr 06 18:12:40 CST 2020.-->
+    <!--@Table sys_user_log-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="operation" jdbcType="VARCHAR" property="operation" />
+    <result column="decription" jdbcType="VARCHAR" property="decription" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="params" jdbcType="VARCHAR" property="params" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated generated on Mon Apr 06 18:12:40 CST 2020.-->
+    id, username, `name`, `password`, create_time, update_time, `operation`, decription, 
+    url, params
+  </sql>
+</mapper>

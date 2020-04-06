@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: dbcommons
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/demo_java_04?serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+  mapper-locations: classpath*:mappers/*.xml
+logging:
+  level:
+    com.example.commons.db.mybatis.mapper.pagehelper.test: debug
