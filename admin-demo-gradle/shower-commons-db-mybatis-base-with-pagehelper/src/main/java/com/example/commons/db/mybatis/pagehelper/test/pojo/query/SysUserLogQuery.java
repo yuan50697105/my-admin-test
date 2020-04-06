@@ -1,6 +1,6 @@
-package com.example.commons.db.mybatis.pagehelper.test.pojo;
+package com.example.commons.db.mybatis.pagehelper.test.pojo.query;
 
-import com.example.commons.db.mybatis.pagehelper.pojo.BaseDbQuery;
+import com.example.commons.db.mybatis.pagehelper.test.pojo.CommonsQuery;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -12,7 +12,7 @@ import lombok.EqualsAndHashCode;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class SysUserLogQuery extends BaseDbQuery {
+public class SysUserLogQuery extends CommonsQuery {
     private String userId;
     private String username;
     private String name;

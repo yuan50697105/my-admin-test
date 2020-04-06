@@ -3,7 +3,7 @@ package com.example.commons.db.mybatis.pagehelper.test.service;
 import java.util.List;
 import com.example.commons.db.mybatis.pagehelper.test.pojo.SysUserLog;
 import com.example.commons.db.mybatis.pagehelper.test.pojo.SysUserLogExample;
-import com.example.commons.db.mybatis.pagehelper.test.pojo.SysUserLogQuery;
+import com.example.commons.db.mybatis.pagehelper.test.pojo.query.SysUserLogQuery;
 import com.example.commons.db.pojo.IPageResult;
 
 public interface SysUserLogService{

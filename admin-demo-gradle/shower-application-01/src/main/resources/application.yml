@@ -3,4 +3,4 @@ server:
     context-path: /admin
 spring:
   profiles:
-    active: db-c,mvc
+    active: dbc,mvc

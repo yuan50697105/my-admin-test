@@ -1,6 +1,6 @@
 package com.example.commons.db.mybatis.pagehelper.test.pojo;
 
-import com.example.commons.db.mybatis.pagehelper.pojo.BaseDbQuery;
+import com.example.commons.db.pojo.BaseDbQuery;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

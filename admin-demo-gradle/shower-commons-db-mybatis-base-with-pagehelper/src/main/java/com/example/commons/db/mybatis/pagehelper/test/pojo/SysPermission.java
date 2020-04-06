@@ -1,6 +1,5 @@
 package com.example.commons.db.mybatis.pagehelper.test.pojo;
 
-import com.example.commons.db.mybatis.ext.sqlhelper.test.pojo.CommonsDbEntity;
 import java.io.Serializable;
 
 import com.example.commons.db.mybatis.pagehelper.test.constants.EnableConstants;import lombok.AllArgsConstructor;
