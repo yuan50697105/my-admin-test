@@ -4,7 +4,7 @@ import com.example.application.pojo.admin.user.AdminSysUserSaveRequestBody;
 import com.example.application.pojo.admin.user.AdminSysUserUpdateRequestBody;
 import com.example.application.service.AdminSysUserService;
 import com.example.commons.constants.RouteConstants;
-import com.example.commons.db.mybatis.pagehelper.test.pojo.query.SysUserQuery;
+import com.example.commons.db.mybatis.mapper.sqlhelper.test.pojo.query.SysUserQuery;
 import com.example.commons.web.controller.BaseController;
 import com.example.commons.web.pojo.Result;
 import lombok.AllArgsConstructor;
@@ -99,7 +99,7 @@ public class AdminSysUserController extends BaseController {
      * @param id 主键
      * @return 用户信息
      */
-    @GetMapping(value = "get", params = "id")
+    @GetMapping(value = "get",params = "id")
     public Result get2(@RequestParam @NotNull Long id) {
         return adminSysUserService.get(id);
     }
@@ -111,7 +111,7 @@ public class AdminSysUserController extends BaseController {
      * @return 分页数据
      */
     @GetMapping("data")
-    public Result data(SysUserQuery query) {
+    public Result data( SysUserQuery query) {
         return adminSysUserService.data(query);
     }
 
@@ -122,7 +122,7 @@ public class AdminSysUserController extends BaseController {
      * @return 数据列表
      */
     @GetMapping("list")
-    public Result list(SysUserQuery query) {
+    public Result list( SysUserQuery query) {
         return adminSysUserService.list(query);
     }
 }

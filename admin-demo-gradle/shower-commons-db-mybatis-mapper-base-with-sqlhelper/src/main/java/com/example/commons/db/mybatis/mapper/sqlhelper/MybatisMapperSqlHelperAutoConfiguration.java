@@ -9,5 +9,5 @@ import org.springframework.boot.SpringBootConfiguration;
  * @create: 2020-04-06 16:13
  */
 @SpringBootConfiguration
-public class MybatisPageHelperAutoConfiguration {
+public class MybatisMapperSqlHelperAutoConfiguration {
 }
