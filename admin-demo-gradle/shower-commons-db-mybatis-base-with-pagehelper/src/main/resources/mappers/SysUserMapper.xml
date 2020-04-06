@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="SysUserMapper">
-  <resultMap id="BaseResultMap" type="SysUser">
+<mapper namespace="com.example.commons.db.mybatis.pagehelper.test.mapper.SysUserMapper">
+  <resultMap id="BaseResultMap" type="com.example.commons.db.mybatis.pagehelper.test.pojo.SysUser">
     <!--@mbg.generated-->
     <!--@Table sys_user-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -75,7 +75,7 @@
     <!--@mbg.generated-->
     id, create_time, update_time, username, `name`, `password`
   </sql>
-  <select id="selectByExample" parameterType="SysUserExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.example.commons.db.mybatis.pagehelper.test.pojo.SysUserExample" resultMap="BaseResultMap">
     <!--@mbg.generated-->
     select
     <if test="distinct">
@@ -102,21 +102,21 @@
     delete from sys_user
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="SysUserExample">
+  <delete id="deleteByExample" parameterType="com.example.commons.db.mybatis.pagehelper.test.pojo.SysUserExample">
     <!--@mbg.generated-->
     delete from sys_user
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="SysUser" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.example.commons.db.mybatis.pagehelper.test.pojo.SysUser" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into sys_user (create_time, update_time, username, 
       `name`, `password`)
     values (#{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{username,jdbcType=VARCHAR}, 
       #{name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="SysUser" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.example.commons.db.mybatis.pagehelper.test.pojo.SysUser" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into sys_user
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -154,7 +154,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="SysUserExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.example.commons.db.mybatis.pagehelper.test.pojo.SysUserExample" resultType="java.lang.Long">
     <!--@mbg.generated-->
     select count(*) from sys_user
     <if test="_parameter != null">
@@ -201,7 +201,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="SysUser">
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.commons.db.mybatis.pagehelper.test.pojo.SysUser">
     <!--@mbg.generated-->
     update sys_user
     <set>
@@ -223,7 +223,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="SysUser">
+  <update id="updateByPrimaryKey" parameterType="com.example.commons.db.mybatis.pagehelper.test.pojo.SysUser">
     <!--@mbg.generated-->
     update sys_user
     set create_time = #{createTime,jdbcType=TIMESTAMP},

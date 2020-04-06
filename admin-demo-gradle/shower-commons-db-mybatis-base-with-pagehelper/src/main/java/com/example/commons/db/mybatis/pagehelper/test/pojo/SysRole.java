@@ -1,7 +1,7 @@
 package com.example.commons.db.mybatis.pagehelper.test.pojo;
 
 import java.io.Serializable;
-
+import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

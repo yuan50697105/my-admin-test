@@ -7,8 +7,9 @@ import java.util.List;
 import com.example.commons.db.mybatis.pagehelper.test.pojo.SysPermission;
 import com.example.commons.db.mybatis.pagehelper.test.pojo.SysPermissionExample;
 import com.example.commons.db.mybatis.pagehelper.test.service.SysPermissionService;
+
 @Service
-public class SysPermissionServiceImpl implements SysPermissionService{
+public class SysPermissionServiceImpl implements SysPermissionService {
 
     @Resource
     private SysPermissionMapper sysPermissionMapper;
@@ -49,13 +50,13 @@ public class SysPermissionServiceImpl implements SysPermissionService{
     }
 
     @Override
-    public int updateByExampleSelective(SysPermission record,SysPermissionExample example) {
-        return sysPermissionMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(SysPermission record, SysPermissionExample example) {
+        return sysPermissionMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(SysPermission record,SysPermissionExample example) {
-        return sysPermissionMapper.updateByExample(record,example);
+    public int updateByExample(SysPermission record, SysPermissionExample example) {
+        return sysPermissionMapper.updateByExample(record, example);
     }
 
     @Override
@@ -69,3 +70,4 @@ public class SysPermissionServiceImpl implements SysPermissionService{
     }
 
 }
+
