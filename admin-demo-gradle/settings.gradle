@@ -25,4 +25,6 @@ include 'shower-commons-task-batch'
 include 'shower-commons-task-quartz'
 include 'shower-commons-task-quartz-batch'
 include 'shower-application-01'
+include 'shower-application-01'
+include 'shower-application-02'
 

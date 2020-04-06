@@ -1,7 +1,7 @@
 package com.example.commons.db.mybatis.sqlhelper.test.pojo;
 
 import java.io.Serializable;
-import java.util.Date;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class SysRole extends CommonsDbEntity implements Serializable {
+public class SysRole extends CommonsEntity implements Serializable {
     /**
      * 角色编号
      */

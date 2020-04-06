@@ -1,4 +1,4 @@
-package com.example.commons.db.mybatis.pagehelper.test.pojo.query;
+package com.example.commons.db.mybatis.sqlhelper.test.pojo.query;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -7,12 +7,12 @@ import lombok.EqualsAndHashCode;
  * @program: admin-demo-gradle
  * @description:
  * @author: yuane
- * @create: 2020-04-06 13:34
+ * @create: 2020-04-06 13:26
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class SysUserLogQuery extends CommonsQuery {
-    private String userId;
+public class SysUserQuery extends CommonsQuery {
     private String username;
     private String name;
+    private String enabled;
 }

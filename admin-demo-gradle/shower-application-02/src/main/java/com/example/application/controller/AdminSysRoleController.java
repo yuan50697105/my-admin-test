@@ -1,9 +1,10 @@
 package com.example.application.controller;
 
-import com.example.application.pojo.admin.user.AdminSysUserSaveRequestBody;
-import com.example.application.pojo.admin.user.AdminSysUserUpdateRequestBody;
-import com.example.application.service.AdminSysUserService;
-import com.example.commons.db.mybatis.pagehelper.test.pojo.query.SysUserQuery;
+
+import com.example.application.pojo.admin.role.AdminSysRoleSaveRequestBody;
+import com.example.application.pojo.admin.role.AdminSysRoleUpdateRequestBody;
+import com.example.application.service.AdminSysRoleService;
+import com.example.commons.db.mybatis.sqlhelper.test.pojo.query.SysRoleQuery;
 import com.example.commons.web.controller.BaseController;
 import com.example.commons.web.pojo.Result;
 import lombok.AllArgsConstructor;
@@ -20,11 +21,11 @@ import java.util.List;
  * @create: 2020-04-06 13:45
  */
 @RestController
-@RequestMapping("admin/user")
+@RequestMapping("admin/role")
 @Validated
 @AllArgsConstructor
-public class AdminSysUserController extends BaseController {
-    private AdminSysUserService adminSysUserService;
+public class AdminSysRoleController extends BaseController {
+    private AdminSysRoleService adminSysRoleService;
 
     /**
      * 保存用户信息
@@ -33,8 +34,8 @@ public class AdminSysUserController extends BaseController {
      * @return 处理结果
      */
     @PostMapping("save")
-    public Result save(@RequestBody AdminSysUserSaveRequestBody requestBody) {
-        return adminSysUserService.save(requestBody);
+    public Result save(@RequestBody AdminSysRoleSaveRequestBody requestBody) {
+        return adminSysRoleService.save(requestBody);
     }
 
     /**
@@ -43,9 +44,9 @@ public class AdminSysUserController extends BaseController {
      * @param requestBody 请求实体
      * @return 处理结果
      */
-    @PostMapping("update/info")
-    public Result updateInfo(@RequestBody AdminSysUserUpdateRequestBody requestBody) {
-        return adminSysUserService.updateInfo(requestBody);
+    @PostMapping("update")
+    public Result updateInfo(@RequestBody AdminSysRoleUpdateRequestBody requestBody) {
+        return adminSysRoleService.update(requestBody);
     }
 
     /**
@@ -56,7 +57,7 @@ public class AdminSysUserController extends BaseController {
      */
     @GetMapping("delete/{id}")
     public Result delete(@PathVariable("id") Long id) {
-        return adminSysUserService.delete(id);
+        return adminSysRoleService.delete(id);
     }
 
     /**
@@ -67,7 +68,7 @@ public class AdminSysUserController extends BaseController {
      */
     @GetMapping("delete")
     public Result delete2(@RequestParam @NotNull Long id) {
-        return adminSysUserService.delete(id);
+        return adminSysRoleService.delete(id);
     }
 
     /**
@@ -78,7 +79,7 @@ public class AdminSysUserController extends BaseController {
      */
     @GetMapping(value = "delete", params = "ids")
     public Result delete(@RequestParam @NotNull List<Long> ids) {
-        return adminSysUserService.delete(ids);
+        return adminSysRoleService.delete(ids);
     }
 
     /**
@@ -89,7 +90,7 @@ public class AdminSysUserController extends BaseController {
      */
     @GetMapping("get/{id}")
     public Result get(@PathVariable("id") @NotNull Long id) {
-        return adminSysUserService.get(id);
+        return adminSysRoleService.get(id);
     }
 
     /**
@@ -98,9 +99,9 @@ public class AdminSysUserController extends BaseController {
      * @param id 主键
      * @return 用户信息
      */
-    @GetMapping(value = "get",params = "id")
+    @GetMapping("get")
     public Result get2(@RequestParam @NotNull Long id) {
-        return adminSysUserService.get(id);
+        return adminSysRoleService.get(id);
     }
 
     /**
@@ -110,8 +111,8 @@ public class AdminSysUserController extends BaseController {
      * @return 分页数据
      */
     @GetMapping("data")
-    public Result data(SysUserQuery query) {
-        return adminSysUserService.data(query);
+    public Result data(SysRoleQuery query) {
+        return adminSysRoleService.data(query);
     }
 
     /**
@@ -121,7 +122,7 @@ public class AdminSysUserController extends BaseController {
      * @return 数据列表
      */
     @GetMapping("list")
-    public Result list(SysUserQuery query) {
-        return adminSysUserService.list(query);
+    public Result list(SysRoleQuery query) {
+        return adminSysRoleService.list(query);
     }
 }
