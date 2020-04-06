@@ -6,9 +6,8 @@ spring:
     password: root
     url: jdbc:mysql://localhost:3306/demo_java_04?serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
-
 mybatis:
   mapper-locations: classpath*:mappers/*.xml
 logging:
   level:
-    com.example.commons.db.mybatis.ext.pagehelper.test.mapper: debug
+    com.example.commons.db.mybatis.ext.sqlhelper.test: debug

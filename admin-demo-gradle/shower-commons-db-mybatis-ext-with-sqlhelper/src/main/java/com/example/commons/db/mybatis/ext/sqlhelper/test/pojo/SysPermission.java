@@ -1,12 +1,9 @@
 package com.example.commons.db.mybatis.ext.sqlhelper.test.pojo;
 
+import com.example.commons.db.mybatis.ext.sqlhelper.test.constants.EnableConstants;
+import lombok.*;
+
 import java.io.Serializable;
-import java.util.Date;
-import com.example.commons.db.mybatis.pagehelper.test.constants.EnableConstants;import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 
 /**
  * sys_permission
@@ -16,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class SysPermission extends CommonsDbEntity implements Serializable {
+public class SysPermission extends CommonsEntity implements Serializable {
     /**
      * 权限名称
      */

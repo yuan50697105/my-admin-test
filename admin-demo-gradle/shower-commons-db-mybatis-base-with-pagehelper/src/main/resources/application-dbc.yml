@@ -1,4 +1,6 @@
 spring:
+  profiles:
+    active: dbcommons
   datasource:
     username: root
     password: root

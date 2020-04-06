@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class SysRole extends CommonsDbEntity implements Serializable {
+public class SysRole extends CommonsEntity implements Serializable {
     /**
      * 角色编号
      */

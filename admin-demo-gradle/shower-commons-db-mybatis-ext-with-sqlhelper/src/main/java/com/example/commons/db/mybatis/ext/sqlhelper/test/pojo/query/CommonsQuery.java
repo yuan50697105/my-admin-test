@@ -1,7 +1,10 @@
-package com.example.commons.db.mybatis.pagehelper.test.pojo.query;
+package com.example.commons.db.mybatis.ext.sqlhelper.test.pojo.query;
 
 import com.example.commons.db.pojo.BaseDbQuery;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
+import com.gitee.denger.mybatis.example.ext.annotation.AndGreaterThanOrEqualTo;
+import com.gitee.denger.mybatis.example.ext.annotation.AndLessThanOrEqualTo;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -17,10 +20,13 @@ import java.util.Date;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class CommonsQuery extends BaseDbQuery {
+    @AndEqualTo(property = "id")
     private Long id;
+    @AndGreaterThanOrEqualTo(property = "createTime")
     @JsonFormat(pattern = "yyyy-MM-dd")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date createDateStart;
+    @AndLessThanOrEqualTo(property = "createTime")
     @JsonFormat(pattern = "yyyy-MM-dd")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date createDateEnd;

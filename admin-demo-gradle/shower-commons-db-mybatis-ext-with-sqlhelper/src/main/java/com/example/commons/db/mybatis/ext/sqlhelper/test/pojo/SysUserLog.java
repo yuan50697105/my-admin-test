@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class SysUserLog extends CommonsDbEntity implements Serializable {
+public class SysUserLog extends CommonsEntity implements Serializable {
     /**
      * 账户
      */
