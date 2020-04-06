@@ -1,6 +1,7 @@
 server:
   servlet:
     context-path: /admin
+  port: 8084
 spring:
   profiles:
     active: dbc,mvc
