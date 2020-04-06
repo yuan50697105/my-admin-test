@@ -6,6 +6,6 @@ CREATE TABLE sys_permission(
 	update_time TIMESTAMP COMMENT '更新时间',
 	`name` VARCHAR (50) COMMENT '权限名称',
 	code VARCHAR (50) COMMENT '全新编号',
-	enabled VARCHAR (50) COMMENT '启用状态 {@link com.example.commons.db.mybatis.pagehelper.test.constants.EnableConstants}',
+	enabled VARCHAR (50) COMMENT '启用状态 {@link EnableConstants}',
 	PRIMARY KEY (id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT 'sys_permission';
