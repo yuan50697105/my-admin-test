@@ -1,0 +1,16 @@
+{
+  "productKey": "a11RdoeY6Bk",
+  "deviceName": "o895",
+  "productSecret":"bA6QMcr4pkv0WeSN",
+  "deviceSecret": "isKMQlZOBe3Ms1Cn7kqxLNE8ivy5d7W1",
+  "subDevice": [
+    {
+      "productKey": "",
+      "deviceName": ""
+    },
+    {
+      "productKey": "",
+      "deviceName": ""
+    }
+  ]
+}
