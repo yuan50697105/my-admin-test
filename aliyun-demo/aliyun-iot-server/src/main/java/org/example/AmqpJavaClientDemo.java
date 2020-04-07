@@ -110,8 +110,8 @@ public class AmqpJavaClientDemo {
 
     public static void main(String[] args) throws Exception {
         //参数说明，请参见上一篇文档：AMQP客户端接入说明。
-        accessKey = "LTAI4Fu2GuP51x7WuMLSMUnU";
-        accessSecret = "RQilRNtdvmlUtCvK9eNhKc3eldrW2w";
+        accessKey = "LTAI4FpWitQmA9GQwsqAagD5";
+        accessSecret = "iiZi5M4YDDhRCuakPgRz3MYAB9PK4R";
         consumerGroupId = "DEFAULT_GROUP";
         timeStamp = System.currentTimeMillis();
         //签名方法：支持hmacmd5，hmacsha1和hmacsha256
