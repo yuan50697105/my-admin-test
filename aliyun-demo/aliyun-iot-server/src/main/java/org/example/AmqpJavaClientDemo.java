@@ -14,6 +14,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import java.net.URI;
 import java.util.Hashtable;
+import java.util.UUID;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -109,15 +110,15 @@ public class AmqpJavaClientDemo {
 
     public static void main(String[] args) throws Exception {
         //参数说明，请参见上一篇文档：AMQP客户端接入说明。
-        accessKey = "LTAI4Fuvfo6H4hrjnmx7uab4";
-        accessSecret = "rFjndFml6C2CnXGD0ECNbCklL7kikQ";
+        accessKey = "LTAI4Fu2GuP51x7WuMLSMUnU";
+        accessSecret = "RQilRNtdvmlUtCvK9eNhKc3eldrW2w";
         consumerGroupId = "DEFAULT_GROUP";
         timeStamp = System.currentTimeMillis();
         //签名方法：支持hmacmd5，hmacsha1和hmacsha256
         signMethod = "hmacsha1";
         //控制台服务端订阅中消费组状态页客户端ID一栏将显示clientId参数。
         //建议使用机器UUID、MAC地址、IP等唯一标识等作为clientId。便于您区分识别不同的客户端。
-        clientId = "${YourClientId}";
+        clientId = UUID.randomUUID().toString();
 
         //UserName组装方法，请参见上一篇文档：AMQP客户端接入说明。
         String userName = clientId + "|authMode=aksign"
