@@ -1,10 +1,10 @@
 package com.example.commons.db.mybatis.mapper.sqlhelper.test.service.impl;
 
-import com.example.commons.db.mybatis.mapper.sqlhelper.pojo.PageResult;
+import com.example.commons.db.mybatis.mapper.sqlhelper.base.pojo.PageResult;
 import com.example.commons.db.mybatis.mapper.sqlhelper.test.mapper.SysRoleMapper;
 import com.example.commons.db.mybatis.mapper.sqlhelper.test.pojo.SysRole;
 import com.example.commons.db.mybatis.mapper.sqlhelper.test.pojo.SysUser;
-import com.example.commons.db.mybatis.mapper.sqlhelper.test.pojo.query.SysRoleQuery;
+import com.example.commons.db.mybatis.mapper.sqlhelper.commons.pojo.query.SysRoleQuery;
 import com.example.commons.db.mybatis.mapper.sqlhelper.test.service.SysRoleService;
 import com.example.commons.db.pojo.IPageResult;
 import com.github.pagehelper.PageHelper;

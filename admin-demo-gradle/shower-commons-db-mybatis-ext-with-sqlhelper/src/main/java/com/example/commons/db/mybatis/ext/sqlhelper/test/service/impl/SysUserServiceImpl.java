@@ -1,6 +1,6 @@
 package com.example.commons.db.mybatis.ext.sqlhelper.test.service.impl;
 
-import com.example.commons.db.mybatis.ext.sqlhelper.pojo.PageResult;
+import com.example.commons.db.mybatis.ext.sqlhelper.base.pojo.PageResult;
 import com.example.commons.db.mybatis.ext.sqlhelper.test.mapper.SysUserMapper;
 import com.example.commons.db.mybatis.ext.sqlhelper.test.pojo.SysUser;
 import com.example.commons.db.mybatis.ext.sqlhelper.test.pojo.SysUserExample;

@@ -1,7 +1,7 @@
 package com.example.commons.db.mybatis.ext.pagehelper.test.service.impl;
 
 import cn.hutool.core.util.ObjectUtil;
-import com.example.commons.db.mybatis.ext.pagehelper.pojo.PageResult;
+import com.example.commons.db.mybatis.ext.pagehelper.base.pojo.PageResult;
 import com.example.commons.db.mybatis.ext.pagehelper.test.mapper.SysRoleMapper;
 import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysRole;
 import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysRoleExample;

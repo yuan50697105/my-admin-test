@@ -1,5 +1,6 @@
 package com.example.commons.db.mybatis.ext.pagehelper.test.pojo.query;
 
+import com.example.commons.db.mybatis.ext.pagehelper.commons.pojo.query.CommonsQuery;
 import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysUserExample;
 import com.gitee.denger.mybatis.example.ext.MybatisExample;
 import com.gitee.denger.mybatis.example.ext.annotation.AndLike;

@@ -17,13 +17,13 @@ public abstract class IPageResult<T> extends BaseEntity {
     private long size;
     private long totalNumberOfRows;
     private long totalPages;
-    private Iterable<T> data;
+    private Iterable<T> list;
 
-    public IPageResult(long page, long size, long totalNumberOfRows, long totalPages, Iterable<T> data) {
+    public IPageResult(long page, long size, long totalNumberOfRows, long totalPages, Iterable<T> list) {
         this.page = page;
         this.size = size;
         this.totalNumberOfRows = totalNumberOfRows;
         this.totalPages = totalPages;
-        this.data = data;
+        this.list = list;
     }
 }

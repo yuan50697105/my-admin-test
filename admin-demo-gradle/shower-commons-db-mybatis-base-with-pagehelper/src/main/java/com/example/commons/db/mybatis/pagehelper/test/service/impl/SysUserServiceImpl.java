@@ -1,6 +1,6 @@
 package com.example.commons.db.mybatis.pagehelper.test.service.impl;
 
-import com.example.commons.db.mybatis.pagehelper.pojo.PageResult;
+import com.example.commons.db.mybatis.pagehelper.base.pojo.PageResult;
 import com.example.commons.db.mybatis.pagehelper.test.mapper.SysUserMapper;
 import com.example.commons.db.mybatis.pagehelper.test.pojo.SysUser;
 import com.example.commons.db.mybatis.pagehelper.test.pojo.SysUserExample;

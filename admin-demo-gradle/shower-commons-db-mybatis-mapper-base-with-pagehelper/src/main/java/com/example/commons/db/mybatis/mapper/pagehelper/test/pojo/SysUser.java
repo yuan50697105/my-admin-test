@@ -1,5 +1,6 @@
 package com.example.commons.db.mybatis.mapper.pagehelper.test.pojo;
 
+import com.example.commons.db.mybatis.mapper.pagehelper.commons.pojo.CommonsEntity;
 import lombok.*;
 
 import javax.persistence.Column;

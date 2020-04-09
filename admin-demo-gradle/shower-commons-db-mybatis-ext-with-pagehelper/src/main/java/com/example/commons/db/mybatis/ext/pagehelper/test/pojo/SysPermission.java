@@ -1,5 +1,6 @@
 package com.example.commons.db.mybatis.ext.pagehelper.test.pojo;
 
+import com.example.commons.db.mybatis.ext.pagehelper.commons.pojo.CommonsEntity;
 import com.example.commons.db.mybatis.ext.pagehelper.test.constants.EnableConstants;
 import lombok.*;
 

@@ -1,5 +1,6 @@
 package com.example.commons.db.mybatis.sqlhelper.test.pojo;
 
+import com.example.commons.db.mybatis.sqlhelper.commons.pojo.CommonsEntity;
 import com.example.commons.db.mybatis.sqlhelper.test.constants.EnableConstants;
 import lombok.*;
 

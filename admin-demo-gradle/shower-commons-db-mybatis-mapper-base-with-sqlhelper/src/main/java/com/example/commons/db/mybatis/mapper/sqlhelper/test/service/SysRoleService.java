@@ -1,7 +1,7 @@
 package com.example.commons.db.mybatis.mapper.sqlhelper.test.service;
 
 import com.example.commons.db.mybatis.mapper.sqlhelper.test.pojo.SysRole;
-import com.example.commons.db.mybatis.mapper.sqlhelper.test.pojo.query.SysRoleQuery;
+import com.example.commons.db.mybatis.mapper.sqlhelper.commons.pojo.query.SysRoleQuery;
 import com.example.commons.db.pojo.IPageResult;
 
 import java.util.List;

@@ -6,7 +6,7 @@ import com.example.application.pojo.admin.role.AdminSysRoleUpdateRequestBody;
 import com.example.application.service.AdminSysRoleService;
 import com.example.commons.db.mybatis.mapper.sqlhelper.test.constants.EnableConstants;
 import com.example.commons.db.mybatis.mapper.sqlhelper.test.pojo.SysRole;
-import com.example.commons.db.mybatis.mapper.sqlhelper.test.pojo.query.SysRoleQuery;
+import com.example.commons.db.mybatis.mapper.sqlhelper.commons.pojo.query.SysRoleQuery;
 import com.example.commons.db.mybatis.mapper.sqlhelper.test.service.SysRoleService;
 import com.example.commons.db.pojo.IPageResult;
 import com.example.commons.web.pojo.Result;

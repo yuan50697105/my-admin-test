@@ -1,7 +1,8 @@
 package com.example.commons.db.mybatis.ext.sqlhelper.test.pojo;
 
 import java.io.Serializable;
-import java.util.Date;
+
+import com.example.commons.db.mybatis.ext.sqlhelper.commons.pojo.CommonsEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
