@@ -29,4 +29,10 @@ public interface SysPermissionMapper {
     int updateByPrimaryKeySelective(SysPermission record);
 
     int updateByPrimaryKey(SysPermission record);
+
+    int updateBatch(List<SysPermission> list);
+
+    int updateBatchSelective(List<SysPermission> list);
+
+    int batchInsert(@Param("list") List<SysPermission> list);
 }

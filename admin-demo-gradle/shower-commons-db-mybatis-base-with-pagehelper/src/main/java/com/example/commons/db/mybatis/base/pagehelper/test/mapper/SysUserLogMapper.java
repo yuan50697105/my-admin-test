@@ -29,4 +29,10 @@ public interface SysUserLogMapper {
     int updateByPrimaryKeySelective(SysUserLog record);
 
     int updateByPrimaryKey(SysUserLog record);
+
+    int updateBatch(List<SysUserLog> list);
+
+    int updateBatchSelective(List<SysUserLog> list);
+
+    int batchInsert(@Param("list") List<SysUserLog> list);
 }

@@ -6,7 +6,7 @@ import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysUserLogExampl
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysUserLogQuery;
 import com.example.commons.db.pojo.IPageResult;
 
-public interface SysUserLogService{
+public interface SysUserLogService {
 
 
     long countByExample(SysUserLogExample example);
@@ -23,9 +23,9 @@ public interface SysUserLogService{
 
     SysUserLog selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(SysUserLog record,SysUserLogExample example);
+    int updateByExampleSelective(SysUserLog record, SysUserLogExample example);
 
-    int updateByExample(SysUserLog record,SysUserLogExample example);
+    int updateByExample(SysUserLog record, SysUserLogExample example);
 
     int updateByPrimaryKeySelective(SysUserLog record);
 
@@ -34,4 +34,15 @@ public interface SysUserLogService{
     IPageResult<SysUserLog> selectPageByQuery(SysUserLogQuery query);
 
     IPageResult<SysUserLog> selectPageByExample(SysUserLogExample example, int page, int size);
+
+    int updateBatch(List<SysUserLog> list);
+
+    int updateBatchSelective(List<SysUserLog> list);
+
+    int batchInsert(List<SysUserLog> list);
 }
+
+
+
+
+

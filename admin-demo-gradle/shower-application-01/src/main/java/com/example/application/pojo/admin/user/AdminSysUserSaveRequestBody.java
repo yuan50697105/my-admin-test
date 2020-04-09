@@ -4,6 +4,8 @@ import com.example.commons.pojo.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.util.List;
+
 /**
  * @program: admin-demo-gradle
  * @description:
@@ -17,7 +19,6 @@ public class AdminSysUserSaveRequestBody extends BaseEntity {
      * 账户
      */
     private String username;
-
     /**
      * 姓名
      */
@@ -26,4 +27,8 @@ public class AdminSysUserSaveRequestBody extends BaseEntity {
      * 密码
      */
     private String password;
+    /**
+     * 角色ID
+     */
+    private List<Long> roleId;
 }

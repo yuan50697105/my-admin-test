@@ -10,32 +10,27 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /**
- * sys_user
+ * sys_user_role
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class SysUser extends CommonsEntity implements Serializable {
+public class SysUserRole extends CommonsEntity implements Serializable {
     /**
-     * 账户
+     * 用户ID
      */
-    private String username;
+    private Long userId;
 
     /**
-     * 姓名
+     * 角色ID
      */
-    private String name;
-
-    /**
-     * 密码
-     */
-    private String password;
+    private Long roleId;
 
     private static final long serialVersionUID = 1L;
 
-    public static SysUserBuilder builder() {
-        return new SysUserBuilder();
+    public static SysUserRoleBuilder builder() {
+        return new SysUserRoleBuilder();
     }
 }
