@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.commons.db.mybatis.ext.pagehelper.test.mapper.SysUserMapper">
-  <resultMap id="BaseResultMap" type="com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysUser">
+<mapper namespace="com.example.commons.db.mybatis.ext.pagehelper.test.mapper.SysUserRoleMapper">
+  <resultMap id="BaseResultMap" type="com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysUserRole">
     <!--@mbg.generated-->
-    <!--@Table sys_user-->
+    <!--@Table sys_user_role-->
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
-    <result column="username" jdbcType="VARCHAR" property="username" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="role_id" jdbcType="BIGINT" property="roleId" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <!--@mbg.generated-->
@@ -73,16 +72,16 @@
   </sql>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, create_time, update_time, username, `name`, `password`
+    id, create_time, update_time, user_id, role_id
   </sql>
-  <select id="selectByExample" parameterType="com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysUserExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysUserRoleExample" resultMap="BaseResultMap">
     <!--@mbg.generated-->
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from sys_user
+    from sys_user_role
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -94,31 +93,31 @@
     <!--@mbg.generated-->
     select 
     <include refid="Base_Column_List" />
-    from sys_user
+    from sys_user_role
     where id = #{id,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     <!--@mbg.generated-->
-    delete from sys_user
+    delete from sys_user_role
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysUserExample">
+  <delete id="deleteByExample" parameterType="com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysUserRoleExample">
     <!--@mbg.generated-->
-    delete from sys_user
+    delete from sys_user_role
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysUser" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysUserRole" useGeneratedKeys="true">
     <!--@mbg.generated-->
-    insert into sys_user (create_time, update_time, username, 
-      `name`, `password`)
-    values (#{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{username,jdbcType=VARCHAR}, 
-      #{name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR})
+    insert into sys_user_role (create_time, update_time, user_id, 
+      role_id)
+    values (#{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{userId,jdbcType=BIGINT}, 
+      #{roleId,jdbcType=BIGINT})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysUser" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysUserRole" useGeneratedKeys="true">
     <!--@mbg.generated-->
-    insert into sys_user
+    insert into sys_user_role
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="createTime != null">
         create_time,
@@ -126,14 +125,11 @@
       <if test="updateTime != null">
         update_time,
       </if>
-      <if test="username != null">
-        username,
+      <if test="userId != null">
+        user_id,
       </if>
-      <if test="name != null">
-        `name`,
-      </if>
-      <if test="password != null">
-        `password`,
+      <if test="roleId != null">
+        role_id,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -143,27 +139,24 @@
       <if test="updateTime != null">
         #{updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="username != null">
-        #{username,jdbcType=VARCHAR},
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
       </if>
-      <if test="name != null">
-        #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null">
-        #{password,jdbcType=VARCHAR},
+      <if test="roleId != null">
+        #{roleId,jdbcType=BIGINT},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysUserExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysUserRoleExample" resultType="java.lang.Long">
     <!--@mbg.generated-->
-    select count(*) from sys_user
+    select count(*) from sys_user_role
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
     <!--@mbg.generated-->
-    update sys_user
+    update sys_user_role
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=BIGINT},
@@ -174,14 +167,11 @@
       <if test="record.updateTime != null">
         update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.username != null">
-        username = #{record.username,jdbcType=VARCHAR},
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=BIGINT},
       </if>
-      <if test="record.name != null">
-        `name` = #{record.name,jdbcType=VARCHAR},
-      </if>
-      <if test="record.password != null">
-        `password` = #{record.password,jdbcType=VARCHAR},
+      <if test="record.roleId != null">
+        role_id = #{record.roleId,jdbcType=BIGINT},
       </if>
     </set>
     <if test="_parameter != null">
@@ -190,20 +180,19 @@
   </update>
   <update id="updateByExample" parameterType="map">
     <!--@mbg.generated-->
-    update sys_user
+    update sys_user_role
     set id = #{record.id,jdbcType=BIGINT},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       update_time = #{record.updateTime,jdbcType=TIMESTAMP},
-      username = #{record.username,jdbcType=VARCHAR},
-      `name` = #{record.name,jdbcType=VARCHAR},
-      `password` = #{record.password,jdbcType=VARCHAR}
+      user_id = #{record.userId,jdbcType=BIGINT},
+      role_id = #{record.roleId,jdbcType=BIGINT}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysUser">
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysUserRole">
     <!--@mbg.generated-->
-    update sys_user
+    update sys_user_role
     <set>
       <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -211,31 +200,27 @@
       <if test="updateTime != null">
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="username != null">
-        username = #{username,jdbcType=VARCHAR},
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=BIGINT},
       </if>
-      <if test="name != null">
-        `name` = #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null">
-        `password` = #{password,jdbcType=VARCHAR},
+      <if test="roleId != null">
+        role_id = #{roleId,jdbcType=BIGINT},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysUser">
+  <update id="updateByPrimaryKey" parameterType="com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysUserRole">
     <!--@mbg.generated-->
-    update sys_user
+    update sys_user_role
     set create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
-      username = #{username,jdbcType=VARCHAR},
-      `name` = #{name,jdbcType=VARCHAR},
-      `password` = #{password,jdbcType=VARCHAR}
+      user_id = #{userId,jdbcType=BIGINT},
+      role_id = #{roleId,jdbcType=BIGINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateBatch" parameterType="java.util.List">
     <!--@mbg.generated-->
-    update sys_user
+    update sys_user_role
     <trim prefix="set" suffixOverrides=",">
       <trim prefix="create_time = case" suffix="end,">
         <foreach collection="list" index="index" item="item">
@@ -247,19 +232,14 @@
           when id = #{item.id,jdbcType=BIGINT} then #{item.updateTime,jdbcType=TIMESTAMP}
         </foreach>
       </trim>
-      <trim prefix="username = case" suffix="end,">
+      <trim prefix="user_id = case" suffix="end,">
         <foreach collection="list" index="index" item="item">
-          when id = #{item.id,jdbcType=BIGINT} then #{item.username,jdbcType=VARCHAR}
+          when id = #{item.id,jdbcType=BIGINT} then #{item.userId,jdbcType=BIGINT}
         </foreach>
       </trim>
-      <trim prefix="`name` = case" suffix="end,">
+      <trim prefix="role_id = case" suffix="end,">
         <foreach collection="list" index="index" item="item">
-          when id = #{item.id,jdbcType=BIGINT} then #{item.name,jdbcType=VARCHAR}
-        </foreach>
-      </trim>
-      <trim prefix="`password` = case" suffix="end,">
-        <foreach collection="list" index="index" item="item">
-          when id = #{item.id,jdbcType=BIGINT} then #{item.password,jdbcType=VARCHAR}
+          when id = #{item.id,jdbcType=BIGINT} then #{item.roleId,jdbcType=BIGINT}
         </foreach>
       </trim>
     </trim>
@@ -270,7 +250,7 @@
   </update>
   <update id="updateBatchSelective" parameterType="java.util.List">
     <!--@mbg.generated-->
-    update sys_user
+    update sys_user_role
     <trim prefix="set" suffixOverrides=",">
       <trim prefix="create_time = case" suffix="end,">
         <foreach collection="list" index="index" item="item">
@@ -286,24 +266,17 @@
           </if>
         </foreach>
       </trim>
-      <trim prefix="username = case" suffix="end,">
+      <trim prefix="user_id = case" suffix="end,">
         <foreach collection="list" index="index" item="item">
-          <if test="item.username != null">
-            when id = #{item.id,jdbcType=BIGINT} then #{item.username,jdbcType=VARCHAR}
+          <if test="item.userId != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.userId,jdbcType=BIGINT}
           </if>
         </foreach>
       </trim>
-      <trim prefix="`name` = case" suffix="end,">
+      <trim prefix="role_id = case" suffix="end,">
         <foreach collection="list" index="index" item="item">
-          <if test="item.name != null">
-            when id = #{item.id,jdbcType=BIGINT} then #{item.name,jdbcType=VARCHAR}
-          </if>
-        </foreach>
-      </trim>
-      <trim prefix="`password` = case" suffix="end,">
-        <foreach collection="list" index="index" item="item">
-          <if test="item.password != null">
-            when id = #{item.id,jdbcType=BIGINT} then #{item.password,jdbcType=VARCHAR}
+          <if test="item.roleId != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.roleId,jdbcType=BIGINT}
           </if>
         </foreach>
       </trim>
@@ -315,12 +288,12 @@
   </update>
   <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
     <!--@mbg.generated-->
-    insert into sys_user
-    (create_time, update_time, username, `name`, `password`)
+    insert into sys_user_role
+    (create_time, update_time, user_id, role_id)
     values
     <foreach collection="list" item="item" separator=",">
-      (#{item.createTime,jdbcType=TIMESTAMP}, #{item.updateTime,jdbcType=TIMESTAMP}, #{item.username,jdbcType=VARCHAR}, 
-        #{item.name,jdbcType=VARCHAR}, #{item.password,jdbcType=VARCHAR})
+      (#{item.createTime,jdbcType=TIMESTAMP}, #{item.updateTime,jdbcType=TIMESTAMP}, #{item.userId,jdbcType=BIGINT}, 
+        #{item.roleId,jdbcType=BIGINT})
     </foreach>
   </insert>
 </mapper>

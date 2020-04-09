@@ -1,13 +1,11 @@
-package com.example.commons.db.mybatis.ext.pagehelper.test.mapper;
+package com.example.commons.db.mybatis.ext.pagehelper.test.service.impl;
 
-import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysRole;
 import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysRoleExample;
 import java.util.List;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
+import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysRole;
+public interface SysRoleService{
 
-@Mapper
-public interface SysRoleMapper {
+
     long countByExample(SysRoleExample example);
 
     int deleteByExample(SysRoleExample example);
@@ -22,9 +20,9 @@ public interface SysRoleMapper {
 
     SysRole selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(@Param("record") SysRole record, @Param("example") SysRoleExample example);
+    int updateByExampleSelective(SysRole record,SysRoleExample example);
 
-    int updateByExample(@Param("record") SysRole record, @Param("example") SysRoleExample example);
+    int updateByExample(SysRole record,SysRoleExample example);
 
     int updateByPrimaryKeySelective(SysRole record);
 
@@ -34,5 +32,6 @@ public interface SysRoleMapper {
 
     int updateBatchSelective(List<SysRole> list);
 
-    int batchInsert(@Param("list") List<SysRole> list);
+    int batchInsert(List<SysRole> list);
+
 }
