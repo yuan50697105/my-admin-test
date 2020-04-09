@@ -1,8 +1,8 @@
-package com.example.commons.db.mybatis.ext.pagehelper.test.service.impl;
+package com.example.commons.db.mybatis.ext.sqlhelper.test.service.impl;
 
-import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysRoleExample;
+import com.example.commons.db.mybatis.ext.sqlhelper.test.pojo.SysRoleExample;
 import java.util.List;
-import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysRole;
+import com.example.commons.db.mybatis.ext.sqlhelper.test.pojo.SysRole;
 public interface SysRoleService{
 
 

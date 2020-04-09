@@ -1,8 +1,8 @@
-package com.example.commons.db.mybatis.ext.pagehelper.test.service.impl;
+package com.example.commons.db.mybatis.ext.sqlhelper.test.service.impl;
 
 import java.util.List;
-import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysUserExample;
-import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysUser;
+import com.example.commons.db.mybatis.ext.sqlhelper.test.pojo.SysUser;
+import com.example.commons.db.mybatis.ext.sqlhelper.test.pojo.SysUserExample;
 public interface SysUserService{
 
 

@@ -70,5 +70,23 @@ public class SysPermissionServiceImpl implements SysPermissionService {
         return sysPermissionMapper.updateByPrimaryKey(record);
     }
 
+    @Override
+    public int updateBatch(List<SysPermission> list) {
+        return sysPermissionMapper.updateBatch(list);
+    }
+
+    @Override
+    public int updateBatchSelective(List<SysPermission> list) {
+        return sysPermissionMapper.updateBatchSelective(list);
+    }
+
+    @Override
+    public int batchInsert(List<SysPermission> list) {
+        return sysPermissionMapper.batchInsert(list);
+    }
 }
+
+
+
+
 

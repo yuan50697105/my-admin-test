@@ -1,14 +1,16 @@
 package com.example.commons.db.mybatis.ext.pagehelper.test.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import java.util.List;
-import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysUserRoleExample;
 import com.example.commons.db.mybatis.ext.pagehelper.test.mapper.SysUserRoleMapper;
 import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysUserRole;
-import com.example.commons.db.mybatis.ext.pagehelper.test.service.impl.SysUserRoleService;
+import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysUserRoleExample;
+import com.example.commons.db.mybatis.ext.pagehelper.test.service.SysUserRoleService;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
+
 @Service
-public class SysUserRoleServiceImpl implements SysUserRoleService{
+public class SysUserRoleServiceImpl implements SysUserRoleService {
 
     @Resource
     private SysUserRoleMapper sysUserRoleMapper;
@@ -49,12 +51,12 @@ public class SysUserRoleServiceImpl implements SysUserRoleService{
     }
 
     @Override
-    public int updateByExampleSelective(SysUserRole record,SysUserRoleExample example) {
+    public int updateByExampleSelective(SysUserRole record, SysUserRoleExample example) {
         return sysUserRoleMapper.updateByExampleSelective(record,example);
     }
 
     @Override
-    public int updateByExample(SysUserRole record,SysUserRoleExample example) {
+    public int updateByExample(SysUserRole record, SysUserRoleExample example) {
         return sysUserRoleMapper.updateByExample(record,example);
     }
 
@@ -81,6 +83,34 @@ public class SysUserRoleServiceImpl implements SysUserRoleService{
     @Override
     public int batchInsert(List<SysUserRole> list) {
         return sysUserRoleMapper.batchInsert(list);
+    }
+
+    @Override
+    public int deleteByRoleId(Long roleId) {
+        SysUserRoleExample example = new SysUserRoleExample();
+        example.or().andRoleIdEqualTo(roleId);
+        return deleteByExample(example);
+    }
+
+    @Override
+    public int deleteByRoleIds(List<Long> roleIds) {
+        SysUserRoleExample example = new SysUserRoleExample();
+        example.or().andRoleIdIn(roleIds);
+        return deleteByExample(example);
+    }
+
+    @Override
+    public int deleteByUserId(Long userId) {
+        SysUserRoleExample example = new SysUserRoleExample();
+        example.or().andUserIdEqualTo(userId);
+        return deleteByExample(example);
+    }
+
+    @Override
+    public int deleteByUserIds(List<Long> userIds) {
+        SysUserRoleExample example = new SysUserRoleExample();
+        example.or().andUserIdIn(userIds);
+        return deleteByExample(example);
     }
 
 }

@@ -1,9 +1,10 @@
-package com.example.commons.db.mybatis.ext.pagehelper.test.service.impl;
+package com.example.commons.db.mybatis.ext.sqlhelper.test.service;
 
 import java.util.List;
-import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysUserRoleExample;
-import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysUserRole;
-public interface SysUserRoleService{
+import com.example.commons.db.mybatis.ext.sqlhelper.test.pojo.SysUserRole;
+import com.example.commons.db.mybatis.ext.sqlhelper.test.pojo.SysUserRoleExample;
+
+public interface SysUserRoleService {
 
 
     long countByExample(SysUserRoleExample example);
@@ -20,9 +21,9 @@ public interface SysUserRoleService{
 
     SysUserRole selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(SysUserRole record,SysUserRoleExample example);
+    int updateByExampleSelective(SysUserRole record, SysUserRoleExample example);
 
-    int updateByExample(SysUserRole record,SysUserRoleExample example);
+    int updateByExample(SysUserRole record, SysUserRoleExample example);
 
     int updateByPrimaryKeySelective(SysUserRole record);
 
@@ -35,3 +36,5 @@ public interface SysUserRoleService{
     int batchInsert(List<SysUserRole> list);
 
 }
+
+

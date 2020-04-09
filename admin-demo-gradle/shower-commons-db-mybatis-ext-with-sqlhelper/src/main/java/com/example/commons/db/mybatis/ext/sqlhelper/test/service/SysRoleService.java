@@ -39,5 +39,14 @@ public interface SysRoleService {
     IPageResult<SysRole> selectPageByExample(SysRoleExample example, int page, int size);
 
     List<SysRole> selectByQuery(SysRoleQuery query);
+
+    int updateBatch(List<SysRole> list);
+
+    int updateBatchSelective(List<SysRole> list);
+
+    int batchInsert(List<SysRole> list);
 }
+
+
+
 

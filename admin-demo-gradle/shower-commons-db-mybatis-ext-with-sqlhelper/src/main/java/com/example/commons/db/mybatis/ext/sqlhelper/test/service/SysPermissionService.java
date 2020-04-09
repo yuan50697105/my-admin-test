@@ -31,5 +31,13 @@ public interface SysPermissionService {
 
     int updateByPrimaryKey(SysPermission record);
 
+    int updateBatch(List<SysPermission> list);
+
+    int updateBatchSelective(List<SysPermission> list);
+
+    int batchInsert(List<SysPermission> list);
 }
+
+
+
 

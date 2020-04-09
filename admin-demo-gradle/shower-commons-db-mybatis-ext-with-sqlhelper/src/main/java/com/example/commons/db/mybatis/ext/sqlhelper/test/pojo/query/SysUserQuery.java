@@ -4,6 +4,7 @@ import com.example.commons.db.mybatis.ext.sqlhelper.commons.pojo.query.CommonsQu
 import com.example.commons.db.mybatis.ext.sqlhelper.test.pojo.SysUserExample;
 import com.gitee.denger.mybatis.example.ext.MybatisExample;
 import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
+import com.gitee.denger.mybatis.example.ext.annotation.AndNotEqualTo;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -20,5 +21,6 @@ public class SysUserQuery extends CommonsQuery implements MybatisExample<SysUser
     private String username;
     @AndLike(property = "name")
     private String name;
+    @AndNotEqualTo
     private String enabled;
 }

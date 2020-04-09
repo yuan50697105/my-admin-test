@@ -2,10 +2,9 @@ package com.example.commons.db.mybatis.ext.sqlhelper.test.mapper;
 
 import com.example.commons.db.mybatis.ext.sqlhelper.test.pojo.SysUserLog;
 import com.example.commons.db.mybatis.ext.sqlhelper.test.pojo.SysUserLogExample;
+import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-
-import java.util.List;
 
 @Mapper
 public interface SysUserLogMapper {
@@ -30,4 +29,10 @@ public interface SysUserLogMapper {
     int updateByPrimaryKeySelective(SysUserLog record);
 
     int updateByPrimaryKey(SysUserLog record);
+
+    int updateBatch(List<SysUserLog> list);
+
+    int updateBatchSelective(List<SysUserLog> list);
+
+    int batchInsert(@Param("list") List<SysUserLog> list);
 }

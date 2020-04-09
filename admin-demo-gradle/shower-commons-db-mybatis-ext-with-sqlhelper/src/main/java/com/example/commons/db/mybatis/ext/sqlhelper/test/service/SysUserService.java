@@ -39,5 +39,14 @@ public interface SysUserService {
     IPageResult<SysUser> selectPageByExample(SysUserExample example, int page, int size);
 
     List<SysUser> selectByQuery(SysUserQuery query);
+
+    int updateBatch(List<SysUser> list);
+
+    int updateBatchSelective(List<SysUser> list);
+
+    int batchInsert(List<SysUser> list);
 }
+
+
+
 

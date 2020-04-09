@@ -1,11 +1,17 @@
-package com.example.commons.db.mybatis.ext.pagehelper.test.service.impl;
+package com.example.commons.db.mybatis.ext.pagehelper.test.service;
+
+import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysRolePermission;
+import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysRolePermissionExample;
 
 import java.util.List;
-import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysRolePermissionExample;
-import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysRolePermission;
-public interface SysRolePermissionService{
 
-
+/**
+ * @program: admin-demo-gradle
+ * @description:
+ * @author: yuane
+ * @create: 2020-04-09 21:57
+ */
+public interface SysRolePermissionService {
     long countByExample(SysRolePermissionExample example);
 
     int deleteByExample(SysRolePermissionExample example);
@@ -20,9 +26,9 @@ public interface SysRolePermissionService{
 
     SysRolePermission selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(SysRolePermission record,SysRolePermissionExample example);
+    int updateByExampleSelective(SysRolePermission record, SysRolePermissionExample example);
 
-    int updateByExample(SysRolePermission record,SysRolePermissionExample example);
+    int updateByExample(SysRolePermission record, SysRolePermissionExample example);
 
     int updateByPrimaryKeySelective(SysRolePermission record);
 
@@ -34,4 +40,12 @@ public interface SysRolePermissionService{
 
     int batchInsert(List<SysRolePermission> list);
 
+    int deleteByPermissionId(Long permissionId);
+
+    int deleteByPermissionIds(List<Long> permissionIds);
+
+    int deleteByRoleId(Long roleId);
+
+
+    int deleteByRoleIds(List<Long> roleIds);
 }

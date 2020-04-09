@@ -1,9 +1,13 @@
 package com.example.commons.db.mybatis.ext.sqlhelper.test.pojo;
 
 import com.example.commons.db.mybatis.ext.sqlhelper.commons.pojo.CommonsEntity;
-import lombok.*;
-
 import java.io.Serializable;
+import java.util.Date;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 /**
  * sys_role
