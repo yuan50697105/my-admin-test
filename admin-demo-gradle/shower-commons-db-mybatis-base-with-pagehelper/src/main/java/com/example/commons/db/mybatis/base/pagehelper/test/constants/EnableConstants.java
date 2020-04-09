@@ -1,9 +1,6 @@
 package com.example.commons.db.mybatis.base.pagehelper.test.constants;
 
-import com.example.commons.db.utils.DictUtils;
-import com.example.commons.db.utils.annotation.ConstantsName;
-
-import java.util.Map;
+import com.example.commons.db.utils.annotation.Constants;
 
 /**
  * @program: admin-demo-gradle
@@ -13,8 +10,8 @@ import java.util.Map;
  */
 
 public class EnableConstants {
-    @ConstantsName(name = "启用")
+    @Constants(name = "启用", value = EnableConstants.ENABLED)
     public static final String ENABLED = "ENABLED";
-    @ConstantsName(name = "停用")
+    @Constants(name = "停用", value = EnableConstants.DISABLED)
     public static final String DISABLED = "DISABLED";
 }
