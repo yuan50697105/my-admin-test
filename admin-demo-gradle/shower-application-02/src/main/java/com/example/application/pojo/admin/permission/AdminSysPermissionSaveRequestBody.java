@@ -1,6 +1,6 @@
 package com.example.application.pojo.admin.permission;
 
-import com.example.commons.db.mybatis.base.pagehelper.test.constants.PermissionConstants;
+import com.example.commons.db.mybatis.base.sqlhelper.test.constants.PermissionConstants;
 import com.example.commons.pojo.BaseEntity;
 import com.example.commons.utils.validator.annotation.ConstantsValidater;
 import lombok.Data;
