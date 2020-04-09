@@ -20,7 +20,7 @@ public class ConstantsValidateFactory implements ConstraintValidator<ConstantsVa
         if (ObjectUtil.isEmpty(value)) {
             return false;
         } else {
-            String regex = RegexUtils.regex(type);
+            String regex = RegexUtils.constantsRegex(type);
             return value.toString().matches(regex);
         }
     }

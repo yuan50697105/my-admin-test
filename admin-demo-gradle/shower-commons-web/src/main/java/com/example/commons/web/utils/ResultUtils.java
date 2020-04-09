@@ -13,12 +13,12 @@ import java.util.Map;
  * @create: 2020-03-26 23:16
  */
 public class ResultUtils {
-    public static final int USER_NOT_FOUND_ERROR_CODE = 201;
-    public static final String USER_NOT_FOUND_ERROR_MESSAGE = "用户不存在";
     private static final Integer OK_CODE = 0;
     private static final String OK_MESSAGE = "成功";
     private static final Integer EXCEPTION_ERROR_CODE = 101;
     private static final Integer VALIDATE_ERROR_CODE = 102;
+    public static final int USER_NOT_FOUND_ERROR_CODE = 201;
+    public static final String USER_NOT_FOUND_ERROR_MESSAGE = "用户不存在";
     private static final String USER_EXIST_ERROR_MESSAGE = "用户已存在";
     private static final Integer USER_EXIST_ERROR_CODE = 202;
 
