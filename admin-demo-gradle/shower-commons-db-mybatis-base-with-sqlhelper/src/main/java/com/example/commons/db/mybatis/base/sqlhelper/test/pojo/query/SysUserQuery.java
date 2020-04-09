@@ -1,6 +1,6 @@
 package com.example.commons.db.mybatis.base.sqlhelper.test.pojo.query;
 
-import com.example.commons.db.mybatis.base.pagehelper.commons.pojo.query.CommonsQuery;
+import com.example.commons.db.mybatis.base.sqlhelper.commons.pojo.query.CommonsQuery;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
