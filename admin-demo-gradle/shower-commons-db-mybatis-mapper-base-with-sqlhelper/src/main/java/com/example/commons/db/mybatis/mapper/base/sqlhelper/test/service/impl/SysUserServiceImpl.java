@@ -3,7 +3,7 @@ package com.example.commons.db.mybatis.mapper.base.sqlhelper.test.service.impl;
 import com.example.commons.db.mybatis.mapper.base.sqlhelper.base.pojo.PageResult;
 import com.example.commons.db.mybatis.mapper.base.sqlhelper.test.mapper.SysUserMapper;
 import com.example.commons.db.mybatis.mapper.base.sqlhelper.test.pojo.SysUser;
-import com.example.commons.db.mybatis.mapper.base.sqlhelper.commons.pojo.query.SysUserQuery;
+import com.example.commons.db.mybatis.mapper.base.sqlhelper.test.pojo.query.SysUserQuery;
 import com.example.commons.db.mybatis.mapper.base.sqlhelper.test.service.SysUserService;
 import com.example.commons.db.pojo.IPageResult;
 import com.github.pagehelper.PageHelper;

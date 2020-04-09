@@ -1,14 +1,29 @@
 package com.example.commons.db.mybatis.mapper.ext.sqlhelper.test.service;
 
-import java.util.List;
 import com.example.commons.db.mybatis.mapper.ext.sqlhelper.test.pojo.SysRole;
+import com.example.commons.db.mybatis.mapper.ext.sqlhelper.test.pojo.query.SysRoleQuery;
+import com.example.commons.db.pojo.IPageResult;
+
+import java.util.List;
+
 public interface SysRoleService{
 
 
-    int updateBatch(List<SysRole> list);
+    int insert(SysRole sysRole);
 
-    int updateBatchSelective(List<SysRole> list);
+    SysRole selectByPrimaryKey(Long id);
 
-    int batchInsert(List<SysRole> list);
+    int updateByPrimaryKeySelective(SysRole sysRole);
 
+    int deleteByPrimaryKey(Long id);
+
+    int deleteByIds(List<Long> ids);
+
+    IPageResult<SysRole> selectPageByQuery(SysRoleQuery query);
+
+    List<SysRole> selectByQuery(SysRoleQuery query);
+
+    List<SysRole> selectByExample(Object object);
+
+    IPageResult<SysRole> selectPageByExample(Object object, int page, int size);
 }

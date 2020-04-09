@@ -1,14 +1,29 @@
 package com.example.commons.db.mybatis.mapper.ext.pagehelper.test.service;
 
 import com.example.commons.db.mybatis.mapper.ext.pagehelper.test.pojo.SysUser;
+import com.example.commons.db.mybatis.mapper.ext.pagehelper.test.pojo.query.SysUserQuery;
+import com.example.commons.db.pojo.IPageResult;
+
 import java.util.List;
+
 public interface SysUserService{
 
 
-    int updateBatch(List<SysUser> list);
+    int insert(SysUser sysUser);
 
-    int updateBatchSelective(List<SysUser> list);
+    SysUser selectByPrimaryKey(Long id);
 
-    int batchInsert(List<SysUser> list);
+    int updateByPrimaryKeySelective(SysUser sysUser);
 
+    int deleteByPrimaryKey(Long id);
+
+    int deleteByIds(List<Long> ids);
+
+    IPageResult<SysUser> selectPageByQuery(SysUserQuery query);
+
+    List<SysUser> selectByQuery(SysUserQuery query);
+
+    List<SysUser> selectByExample(Object object);
+
+    IPageResult<SysUser> selectPageByExample(Object object, int page, int size);
 }

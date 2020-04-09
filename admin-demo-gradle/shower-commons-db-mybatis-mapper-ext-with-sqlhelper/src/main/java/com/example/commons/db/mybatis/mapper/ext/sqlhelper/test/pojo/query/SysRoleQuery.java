@@ -1,5 +1,6 @@
-package com.example.commons.db.mybatis.mapper.base.sqlhelper.commons.pojo.query;
+package com.example.commons.db.mybatis.mapper.ext.sqlhelper.test.pojo.query;
 
+import com.example.commons.db.mybatis.mapper.ext.sqlhelper.commons.pojo.query.CommonsQuery;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
