@@ -37,7 +37,7 @@ public class AdminSysUserController extends BaseController {
      * @param requestBody 请求实体
      * @return 处理结果
      */
-    @PostMapping("save")
+    @PostMapping({"save",""})
     public Result save(@RequestBody @Validated AdminSysUserSaveRequestBody requestBody) {
         return adminSysUserService.save(requestBody);
     }
@@ -49,6 +49,7 @@ public class AdminSysUserController extends BaseController {
      * @return 处理结果
      */
     @PostMapping("update/info")
+    @PutMapping("info")
     public Result updateInfo(@RequestBody @Validated AdminSysUserUpdateRequestBody requestBody) {
         return adminSysUserService.updateInfo(requestBody);
     }
@@ -60,6 +61,7 @@ public class AdminSysUserController extends BaseController {
      * @return 处理结果
      */
     @PostMapping("update/role")
+    @PutMapping("role")
     public Result updateRole(@RequestBody @Validated AdminUserRoleUpdateRequestBody requestBody) {
         return adminSysUserService.updateRole(requestBody);
     }
@@ -71,6 +73,7 @@ public class AdminSysUserController extends BaseController {
      * @return 处理结果
      */
     @GetMapping("delete/{id}")
+    @DeleteMapping("{id}")
     public Result delete(@PathVariable("id") @NotNull(message = ID_NOT_NULL) Long id) {
         return adminSysUserService.delete(id);
     }
@@ -81,7 +84,7 @@ public class AdminSysUserController extends BaseController {
      * @param id 主键
      * @return 处理结果
      */
-    @GetMapping("delete")
+    @GetMapping(value = "delete",params = "id")
     public Result delete2(@RequestParam @NotNull(message = ID_NOT_NULL) Long id) {
         return adminSysUserService.delete(id);
     }
@@ -114,7 +117,7 @@ public class AdminSysUserController extends BaseController {
      * @param id 主键
      * @return 用户信息
      */
-    @GetMapping(value = "get", params = "id")
+    @GetMapping(value = "get")
     public Result get2(@RequestParam @NotNull(message = ID_NOT_NULL) Long id) {
         return adminSysUserService.get(id);
     }

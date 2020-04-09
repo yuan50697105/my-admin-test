@@ -24,6 +24,8 @@ import java.util.List;
 @Validated
 @AllArgsConstructor
 public class AdminSysRoleController extends BaseController {
+    public static final String ID_NOT_NULL = "id not null";
+    public static final String IDS_NOT_EMPTY = "ids not empty";
     private AdminSysRoleService adminSysRoleService;
 
     /**
@@ -32,8 +34,8 @@ public class AdminSysRoleController extends BaseController {
      * @param requestBody 请求实体
      * @return 处理结果
      */
-    @PostMapping("save")
-    public Result save(@RequestBody AdminSysRoleSaveRequestBody requestBody) {
+    @PostMapping({"save", ""})
+    public Result save(@RequestBody @Validated AdminSysRoleSaveRequestBody requestBody) {
         return adminSysRoleService.save(requestBody);
     }
 
@@ -43,8 +45,9 @@ public class AdminSysRoleController extends BaseController {
      * @param requestBody 请求实体
      * @return 处理结果
      */
-    @PostMapping("update")
-    public Result updateInfo(@RequestBody AdminSysRoleUpdateRequestBody requestBody) {
+    @PostMapping("update/info")
+    @PutMapping("info")
+    public Result updateInfo(@RequestBody @Validated AdminSysRoleUpdateRequestBody requestBody) {
         return adminSysRoleService.update(requestBody);
     }
 
@@ -55,7 +58,8 @@ public class AdminSysRoleController extends BaseController {
      * @return 处理结果
      */
     @GetMapping("delete/{id}")
-    public Result delete(@PathVariable("id") Long id) {
+    @DeleteMapping("{id}")
+    public Result delete(@PathVariable("id") @NotNull(message = ID_NOT_NULL) Long id) {
         return adminSysRoleService.delete(id);
     }
 
@@ -65,8 +69,8 @@ public class AdminSysRoleController extends BaseController {
      * @param id 主键
      * @return 处理结果
      */
-    @GetMapping("delete")
-    public Result delete2(@RequestParam @NotNull Long id) {
+    @GetMapping(value = "delete", params = "id")
+    public Result delete2(@RequestParam @NotNull(message = ID_NOT_NULL) Long id) {
         return adminSysRoleService.delete(id);
     }
 
@@ -77,7 +81,7 @@ public class AdminSysRoleController extends BaseController {
      * @return 处理结果
      */
     @GetMapping(value = "delete", params = "ids")
-    public Result delete(@RequestParam @NotNull List<Long> ids) {
+    public Result delete(@RequestParam @NotNull(message = IDS_NOT_EMPTY) List<Long> ids) {
         return adminSysRoleService.delete(ids);
     }
 
@@ -87,8 +91,8 @@ public class AdminSysRoleController extends BaseController {
      * @param id 主键
      * @return 用户信息
      */
-    @GetMapping("get/{id}")
-    public Result get(@PathVariable("id") @NotNull Long id) {
+    @GetMapping({"get/{id}", "{id}"})
+    public Result get(@PathVariable("id") @NotNull(message = ID_NOT_NULL) Long id) {
         return adminSysRoleService.get(id);
     }
 
@@ -99,7 +103,7 @@ public class AdminSysRoleController extends BaseController {
      * @return 用户信息
      */
     @GetMapping("get")
-    public Result get2(@RequestParam @NotNull Long id) {
+    public Result get2(@RequestParam @NotNull(message = ID_NOT_NULL) Long id) {
         return adminSysRoleService.get(id);
     }
 
