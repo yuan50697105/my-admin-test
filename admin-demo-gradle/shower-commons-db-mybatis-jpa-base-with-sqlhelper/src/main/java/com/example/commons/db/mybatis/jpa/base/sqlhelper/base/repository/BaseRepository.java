@@ -1,4 +1,4 @@
-package com.example.commons.db.mybatis.jpa.pagehelper.base.repository;
+package com.example.commons.db.mybatis.jpa.base.sqlhelper.base.repository;
 
 import org.springframework.data.jpa.repository.support.JpaRepositoryImplementation;
 
