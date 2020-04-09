@@ -5,6 +5,7 @@ import com.example.application.pojo.admin.user.AdminSysUserUpdateRequestBody;
 import com.example.application.pojo.admin.user.AdminUserRoleUpdateRequestBody;
 import com.example.application.service.AdminSysUserService;
 import com.example.commons.constants.RouteConstants;
+import com.example.commons.db.mybatis.base.pagehelper.test.constants.EnableConstants;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysUserQuery;
 import com.example.commons.web.controller.BaseController;
 import com.example.commons.web.pojo.Result;
@@ -30,6 +31,11 @@ public class AdminSysUserController extends BaseController {
     public static final String ID_NOT_NULL = "id not null";
     public static final String IDS_NOT_EMPTY = "ids not empty";
     private AdminSysUserService adminSysUserService;
+
+    @GetMapping("contants")
+    public Object constants() {
+        return new EnableConstants().dict();
+    }
 
     /**
      * 保存用户信息
