@@ -10,4 +10,8 @@ public class RouteConstants {
     public static class AdminUserRouteConstants {
         public static final String BASE_URL = "user";
     }
+
+    public static class AdminRoleRouteConstants {
+        public static final String BASE_URL = "role";
+    }
 }

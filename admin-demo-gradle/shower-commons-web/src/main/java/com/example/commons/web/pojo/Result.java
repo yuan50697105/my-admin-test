@@ -19,9 +19,9 @@ public class Result extends BaseEntity {
     private String message;
     private Object data;
 
-    public Result(Integer code, Object data) {
+    public Result(Integer code, String message) {
         this.code = code;
-        this.data = data;
+        this.message = message;
     }
 
     public Result(Integer code, String message, Object data) {

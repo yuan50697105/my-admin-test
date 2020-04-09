@@ -3,10 +3,12 @@ package com.example.application.controller;
 import com.example.application.pojo.admin.role.AdminSysRoleSaveRequestBody;
 import com.example.application.pojo.admin.role.AdminSysRoleUpdateRequestBody;
 import com.example.application.service.AdminSysRoleService;
+import com.example.commons.constants.RouteConstants;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysRoleQuery;
 import com.example.commons.web.controller.BaseController;
 import com.example.commons.web.pojo.Result;
 import lombok.AllArgsConstructor;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,7 +22,7 @@ import java.util.List;
  * @create: 2020-04-06 13:45
  */
 @RestController
-@RequestMapping("admin/role")
+@RequestMapping(RouteConstants.AdminRoleRouteConstants.BASE_URL)
 @Validated
 @AllArgsConstructor
 public class AdminSysRoleController extends BaseController {
@@ -35,7 +37,8 @@ public class AdminSysRoleController extends BaseController {
      * @return 处理结果
      */
     @PostMapping({"save", ""})
-    public Result save(@RequestBody @Validated AdminSysRoleSaveRequestBody requestBody) {
+    public Result save(@RequestBody @Validated AdminSysRoleSaveRequestBody requestBody, BindingResult result) {
+        validate(result);
         return adminSysRoleService.save(requestBody);
     }
 

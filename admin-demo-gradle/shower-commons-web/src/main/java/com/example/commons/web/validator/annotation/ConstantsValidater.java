@@ -1,5 +1,7 @@
 package com.example.commons.web.validator.annotation;
 
+import com.example.commons.web.validator.ConstantsValidateFactory;
+
 import javax.validation.Constraint;
 import javax.validation.Payload;
 import java.lang.annotation.*;
@@ -22,7 +24,9 @@ public @interface ConstantsValidater {
     Class<? extends Payload>[] payload() default {};
 
     // 没加default给定默认值，使用注解的时候该属性必须赋值，否则报错
-    Class<?> regex();
+    String regex() default "";
     // value属性，加上了default "mercy" 使得该属性在使用注解的时候可以不用输入也不会报错
     String value() default "mercy";
+
+    Class<?> constants();
 }

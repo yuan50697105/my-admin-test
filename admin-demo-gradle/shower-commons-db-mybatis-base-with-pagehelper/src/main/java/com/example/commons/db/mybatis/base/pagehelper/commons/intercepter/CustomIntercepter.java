@@ -34,11 +34,12 @@ public class CustomIntercepter implements Interceptor {
     @Override
     public Object intercept(Invocation invocation) throws Throwable {
         MappedStatement statement = ((MappedStatement) invocation.getArgs()[0]);
+        SqlCommandType sqlCommandType = statement.getSqlCommandType();
         Object object = invocation.getArgs()[1];
         List<Field> fields = getAllField(object);
         for (Field field : fields) {
             if (field.getName().equals(ID)) {
-                if (statement.getSqlCommandType().equals(SqlCommandType.INSERT)) {
+                if (sqlCommandType.equals(SqlCommandType.INSERT)) {
                     field.setAccessible(true);
                     if (ObjectUtil.isEmpty(field.get(object))) {
                         field.set(object, IdUtil.getSnowflake(1, 1).nextId());
@@ -46,18 +47,18 @@ public class CustomIntercepter implements Interceptor {
                 }
             }
             if (field.getName().equals(CREATE_TIME)) {
-                if (statement.getSqlCommandType().equals(SqlCommandType.INSERT)) {
+                if (sqlCommandType.equals(SqlCommandType.INSERT) || sqlCommandType.equals(SqlCommandType.UPDATE)) {
                     field.setAccessible(true);
                     if (ObjectUtil.isEmpty(field.get(object))) {
-                        field.set(object,new Date());
+                        field.set(object, new Date());
                     }
                 }
             }
             if (field.getName().equals(UPDATE_TIME)) {
-                if (statement.getSqlCommandType().equals(SqlCommandType.UPDATE)) {
+                if (sqlCommandType.equals(SqlCommandType.UPDATE)) {
                     field.setAccessible(true);
                     if (ObjectUtil.isEmpty(field.get(object))) {
-                        field.set(object,new Date());
+                        field.set(object, new Date());
                     }
                 }
             }
