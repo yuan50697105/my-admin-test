@@ -4,6 +4,7 @@ import com.example.application.pojo.admin.user.AdminSysUserSaveRequestBody;
 import com.example.application.pojo.admin.user.AdminSysUserUpdateRequestBody;
 import com.example.application.pojo.admin.user.AdminUserRoleUpdateRequestBody;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysUserQuery;
+import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.query.SysUserQuery;
 import com.example.commons.web.pojo.Result;
 
 import java.util.List;
@@ -79,4 +80,6 @@ public interface AdminSysUserService {
      * @return 处理结果
      */
     Result delete(Long id);
+
+    Result list(SysUserQuery query);
 }

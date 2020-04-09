@@ -4,6 +4,7 @@ import com.example.application.pojo.admin.role.AdminSysPermissionUpdateRequestBo
 import com.example.application.pojo.admin.role.AdminSysRoleSaveRequestBody;
 import com.example.application.pojo.admin.role.AdminSysRoleUpdateRequestBody;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysRoleQuery;
+import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.query.SysRoleQuery;
 import com.example.commons.web.pojo.Result;
 
 import java.util.List;
@@ -77,4 +78,6 @@ public interface AdminSysRoleService {
      * @return 数据列表
      */
     Result list(SysRoleQuery query);
+
+    Result data(SysRoleQuery query);
 }
