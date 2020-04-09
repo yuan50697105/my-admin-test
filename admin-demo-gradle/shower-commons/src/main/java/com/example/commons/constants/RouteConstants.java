@@ -14,4 +14,8 @@ public class RouteConstants {
     public static class AdminRoleRouteConstants {
         public static final String BASE_URL = "role";
     }
+
+    public class AdminPermissionRouteConstants {
+        public static final String BASE_URL = "permission";
+    }
 }

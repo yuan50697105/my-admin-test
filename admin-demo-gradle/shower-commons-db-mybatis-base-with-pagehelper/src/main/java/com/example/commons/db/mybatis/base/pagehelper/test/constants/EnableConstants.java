@@ -9,7 +9,7 @@ import com.example.commons.db.utils.annotation.Constants;
  * @create: 2020-04-06 02:47
  */
 
-public class EnableConstants {
+public class EnableConstants extends BaseConstants {
     @Constants(name = "启用", value = EnableConstants.ENABLED)
     public static final String ENABLED = "ENABLED";
     @Constants(name = "停用", value = EnableConstants.DISABLED)

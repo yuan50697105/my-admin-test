@@ -1,12 +1,13 @@
 package com.example.commons.db.mybatis.base.pagehelper.test.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
 import com.example.commons.db.mybatis.base.pagehelper.test.mapper.SysRolePermissionMapper;
-import java.util.List;
-import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysRolePermissionExample;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysRolePermission;
+import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysRolePermissionExample;
 import com.example.commons.db.mybatis.base.pagehelper.test.service.SysRolePermissionService;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class SysRolePermissionServiceImpl implements SysRolePermissionService {
@@ -96,6 +97,20 @@ public class SysRolePermissionServiceImpl implements SysRolePermissionService {
     @Override
     public int batchInsert(List<SysRolePermission> list) {
         return sysRolePermissionMapper.batchInsert(list);
+    }
+
+    @Override
+    public int deleteByPermissionId(Long permissinoId) {
+        SysRolePermissionExample example = new SysRolePermissionExample();
+        example.or().andPermissionIdEqualTo(permissinoId);
+        return deleteByExample(example);
+    }
+
+    @Override
+    public int deleteByPermissionIds(List<Long> permissionIds) {
+        SysRolePermissionExample example = new SysRolePermissionExample();
+        example.or().andPermissionIdIn(permissionIds);
+        return deleteByExample(example);
     }
 
 }

@@ -1,8 +1,11 @@
 package com.example.commons.db.mybatis.base.pagehelper.test.service;
 
-import java.util.List;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysPermission;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysPermissionExample;
+import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysPermissionQuery;
+import com.example.commons.db.pojo.IPageResult;
+
+import java.util.List;
 public interface SysPermissionService{
 
 
@@ -35,4 +38,12 @@ public interface SysPermissionService{
     int batchInsert(List<SysPermission> list);
 
     List<SysPermission> selectByIds(List<Long> ids);
+
+    int deleteByIds(List<Long> ids);
+
+    IPageResult<SysPermission> selectPageByQuery(SysPermissionQuery query);
+
+    List<SysPermission> selectByQuery(SysPermissionQuery query);
+
+    IPageResult<SysPermission> selectPageByExample(SysPermissionExample example, Integer page, Integer size);
 }
