@@ -65,7 +65,20 @@ public class AdminSysRoleController extends BaseController {
         return adminSysRoleService.updateInfo(requestBody);
     }
 
+    /**
+     * 更新权限
+     *
+     * @param requestBody 请求实体
+     * @return 处理结果
+     */
+    @PostMapping("update/permission")
     public Result updatePermission(@RequestBody @Validated AdminSysPermissionUpdateRequestBody requestBody, BindingResult result) {
+        validate(result);
+        return adminSysRoleService.updatePermission(requestBody);
+    }
+
+    @PutMapping("permission")
+    public Result updatePermission2(@RequestBody @Validated AdminSysPermissionUpdateRequestBody requestBody, BindingResult result) {
         validate(result);
         return adminSysRoleService.updatePermission(requestBody);
     }
@@ -120,7 +133,7 @@ public class AdminSysRoleController extends BaseController {
      * @param id 主键
      * @return 用户信息
      */
-    @GetMapping(value = "get",params = "id")
+    @GetMapping(value = "get", params = "id")
     public Result get(@RequestParam @NotNull(message = ID_NOT_NULL) Long id) {
         return adminSysRoleService.get(id);
     }
