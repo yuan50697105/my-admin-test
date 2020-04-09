@@ -56,7 +56,7 @@ public class AdminSysRoleServiceImpl extends BaseServiceImpl implements AdminSys
     public Result updateInfo(AdminSysRoleUpdateRequestBody requestBody) {
         SysRole sysRole = sysRoleService.selectByPrimaryKey(requestBody.getId());
         if (isNotEmpty(sysRole)) {
-            updateRoleFromReqestBody(sysRole, requestBody);
+            updateRoleFromRequestBody(sysRole, requestBody);
             sysRoleService.updateByPrimaryKeySelective(sysRole);
         }
         return updateSuccess();
@@ -128,7 +128,7 @@ public class AdminSysRoleServiceImpl extends BaseServiceImpl implements AdminSys
         return sysRolePermissions;
     }
 
-    private void updateRoleFromReqestBody(SysRole sysRole, AdminSysRoleUpdateRequestBody requestBody) {
+    private void updateRoleFromRequestBody(SysRole sysRole, AdminSysRoleUpdateRequestBody requestBody) {
         sysRole.copyFrom(requestBody);
     }
 }
