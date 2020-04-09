@@ -49,7 +49,6 @@ public class AdminSysUserController extends BaseController {
      * @return 处理结果
      */
     @PostMapping("update/info")
-    @PutMapping("info")
     public Result updateInfo(@RequestBody @Validated AdminSysUserUpdateRequestBody requestBody) {
         return adminSysUserService.updateInfo(requestBody);
     }
@@ -149,7 +148,7 @@ public class AdminSysUserController extends BaseController {
      * @param id 主键
      * @return 用户信息
      */
-    @GetMapping(value = "get",params = "id")
+    @GetMapping(value = "get", params = "id")
     public Result get1(@RequestParam @NotNull(message = ID_NOT_NULL) Long id) {
         return adminSysUserService.get(id);
     }

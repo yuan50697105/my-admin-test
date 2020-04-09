@@ -83,6 +83,13 @@ public class SysPermissionServiceImpl implements SysPermissionService {
     public int batchInsert(List<SysPermission> list) {
         return sysPermissionMapper.batchInsert(list);
     }
+
+    @Override
+    public List<SysPermission> selectByIds(List<Long> ids) {
+        SysPermissionExample example = new SysPermissionExample();
+        example.or().andIdIn(ids);
+        return sysPermissionMapper.selectByExample(example);
+    }
 }
 
 

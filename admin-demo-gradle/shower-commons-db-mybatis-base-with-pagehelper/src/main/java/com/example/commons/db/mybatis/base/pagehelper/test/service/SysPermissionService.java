@@ -33,4 +33,6 @@ public interface SysPermissionService{
     int updateBatchSelective(List<SysPermission> list);
 
     int batchInsert(List<SysPermission> list);
+
+    List<SysPermission> selectByIds(List<Long> ids);
 }

@@ -1,5 +1,6 @@
 package com.example.application.controller;
 
+import com.example.application.pojo.admin.role.AdminSysPermissionUpdateRequestBody;
 import com.example.application.pojo.admin.role.AdminSysRoleSaveRequestBody;
 import com.example.application.pojo.admin.role.AdminSysRoleUpdateRequestBody;
 import com.example.application.service.AdminSysRoleService;
@@ -50,7 +51,7 @@ public class AdminSysRoleController extends BaseController {
      */
     @PostMapping("update/info")
     public Result updateInfo(@RequestBody @Validated AdminSysRoleUpdateRequestBody requestBody) {
-        return adminSysRoleService.update(requestBody);
+        return adminSysRoleService.updateInfo(requestBody);
     }
 
     /**
@@ -61,9 +62,13 @@ public class AdminSysRoleController extends BaseController {
      */
     @PutMapping("info")
     public Result updateInfo2(@RequestBody @Validated AdminSysRoleUpdateRequestBody requestBody) {
-        return adminSysRoleService.update(requestBody);
+        return adminSysRoleService.updateInfo(requestBody);
     }
 
+    public Result updatePermission(@RequestBody @Validated AdminSysPermissionUpdateRequestBody requestBody, BindingResult result) {
+        validate(result);
+        return adminSysRoleService.updatePermission(requestBody);
+    }
 
     /**
      * 删除用户

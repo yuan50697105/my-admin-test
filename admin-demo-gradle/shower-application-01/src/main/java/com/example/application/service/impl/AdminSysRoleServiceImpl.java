@@ -1,12 +1,17 @@
 package com.example.application.service.impl;
 
 import cn.hutool.core.util.IdUtil;
+import com.example.application.pojo.admin.role.AdminSysPermissionUpdateRequestBody;
 import com.example.application.pojo.admin.role.AdminSysRoleSaveRequestBody;
 import com.example.application.pojo.admin.role.AdminSysRoleUpdateRequestBody;
 import com.example.application.service.AdminSysRoleService;
 import com.example.commons.db.mybatis.base.pagehelper.test.constants.EnableConstants;
+import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysPermission;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysRole;
+import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysRolePermission;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysRoleQuery;
+import com.example.commons.db.mybatis.base.pagehelper.test.service.SysPermissionService;
+import com.example.commons.db.mybatis.base.pagehelper.test.service.SysRolePermissionService;
 import com.example.commons.db.mybatis.base.pagehelper.test.service.SysRoleService;
 import com.example.commons.db.pojo.IPageResult;
 import com.example.commons.web.pojo.Result;
@@ -15,6 +20,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static cn.hutool.core.util.ObjectUtil.isNotEmpty;
@@ -29,23 +35,41 @@ import static cn.hutool.core.util.ObjectUtil.isNotEmpty;
 @AllArgsConstructor
 public class AdminSysRoleServiceImpl extends BaseServiceImpl implements AdminSysRoleService {
     private SysRoleService sysRoleService;
+    private SysPermissionService sysPermissionService;
+    private SysRolePermissionService sysRolePermissionService;
 
     @Override
     @Transactional
     public Result save(AdminSysRoleSaveRequestBody requestBody) {
         SysRole sysRole = createRoleFromRequestBody(requestBody);
         sysRoleService.insert(sysRole);
+        List<SysPermission> sysPermissions = sysPermissionService.selectByIds(requestBody.getPermissionIds());
+        List<SysRolePermission> sysRolePermissions = createRolePermissionList(sysRole, sysPermissions);
+        sysRolePermissionService.batchInsert(sysRolePermissions);
         return saveSuccess();
     }
 
     @Override
     @Transactional
-    public Result update(AdminSysRoleUpdateRequestBody requestBody) {
+    public Result updateInfo(AdminSysRoleUpdateRequestBody requestBody) {
         SysRole sysRole = sysRoleService.selectByPrimaryKey(requestBody.getId());
         if (isNotEmpty(sysRole)) {
             updateRoleFromReqestBody(sysRole, requestBody);
             sysRoleService.updateByPrimaryKeySelective(sysRole);
         }
+        return updateSuccess();
+    }
+
+    @Override
+    @Transactional
+    public Result updatePermission(AdminSysPermissionUpdateRequestBody requestBody) {
+        Long id = requestBody.getId();
+        List<Long> permissionIds = requestBody.getPermissionIds();
+        SysRole sysRole = sysRoleService.selectByPrimaryKey(requestBody.getId());
+        List<SysPermission> sysPermissions = sysPermissionService.selectByIds(permissionIds);
+        sysRolePermissionService.deleteByRoleId(id);
+        List<SysRolePermission> sysRolePermissions = createRolePermissionList(sysRole, sysPermissions);
+        sysRolePermissionService.batchInsert(sysRolePermissions);
         return updateSuccess();
     }
 
@@ -87,6 +111,15 @@ public class AdminSysRoleServiceImpl extends BaseServiceImpl implements AdminSys
         sysRole.setName(requestBody.getName());
         sysRole.setEnabled(EnableConstants.ENABLED);
         return sysRole;
+    }
+
+    private List<SysRolePermission> createRolePermissionList(SysRole sysRole, List<SysPermission> sysPermissions) {
+        int initSize = isNotEmpty(sysPermissions) ? sysPermissions.size() : 1;
+        ArrayList<SysRolePermission> sysRolePermissions = new ArrayList<>(initSize);
+        for (SysPermission sysPermission : sysPermissions) {
+            sysRolePermissions.add(new SysRolePermission(sysRole.getId(), sysPermission.getId()));
+        }
+        return sysRolePermissions;
     }
 
     private void updateRoleFromReqestBody(SysRole sysRole, AdminSysRoleUpdateRequestBody requestBody) {
