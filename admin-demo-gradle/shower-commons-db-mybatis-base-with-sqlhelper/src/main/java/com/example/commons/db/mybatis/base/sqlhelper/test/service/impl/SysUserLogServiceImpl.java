@@ -95,6 +95,26 @@ public class SysUserLogServiceImpl implements SysUserLogService {
     }
 
 
+    @Override
+    public int updateBatch(List<SysUserLog> list) {
+        return sysUserLogMapper.updateBatch(list);
+    }
+
+    @Override
+    public int updateBatchSelective(List<SysUserLog> list) {
+        return sysUserLogMapper.updateBatchSelective(list);
+    }
+
+    @Override
+    public int batchInsert(List<SysUserLog> list) {
+        return sysUserLogMapper.batchInsert(list);
+    }
 }
+
+
+
+
+
+
 
 

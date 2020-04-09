@@ -2,10 +2,9 @@ package com.example.commons.db.mybatis.base.sqlhelper.test.mapper;
 
 import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysUser;
 import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysUserExample;
+import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-
-import java.util.List;
 
 @Mapper
 public interface SysUserMapper {
@@ -30,4 +29,10 @@ public interface SysUserMapper {
     int updateByPrimaryKeySelective(SysUser record);
 
     int updateByPrimaryKey(SysUser record);
+
+    int updateBatch(List<SysUser> list);
+
+    int updateBatchSelective(List<SysUser> list);
+
+    int batchInsert(@Param("list") List<SysUser> list);
 }

@@ -7,7 +7,7 @@ import com.example.commons.db.pojo.IPageResult;
 
 import java.util.List;
 
-public interface SysRoleService{
+public interface SysRoleService {
 
 
     long countByExample(SysRoleExample example);
@@ -15,8 +15,6 @@ public interface SysRoleService{
     int deleteByExample(SysRoleExample example);
 
     int deleteByPrimaryKey(Long id);
-
-    int deleteByIds(List<Long> ids);
 
     int insert(SysRole record);
 
@@ -34,9 +32,20 @@ public interface SysRoleService{
 
     int updateByPrimaryKey(SysRole record);
 
+    int deleteByIds(List<Long> ids);
+
     IPageResult<SysRole> selectPageByQuery(SysRoleQuery query);
 
     IPageResult<SysRole> selectPageByExample(SysRoleExample example, int page, int size);
 
     List<SysRole> selectByQuery(SysRoleQuery query);
+
+    int updateBatch(List<SysRole> list);
+
+    int updateBatchSelective(List<SysRole> list);
+
+    int batchInsert(List<SysRole> list);
+
+    List<SysRole> selectByIds(List<Long> ids);
 }
+

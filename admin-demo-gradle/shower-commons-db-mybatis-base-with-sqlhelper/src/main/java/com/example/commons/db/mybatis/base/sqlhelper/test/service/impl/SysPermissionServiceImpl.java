@@ -1,9 +1,16 @@
 package com.example.commons.db.mybatis.base.sqlhelper.test.service.impl;
 
+import cn.hutool.core.util.ObjectUtil;
+import com.example.commons.db.mybatis.base.sqlhelper.pojo.PageResult;
 import com.example.commons.db.mybatis.base.sqlhelper.test.mapper.SysPermissionMapper;
 import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysPermission;
 import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysPermissionExample;
+import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.query.SysPermissionQuery;
 import com.example.commons.db.mybatis.base.sqlhelper.test.service.SysPermissionService;
+import com.example.commons.db.pojo.IPageResult;
+import com.example.commons.db.utils.DbUtils;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -70,6 +77,67 @@ public class SysPermissionServiceImpl implements SysPermissionService {
         return sysPermissionMapper.updateByPrimaryKey(record);
     }
 
+    @Override
+    public int updateBatch(List<SysPermission> list) {
+        return sysPermissionMapper.updateBatch(list);
+    }
+
+    @Override
+    public int updateBatchSelective(List<SysPermission> list) {
+        return sysPermissionMapper.updateBatchSelective(list);
+    }
+
+    @Override
+    public int batchInsert(List<SysPermission> list) {
+        return sysPermissionMapper.batchInsert(list);
+    }
+
+    @Override
+    public List<SysPermission> selectByIds(List<Long> ids) {
+        SysPermissionExample example = new SysPermissionExample();
+        example.or().andIdIn(ids);
+        return sysPermissionMapper.selectByExample(example);
+    }
+
+    @Override
+    public int deleteByIds(List<Long> ids) {
+        SysPermissionExample example = new SysPermissionExample();
+        example.or().andIdIn(ids);
+        return deleteByExample(example);
+    }
+
+    @Override
+    public IPageResult<SysPermission> selectPageByQuery(SysPermissionQuery query) {
+        SysPermissionExample example = createExample(query);
+        return selectPageByExample(example, query.getPage(), query.getSize());
+    }
+
+    @Override
+    public List<SysPermission> selectByQuery(SysPermissionQuery query) {
+        SysPermissionExample example = createExample(query);
+        return selectByExample(example);
+    }
+
+    @Override
+    public IPageResult<SysPermission> selectPageByExample(SysPermissionExample example, Integer page, Integer size) {
+        PageHelper.startPage(page, size);
+        return new PageResult<>(new PageInfo<>(selectByExample(example)));
+    }
+
+    private SysPermissionExample createExample(SysPermissionQuery query) {
+        SysPermissionExample example = new SysPermissionExample();
+        SysPermissionExample.Criteria criteria = example.createCriteria();
+        if (ObjectUtil.isNotEmpty(query.getName())) {
+            criteria.andNameLike(DbUtils.likeContains(query.getName()));
+        }
+        return example;
+    }
 }
+
+
+
+
+
+
 
 

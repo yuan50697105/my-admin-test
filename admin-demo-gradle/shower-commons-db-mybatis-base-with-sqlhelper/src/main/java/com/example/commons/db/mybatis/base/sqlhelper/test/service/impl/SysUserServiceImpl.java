@@ -121,6 +121,35 @@ public class SysUserServiceImpl implements SysUserService {
         example.or(criteria);
         return example;
     }
+
+    @Override
+    public int updateBatch(List<SysUser> list) {
+        return sysUserMapper.updateBatch(list);
+    }
+
+    @Override
+    public int updateBatchSelective(List<SysUser> list) {
+        return sysUserMapper.updateBatchSelective(list);
+    }
+
+    @Override
+    public int batchInsert(List<SysUser> list) {
+        return sysUserMapper.batchInsert(list);
+    }
+
+    @Override
+    public boolean existByUsername(String username) {
+        SysUserExample example = new SysUserExample();
+        example.or().andUsernameEqualTo(username);
+        return sysUserMapper.countByExample(example) > 0;
+    }
+
 }
+
+
+
+
+
+
 
 

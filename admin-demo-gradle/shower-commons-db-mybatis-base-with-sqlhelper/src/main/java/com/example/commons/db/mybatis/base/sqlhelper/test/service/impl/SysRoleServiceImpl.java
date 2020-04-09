@@ -111,6 +111,34 @@ public class SysRoleServiceImpl implements SysRoleService {
         example.or(criteria);
         return example;
     }
+
+    @Override
+    public int updateBatch(List<SysRole> list) {
+        return sysRoleMapper.updateBatch(list);
+    }
+
+    @Override
+    public int updateBatchSelective(List<SysRole> list) {
+        return sysRoleMapper.updateBatchSelective(list);
+    }
+
+    @Override
+    public int batchInsert(List<SysRole> list) {
+        return sysRoleMapper.batchInsert(list);
+    }
+
+    @Override
+    public List<SysRole> selectByIds(List<Long> ids) {
+        SysRoleExample example = new SysRoleExample();
+        example.or().andIdIn(ids);
+        return sysRoleMapper.selectByExample(example);
+    }
 }
+
+
+
+
+
+
 
 

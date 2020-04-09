@@ -3,12 +3,14 @@ package com.example.commons.db.mybatis.base.sqlhelper.test.service.impl;
 import com.example.commons.db.mybatis.base.sqlhelper.test.mapper.SysRolePermissionMapper;
 import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysRolePermission;
 import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysRolePermissionExample;
+import com.example.commons.db.mybatis.base.sqlhelper.test.service.SysRolePermissionService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+
 @Service
-public class SysRolePermissionServiceImpl implements SysRolePermissionService{
+public class SysRolePermissionServiceImpl implements SysRolePermissionService {
 
     @Resource
     private SysRolePermissionMapper sysRolePermissionMapper;
@@ -26,6 +28,20 @@ public class SysRolePermissionServiceImpl implements SysRolePermissionService{
     @Override
     public int deleteByPrimaryKey(Long id) {
         return sysRolePermissionMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public int deleteByRoleId(Long roleId) {
+        SysRolePermissionExample example = new SysRolePermissionExample();
+        example.or().andRoleIdEqualTo(roleId);
+        return deleteByExample(example);
+    }
+
+    @Override
+    public int deleteByRoleIds(List<Long> roleIds) {
+        SysRolePermissionExample example = new SysRolePermissionExample();
+        example.or().andRoleIdIn(roleIds);
+        return deleteByExample(example);
     }
 
     @Override
@@ -49,13 +65,13 @@ public class SysRolePermissionServiceImpl implements SysRolePermissionService{
     }
 
     @Override
-    public int updateByExampleSelective(SysRolePermission record,SysRolePermissionExample example) {
-        return sysRolePermissionMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(SysRolePermission record, SysRolePermissionExample example) {
+        return sysRolePermissionMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(SysRolePermission record,SysRolePermissionExample example) {
-        return sysRolePermissionMapper.updateByExample(record,example);
+    public int updateByExample(SysRolePermission record, SysRolePermissionExample example) {
+        return sysRolePermissionMapper.updateByExample(record, example);
     }
 
     @Override
@@ -68,4 +84,36 @@ public class SysRolePermissionServiceImpl implements SysRolePermissionService{
         return sysRolePermissionMapper.updateByPrimaryKey(record);
     }
 
+    @Override
+    public int updateBatch(List<SysRolePermission> list) {
+        return sysRolePermissionMapper.updateBatch(list);
+    }
+
+    @Override
+    public int updateBatchSelective(List<SysRolePermission> list) {
+        return sysRolePermissionMapper.updateBatchSelective(list);
+    }
+
+    @Override
+    public int batchInsert(List<SysRolePermission> list) {
+        return sysRolePermissionMapper.batchInsert(list);
+    }
+
+    @Override
+    public int deleteByPermissionId(Long permissinoId) {
+        SysRolePermissionExample example = new SysRolePermissionExample();
+        example.or().andPermissionIdEqualTo(permissinoId);
+        return deleteByExample(example);
+    }
+
+    @Override
+    public int deleteByPermissionIds(List<Long> permissionIds) {
+        SysRolePermissionExample example = new SysRolePermissionExample();
+        example.or().andPermissionIdIn(permissionIds);
+        return deleteByExample(example);
+    }
+
 }
+
+
+

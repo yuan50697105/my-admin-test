@@ -1,9 +1,9 @@
 package com.example.application.service;
 
-
+import com.example.application.pojo.admin.role.AdminSysPermissionUpdateRequestBody;
 import com.example.application.pojo.admin.role.AdminSysRoleSaveRequestBody;
 import com.example.application.pojo.admin.role.AdminSysRoleUpdateRequestBody;
-import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.query.SysRoleQuery;
+import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysRoleQuery;
 import com.example.commons.web.pojo.Result;
 
 import java.util.List;
@@ -29,7 +29,14 @@ public interface AdminSysRoleService {
      * @param requestBody 请求实体
      * @return 处理结果
      */
-    Result update(AdminSysRoleUpdateRequestBody requestBody);
+    Result updateInfo(AdminSysRoleUpdateRequestBody requestBody);
+
+    /**
+     * 修改角色权限
+     * @param requestBody 请求实体
+     * @return 处理结果
+     */
+    Result updatePermission(AdminSysPermissionUpdateRequestBody requestBody);
 
     /**
      * 删除

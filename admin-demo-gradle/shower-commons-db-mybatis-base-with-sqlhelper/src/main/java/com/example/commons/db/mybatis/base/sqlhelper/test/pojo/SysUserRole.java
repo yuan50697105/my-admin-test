@@ -1,28 +1,36 @@
 package com.example.commons.db.mybatis.base.sqlhelper.test.pojo;
 
 import com.example.commons.db.mybatis.base.sqlhelper.commons.pojo.CommonsEntity;
-import lombok.*;
-
 import java.io.Serializable;
+import java.util.Date;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 /**
-    * sys_user_role
-    */
+ * sys_user_role
+ */
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class SysUserRole extends CommonsEntity implements Serializable {
     /**
-    * 用户ID
-    */
+     * 用户ID
+     */
     private Long userId;
 
     /**
-    * 角色ID
-    */
+     * 角色ID
+     */
     private Long roleId;
 
     private static final long serialVersionUID = 1L;
+
+    public static SysUserRoleBuilder builder() {
+        return new SysUserRoleBuilder();
+    }
 }

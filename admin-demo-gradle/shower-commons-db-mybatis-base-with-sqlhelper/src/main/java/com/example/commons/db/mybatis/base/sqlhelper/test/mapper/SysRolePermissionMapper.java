@@ -2,10 +2,9 @@ package com.example.commons.db.mybatis.base.sqlhelper.test.mapper;
 
 import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysRolePermission;
 import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysRolePermissionExample;
+import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-
-import java.util.List;
 
 @Mapper
 public interface SysRolePermissionMapper {
@@ -30,4 +29,10 @@ public interface SysRolePermissionMapper {
     int updateByPrimaryKeySelective(SysRolePermission record);
 
     int updateByPrimaryKey(SysRolePermission record);
+
+    int updateBatch(List<SysRolePermission> list);
+
+    int updateBatchSelective(List<SysRolePermission> list);
+
+    int batchInsert(@Param("list") List<SysRolePermission> list);
 }
