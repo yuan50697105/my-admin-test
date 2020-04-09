@@ -12,6 +12,8 @@ public interface SysUserRoleService{
 
     int deleteByPrimaryKey(Long id);
 
+    int deleteByUserId(Long userId);
+
     int insert(SysUserRole record);
 
     int insertSelective(SysUserRole record);
@@ -33,5 +35,4 @@ public interface SysUserRoleService{
     int updateBatchSelective(List<SysUserRole> list);
 
     int batchInsert(List<SysUserRole> list);
-
 }

@@ -3,6 +3,9 @@ package com.example.commons.db.mybatis.base.pagehelper.test.service;
 import java.util.List;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysUserExample;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysUser;
+import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysUserQuery;
+import com.example.commons.db.pojo.IPageResult;
+
 public interface SysUserService{
 
 
@@ -28,4 +31,19 @@ public interface SysUserService{
 
     int updateByPrimaryKey(SysUser record);
 
+    int deleteByIds(List<Long> ids);
+
+    IPageResult<SysUser> selectPageByQuery(SysUserQuery query);
+
+    IPageResult<SysUser> selectPageByExample(SysUserExample example, int page, int size);
+
+    List<SysUser> selectByQuery(SysUserQuery query);
+
+    int updateBatch(List<SysUser> list);
+
+    int updateBatchSelective(List<SysUser> list);
+
+    int batchInsert(List<SysUser> list);
+
+    boolean existByUsername(String username);
 }

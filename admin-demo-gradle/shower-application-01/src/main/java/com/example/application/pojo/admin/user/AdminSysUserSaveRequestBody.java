@@ -30,5 +30,5 @@ public class AdminSysUserSaveRequestBody extends BaseEntity {
     /**
      * 角色ID
      */
-    private List<Long> roleId;
+    private List<Long> roleIds;
 }
