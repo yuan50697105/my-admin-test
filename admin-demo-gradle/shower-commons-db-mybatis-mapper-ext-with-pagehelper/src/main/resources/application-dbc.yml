@@ -5,4 +5,4 @@ mybatis:
   mapper-locations: classpath*:mappers/*.xml
 logging:
   level:
-    com.example.commons.db.mybatis.pagehelper.test: debug
+    com.example.commons.db.mybatis.mapper.ext.pagehelper.test: debug
