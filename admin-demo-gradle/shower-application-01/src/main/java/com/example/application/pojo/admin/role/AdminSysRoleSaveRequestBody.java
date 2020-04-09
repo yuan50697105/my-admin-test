@@ -2,7 +2,7 @@ package com.example.application.pojo.admin.role;
 
 import com.example.commons.db.mybatis.base.pagehelper.test.constants.EnableConstants;
 import com.example.commons.pojo.BaseEntity;
-import com.example.commons.web.validator.annotation.ConstantsValidater;
+import com.example.commons.utils.validator.annotation.ConstantsValidater;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

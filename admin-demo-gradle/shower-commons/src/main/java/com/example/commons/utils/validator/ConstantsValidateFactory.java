@@ -1,8 +1,8 @@
-package com.example.commons.web.validator;
+package com.example.commons.utils.validator;
 
 import cn.hutool.core.util.ObjectUtil;
 import com.example.commons.utils.RegexUtils;
-import com.example.commons.web.validator.annotation.ConstantsValidater;
+import com.example.commons.utils.validator.annotation.ConstantsValidater;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

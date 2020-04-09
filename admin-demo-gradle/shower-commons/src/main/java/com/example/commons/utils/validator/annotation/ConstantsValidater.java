@@ -1,6 +1,6 @@
-package com.example.commons.web.validator.annotation;
+package com.example.commons.utils.validator.annotation;
 
-import com.example.commons.web.validator.ConstantsValidateFactory;
+import com.example.commons.utils.validator.ConstantsValidateFactory;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
