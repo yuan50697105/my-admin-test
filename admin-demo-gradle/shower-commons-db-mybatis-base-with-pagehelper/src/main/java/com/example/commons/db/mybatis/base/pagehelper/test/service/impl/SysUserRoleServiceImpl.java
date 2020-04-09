@@ -1,14 +1,15 @@
 package com.example.commons.db.mybatis.base.pagehelper.test.service.impl;
 
+import com.example.commons.db.mybatis.base.pagehelper.test.service.SysUserRoleService;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.example.commons.db.mybatis.base.pagehelper.test.mapper.SysUserRoleMapper;
 import java.util.List;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysUserRoleExample;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysUserRole;
-import com.example.commons.db.mybatis.base.pagehelper.test.service.SysUserRoleService;
+
 @Service
-public class SysUserRoleServiceImpl implements SysUserRoleService{
+public class SysUserRoleServiceImpl implements SysUserRoleService {
 
     @Resource
     private SysUserRoleMapper sysUserRoleMapper;
@@ -49,13 +50,13 @@ public class SysUserRoleServiceImpl implements SysUserRoleService{
     }
 
     @Override
-    public int updateByExampleSelective(SysUserRole record,SysUserRoleExample example) {
-        return sysUserRoleMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(SysUserRole record, SysUserRoleExample example) {
+        return sysUserRoleMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(SysUserRole record,SysUserRoleExample example) {
-        return sysUserRoleMapper.updateByExample(record,example);
+    public int updateByExample(SysUserRole record, SysUserRoleExample example) {
+        return sysUserRoleMapper.updateByExample(record, example);
     }
 
     @Override
@@ -84,3 +85,4 @@ public class SysUserRoleServiceImpl implements SysUserRoleService{
     }
 
 }
+

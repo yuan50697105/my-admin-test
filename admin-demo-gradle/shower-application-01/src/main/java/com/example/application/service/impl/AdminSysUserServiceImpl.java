@@ -5,7 +5,6 @@ import com.example.application.pojo.admin.user.AdminSysUserUpdateRequestBody;
 import com.example.application.service.AdminSysUserService;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysUser;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysUserQuery;
-import com.example.commons.db.mybatis.base.pagehelper.test.service.SysUserService;
 import com.example.commons.db.pojo.IPageResult;
 import com.example.commons.web.pojo.Result;
 import com.example.commons.web.utils.ResultUtils;

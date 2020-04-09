@@ -1,12 +1,12 @@
 package com.example.commons.db.mybatis.base.pagehelper.test.service.impl;
 
+import com.example.commons.db.mybatis.base.pagehelper.test.service.SysPermissionService;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.example.commons.db.mybatis.base.pagehelper.test.mapper.SysPermissionMapper;
 import java.util.List;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysPermission;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysPermissionExample;
-import com.example.commons.db.mybatis.base.pagehelper.test.service.SysPermissionService;
 
 @Service
 public class SysPermissionServiceImpl implements SysPermissionService {
