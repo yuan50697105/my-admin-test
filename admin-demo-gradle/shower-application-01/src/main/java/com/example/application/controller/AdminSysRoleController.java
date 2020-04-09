@@ -77,6 +77,13 @@ public class AdminSysRoleController extends BaseController {
         return adminSysRoleService.updatePermission(requestBody);
     }
 
+    /**
+     * 更新权限
+     *
+     * @param requestBody 请求实体
+     * @param result      表单验证结果
+     * @return 处理结果
+     */
     @PutMapping("permission")
     public Result updatePermission2(@RequestBody @Validated AdminSysPermissionUpdateRequestBody requestBody, BindingResult result) {
         validate(result);
