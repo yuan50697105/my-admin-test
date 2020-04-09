@@ -1,6 +1,6 @@
 package com.example.commons.db.mybatis.mapper.ext.sqlhelper.commons.pojo;
 
-import com.example.commons.db.mybatis.mapper.base.pagehelper.commons.intercepter.CustomIntercepter;
+import com.example.commons.db.mybatis.mapper.ext.sqlhelper.commons.intercepter.CustomIntercepter;
 import com.example.commons.db.pojo.BaseDbEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
