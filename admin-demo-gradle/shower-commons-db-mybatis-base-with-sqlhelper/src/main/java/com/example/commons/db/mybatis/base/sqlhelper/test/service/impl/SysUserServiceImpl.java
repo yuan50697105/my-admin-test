@@ -1,10 +1,11 @@
 package com.example.commons.db.mybatis.base.sqlhelper.test.service.impl;
 
-import com.example.commons.db.mybatis.base.pagehelper.base.pojo.PageResult;
-import com.example.commons.db.mybatis.base.pagehelper.test.mapper.SysUserMapper;
-import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysUser;
-import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysUserExample;
-import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysUserQuery;
+import com.example.commons.db.mybatis.base.sqlhelper.pojo.PageResult;
+import com.example.commons.db.mybatis.base.sqlhelper.test.mapper.SysUserMapper;
+import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysUser;
+import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysUserExample;
+import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.query.SysUserQuery;
+import com.example.commons.db.mybatis.base.sqlhelper.test.service.SysUserService;
 import com.example.commons.db.pojo.IPageResult;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;

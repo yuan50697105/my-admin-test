@@ -1,8 +1,8 @@
 package com.example.commons.db.mybatis.base.sqlhelper.test.service;
 
-import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysUserLog;
-import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysUserLogExample;
-import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysUserLogQuery;
+import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysUserLog;
+import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysUserLogExample;
+import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.query.SysUserLogQuery;
 import com.example.commons.db.pojo.IPageResult;
 
 import java.util.List;

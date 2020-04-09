@@ -1,8 +1,9 @@
 package com.example.commons.db.mybatis.base.sqlhelper.test.service.impl;
 
-import com.example.commons.db.mybatis.base.pagehelper.test.mapper.SysPermissionMapper;
-import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysPermission;
-import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysPermissionExample;
+import com.example.commons.db.mybatis.base.sqlhelper.test.mapper.SysPermissionMapper;
+import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysPermission;
+import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysPermissionExample;
+import com.example.commons.db.mybatis.base.sqlhelper.test.service.SysPermissionService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

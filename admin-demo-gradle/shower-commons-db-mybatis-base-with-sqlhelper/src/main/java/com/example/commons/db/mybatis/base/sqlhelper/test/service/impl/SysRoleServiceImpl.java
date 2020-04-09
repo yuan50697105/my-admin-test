@@ -1,11 +1,12 @@
 package com.example.commons.db.mybatis.base.sqlhelper.test.service.impl;
 
 import cn.hutool.core.util.ObjectUtil;
-import com.example.commons.db.mybatis.base.pagehelper.base.pojo.PageResult;
-import com.example.commons.db.mybatis.base.pagehelper.test.mapper.SysRoleMapper;
-import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysRole;
-import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysRoleExample;
-import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysRoleQuery;
+import com.example.commons.db.mybatis.base.sqlhelper.pojo.PageResult;
+import com.example.commons.db.mybatis.base.sqlhelper.test.mapper.SysRoleMapper;
+import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysRole;
+import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysRoleExample;
+import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.query.SysRoleQuery;
+import com.example.commons.db.mybatis.base.sqlhelper.test.service.SysRoleService;
 import com.example.commons.db.pojo.IPageResult;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
