@@ -75,7 +75,7 @@ public class AdminSysPermissionController extends BaseController {
         return adminSysPermissionService.get(id);
     }
 
-    @GetMapping({"get/{id}", "id"})
+    @GetMapping({"get/{id}", "{id}"})
     public Result get2(@PathVariable("id") @NotNull(message = ID_NOT_NULL) Long id) {
         return adminSysPermissionService.get(id);
     }
