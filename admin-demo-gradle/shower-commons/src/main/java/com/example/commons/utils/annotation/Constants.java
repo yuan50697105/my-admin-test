@@ -1,4 +1,4 @@
-package com.example.commons.db.utils.annotation;
+package com.example.commons.utils.annotation;
 
 import java.lang.annotation.*;
 

@@ -1,12 +1,13 @@
 package com.example.commons.db.mybatis.base.pagehelper.test.service.impl;
 
+import com.example.commons.db.mybatis.base.pagehelper.test.mapper.SysUserRoleMapper;
+import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysUserRole;
+import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysUserRoleExample;
 import com.example.commons.db.mybatis.base.pagehelper.test.service.SysUserRoleService;
 import org.springframework.stereotype.Service;
+
 import javax.annotation.Resource;
-import com.example.commons.db.mybatis.base.pagehelper.test.mapper.SysUserRoleMapper;
 import java.util.List;
-import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysUserRoleExample;
-import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysUserRole;
 
 @Service
 public class SysUserRoleServiceImpl implements SysUserRoleService {

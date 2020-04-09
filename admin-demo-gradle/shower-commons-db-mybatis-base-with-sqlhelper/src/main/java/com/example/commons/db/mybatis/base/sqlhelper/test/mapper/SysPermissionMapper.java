@@ -1,6 +1,5 @@
 package com.example.commons.db.mybatis.base.sqlhelper.test.mapper;
 
-
 import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysPermission;
 import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysPermissionExample;
 import org.apache.ibatis.annotations.Mapper;

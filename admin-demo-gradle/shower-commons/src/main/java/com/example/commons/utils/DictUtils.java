@@ -1,7 +1,7 @@
-package com.example.commons.db.utils;
+package com.example.commons.utils;
 
 import cn.hutool.core.util.StrUtil;
-import com.example.commons.db.utils.annotation.Constants;
+import com.example.commons.utils.annotation.Constants;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;

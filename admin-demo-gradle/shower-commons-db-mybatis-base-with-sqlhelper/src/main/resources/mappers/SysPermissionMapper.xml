@@ -9,6 +9,7 @@
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
     <result column="enabled" jdbcType="VARCHAR" property="enabled" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -73,7 +74,7 @@
   </sql>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, create_time, update_time, `name`, code, enabled
+    id, create_time, update_time, `name`, code, `type`, enabled
   </sql>
   <select id="selectByExample" parameterType="com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysPermissionExample" resultMap="BaseResultMap">
     <!--@mbg.generated-->
@@ -112,9 +113,11 @@
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysPermission" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into sys_permission (create_time, update_time, `name`, 
-      code, enabled)
+      code, `type`, enabled
+      )
     values (#{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{name,jdbcType=VARCHAR}, 
-      #{code,jdbcType=VARCHAR}, #{enabled,jdbcType=VARCHAR})
+      #{code,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{enabled,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysPermission" useGeneratedKeys="true">
     <!--@mbg.generated-->
@@ -132,6 +135,9 @@
       <if test="code != null">
         code,
       </if>
+      <if test="type != null">
+        `type`,
+      </if>
       <if test="enabled != null">
         enabled,
       </if>
@@ -148,6 +154,9 @@
       </if>
       <if test="code != null">
         #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
       </if>
       <if test="enabled != null">
         #{enabled,jdbcType=VARCHAR},
@@ -180,6 +189,9 @@
       <if test="record.code != null">
         code = #{record.code,jdbcType=VARCHAR},
       </if>
+      <if test="record.type != null">
+        `type` = #{record.type,jdbcType=VARCHAR},
+      </if>
       <if test="record.enabled != null">
         enabled = #{record.enabled,jdbcType=VARCHAR},
       </if>
@@ -196,6 +208,7 @@
       update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       `name` = #{record.name,jdbcType=VARCHAR},
       code = #{record.code,jdbcType=VARCHAR},
+      `type` = #{record.type,jdbcType=VARCHAR},
       enabled = #{record.enabled,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -217,6 +230,9 @@
       <if test="code != null">
         code = #{code,jdbcType=VARCHAR},
       </if>
+      <if test="type != null">
+        `type` = #{type,jdbcType=VARCHAR},
+      </if>
       <if test="enabled != null">
         enabled = #{enabled,jdbcType=VARCHAR},
       </if>
@@ -230,6 +246,7 @@
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       `name` = #{name,jdbcType=VARCHAR},
       code = #{code,jdbcType=VARCHAR},
+      `type` = #{type,jdbcType=VARCHAR},
       enabled = #{enabled,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>

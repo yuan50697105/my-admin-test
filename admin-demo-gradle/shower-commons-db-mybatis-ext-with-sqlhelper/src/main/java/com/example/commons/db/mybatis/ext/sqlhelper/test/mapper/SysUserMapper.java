@@ -2,9 +2,10 @@ package com.example.commons.db.mybatis.ext.sqlhelper.test.mapper;
 
 import com.example.commons.db.mybatis.ext.sqlhelper.test.pojo.SysUser;
 import com.example.commons.db.mybatis.ext.sqlhelper.test.pojo.SysUserExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 @Mapper
 public interface SysUserMapper {

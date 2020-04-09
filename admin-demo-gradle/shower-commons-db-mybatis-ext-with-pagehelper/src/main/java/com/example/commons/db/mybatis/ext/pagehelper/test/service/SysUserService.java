@@ -1,11 +1,11 @@
 package com.example.commons.db.mybatis.ext.pagehelper.test.service;
 
-import java.util.List;
-
 import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysUser;
 import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysUserExample;
 import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.query.SysUserQuery;
 import com.example.commons.db.pojo.IPageResult;
+
+import java.util.List;
 
 public interface SysUserService {
 

@@ -1,6 +1,7 @@
 package com.example.commons.db.mybatis.base.pagehelper.test.constants;
 
-import com.example.commons.db.utils.annotation.Constants;
+import com.example.commons.constants.BaseConstants;
+import com.example.commons.utils.annotation.Constants;
 
 /**
  * @program: admin-demo-gradle

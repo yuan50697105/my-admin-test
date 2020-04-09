@@ -1,9 +1,11 @@
 package com.example.commons.db.mybatis.ext.pagehelper.test.mapper;
 
 import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysRole;
-import java.util.List;
-import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysRoleExample;import org.apache.ibatis.annotations.Mapper;
+import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysRoleExample;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 @Mapper
 public interface SysRoleMapper {

@@ -1,7 +1,6 @@
 package com.example.commons.db.mybatis.base.sqlhelper.test.pojo;
 
 import com.example.commons.db.mybatis.base.sqlhelper.commons.pojo.CommonsEntity;
-import com.example.commons.db.mybatis.base.sqlhelper.test.constants.EnableConstants;
 import lombok.*;
 
 import java.io.Serializable;
@@ -24,6 +23,11 @@ public class SysPermission extends CommonsEntity implements Serializable {
      * 全新编号
      */
     private String code;
+
+    /**
+     * 类型 {@link PermissionConstants}
+     */
+    private String type;
 
     /**
      * 启用状态 {@link EnableConstants}

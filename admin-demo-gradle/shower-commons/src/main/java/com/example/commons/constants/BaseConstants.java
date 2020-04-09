@@ -1,6 +1,7 @@
-package com.example.commons.db.mybatis.base.pagehelper.test.constants;
+package com.example.commons.constants;
 
-import com.example.commons.db.utils.DictUtils;
+
+import com.example.commons.utils.DictUtils;
 
 import java.util.Map;
 

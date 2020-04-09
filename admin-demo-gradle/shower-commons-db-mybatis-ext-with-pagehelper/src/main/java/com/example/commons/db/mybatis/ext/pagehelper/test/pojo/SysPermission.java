@@ -1,15 +1,10 @@
 package com.example.commons.db.mybatis.ext.pagehelper.test.pojo;
 
 import com.example.commons.db.mybatis.ext.pagehelper.commons.pojo.CommonsEntity;
-import java.io.Serializable;
-import java.util.Date;
-
 import com.example.commons.db.mybatis.ext.pagehelper.test.constants.EnableConstants;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
+import java.io.Serializable;
 
 /**
  * sys_permission

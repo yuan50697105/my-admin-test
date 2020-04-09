@@ -5,6 +5,7 @@ import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysPermission;
 import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysPermissionExample;
 import com.example.commons.db.mybatis.ext.pagehelper.test.service.SysPermissionService;
 import org.springframework.stereotype.Service;
+
 import javax.annotation.Resource;
 import java.util.List;
 

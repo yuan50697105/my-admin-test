@@ -1,10 +1,11 @@
 package com.example.commons.db.mybatis.base.pagehelper.test.service;
 
-import java.util.List;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysUserLog;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysUserLogExample;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysUserLogQuery;
 import com.example.commons.db.pojo.IPageResult;
+
+import java.util.List;
 
 public interface SysUserLogService{
 

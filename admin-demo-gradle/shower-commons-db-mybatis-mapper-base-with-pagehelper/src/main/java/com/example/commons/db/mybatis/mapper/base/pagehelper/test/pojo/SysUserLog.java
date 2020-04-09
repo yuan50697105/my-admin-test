@@ -1,14 +1,11 @@
 package com.example.commons.db.mybatis.mapper.base.pagehelper.test.pojo;
 
-import java.io.Serializable;
-import javax.persistence.*;
-
 import com.example.commons.db.mybatis.mapper.base.pagehelper.commons.pojo.CommonsEntity;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
+import javax.persistence.Column;
+import javax.persistence.Table;
+import java.io.Serializable;
 
 /**
     * sys_user_log

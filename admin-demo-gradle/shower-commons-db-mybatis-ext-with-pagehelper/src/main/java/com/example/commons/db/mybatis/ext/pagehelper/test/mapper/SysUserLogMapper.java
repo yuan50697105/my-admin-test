@@ -1,9 +1,11 @@
 package com.example.commons.db.mybatis.ext.pagehelper.test.mapper;
 
 import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysUserLog;
-import java.util.List;
-import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysUserLogExample;import org.apache.ibatis.annotations.Mapper;
+import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysUserLogExample;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 @Mapper
 public interface SysUserLogMapper {

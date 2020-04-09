@@ -1,11 +1,11 @@
 package com.example.commons.db.mybatis.ext.pagehelper.test.service;
 
-import java.util.List;
-
 import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysRole;
 import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.SysRoleExample;
 import com.example.commons.db.mybatis.ext.pagehelper.test.pojo.query.SysRoleQuery;
 import com.example.commons.db.pojo.IPageResult;
+
+import java.util.List;
 
 public interface SysRoleService {
 
