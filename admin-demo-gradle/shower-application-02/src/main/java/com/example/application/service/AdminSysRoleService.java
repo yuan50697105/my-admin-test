@@ -3,7 +3,6 @@ package com.example.application.service;
 import com.example.application.pojo.admin.role.AdminSysPermissionUpdateRequestBody;
 import com.example.application.pojo.admin.role.AdminSysRoleSaveRequestBody;
 import com.example.application.pojo.admin.role.AdminSysRoleUpdateRequestBody;
-import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysRoleQuery;
 import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.query.SysRoleQuery;
 import com.example.commons.web.pojo.Result;
 
@@ -79,5 +78,4 @@ public interface AdminSysRoleService {
      */
     Result list(SysRoleQuery query);
 
-    Result data(SysRoleQuery query);
 }
