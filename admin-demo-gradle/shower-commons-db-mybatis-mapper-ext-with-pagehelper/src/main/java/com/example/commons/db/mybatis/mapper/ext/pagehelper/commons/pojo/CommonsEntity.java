@@ -1,9 +1,13 @@
 package com.example.commons.db.mybatis.mapper.ext.pagehelper.commons.pojo;
 
+import com.example.commons.db.mybatis.mapper.ext.pagehelper.commons.intercepter.CustomIntercepter;
 import com.example.commons.db.pojo.BaseDbEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import tk.mybatis.mapper.annotation.KeySql;
 
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import java.util.Date;
 
 /**
@@ -14,10 +18,13 @@ import java.util.Date;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
+@MappedSuperclass
 public class CommonsEntity extends BaseDbEntity {
     /**
      * 主键
      */
+    @Id
+    @KeySql(genId = CustomIntercepter.class)
     private Long id;
     /**
      * 创建时间
