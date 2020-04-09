@@ -12,6 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
@@ -27,6 +28,7 @@ import java.util.List;
 @Validated
 public class AdminSysPermissionController extends BaseController {
     public static final String ID_NOT_NULL = "id not null";
+    public static final String IDS_NOT_EMPTY = "ids not empty";
     private AdminSysPermissionService adminSysPermissionService;
 
     @RequestMapping({"save", ""})
@@ -48,12 +50,12 @@ public class AdminSysPermissionController extends BaseController {
     }
 
     @GetMapping(value = "delete", params = "id")
-    public Result delete(Long id) {
+    public Result delete(@NotNull(message = ID_NOT_NULL) Long id) {
         return adminSysPermissionService.delete(id);
     }
 
     @GetMapping(value = "delete", params = "ids")
-    public Result delete(List<Long> ids) {
+    public Result delete(@NotEmpty(message = IDS_NOT_EMPTY) List<Long> ids) {
         return adminSysPermissionService.delete(ids);
     }
 
@@ -69,12 +71,12 @@ public class AdminSysPermissionController extends BaseController {
     }
 
     @GetMapping(value = "get", params = "id")
-    public Result get(Long id) {
+    public Result get(@NotNull(message = ID_NOT_NULL) Long id) {
         return adminSysPermissionService.get(id);
     }
 
     @GetMapping({"get/{id}", "id"})
-    public Result get2(@PathVariable("id") Long id) {
+    public Result get2(@PathVariable("id") @NotNull(message = ID_NOT_NULL) Long id) {
         return adminSysPermissionService.get(id);
     }
 
