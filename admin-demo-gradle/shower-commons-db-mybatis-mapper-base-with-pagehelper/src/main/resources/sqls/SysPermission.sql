@@ -1,5 +1,5 @@
 -- auto Generated on 2020-04-06
-DROP TABLE IF EXISTS sys_permission;
+# DROP TABLE IF EXISTS sys_permission;
 CREATE TABLE sys_permission(
 	id BIGINT (15) NOT NULL AUTO_INCREMENT COMMENT '主键',
 	create_time DATETIME COMMENT '创建时间',
