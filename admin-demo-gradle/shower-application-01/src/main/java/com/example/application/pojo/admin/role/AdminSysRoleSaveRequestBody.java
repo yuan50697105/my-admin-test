@@ -26,7 +26,7 @@ public class AdminSysRoleSaveRequestBody extends BaseEntity {
     private String name;
 
     /**
-     * 启用状态 {@link com.example.commons.db.mybatis.pagehelper.test.constants.EnableConstants}
+     * 启用状态 {@link com.example.commons.db.mybatis.base.pagehelper.test.constants.EnableConstants}
      */
     private String enabled;
 }

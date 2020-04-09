@@ -2,7 +2,7 @@ package com.example.application.service;
 
 import com.example.application.pojo.admin.user.AdminSysUserSaveRequestBody;
 import com.example.application.pojo.admin.user.AdminSysUserUpdateRequestBody;
-import com.example.commons.db.mybatis.mapper.pagehelper.test.pojo.query.SysUserQuery;
+import com.example.commons.db.mybatis.mapper.base.pagehelper.test.pojo.query.SysUserQuery;
 import com.example.commons.web.pojo.Result;
 
 import java.util.List;

@@ -3,7 +3,7 @@ package com.example.application.controller;
 import com.example.application.pojo.admin.role.AdminSysRoleSaveRequestBody;
 import com.example.application.pojo.admin.role.AdminSysRoleUpdateRequestBody;
 import com.example.application.service.AdminSysRoleService;
-import com.example.commons.db.mybatis.mapper.sqlhelper.commons.pojo.query.SysRoleQuery;
+import com.example.commons.db.mybatis.mapper.base.sqlhelper.commons.pojo.query.SysRoleQuery;
 import com.example.commons.web.controller.BaseController;
 import com.example.commons.web.pojo.Result;
 import lombok.AllArgsConstructor;
