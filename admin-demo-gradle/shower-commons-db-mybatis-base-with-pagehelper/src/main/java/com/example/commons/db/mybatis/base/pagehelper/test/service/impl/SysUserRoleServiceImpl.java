@@ -37,6 +37,27 @@ public class SysUserRoleServiceImpl implements SysUserRoleService {
     }
 
     @Override
+    public int deleteByUserIds(List<Long> userIds) {
+        SysUserRoleExample example = new SysUserRoleExample();
+        example.or().andUserIdIn(userIds);
+        return deleteByExample(example);
+    }
+
+    @Override
+    public int deleteByRoleId(Long roleId) {
+        SysUserRoleExample example = new SysUserRoleExample();
+        example.or().andRoleIdEqualTo(roleId);
+        return deleteByExample(example);
+    }
+
+    @Override
+    public int deleteByRoleIds(List<Long> roleIds) {
+        SysUserRoleExample example = new SysUserRoleExample();
+        example.or().andRoleIdIn(roleIds);
+        return deleteByExample(example);
+    }
+
+    @Override
     public int insert(SysUserRole record) {
         return sysUserRoleMapper.insert(record);
     }

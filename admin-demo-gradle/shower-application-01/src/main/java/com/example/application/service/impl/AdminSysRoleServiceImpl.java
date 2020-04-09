@@ -13,6 +13,7 @@ import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysRoleQue
 import com.example.commons.db.mybatis.base.pagehelper.test.service.SysPermissionService;
 import com.example.commons.db.mybatis.base.pagehelper.test.service.SysRolePermissionService;
 import com.example.commons.db.mybatis.base.pagehelper.test.service.SysRoleService;
+import com.example.commons.db.mybatis.base.pagehelper.test.service.SysUserRoleService;
 import com.example.commons.db.pojo.IPageResult;
 import com.example.commons.web.pojo.Result;
 import com.example.commons.web.utils.ResultUtils;
@@ -37,6 +38,7 @@ public class AdminSysRoleServiceImpl extends BaseServiceImpl implements AdminSys
     private SysRoleService sysRoleService;
     private SysPermissionService sysPermissionService;
     private SysRolePermissionService sysRolePermissionService;
+    private SysUserRoleService sysUserRoleService;
 
     @Override
     @Transactional
@@ -77,6 +79,8 @@ public class AdminSysRoleServiceImpl extends BaseServiceImpl implements AdminSys
     @Transactional
     public Result delete(Long id) {
         sysRoleService.deleteByPrimaryKey(id);
+        sysRolePermissionService.deleteByRoleId(id);
+        sysUserRoleService.deleteByRoleId(id);
         return deleteSuccess();
     }
 
@@ -84,6 +88,8 @@ public class AdminSysRoleServiceImpl extends BaseServiceImpl implements AdminSys
     @Transactional
     public Result delete(List<Long> ids) {
         sysRoleService.deleteByIds(ids);
+        sysRolePermissionService.deleteByRoleIds(ids);
+        sysUserRoleService.deleteByRoleIds(ids);
         return deleteSuccess();
     }
 

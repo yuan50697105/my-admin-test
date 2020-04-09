@@ -15,6 +15,8 @@ public interface SysRolePermissionService {
 
     int deleteByRoleId(Long roleId);
 
+    int deleteByRoleIds(List<Long> roleIds);
+
     int insert(SysRolePermission record);
 
     int insertSelective(SysRolePermission record);

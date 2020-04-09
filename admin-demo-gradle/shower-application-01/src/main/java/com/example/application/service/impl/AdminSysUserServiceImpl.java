@@ -116,6 +116,7 @@ public class AdminSysUserServiceImpl extends BaseServiceImpl implements AdminSys
     @Transactional
     public Result delete(Long id) {
         sysUserService.deleteByPrimaryKey(id);
+        sysUserRoleService.deleteByUserId(id);
         return ResultUtils.ok(DELELE_SUCCESS);
     }
 
@@ -123,6 +124,7 @@ public class AdminSysUserServiceImpl extends BaseServiceImpl implements AdminSys
     @Transactional
     public Result delete(List<Long> ids) {
         sysUserService.deleteByIds(ids);
+        sysUserRoleService.deleteByUserIds(ids);
         return ResultUtils.ok(DELELE_SUCCESS);
     }
 

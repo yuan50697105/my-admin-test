@@ -37,6 +37,13 @@ public class SysRolePermissionServiceImpl implements SysRolePermissionService {
     }
 
     @Override
+    public int deleteByRoleIds(List<Long> roleIds) {
+        SysRolePermissionExample example = new SysRolePermissionExample();
+        example.or().andRoleIdIn(roleIds);
+        return deleteByExample(example);
+    }
+
+    @Override
     public int insert(SysRolePermission record) {
         return sysRolePermissionMapper.insert(record);
     }

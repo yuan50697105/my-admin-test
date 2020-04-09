@@ -14,6 +14,12 @@ public interface SysUserRoleService{
 
     int deleteByUserId(Long userId);
 
+    int deleteByUserIds(List<Long> userIds);
+
+    int deleteByRoleId(Long roleId);
+
+    int deleteByRoleIds(List<Long> roleIds);
+
     int insert(SysUserRole record);
 
     int insertSelective(SysUserRole record);
