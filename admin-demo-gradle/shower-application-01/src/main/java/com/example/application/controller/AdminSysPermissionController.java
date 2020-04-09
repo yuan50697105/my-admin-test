@@ -43,7 +43,7 @@ public class AdminSysPermissionController extends BaseController {
         return adminSysPermissionService.update(requestBody);
     }
 
-    @PutMapping()
+    @PutMapping
     public Result update2(@RequestBody @Validated AdminSysPermissionUpdateRequestBody requestBody, BindingResult result) {
         validate(result);
         return adminSysPermissionService.update(requestBody);
