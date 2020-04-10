@@ -86,4 +86,20 @@ public class SysRoleServiceImpl implements SysRoleService {
         }
         return builder.where(weekendSqls).build();
     }
+
+    @Override
+    public int updateBatch(List<SysRole> list) {
+        return sysRoleMapper.updateBatch(list);
+    }
+
+    @Override
+    public int updateBatchSelective(List<SysRole> list) {
+        return sysRoleMapper.updateBatchSelective(list);
+    }
+
+    @Override
+    public int batchInsert(List<SysRole> list) {
+        return sysRoleMapper.batchInsert(list);
+    }
 }
+

@@ -83,4 +83,20 @@ public class SysUserServiceImpl implements SysUserService {
         }
         return builder.where(weekendSqls).build();
     }
+
+    @Override
+    public int updateBatch(List<SysUser> list) {
+        return sysUserMapper.updateBatch(list);
+    }
+
+    @Override
+    public int updateBatchSelective(List<SysUser> list) {
+        return sysUserMapper.updateBatchSelective(list);
+    }
+
+    @Override
+    public int batchInsert(List<SysUser> list) {
+        return sysUserMapper.batchInsert(list);
+    }
 }
+

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.commons.db.mybatis.mapper.ext.sqlhelper.test.mapper.SysUserMapper">
   <resultMap id="BaseResultMap" type="com.example.commons.db.mybatis.mapper.ext.sqlhelper.test.pojo.SysUser">
-    <!--@mbg.generated generated on Thu Apr 09 10:32:04 CST 2020.-->
+    <!--@mbg.generated generated on Fri Apr 10 21:34:11 CST 2020.-->
     <!--@Table sys_user-->
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
@@ -12,11 +12,11 @@
     <result column="password" jdbcType="VARCHAR" property="password" />
   </resultMap>
   <sql id="Base_Column_List">
-    <!--@mbg.generated generated on Thu Apr 09 10:32:04 CST 2020.-->
+    <!--@mbg.generated generated on Fri Apr 10 21:34:11 CST 2020.-->
     id, create_time, update_time, username, `name`, `password`
   </sql>
   <update id="updateBatch" parameterType="java.util.List">
-    <!--@mbg.generated generated on Thu Apr 09 10:32:04 CST 2020.-->
+    <!--@mbg.generated generated on Fri Apr 10 21:34:11 CST 2020.-->
     update sys_user
     <trim prefix="set" suffixOverrides=",">
       <trim prefix="create_time = case" suffix="end,">
@@ -51,7 +51,7 @@
     </foreach>
   </update>
   <update id="updateBatchSelective" parameterType="java.util.List">
-    <!--@mbg.generated generated on Thu Apr 09 10:32:04 CST 2020.-->
+    <!--@mbg.generated generated on Fri Apr 10 21:34:11 CST 2020.-->
     update sys_user
     <trim prefix="set" suffixOverrides=",">
       <trim prefix="create_time = case" suffix="end,">
@@ -96,7 +96,7 @@
     </foreach>
   </update>
   <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
-    <!--@mbg.generated generated on Thu Apr 09 10:32:04 CST 2020.-->
+    <!--@mbg.generated generated on Fri Apr 10 21:34:11 CST 2020.-->
     insert into sys_user
     (create_time, update_time, username, `name`, `password`)
     values

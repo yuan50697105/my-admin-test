@@ -1,17 +1,20 @@
 package com.example.commons.db.mybatis.mapper.ext.sqlhelper.test.pojo;
 
 import com.example.commons.db.mybatis.mapper.ext.sqlhelper.commons.pojo.CommonsEntity;
-import lombok.*;
-
-import javax.persistence.Column;
-import javax.persistence.Table;
 import java.io.Serializable;
+import java.util.Date;
+import javax.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 /**
-    * sys_role
-    */
+ * sys_role
+ */
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -36,4 +39,8 @@ public class SysRole extends CommonsEntity implements Serializable {
     private String enabled;
 
     private static final long serialVersionUID = 1L;
+
+    public static SysRoleBuilder builder() {
+        return new SysRoleBuilder();
+    }
 }

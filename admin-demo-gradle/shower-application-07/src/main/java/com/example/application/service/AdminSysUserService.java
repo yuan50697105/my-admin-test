@@ -2,6 +2,7 @@ package com.example.application.service;
 
 import com.example.application.pojo.admin.user.AdminSysUserSaveRequestBody;
 import com.example.application.pojo.admin.user.AdminSysUserUpdateRequestBody;
+import com.example.application.pojo.admin.user.AdminUserRoleUpdateRequestBody;
 import com.example.commons.db.mybatis.mapper.ext.pagehelper.test.pojo.query.SysUserQuery;
 import com.example.commons.web.pojo.Result;
 
@@ -24,12 +25,28 @@ public interface AdminSysUserService {
     Result save(AdminSysUserSaveRequestBody requestBody);
 
     /**
+     * 主键列表删除
+     *
+     * @param ids 主键列表
+     * @return 处理结果
+     */
+    Result delete(List<Long> ids);
+
+    /**
      * 修改用户信息
      *
      * @param requestBody 请求实体
      * @return 处理结果
      */
     Result updateInfo(AdminSysUserUpdateRequestBody requestBody);
+
+    /**
+     * 修改用户角色
+     *
+     * @param requestBody 请求实体
+     * @return 处理结果
+     */
+    Result updateRole(AdminUserRoleUpdateRequestBody requestBody);
 
     /**
      * 主键查询
@@ -62,13 +79,4 @@ public interface AdminSysUserService {
      * @return 处理结果
      */
     Result delete(Long id);
-
-    /**
-     * 主键列表删除
-     *
-     * @param ids 主键列表
-     * @return 处理结果
-     */
-    Result delete(List<Long> ids);
-
 }

@@ -1,17 +1,20 @@
 package com.example.commons.db.mybatis.mapper.ext.pagehelper.test.pojo;
 
 import com.example.commons.db.mybatis.mapper.ext.pagehelper.commons.pojo.CommonsEntity;
-import lombok.*;
-
-import javax.persistence.Column;
-import javax.persistence.Table;
 import java.io.Serializable;
+import java.util.Date;
+import javax.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 /**
-    * sys_user_log
-    */
+ * sys_user_log
+ */
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -60,4 +63,8 @@ public class SysUserLog extends CommonsEntity implements Serializable {
     private String params;
 
     private static final long serialVersionUID = 1L;
+
+    public static SysUserLogBuilder builder() {
+        return new SysUserLogBuilder();
+    }
 }

@@ -1,17 +1,20 @@
 package com.example.commons.db.mybatis.mapper.ext.sqlhelper.test.pojo;
 
 import com.example.commons.db.mybatis.mapper.ext.sqlhelper.commons.pojo.CommonsEntity;
-import lombok.*;
-
-import javax.persistence.Column;
-import javax.persistence.Table;
 import java.io.Serializable;
+import java.util.Date;
+import javax.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 /**
-    * sys_permission
-    */
+ * sys_permission
+ */
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -30,10 +33,20 @@ public class SysPermission extends CommonsEntity implements Serializable {
     private String code;
 
     /**
+     * 类型 {@link PermissionConstants}
+     */
+    @Column(name = "`type`")
+    private String type;
+
+    /**
      * 启用状态 {@link EnableConstants}
      */
     @Column(name = "enabled")
     private String enabled;
 
     private static final long serialVersionUID = 1L;
+
+    public static SysPermissionBuilder builder() {
+        return new SysPermissionBuilder();
+    }
 }
