@@ -6,7 +6,7 @@ import com.example.commons.db.pojo.IPageResult;
 
 import java.util.List;
 
-public interface SysRoleService{
+public interface SysRoleService {
 
 
     int insert(SysRole sysRole);
@@ -26,4 +26,13 @@ public interface SysRoleService{
     List<SysRole> selectByExample(Object object);
 
     IPageResult<SysRole> selectPageByExample(Object object, int page, int size);
+
+    int updateBatch(List<SysRole> list);
+
+    int updateBatchSelective(List<SysRole> list);
+
+    int batchInsert(List<SysRole> list);
+
+    List<SysRole> selectByIds(List<Long> ids);
 }
+

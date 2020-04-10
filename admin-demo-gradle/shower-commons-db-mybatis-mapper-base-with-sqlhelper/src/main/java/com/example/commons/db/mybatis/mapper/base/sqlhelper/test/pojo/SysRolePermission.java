@@ -11,36 +11,30 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /**
- * sys_role
+ * sys_role_permission
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "sys_role")
-public class SysRole extends CommonsEntity implements Serializable {
+@Table(name = "sys_role_permission")
+public class SysRolePermission extends CommonsEntity implements Serializable {
     /**
-     * 角色编号
+     * 角色ID
      */
-    @Column(name = "code")
-    private String code;
+    @Column(name = "role_id")
+    private Long roleId;
 
     /**
-     * 角色名称
+     * 权限ID
      */
-    @Column(name = "`name`")
-    private String name;
-
-    /**
-     * 启用状态
-     */
-    @Column(name = "enabled")
-    private String enabled;
+    @Column(name = "permission_id")
+    private Long permissionId;
 
     private static final long serialVersionUID = 1L;
 
-    public static SysRoleBuilder builder() {
-        return new SysRoleBuilder();
+    public static SysRolePermissionBuilder builder() {
+        return new SysRolePermissionBuilder();
     }
 }

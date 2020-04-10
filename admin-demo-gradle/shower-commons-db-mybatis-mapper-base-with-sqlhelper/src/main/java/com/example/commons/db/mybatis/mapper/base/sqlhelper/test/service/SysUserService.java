@@ -6,7 +6,7 @@ import com.example.commons.db.pojo.IPageResult;
 
 import java.util.List;
 
-public interface SysUserService{
+public interface SysUserService {
 
 
     int insert(SysUser sysUser);
@@ -26,4 +26,13 @@ public interface SysUserService{
     List<SysUser> selectByExample(Object object);
 
     IPageResult<SysUser> selectPageByExample(Object object, int page, int size);
+
+    int updateBatch(List<SysUser> list);
+
+    int updateBatchSelective(List<SysUser> list);
+
+    int batchInsert(List<SysUser> list);
+
+    boolean existByUsername(String username);
 }
+
