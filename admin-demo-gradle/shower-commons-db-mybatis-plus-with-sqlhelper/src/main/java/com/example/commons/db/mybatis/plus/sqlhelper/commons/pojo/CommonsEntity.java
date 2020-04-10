@@ -1,12 +1,11 @@
 package com.example.commons.db.mybatis.plus.sqlhelper.commons.pojo;
 
-import com.example.commons.db.mybatis.mapper.ext.sqlhelper.commons.intercepter.CustomIntercepter;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.example.commons.db.pojo.BaseDbEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import tk.mybatis.mapper.annotation.KeySql;
 
-import javax.persistence.Id;
 import java.util.Date;
 
 /**
@@ -21,8 +20,7 @@ public class CommonsEntity extends BaseDbEntity {
     /**
      * 主键
      */
-    @Id
-    @KeySql(genId = CustomIntercepter.class)
+    @TableId(type = IdType.INPUT)
     private Long id;
     /**
      * 创建时间

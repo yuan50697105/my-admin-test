@@ -1,6 +1,6 @@
 package com.example.application.pojo.admin.role;
 
-import com.example.commons.db.mybatis.plus.sqlhelper.test.constants.EnableConstants;
+import com.example.commons.db.mybatis.plus.pagehelper.test.constants.EnableConstants;
 import com.example.commons.pojo.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

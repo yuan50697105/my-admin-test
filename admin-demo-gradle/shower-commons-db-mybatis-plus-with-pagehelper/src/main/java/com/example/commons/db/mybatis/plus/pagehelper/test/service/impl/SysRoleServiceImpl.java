@@ -1,10 +1,16 @@
 package com.example.commons.db.mybatis.plus.pagehelper.test.service.impl;
 
+import cn.hutool.core.util.ObjectUtil;
+import com.baomidou.mybatisplus.extension.conditions.query.QueryChainWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.example.commons.db.mybatis.plus.pagehelper.base.pojo.PageResult;
 import com.example.commons.db.mybatis.plus.pagehelper.test.mapper.SysRoleMapper;
 import com.example.commons.db.mybatis.plus.pagehelper.test.pojo.SysRole;
 import com.example.commons.db.mybatis.plus.pagehelper.test.pojo.SysRoleExample;
+import com.example.commons.db.mybatis.plus.pagehelper.test.pojo.query.SysRoleQuery;
 import com.example.commons.db.mybatis.plus.pagehelper.test.service.SysRoleService;
+import com.example.commons.db.pojo.IPageResult;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -50,6 +56,51 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
     @Override
     public int updateByExample(SysRole record, SysRoleExample example) {
         return baseMapper.updateByExample(record, example);
+    }
+
+    @Override
+    public int insert(SysRole sysRole) {
+        return baseMapper.insert(sysRole);
+    }
+
+    @Override
+    public SysRole selectByPrimaryKey(Long id) {
+        return getById(id);
+    }
+
+    @Override
+    public int updateByPrimaryKeySelective(SysRole sysRole) {
+        return baseMapper.updateById(sysRole);
+    }
+
+    @Override
+    public int deleteByPrimaryKey(Long id) {
+        return baseMapper.deleteById(id);
+    }
+
+    @Override
+    public boolean deleteByIds(List<Long> ids) {
+        return removeByIds(ids);
+    }
+
+    @Override
+    public IPageResult<SysRole> selectPageByQuery(SysRoleQuery query) {
+        QueryChainWrapper<SysRole> wrapper = createQuery(query);
+        Page<SysRole> page = wrapper.page(new Page<>(query.getPage(), query.getSize()));
+        return new PageResult<>(page);
+    }
+
+    @Override
+    public List<SysRole> selectByQuery(SysRoleQuery query) {
+        return createQuery(query).list();
+    }
+
+    public QueryChainWrapper<SysRole> createQuery(SysRoleQuery query) {
+        QueryChainWrapper<SysRole> wrapper = query();
+        if (ObjectUtil.isNotEmpty(query.getName())) {
+            wrapper.like("name", query.getName());
+        }
+        return wrapper;
     }
 }
 

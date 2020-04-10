@@ -3,6 +3,8 @@ package com.example.commons.db.mybatis.plus.pagehelper.test.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.example.commons.db.mybatis.plus.pagehelper.test.pojo.SysUser;
 import com.example.commons.db.mybatis.plus.pagehelper.test.pojo.SysUserExample;
+import com.example.commons.db.mybatis.plus.pagehelper.test.pojo.query.SysUserQuery;
+import com.example.commons.db.pojo.IPageResult;
 
 import java.util.List;
 
@@ -24,5 +26,19 @@ public interface SysUserService extends IService<SysUser> {
     int updateByExampleSelective(SysUser record, SysUserExample example);
 
     int updateByExample(SysUser record, SysUserExample example);
+
+    int insert(SysUser sysUser);
+
+    SysUser selectByPrimaryKey(Long id);
+
+    int updateByPrimaryKeySelective(SysUser sysUser);
+
+    boolean deleteByPrimaryKey(Long id);
+
+    boolean deleteByIds(List<Long> ids);
+
+    IPageResult<SysUser> selectPageByQuery(SysUserQuery query);
+
+    List<SysUser> selectByQuery(SysUserQuery query);
 }
 
