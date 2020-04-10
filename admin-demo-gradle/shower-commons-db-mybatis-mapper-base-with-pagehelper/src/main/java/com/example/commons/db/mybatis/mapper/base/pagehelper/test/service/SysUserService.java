@@ -5,9 +5,14 @@ import com.example.commons.db.mybatis.mapper.base.pagehelper.test.pojo.query.Sys
 import com.example.commons.db.pojo.IPageResult;
 
 import java.util.List;
-
 public interface SysUserService{
 
+
+    int updateBatch(List<SysUser> list);
+
+    int updateBatchSelective(List<SysUser> list);
+
+    int batchInsert(List<SysUser> list);
 
     int insert(SysUser sysUser);
 
@@ -23,7 +28,5 @@ public interface SysUserService{
 
     List<SysUser> selectByQuery(SysUserQuery query);
 
-    List<SysUser> selectByExample(Object object);
-
-    IPageResult<SysUser> selectPageByExample(Object object, int page, int size);
+    boolean existByUsername(String username);
 }

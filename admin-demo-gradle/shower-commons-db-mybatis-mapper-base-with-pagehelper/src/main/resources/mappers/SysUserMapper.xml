@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.commons.db.mybatis.mapper.base.pagehelper.test.mapper.SysUserMapper">
   <resultMap id="BaseResultMap" type="com.example.commons.db.mybatis.mapper.base.pagehelper.test.pojo.SysUser">
-    <!--@mbg.generated generated on Mon Apr 06 18:12:40 CST 2020.-->
+    <!--@mbg.generated generated on Fri Apr 10 20:12:03 CST 2020.-->
     <!--@Table sys_user-->
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
@@ -12,7 +12,97 @@
     <result column="password" jdbcType="VARCHAR" property="password" />
   </resultMap>
   <sql id="Base_Column_List">
-    <!--@mbg.generated generated on Mon Apr 06 18:12:40 CST 2020.-->
+    <!--@mbg.generated generated on Fri Apr 10 20:12:03 CST 2020.-->
     id, create_time, update_time, username, `name`, `password`
   </sql>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated generated on Fri Apr 10 20:12:03 CST 2020.-->
+    update sys_user
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="create_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.createTime,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="update_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.updateTime,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="username = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.username,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="`name` = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.name,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="`password` = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.password,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=BIGINT}
+    </foreach>
+  </update>
+  <update id="updateBatchSelective" parameterType="java.util.List">
+    <!--@mbg.generated generated on Fri Apr 10 20:12:03 CST 2020.-->
+    update sys_user
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="create_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.createTime != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.createTime,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="update_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.updateTime != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.updateTime,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="username = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.username != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.username,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="`name` = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.name != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.name,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="`password` = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.password != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.password,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=BIGINT}
+    </foreach>
+  </update>
+  <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
+    <!--@mbg.generated generated on Fri Apr 10 20:12:03 CST 2020.-->
+    insert into sys_user
+    (create_time, update_time, username, `name`, `password`)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.createTime,jdbcType=TIMESTAMP}, #{item.updateTime,jdbcType=TIMESTAMP}, #{item.username,jdbcType=VARCHAR}, 
+        #{item.name,jdbcType=VARCHAR}, #{item.password,jdbcType=VARCHAR})
+    </foreach>
+  </insert>
 </mapper>

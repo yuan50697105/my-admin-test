@@ -5,9 +5,14 @@ import com.example.commons.db.mybatis.mapper.base.pagehelper.test.pojo.query.Sys
 import com.example.commons.db.pojo.IPageResult;
 
 import java.util.List;
-
 public interface SysRoleService{
 
+
+    int updateBatch(List<SysRole> list);
+
+    int updateBatchSelective(List<SysRole> list);
+
+    int batchInsert(List<SysRole> list);
 
     int insert(SysRole sysRole);
 
@@ -23,7 +28,5 @@ public interface SysRoleService{
 
     List<SysRole> selectByQuery(SysRoleQuery query);
 
-    List<SysRole> selectByExample(Object object);
-
-    IPageResult<SysRole> selectPageByExample(Object object, int page, int size);
+    List<SysRole> selectByIds(List<Long> ids);
 }
