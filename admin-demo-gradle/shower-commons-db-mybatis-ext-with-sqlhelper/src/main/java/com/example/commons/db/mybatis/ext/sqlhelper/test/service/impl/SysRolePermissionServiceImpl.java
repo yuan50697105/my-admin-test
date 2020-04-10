@@ -1,12 +1,13 @@
 package com.example.commons.db.mybatis.ext.sqlhelper.test.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import com.example.commons.db.mybatis.ext.sqlhelper.test.pojo.SysRolePermissionExample;
-import java.util.List;
 import com.example.commons.db.mybatis.ext.sqlhelper.test.mapper.SysRolePermissionMapper;
 import com.example.commons.db.mybatis.ext.sqlhelper.test.pojo.SysRolePermission;
-import com.example.commons.db.mybatis.ext.sqlhelper.test.service.impl.SysRolePermissionService;
+import com.example.commons.db.mybatis.ext.sqlhelper.test.pojo.SysRolePermissionExample;
+import com.example.commons.db.mybatis.ext.sqlhelper.test.service.SysRolePermissionService;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class SysRolePermissionServiceImpl implements SysRolePermissionService {
@@ -82,6 +83,34 @@ public class SysRolePermissionServiceImpl implements SysRolePermissionService {
     @Override
     public int batchInsert(List<SysRolePermission> list) {
         return sysRolePermissionMapper.batchInsert(list);
+    }
+
+    @Override
+    public int deleteByPermissionId(Long permissionId) {
+        SysRolePermissionExample example = new SysRolePermissionExample();
+        example.or().andPermissionIdEqualTo(permissionId);
+        return deleteByExample(example);
+    }
+
+    @Override
+    public int deleteByPermissionIds(List<Long> permissionIds) {
+        SysRolePermissionExample example = new SysRolePermissionExample();
+        example.or().andPermissionIdIn(permissionIds);
+        return deleteByExample(example);
+    }
+
+    @Override
+    public int deleteByRoleId(Long roleId) {
+        SysRolePermissionExample example = new SysRolePermissionExample();
+        example.or().andRoleIdEqualTo(roleId);
+        return deleteByExample(example);
+    }
+
+    @Override
+    public int deleteByRoleIds(List<Long> roleIds) {
+        SysRolePermissionExample example = new SysRolePermissionExample();
+        example.or().andRoleIdIn(roleIds);
+        return deleteByExample(example);
     }
 
 }

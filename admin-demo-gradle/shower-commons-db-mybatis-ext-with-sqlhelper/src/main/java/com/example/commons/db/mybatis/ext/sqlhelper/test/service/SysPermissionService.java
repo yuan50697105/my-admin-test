@@ -3,6 +3,8 @@ package com.example.commons.db.mybatis.ext.sqlhelper.test.service;
 
 import com.example.commons.db.mybatis.ext.sqlhelper.test.pojo.SysPermission;
 import com.example.commons.db.mybatis.ext.sqlhelper.test.pojo.SysPermissionExample;
+import com.example.commons.db.mybatis.ext.sqlhelper.test.pojo.query.SysPermissionQuery;
+import com.example.commons.db.pojo.IPageResult;
 
 import java.util.List;
 
@@ -36,6 +38,14 @@ public interface SysPermissionService {
     int updateBatchSelective(List<SysPermission> list);
 
     int batchInsert(List<SysPermission> list);
+
+    int deleteByIds(List<Long> ids);
+
+    IPageResult<SysPermission> selectPageByQuery(SysPermissionQuery query);
+
+    List<SysPermission> selectByQuery(SysPermissionQuery query);
+
+    List<SysPermission> selectByIds(List<Long> ids);
 }
 
 

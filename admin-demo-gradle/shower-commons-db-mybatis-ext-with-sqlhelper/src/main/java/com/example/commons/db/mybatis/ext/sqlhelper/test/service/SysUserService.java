@@ -45,6 +45,8 @@ public interface SysUserService {
     int updateBatchSelective(List<SysUser> list);
 
     int batchInsert(List<SysUser> list);
+
+    boolean existByUsername(String username);
 }
 
 

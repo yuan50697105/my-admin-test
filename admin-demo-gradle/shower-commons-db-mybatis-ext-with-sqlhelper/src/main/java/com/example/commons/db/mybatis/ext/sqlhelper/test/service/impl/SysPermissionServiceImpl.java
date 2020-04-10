@@ -1,9 +1,14 @@
 package com.example.commons.db.mybatis.ext.sqlhelper.test.service.impl;
 
+import com.example.commons.db.mybatis.ext.sqlhelper.base.pojo.PageResult;
 import com.example.commons.db.mybatis.ext.sqlhelper.test.mapper.SysPermissionMapper;
 import com.example.commons.db.mybatis.ext.sqlhelper.test.pojo.SysPermission;
 import com.example.commons.db.mybatis.ext.sqlhelper.test.pojo.SysPermissionExample;
+import com.example.commons.db.mybatis.ext.sqlhelper.test.pojo.query.SysPermissionQuery;
 import com.example.commons.db.mybatis.ext.sqlhelper.test.service.SysPermissionService;
+import com.example.commons.db.pojo.IPageResult;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -84,6 +89,32 @@ public class SysPermissionServiceImpl implements SysPermissionService {
     public int batchInsert(List<SysPermission> list) {
         return sysPermissionMapper.batchInsert(list);
     }
+
+    @Override
+    public int deleteByIds(List<Long> ids) {
+        SysPermissionExample example = new SysPermissionExample();
+        example.or().andIdIn(ids);
+        return deleteByExample(example);
+    }
+
+    @Override
+    public IPageResult<SysPermission> selectPageByQuery(SysPermissionQuery query) {
+        PageHelper.startPage(query.getPage(), query.getSize());
+        return new PageResult<>(new PageInfo<>(selectByExample(query.toExample())));
+    }
+
+    @Override
+    public List<SysPermission> selectByQuery(SysPermissionQuery query) {
+        return selectByExample(query.toExample());
+    }
+
+    @Override
+    public List<SysPermission> selectByIds(List<Long> ids) {
+        SysPermissionExample example = new SysPermissionExample();
+        example.or().andIdIn(ids);
+        return selectByExample(example);
+    }
+
 }
 
 
