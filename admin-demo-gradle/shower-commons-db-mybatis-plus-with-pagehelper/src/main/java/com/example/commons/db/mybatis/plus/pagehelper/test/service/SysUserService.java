@@ -1,8 +1,10 @@
 package com.example.commons.db.mybatis.plus.pagehelper.test.service;
 
-import java.util.List;
-import com.example.commons.db.mybatis.plus.pagehelper.test.pojo.SysUser;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.example.commons.db.mybatis.plus.pagehelper.test.pojo.SysUser;
+import com.example.commons.db.mybatis.plus.pagehelper.test.pojo.SysUserExample;
+
+import java.util.List;
 
 public interface SysUserService extends IService<SysUser> {
 

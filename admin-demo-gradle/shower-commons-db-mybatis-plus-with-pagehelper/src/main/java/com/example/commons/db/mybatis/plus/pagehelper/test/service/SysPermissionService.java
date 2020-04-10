@@ -1,8 +1,10 @@
 package com.example.commons.db.mybatis.plus.pagehelper.test.service;
 
-import java.util.List;
-import com.example.commons.db.mybatis.plus.pagehelper.test.pojo.SysPermission;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.example.commons.db.mybatis.plus.pagehelper.test.pojo.SysPermission;
+import com.example.commons.db.mybatis.plus.pagehelper.test.pojo.SysPermissionExample;
+
+import java.util.List;
 
 public interface SysPermissionService extends IService<SysPermission> {
 

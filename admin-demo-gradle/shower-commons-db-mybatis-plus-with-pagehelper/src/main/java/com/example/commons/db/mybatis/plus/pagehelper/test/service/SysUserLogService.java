@@ -1,8 +1,10 @@
 package com.example.commons.db.mybatis.plus.pagehelper.test.service;
 
-import com.example.commons.db.mybatis.plus.pagehelper.test.pojo.SysUserLog;
-import java.util.List;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.example.commons.db.mybatis.plus.pagehelper.test.pojo.SysUserLog;
+import com.example.commons.db.mybatis.plus.pagehelper.test.pojo.SysUserLogExample;
+
+import java.util.List;
 
 public interface SysUserLogService extends IService<SysUserLog> {
 
