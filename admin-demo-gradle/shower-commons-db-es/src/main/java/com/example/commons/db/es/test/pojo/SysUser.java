@@ -1,4 +1,4 @@
-package com.example.commons.db.es.test;
+package com.example.commons.db.es.test.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
