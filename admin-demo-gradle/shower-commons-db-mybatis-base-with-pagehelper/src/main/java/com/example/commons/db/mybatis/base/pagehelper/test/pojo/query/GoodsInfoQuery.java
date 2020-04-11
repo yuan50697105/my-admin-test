@@ -1,6 +1,7 @@
 package com.example.commons.db.mybatis.base.pagehelper.test.pojo.query;
 
 import com.example.commons.db.mybatis.base.pagehelper.commons.pojo.query.CommonsQuery;
+import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -13,6 +14,8 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class GoodsInfoQuery extends CommonsQuery {
+    @AndLike
     private String code;
+    @AndLike
     private String name;
 }
