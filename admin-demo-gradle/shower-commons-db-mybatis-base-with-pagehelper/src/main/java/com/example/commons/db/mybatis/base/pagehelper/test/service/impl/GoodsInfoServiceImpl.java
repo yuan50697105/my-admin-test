@@ -104,6 +104,13 @@ public class GoodsInfoServiceImpl implements GoodsInfoService {
         return selectByExample(createEample(query));
     }
 
+    @Override
+    public int deleteByIds(List<Long> ids) {
+        GoodsInfoExample example = new GoodsInfoExample();
+        example.or().andIdIn(ids);
+        return deleteByExample(example);
+    }
+
 
     public GoodsInfoExample createEample(GoodsInfoQuery query) {
         GoodsInfoExample example = new GoodsInfoExample();

@@ -41,4 +41,6 @@ public interface GoodsInfoService {
     IPageResult<GoodsInfo> selectPageByQuery(GoodsInfoQuery query);
 
     List<GoodsInfo> selectByQuery(GoodsInfoQuery query);
+
+    int deleteByIds(List<Long> ids);
 }

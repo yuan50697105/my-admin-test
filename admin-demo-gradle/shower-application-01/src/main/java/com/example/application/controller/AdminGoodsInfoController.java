@@ -1,15 +1,18 @@
 package com.example.application.controller;
 
+import com.example.application.pojo.goods.GoodsInfoSaveRequestBody;
+import com.example.application.pojo.goods.GoodsInfoUpdateRequestBody;
 import com.example.application.service.AdminGoodsInfoService;
 import com.example.commons.constants.RouteConstants;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.GoodsInfoQuery;
 import com.example.commons.web.controller.BaseController;
 import com.example.commons.web.pojo.Result;
 import lombok.AllArgsConstructor;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @program: admin-demo-gradle
@@ -28,4 +31,59 @@ public class AdminGoodsInfoController extends BaseController {
     public Result data(GoodsInfoQuery query) {
         return adminGoodsInfoService.data(query);
     }
+
+    @GetMapping("list")
+    public Result list(GoodsInfoQuery query) {
+        return adminGoodsInfoService.list(query);
+    }
+
+
+    @GetMapping(value = "get", params = "id")
+    public Result get(Long id) {
+        return adminGoodsInfoService.get(id);
+    }
+
+    @GetMapping(value = {"get/{id}","{id}"})
+    public Result get2(@PathVariable("id") Long id) {
+        return adminGoodsInfoService.get(id);
+    }
+
+    @PostMapping({"save", ""})
+    public Result save(@RequestBody @Validated GoodsInfoSaveRequestBody requestBody, BindingResult result) {
+        validate(result);
+        return adminGoodsInfoService.save(requestBody);
+    }
+
+    @PostMapping("update")
+    public Result update(@RequestBody @Validated GoodsInfoUpdateRequestBody requestBody, BindingResult result) {
+        validate(result);
+        return adminGoodsInfoService.update(requestBody);
+    }
+
+    @PutMapping
+    public Result update2(@RequestBody @Validated GoodsInfoUpdateRequestBody requestBody, BindingResult result) {
+        validate(result);
+        return adminGoodsInfoService.update(requestBody);
+    }
+
+    @GetMapping(value = "delete", params = "id")
+    public Result delete(Long id) {
+        return adminGoodsInfoService.delete(id);
+    }
+
+    @GetMapping(value = "delete", params = "ids")
+    public Result delete(List<Long> ids) {
+        return adminGoodsInfoService.delete(ids);
+    }
+
+    @DeleteMapping("{id}")
+    public Result delete2(@PathVariable("id") Long id) {
+        return adminGoodsInfoService.delete(id);
+    }
+
+    @GetMapping("delete/{id}")
+    public Result delete3(@PathVariable("id") Long id) {
+        return adminGoodsInfoService.delete(id);
+    }
+
 }
