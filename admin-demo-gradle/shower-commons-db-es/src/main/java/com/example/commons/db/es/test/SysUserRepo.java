@@ -1,6 +1,6 @@
 package com.example.commons.db.es.test;
 
-import com.example.commons.db.es.repository.BaseEsRespository;
+import com.example.commons.db.es.base.repository.BaseEsRespository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

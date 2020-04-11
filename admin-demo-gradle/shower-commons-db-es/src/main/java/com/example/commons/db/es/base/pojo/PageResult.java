@@ -1,4 +1,4 @@
-package com.example.commons.db.es.pojo;
+package com.example.commons.db.es.base.pojo;
 
 import com.example.commons.db.pojo.IPageResult;
 import lombok.Data;

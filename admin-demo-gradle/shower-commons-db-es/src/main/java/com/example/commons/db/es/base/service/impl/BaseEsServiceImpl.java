@@ -1,7 +1,7 @@
-package com.example.commons.db.es.dao.impl;
+package com.example.commons.db.es.base.service.impl;
 
-import com.example.commons.db.es.dao.BaseEsDao;
-import com.example.commons.db.es.repository.BaseEsRespository;
+import com.example.commons.db.es.base.repository.BaseEsRespository;
+import com.example.commons.db.es.base.service.BaseEsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
@@ -13,7 +13,7 @@ import org.springframework.data.elasticsearch.core.ReactiveElasticsearchTemplate
  * @author: yuane
  * @create: 2020-03-28 13:45
  */
-public class BaseEsDaoImpl<T, ID, R extends BaseEsRespository<T, ID>> implements BaseEsDao<T, ID> {
+public class BaseEsServiceImpl<T, ID, R extends BaseEsRespository<T, ID>> implements BaseEsService<T, ID> {
     @Autowired
     protected R baseRepository;
     @Autowired

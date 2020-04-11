@@ -1,4 +1,4 @@
-package com.example.commons.db.es.repository;
+package com.example.commons.db.es.base.repository;
 
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.data.repository.NoRepositoryBean;
