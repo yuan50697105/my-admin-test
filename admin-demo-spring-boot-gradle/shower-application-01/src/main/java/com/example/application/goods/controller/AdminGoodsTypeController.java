@@ -3,7 +3,7 @@ package com.example.application.goods.controller;
 import com.example.application.goods.pojo.type.GoodsTypeSaveRequestBody;
 import com.example.application.goods.pojo.type.GoodsTypeUpdateRequestBody;
 import com.example.application.goods.service.AdminGoodsTypeService;
-import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.GoodsTypeQuery;
+import com.example.commons.db.mybatis.base.pagehelper.module.pojo.query.GoodsTypeQuery;
 import com.example.commons.web.controller.BaseController;
 import com.example.commons.web.pojo.Result;
 import lombok.AllArgsConstructor;

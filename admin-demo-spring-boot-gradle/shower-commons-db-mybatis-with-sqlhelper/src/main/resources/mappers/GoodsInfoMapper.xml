@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.commons.db.mybatis.base.sqlhelper.test.mapper.GoodsInfoMapper">
-  <resultMap id="BaseResultMap" type="com.example.commons.db.mybatis.base.sqlhelper.test.pojo.GoodsInfo">
+<mapper namespace="com.example.commons.db.mybatis.base.sqlhelper.module.mapper.GoodsInfoMapper">
+  <resultMap id="BaseResultMap" type="com.example.commons.db.mybatis.base.sqlhelper.module.pojo.GoodsInfo">
     <!--@mbg.generated-->
     <!--@Table goods_info-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -76,7 +76,7 @@
     <!--@mbg.generated-->
     id, create_time, update_time, code, `name`, price, num
   </sql>
-  <select id="selectByExample" parameterType="com.example.commons.db.mybatis.base.sqlhelper.test.pojo.GoodsInfoExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.example.commons.db.mybatis.base.sqlhelper.module.pojo.GoodsInfoExample" resultMap="BaseResultMap">
     <!--@mbg.generated-->
     select
     <if test="distinct">
@@ -103,21 +103,21 @@
     delete from goods_info
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.example.commons.db.mybatis.base.sqlhelper.test.pojo.GoodsInfoExample">
+  <delete id="deleteByExample" parameterType="com.example.commons.db.mybatis.base.sqlhelper.module.pojo.GoodsInfoExample">
     <!--@mbg.generated-->
     delete from goods_info
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.example.commons.db.mybatis.base.sqlhelper.test.pojo.GoodsInfo" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.example.commons.db.mybatis.base.sqlhelper.module.pojo.GoodsInfo" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into goods_info (create_time, update_time, code, 
       `name`, price, num)
     values (#{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{code,jdbcType=VARCHAR}, 
       #{name,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, #{num,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.example.commons.db.mybatis.base.sqlhelper.test.pojo.GoodsInfo" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.example.commons.db.mybatis.base.sqlhelper.module.pojo.GoodsInfo" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into goods_info
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -161,7 +161,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.example.commons.db.mybatis.base.sqlhelper.test.pojo.GoodsInfoExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.example.commons.db.mybatis.base.sqlhelper.module.pojo.GoodsInfoExample" resultType="java.lang.Long">
     <!--@mbg.generated-->
     select count(*) from goods_info
     <if test="_parameter != null">
@@ -212,7 +212,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.example.commons.db.mybatis.base.sqlhelper.test.pojo.GoodsInfo">
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.commons.db.mybatis.base.sqlhelper.module.pojo.GoodsInfo">
     <!--@mbg.generated-->
     update goods_info
     <set>
@@ -237,7 +237,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.example.commons.db.mybatis.base.sqlhelper.test.pojo.GoodsInfo">
+  <update id="updateByPrimaryKey" parameterType="com.example.commons.db.mybatis.base.sqlhelper.module.pojo.GoodsInfo">
     <!--@mbg.generated-->
     update goods_info
     set create_time = #{createTime,jdbcType=TIMESTAMP},

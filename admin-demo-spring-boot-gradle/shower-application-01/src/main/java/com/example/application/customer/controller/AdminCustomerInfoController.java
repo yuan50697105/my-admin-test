@@ -3,7 +3,7 @@ package com.example.application.customer.controller;
 import com.example.application.customer.pojo.info.AdminCustomerInfoSaveRequestBody;
 import com.example.application.customer.pojo.info.AdminCustomerInfoUpdateRequestBody;
 import com.example.application.customer.service.AdminCustomerInfoService;
-import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.CustomerInfoQuery;
+import com.example.commons.db.mybatis.base.pagehelper.module.pojo.query.CustomerInfoQuery;
 import com.example.commons.web.controller.BaseController;
 import com.example.commons.web.pojo.Result;
 import lombok.AllArgsConstructor;

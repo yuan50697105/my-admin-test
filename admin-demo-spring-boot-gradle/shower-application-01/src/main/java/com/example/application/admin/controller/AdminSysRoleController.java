@@ -4,7 +4,7 @@ import com.example.application.admin.pojo.role.AdminSysPermissionUpdateRequestBo
 import com.example.application.admin.pojo.role.AdminSysRoleSaveRequestBody;
 import com.example.application.admin.pojo.role.AdminSysRoleUpdateRequestBody;
 import com.example.application.admin.service.AdminSysRoleService;
-import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysRoleQuery;
+import com.example.commons.db.mybatis.base.pagehelper.module.pojo.query.SysRoleQuery;
 import com.example.commons.web.controller.BaseController;
 import com.example.commons.web.pojo.Result;
 import lombok.AllArgsConstructor;
