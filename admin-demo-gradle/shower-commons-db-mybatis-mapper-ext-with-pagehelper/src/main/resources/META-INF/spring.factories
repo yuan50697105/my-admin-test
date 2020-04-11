@@ -1,1 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.example.commons.db.mybatis.mapper.ext.pagehelper.MybatisMapperExtPageHelperAutoConfiguration

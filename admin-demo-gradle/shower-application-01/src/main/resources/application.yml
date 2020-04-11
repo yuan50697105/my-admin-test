@@ -6,4 +6,4 @@ spring:
   profiles:
 #    active: dbc,mvc,mysql
 #    active: dbc,mvc,test
-    active: dbc,mvc,mysqllocal
+    active: dbc,mvc,local
