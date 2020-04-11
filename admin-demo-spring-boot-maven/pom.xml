@@ -5,6 +5,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>shower-commons</module>
+        <module>shower-commons-web</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
