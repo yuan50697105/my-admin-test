@@ -2,7 +2,7 @@ package com.example.commons.db.mybatis.mapper.base.pagehelper.test.service;
 
 import com.example.commons.db.mybatis.mapper.base.pagehelper.test.pojo.SysUser;
 import com.example.commons.db.mybatis.mapper.base.pagehelper.test.pojo.query.SysUserQuery;
-import com.example.commons.db.pojo.IPageResult;
+import com.example.db.pojo.IPageResult;
 
 import java.util.List;
 public interface SysUserService{

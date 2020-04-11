@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.example.commons.db.mybatis.plus.pagehelper.test.pojo.SysRole;
 import com.example.commons.db.mybatis.plus.pagehelper.test.pojo.SysRoleExample;
 import com.example.commons.db.mybatis.plus.pagehelper.test.pojo.query.SysRoleQuery;
-import com.example.commons.db.pojo.IPageResult;
+import com.example.db.pojo.IPageResult;
 
 import java.util.List;
 

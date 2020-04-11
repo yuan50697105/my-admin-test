@@ -3,7 +3,7 @@ package com.example.commons.db.mybatis.base.pagehelper.test.service;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysRole;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysRoleExample;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysRoleQuery;
-import com.example.commons.db.pojo.IPageResult;
+import com.example.db.pojo.IPageResult;
 
 import java.util.List;
 

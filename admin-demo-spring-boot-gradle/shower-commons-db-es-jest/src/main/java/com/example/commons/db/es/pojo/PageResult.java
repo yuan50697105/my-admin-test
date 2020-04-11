@@ -1,6 +1,6 @@
 package com.example.commons.db.es.pojo;
 
-import com.example.commons.db.pojo.IPageResult;
+import com.example.db.pojo.IPageResult;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.data.domain.Page;

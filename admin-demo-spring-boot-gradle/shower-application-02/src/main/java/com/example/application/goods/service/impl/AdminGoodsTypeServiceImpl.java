@@ -6,7 +6,7 @@ import com.example.application.goods.service.AdminGoodsTypeService;
 import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.GoodsType;
 import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.query.GoodsTypeQuery;
 import com.example.commons.db.mybatis.base.sqlhelper.test.service.GoodsTypeService;
-import com.example.commons.db.pojo.IPageResult;
+import com.example.db.pojo.IPageResult;
 import com.example.commons.web.pojo.Result;
 import com.example.commons.web.utils.ResultUtils;
 import lombok.AllArgsConstructor;

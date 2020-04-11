@@ -1,4 +1,4 @@
-package com.example.commons.db.pojo;
+package com.example.db.pojo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

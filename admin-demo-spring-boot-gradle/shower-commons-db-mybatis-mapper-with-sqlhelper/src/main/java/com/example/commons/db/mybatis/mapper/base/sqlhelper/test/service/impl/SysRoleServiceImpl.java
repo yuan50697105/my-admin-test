@@ -6,7 +6,7 @@ import com.example.commons.db.mybatis.mapper.base.sqlhelper.test.pojo.SysRole;
 import com.example.commons.db.mybatis.mapper.base.sqlhelper.test.pojo.SysUser;
 import com.example.commons.db.mybatis.mapper.base.sqlhelper.test.pojo.query.SysRoleQuery;
 import com.example.commons.db.mybatis.mapper.base.sqlhelper.test.service.SysRoleService;
-import com.example.commons.db.pojo.IPageResult;
+import com.example.db.pojo.IPageResult;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;

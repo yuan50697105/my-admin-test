@@ -11,7 +11,7 @@ import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysUserQue
 import com.example.commons.db.mybatis.base.pagehelper.test.service.SysRoleService;
 import com.example.commons.db.mybatis.base.pagehelper.test.service.SysUserRoleService;
 import com.example.commons.db.mybatis.base.pagehelper.test.service.SysUserService;
-import com.example.commons.db.pojo.IPageResult;
+import com.example.db.pojo.IPageResult;
 import com.example.commons.web.exception.ResultRuntimeException;
 import com.example.commons.web.pojo.Result;
 import com.example.commons.web.utils.ResultUtils;

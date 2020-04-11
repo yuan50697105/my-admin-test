@@ -2,7 +2,7 @@ package com.example.commons.db.mybatis.mapper.base.sqlhelper.test.service;
 
 import com.example.commons.db.mybatis.mapper.base.sqlhelper.test.pojo.SysPermission;
 import com.example.commons.db.mybatis.mapper.base.sqlhelper.test.pojo.query.SysPermissionQuery;
-import com.example.commons.db.pojo.IPageResult;
+import com.example.db.pojo.IPageResult;
 
 import java.util.List;
 

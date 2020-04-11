@@ -6,7 +6,7 @@ import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysUserLog;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysUserLogExample;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysUserLogQuery;
 import com.example.commons.db.mybatis.base.pagehelper.test.service.SysUserLogService;
-import com.example.commons.db.pojo.IPageResult;
+import com.example.db.pojo.IPageResult;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
