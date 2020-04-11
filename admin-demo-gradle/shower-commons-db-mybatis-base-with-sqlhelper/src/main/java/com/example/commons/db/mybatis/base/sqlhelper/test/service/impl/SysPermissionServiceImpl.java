@@ -1,7 +1,7 @@
 package com.example.commons.db.mybatis.base.sqlhelper.test.service.impl;
 
 import cn.hutool.core.util.ObjectUtil;
-import com.example.commons.db.mybatis.base.sqlhelper.pojo.PageResult;
+import com.example.commons.db.mybatis.base.sqlhelper.base.pojo.PageResult;
 import com.example.commons.db.mybatis.base.sqlhelper.test.mapper.SysPermissionMapper;
 import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysPermission;
 import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysPermissionExample;

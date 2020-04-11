@@ -25,7 +25,7 @@ import java.util.concurrent.Executor;
         @Signature(type = Executor.class, method = "update", args = {MappedStatement.class, Object.class})
 
 })
-public class CustomIntercepter implements Interceptor {
+public class CustomInterceptor implements Interceptor {
 
     public static final String ID = "id";
     public static final String CREATE_TIME = "createTime";

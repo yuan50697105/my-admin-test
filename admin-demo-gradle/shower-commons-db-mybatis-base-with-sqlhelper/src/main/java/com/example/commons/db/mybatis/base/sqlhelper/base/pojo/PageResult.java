@@ -1,4 +1,4 @@
-package com.example.commons.db.mybatis.base.sqlhelper.pojo;
+package com.example.commons.db.mybatis.base.sqlhelper.base.pojo;
 
 import com.example.commons.db.pojo.IPageResult;
 import com.github.pagehelper.PageInfo;
