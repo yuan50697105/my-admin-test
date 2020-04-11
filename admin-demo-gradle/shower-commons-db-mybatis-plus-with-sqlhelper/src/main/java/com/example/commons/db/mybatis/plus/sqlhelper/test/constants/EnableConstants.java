@@ -12,7 +12,4 @@ public class EnableConstants extends BaseConstants {
     public static final String ENABLED = "ENABLED";
     public static final String DISABLED = "DISABLED";
 
-    private EnableConstants() {
-
-    }
 }

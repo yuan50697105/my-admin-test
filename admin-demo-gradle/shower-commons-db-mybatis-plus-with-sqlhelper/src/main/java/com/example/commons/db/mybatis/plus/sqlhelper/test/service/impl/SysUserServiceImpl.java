@@ -1,14 +1,19 @@
 package com.example.commons.db.mybatis.plus.sqlhelper.test.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import java.util.List;
+import cn.hutool.core.util.ObjectUtil;
+import com.baomidou.mybatisplus.extension.conditions.query.LambdaQueryChainWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import java.util.List;
-import com.example.commons.db.mybatis.plus.sqlhelper.test.pojo.SysUser;
+import com.example.commons.db.mybatis.plus.sqlhelper.base.pojo.PageResult;
 import com.example.commons.db.mybatis.plus.sqlhelper.test.mapper.SysUserMapper;
+import com.example.commons.db.mybatis.plus.sqlhelper.test.pojo.SysUser;
 import com.example.commons.db.mybatis.plus.sqlhelper.test.pojo.SysUserExample;
+import com.example.commons.db.mybatis.plus.sqlhelper.test.pojo.query.SysUserQuery;
 import com.example.commons.db.mybatis.plus.sqlhelper.test.service.SysUserService;
+import com.example.commons.db.pojo.IPageResult;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 @Service
 public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements SysUserService{
 
@@ -43,5 +48,44 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     @Override
     public int batchInsert(List<SysUser> list) {
         return baseMapper.batchInsert(list);
+    }
+
+    @Override
+    public boolean insert(SysUser sysUser) {
+        return save(sysUser);
+    }
+
+    @Override
+    public SysUser selectById(Long id) {
+        return getById(id);
+    }
+
+    @Override
+    public boolean deleteById(Long id) {
+        return removeById(id);
+    }
+
+    @Override
+    public boolean deleteByIds(List<Long> ids) {
+        return removeByIds(ids);
+    }
+
+    @Override
+    public IPageResult<SysUser> selectPageByQuery(SysUserQuery query) {
+        LambdaQueryChainWrapper<SysUser> wrapper = createQuery(query);
+        return new PageResult<>(wrapper.page(new Page<>(query.getPage(), query.getSize())));
+    }
+
+    @Override
+    public List<SysUser> selectByQuery(SysUserQuery query) {
+        return createQuery(query).list();
+    }
+
+    public LambdaQueryChainWrapper<SysUser> createQuery(SysUserQuery query) {
+        LambdaQueryChainWrapper<SysUser> wrapper = lambdaQuery();
+        if (ObjectUtil.isNotEmpty(query.getName())) {
+            wrapper.like(SysUser::getName, query.getName());
+        }
+        return wrapper;
     }
 }

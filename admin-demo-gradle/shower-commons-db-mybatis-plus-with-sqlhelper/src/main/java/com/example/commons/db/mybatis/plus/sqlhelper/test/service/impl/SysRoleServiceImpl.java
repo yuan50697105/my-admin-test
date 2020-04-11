@@ -1,14 +1,20 @@
 package com.example.commons.db.mybatis.plus.sqlhelper.test.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import java.util.List;
+import cn.hutool.core.util.ObjectUtil;
+import com.baomidou.mybatisplus.extension.conditions.query.LambdaQueryChainWrapper;
+import com.baomidou.mybatisplus.extension.conditions.query.QueryChainWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import java.util.List;
+import com.example.commons.db.mybatis.plus.sqlhelper.base.pojo.PageResult;
 import com.example.commons.db.mybatis.plus.sqlhelper.test.mapper.SysRoleMapper;
-import com.example.commons.db.mybatis.plus.sqlhelper.test.pojo.SysRoleExample;
 import com.example.commons.db.mybatis.plus.sqlhelper.test.pojo.SysRole;
+import com.example.commons.db.mybatis.plus.sqlhelper.test.pojo.SysRoleExample;
+import com.example.commons.db.mybatis.plus.sqlhelper.test.pojo.query.SysRoleQuery;
 import com.example.commons.db.mybatis.plus.sqlhelper.test.service.SysRoleService;
+import com.example.commons.db.pojo.IPageResult;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 @Service
 public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> implements SysRoleService{
 
@@ -44,4 +50,45 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
     public int batchInsert(List<SysRole> list) {
         return baseMapper.batchInsert(list);
     }
+
+    @Override
+    public boolean insert(SysRole sysRole) {
+        return save(sysRole);
+    }
+
+    @Override
+    public SysRole selectById(Long id) {
+        return getById(id);
+    }
+
+
+    @Override
+    public boolean deleteById(Long id) {
+        return removeById(id);
+    }
+
+    @Override
+    public boolean deleteByIds(List<Long> ids) {
+        return removeByIds(ids);
+    }
+
+    @Override
+    public IPageResult<SysRole> selectPageByQuery(SysRoleQuery query) {
+        LambdaQueryChainWrapper<SysRole> wrapper = createQuery(query);
+        return new PageResult<>(wrapper.page(new Page<>(query.getPage(), query.getSize())));
+    }
+
+    @Override
+    public List<SysRole> selectByQuery(SysRoleQuery query) {
+        return createQuery(query).list();
+    }
+
+    public LambdaQueryChainWrapper<SysRole> createQuery(SysRoleQuery query) {
+        LambdaQueryChainWrapper<SysRole> wrapper = lambdaQuery();
+        if (ObjectUtil.isNotEmpty(query.getName())) {
+            wrapper.like(SysRole::getName, query.getName());
+        }
+        return wrapper;
+    }
+
 }

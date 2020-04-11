@@ -31,7 +31,6 @@ public interface SysUserService extends IService<SysUser> {
 
     SysUser selectByPrimaryKey(Long id);
 
-    int updateByPrimaryKeySelective(SysUser sysUser);
 
     boolean deleteByPrimaryKey(Long id);
 

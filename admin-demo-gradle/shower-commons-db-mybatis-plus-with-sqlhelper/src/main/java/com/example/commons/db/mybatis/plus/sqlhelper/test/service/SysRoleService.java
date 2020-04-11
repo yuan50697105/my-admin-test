@@ -1,9 +1,12 @@
 package com.example.commons.db.mybatis.plus.sqlhelper.test.service;
 
-import java.util.List;
-import com.example.commons.db.mybatis.plus.sqlhelper.test.pojo.SysRoleExample;
-import com.example.commons.db.mybatis.plus.sqlhelper.test.pojo.SysRole;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.example.commons.db.mybatis.plus.sqlhelper.test.pojo.SysRole;
+import com.example.commons.db.mybatis.plus.sqlhelper.test.pojo.SysRoleExample;
+import com.example.commons.db.mybatis.plus.sqlhelper.test.pojo.query.SysRoleQuery;
+import com.example.commons.db.pojo.IPageResult;
+
+import java.util.List;
 public interface SysRoleService extends IService<SysRole>{
 
 
@@ -23,4 +26,15 @@ public interface SysRoleService extends IService<SysRole>{
 
     int batchInsert(List<SysRole> list);
 
+    boolean insert(SysRole sysRole);
+
+    SysRole selectById(Long id);
+
+    boolean deleteById(Long id);
+
+    boolean deleteByIds(List<Long> ids);
+
+    IPageResult<SysRole> selectPageByQuery(SysRoleQuery query);
+
+    List<SysRole> selectByQuery(SysRoleQuery query);
 }

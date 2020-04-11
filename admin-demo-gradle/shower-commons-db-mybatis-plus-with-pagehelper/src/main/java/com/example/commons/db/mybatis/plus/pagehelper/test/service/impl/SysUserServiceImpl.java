@@ -69,7 +69,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     }
 
     @Override
-    public int updateByPrimaryKeySelective(SysUser sysUser) {
+    public int updateById(SysUser sysUser) {
         return baseMapper.updateById(sysUser);
     }
 

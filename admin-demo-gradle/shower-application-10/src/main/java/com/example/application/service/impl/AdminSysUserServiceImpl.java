@@ -3,9 +3,9 @@ package com.example.application.service.impl;
 import com.example.application.pojo.admin.user.AdminSysUserSaveRequestBody;
 import com.example.application.pojo.admin.user.AdminSysUserUpdateRequestBody;
 import com.example.application.service.AdminSysUserService;
-import com.example.commons.db.mybatis.plus.pagehelper.test.pojo.SysUser;
-import com.example.commons.db.mybatis.plus.pagehelper.test.pojo.query.SysUserQuery;
-import com.example.commons.db.mybatis.plus.pagehelper.test.service.SysUserService;
+import com.example.commons.db.mybatis.plus.sqlhelper.test.pojo.SysUser;
+import com.example.commons.db.mybatis.plus.sqlhelper.test.pojo.query.SysUserQuery;
+import com.example.commons.db.mybatis.plus.sqlhelper.test.service.SysUserService;
 import com.example.commons.db.pojo.IPageResult;
 import com.example.commons.web.pojo.Result;
 import com.example.commons.web.utils.ResultUtils;
@@ -52,7 +52,7 @@ public class AdminSysUserServiceImpl extends BaseServiceImpl implements AdminSys
     @Override
     @Transactional
     public Result updateInfo(AdminSysUserUpdateRequestBody requestBody) {
-        SysUser sysUser = sysUserService.selectByPrimaryKey(requestBody.getId());
+        SysUser sysUser = sysUserService.selectById(requestBody.getId());
         if (isNotEmpty(sysUser)) {
             updateUserInfoFromRequestBody(sysUser, requestBody);
             sysUserService.updateById(sysUser);
@@ -68,7 +68,7 @@ public class AdminSysUserServiceImpl extends BaseServiceImpl implements AdminSys
      */
     @Override
     public Result get(Long id) {
-        SysUser sysUser = sysUserService.selectByPrimaryKey(id);
+        SysUser sysUser = sysUserService.selectById(id);
         return ResultUtils.data("user", Optional.ofNullable(sysUser).orElse(new SysUser()));
     }
 
@@ -81,7 +81,7 @@ public class AdminSysUserServiceImpl extends BaseServiceImpl implements AdminSys
     @Override
     @Transactional
     public Result delete(Long id) {
-        sysUserService.deleteByPrimaryKey(id);
+        sysUserService.deleteById(id);
         return ResultUtils.ok(DELELE_SUCCESS);
     }
 

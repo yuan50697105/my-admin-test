@@ -29,11 +29,9 @@ public interface SysRoleService extends IService<SysRole> {
 
     int insert(SysRole sysRole);
 
-    SysRole selectByPrimaryKey(Long id);
+    SysRole selectById(Long id);
 
-    int updateByPrimaryKeySelective(SysRole sysRole);
-
-    int deleteByPrimaryKey(Long id);
+    int deleteById(Long id);
 
     boolean deleteByIds(List<Long> ids);
 

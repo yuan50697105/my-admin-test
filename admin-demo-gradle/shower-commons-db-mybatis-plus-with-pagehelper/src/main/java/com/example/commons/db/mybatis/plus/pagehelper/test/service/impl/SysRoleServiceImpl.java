@@ -64,17 +64,17 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
     }
 
     @Override
-    public SysRole selectByPrimaryKey(Long id) {
+    public SysRole selectById(Long id) {
         return getById(id);
     }
 
     @Override
-    public int updateByPrimaryKeySelective(SysRole sysRole) {
+    public int updateById(SysRole sysRole) {
         return baseMapper.updateById(sysRole);
     }
 
     @Override
-    public int deleteByPrimaryKey(Long id) {
+    public int deleteById(Long id) {
         return baseMapper.deleteById(id);
     }
 
