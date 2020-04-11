@@ -7,12 +7,21 @@
             {{name}}
             <button v-bind:click="aaa"></button>
         </div>
+        <div class="content-list">
+            <List/>
+        </div>
+        <div class="content-counter">
+            <Counter/>
+        </div>
     </div>
 </template>
 
 <script>
+    import List from "./List";
+    import Counter from "./Counter";
     export default {
         name: "Main",
+        components: {Counter, List},
         data() {
             return {
                 name: "aaaa"
@@ -29,5 +38,8 @@
 <style scoped>
     .content {
         background-color: aqua;
+    }
+
+    .content-list {
     }
 </style>

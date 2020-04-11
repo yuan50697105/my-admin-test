@@ -1,4 +1,8 @@
 version: "2"
+networks:
+  app:
+    name: app
+    driver: brige
 services:
   vue_app:
     container_name: vue_app
@@ -7,3 +11,5 @@ services:
       dockerfile: Dockerfile
     ports:
       - 80:80
+    networks:
+      - app
