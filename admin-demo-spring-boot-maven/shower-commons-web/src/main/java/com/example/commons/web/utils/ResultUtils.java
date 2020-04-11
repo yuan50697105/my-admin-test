@@ -1,6 +1,6 @@
 package com.example.commons.web.utils;
 
-import com.example.commons.db.pojo.IPageResult;
+import com.example.db.pojo.IPageResult;
 import com.example.commons.web.pojo.Result;
 
 import java.util.Collections;
