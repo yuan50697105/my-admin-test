@@ -3,7 +3,7 @@ package com.example.application.admin.controller;
 import com.example.application.admin.pojo.permission.AdminSysPermissionSaveRequestBody;
 import com.example.application.admin.pojo.permission.AdminSysPermissionUpdateRequestBody;
 import com.example.application.admin.service.AdminSysPermissionService;
-import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysPermissionQuery;
+import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.query.SysPermissionQuery;
 import com.example.commons.web.controller.BaseController;
 import com.example.commons.web.pojo.Result;
 import lombok.AllArgsConstructor;

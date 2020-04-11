@@ -2,7 +2,7 @@ package com.example.application.admin.service;
 
 import com.example.application.admin.pojo.permission.AdminSysPermissionSaveRequestBody;
 import com.example.application.admin.pojo.permission.AdminSysPermissionUpdateRequestBody;
-import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysPermissionQuery;
+import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.query.SysPermissionQuery;
 import com.example.commons.web.pojo.Result;
 
 import java.util.List;

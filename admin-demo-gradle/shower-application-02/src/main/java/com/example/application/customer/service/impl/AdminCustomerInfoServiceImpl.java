@@ -1,7 +1,7 @@
 package com.example.application.customer.service.impl;
 
 import com.example.application.customer.service.AdminCustomerInfoService;
-import com.example.commons.db.mybatis.base.pagehelper.test.service.CustomerInfoService;
+import com.example.commons.db.mybatis.base.sqlhelper.test.service.CustomerInfoService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
