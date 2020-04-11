@@ -5,6 +5,7 @@ import com.example.commons.db.mybatis.base.pagehelper.test.pojo.CustomerTypeExam
 import com.gitee.denger.mybatis.example.ext.MybatisExample;
 import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * @program: admin-demo-spring-boot-gradle
@@ -12,6 +13,7 @@ import lombok.Data;
  * @author: yuane
  * @create: 2020-04-11 21:28
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class CustomerTypeQuery extends CommonsQuery implements MybatisExample<CustomerTypeExample> {
     @AndLike

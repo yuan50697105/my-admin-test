@@ -11,20 +11,14 @@ import lombok.EqualsAndHashCode;
  * @program: admin-demo-spring-boot-gradle
  * @description:
  * @author: yuane
- * @create: 2020-04-11 22:15
+ * @create: 2020-04-11 21:28
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class CustomerTypeQuery extends CommonsQuery implements MybatisExample<CustomerTypeExample> {
-    /**
-     * 编号
-     */
     @AndLike
     private String code;
-
-    /**
-     * 名称
-     */
     @AndLike
     private String name;
+
 }

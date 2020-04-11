@@ -1,9 +1,13 @@
 package com.example.commons.db.mybatis.base.sqlhelper.test.service;
 
-import java.util.List;
-import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.CustomerTypeExample;
 import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.CustomerType;
-public interface CustomerTypeService{
+import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.CustomerTypeExample;
+import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.query.CustomerTypeQuery;
+import com.example.db.pojo.IPageResult;
+
+import java.util.List;
+
+public interface CustomerTypeService {
 
 
     long countByExample(CustomerTypeExample example);
@@ -34,4 +38,9 @@ public interface CustomerTypeService{
 
     int batchInsert(List<CustomerType> list);
 
+    IPageResult<CustomerType> selectPageByQuery(CustomerTypeQuery query);
+
+    List<CustomerType> selectByQuery(CustomerTypeQuery query);
+
+    int deleteByIds(List<Long> ids);
 }
