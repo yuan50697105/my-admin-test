@@ -69,11 +69,6 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     }
 
     @Override
-    public int updateById(SysUser sysUser) {
-        return baseMapper.updateById(sysUser);
-    }
-
-    @Override
     public boolean deleteByPrimaryKey(Long id) {
         return removeById(id);
     }

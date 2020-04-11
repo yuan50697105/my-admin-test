@@ -68,10 +68,6 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
         return getById(id);
     }
 
-    @Override
-    public int updateById(SysRole sysRole) {
-        return baseMapper.updateById(sysRole);
-    }
 
     @Override
     public int deleteById(Long id) {
