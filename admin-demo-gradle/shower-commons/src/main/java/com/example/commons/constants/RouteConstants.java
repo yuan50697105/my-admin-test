@@ -18,4 +18,14 @@ public class RouteConstants {
     public class AdminPermissionRouteConstants {
         public static final String BASE_URL = "permission";
     }
+
+    /**
+     * @program: admin-demo-gradle
+     * @description:
+     * @author: yuane
+     * @create: 2020-04-11 12:53
+     */
+    public static class AdminGoodsControllerConstants {
+        public static final String GOODS = "goods";
+    }
 }

@@ -2,6 +2,7 @@ package com.example.commons.db.mybatis.base.pagehelper.test.pojo;
 
 import com.example.commons.db.mybatis.base.pagehelper.commons.pojo.CommonsEntity;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,27 +11,37 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /**
- * sys_user_role
+ * goods_info
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class SysUserRole extends CommonsEntity implements Serializable {
+public class GoodsInfo extends CommonsEntity implements Serializable {
     /**
-     * 用户ID
+     * 商品编号
      */
-    private Long userId;
+    private String code;
 
     /**
-     * 角色ID
+     * 商品名称
      */
-    private Long roleId;
+    private String name;
+
+    /**
+     * 价格
+     */
+    private BigDecimal price;
+
+    /**
+     * 库存
+     */
+    private Integer num;
 
     private static final long serialVersionUID = 1L;
 
-    public static SysUserRoleBuilder builder() {
-        return new SysUserRoleBuilder();
+    public static GoodsInfoBuilder builder() {
+        return new GoodsInfoBuilder();
     }
 }

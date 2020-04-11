@@ -4,6 +4,9 @@ import com.example.commons.pojo.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.util.Iterator;
+import java.util.Spliterator;
+
 /**
  * @program: admin-demo
  * @description:
@@ -12,7 +15,7 @@ import lombok.EqualsAndHashCode;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public abstract class IPageResult<T> extends BaseEntity {
+public class IPageResult<T> extends BaseEntity implements Iterable<T> {
     private long page;
     private long size;
     private long totalNumberOfRows;
@@ -25,5 +28,16 @@ public abstract class IPageResult<T> extends BaseEntity {
         this.totalNumberOfRows = totalNumberOfRows;
         this.totalPages = totalPages;
         this.list = list;
+    }
+
+
+    @Override
+    public Iterator<T> iterator() {
+        return list.iterator();
+    }
+
+    @Override
+    public Spliterator<T> spliterator() {
+        return list.spliterator();
     }
 }
