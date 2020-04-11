@@ -14,8 +14,6 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
 
-import static cn.hutool.core.util.ObjectUtil.isNotEmpty;
-
 @Service
 public class SysUserLogServiceImpl implements SysUserLogService {
 
@@ -79,13 +77,7 @@ public class SysUserLogServiceImpl implements SysUserLogService {
 
     @Override
     public IPageResult<SysUserLog> selectPageByQuery(SysUserLogQuery query) {
-        SysUserLogExample example = new SysUserLogExample();
-        SysUserLogExample.Criteria criteria = example.createCriteria();
-        if (isNotEmpty(query.getUsername())) {
-            criteria.andUsernameLike("%" + query.getUsername() + "%");
-        }
-        example.or(criteria);
-        return selectPageByExample(example, query.getPage(), query.getSize());
+        return selectPageByExample(query.toExample(), query.getPage(), query.getSize());
     }
 
     @Override
@@ -110,8 +102,6 @@ public class SysUserLogServiceImpl implements SysUserLogService {
         return sysUserLogMapper.batchInsert(list);
     }
 }
-
-
 
 
 

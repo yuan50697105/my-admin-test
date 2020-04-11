@@ -1,6 +1,5 @@
 package com.example.commons.db.mybatis.base.sqlhelper.test.service.impl;
 
-import cn.hutool.core.util.ObjectUtil;
 import com.example.commons.db.mybatis.base.sqlhelper.pojo.PageResult;
 import com.example.commons.db.mybatis.base.sqlhelper.test.mapper.SysRoleMapper;
 import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysRole;
@@ -85,7 +84,7 @@ public class SysRoleServiceImpl implements SysRoleService {
 
     @Override
     public IPageResult<SysRole> selectPageByQuery(SysRoleQuery query) {
-        SysRoleExample example = createExample(query);
+        SysRoleExample example = query.toExample();
         return selectPageByExample(example, query.getPage(), query.getSize());
     }
 
@@ -97,19 +96,8 @@ public class SysRoleServiceImpl implements SysRoleService {
 
     @Override
     public List<SysRole> selectByQuery(SysRoleQuery query) {
-        SysRoleExample example = createExample(query);
+        SysRoleExample example = query.toExample();
         return selectByExample(example);
-    }
-
-
-    public SysRoleExample createExample(SysRoleQuery query) {
-        SysRoleExample example = new SysRoleExample();
-        SysRoleExample.Criteria criteria = example.createCriteria();
-        if (ObjectUtil.isNotEmpty(query.getName())) {
-            criteria.andNameLike("%" + query.getName() + "%");
-        }
-        example.or(criteria);
-        return example;
     }
 
     @Override
@@ -134,8 +122,6 @@ public class SysRoleServiceImpl implements SysRoleService {
         return sysRoleMapper.selectByExample(example);
     }
 }
-
-
 
 
 

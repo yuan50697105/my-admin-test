@@ -95,13 +95,13 @@ public class GoodsInfoServiceImpl implements GoodsInfoService {
     @Override
     public IPageResult<GoodsInfo> selectPageByQuery(GoodsInfoQuery query) {
         PageHelper.startPage(query.getPage(), query.getSize());
-        GoodsInfoExample example = createEample(query);
+        GoodsInfoExample example = query.toExample();
         return new PageResult<>(new PageInfo<>(selectByExample(example)));
     }
 
     @Override
     public List<GoodsInfo> selectByQuery(GoodsInfoQuery query) {
-        return selectByExample(createEample(query));
+        return selectByExample(query.toExample());
     }
 
     @Override

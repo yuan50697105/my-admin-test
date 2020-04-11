@@ -1,6 +1,8 @@
 package com.example.commons.db.mybatis.base.sqlhelper.test.pojo.query;
 
 import com.example.commons.db.mybatis.base.sqlhelper.commons.pojo.query.CommonsQuery;
+import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysUserLogExample;
+import com.gitee.denger.mybatis.example.ext.MybatisExample;
 import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
 import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import lombok.Data;
@@ -14,7 +16,7 @@ import lombok.EqualsAndHashCode;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class SysUserLogQuery extends CommonsQuery {
+public class SysUserLogQuery extends CommonsQuery implements MybatisExample<SysUserLogExample> {
     @AndEqualTo
     private String userId;
     @AndLike
