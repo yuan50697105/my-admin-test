@@ -4,5 +4,6 @@ server:
   port: 8081
 spring:
   profiles:
+#    active: dbc,mvc,mysql
 #    active: dbc,mvc,test
-    active: dbc,mvc,test
+    active: dbc,mvc,local
