@@ -12,6 +12,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 /**
@@ -67,22 +69,22 @@ public class AdminGoodsInfoController extends BaseController {
     }
 
     @GetMapping(value = "delete", params = "id")
-    public Result delete(Long id) {
+    public Result delete(@NotNull Long id) {
         return adminGoodsInfoService.delete(id);
     }
 
     @GetMapping(value = "delete", params = "ids")
-    public Result delete(List<Long> ids) {
+    public Result delete(@NotEmpty List<Long> ids) {
         return adminGoodsInfoService.delete(ids);
     }
 
     @DeleteMapping("{id}")
-    public Result delete2(@PathVariable("id") Long id) {
+    public Result delete2(@PathVariable("id") @NotNull Long id) {
         return adminGoodsInfoService.delete(id);
     }
 
     @GetMapping("delete/{id}")
-    public Result delete3(@PathVariable("id") Long id) {
+    public Result delete3(@PathVariable("id") @NotNull Long id) {
         return adminGoodsInfoService.delete(id);
     }
 
