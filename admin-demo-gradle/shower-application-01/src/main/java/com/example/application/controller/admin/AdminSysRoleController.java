@@ -4,7 +4,6 @@ import com.example.application.pojo.admin.role.AdminSysPermissionUpdateRequestBo
 import com.example.application.pojo.admin.role.AdminSysRoleSaveRequestBody;
 import com.example.application.pojo.admin.role.AdminSysRoleUpdateRequestBody;
 import com.example.application.service.admin.AdminSysRoleService;
-import com.example.commons.constants.RouteConstants;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysRoleQuery;
 import com.example.commons.web.controller.BaseController;
 import com.example.commons.web.pojo.Result;
@@ -23,7 +22,7 @@ import java.util.List;
  * @create: 2020-04-06 13:45
  */
 @RestController
-@RequestMapping(RouteConstants.AdminRoleRouteConstants.BASE_URL)
+@RequestMapping("sys/role")
 @Validated
 @AllArgsConstructor
 public class AdminSysRoleController extends BaseController {

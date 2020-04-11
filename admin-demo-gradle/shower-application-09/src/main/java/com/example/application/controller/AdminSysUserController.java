@@ -3,7 +3,6 @@ package com.example.application.controller;
 import com.example.application.pojo.admin.user.AdminSysUserSaveRequestBody;
 import com.example.application.pojo.admin.user.AdminSysUserUpdateRequestBody;
 import com.example.application.service.AdminSysUserService;
-import com.example.commons.constants.RouteConstants;
 import com.example.commons.db.mybatis.plus.pagehelper.test.pojo.query.SysUserQuery;
 import com.example.commons.web.controller.BaseController;
 import com.example.commons.web.pojo.Result;

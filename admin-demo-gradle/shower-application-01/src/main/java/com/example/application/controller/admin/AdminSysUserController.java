@@ -4,7 +4,6 @@ import com.example.application.pojo.admin.user.AdminSysUserSaveRequestBody;
 import com.example.application.pojo.admin.user.AdminSysUserUpdateRequestBody;
 import com.example.application.pojo.admin.user.AdminUserRoleUpdateRequestBody;
 import com.example.application.service.admin.AdminSysUserService;
-import com.example.commons.constants.RouteConstants;
 import com.example.commons.db.mybatis.base.pagehelper.test.constants.EnableConstants;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysUserQuery;
 import com.example.commons.web.controller.BaseController;
@@ -24,7 +23,7 @@ import java.util.List;
  * @create: 2020-04-06 13:45
  */
 @RestController
-@RequestMapping(RouteConstants.AdminUserRouteConstants.BASE_URL)
+@RequestMapping("sys/user")
 @Validated
 @AllArgsConstructor
 public class AdminSysUserController extends BaseController {

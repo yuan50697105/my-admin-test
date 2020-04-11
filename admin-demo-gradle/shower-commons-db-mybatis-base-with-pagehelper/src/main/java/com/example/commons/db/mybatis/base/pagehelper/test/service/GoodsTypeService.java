@@ -1,8 +1,12 @@
 package com.example.commons.db.mybatis.base.pagehelper.test.service;
 
-import java.util.List;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.GoodsType;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.GoodsTypeExample;
+import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.GoodsTypeQuery;
+import com.example.commons.db.pojo.IPageResult;
+
+import java.util.List;
+
 public interface GoodsTypeService{
 
 
@@ -34,4 +38,7 @@ public interface GoodsTypeService{
 
     int batchInsert(List<GoodsType> list);
 
+    IPageResult<GoodsType> selectPageByQuery(GoodsTypeQuery query);
+
+    List<GoodsType> selectByQuery(GoodsTypeQuery query);
 }

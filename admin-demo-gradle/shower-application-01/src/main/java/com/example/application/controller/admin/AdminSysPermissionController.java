@@ -3,7 +3,6 @@ package com.example.application.controller.admin;
 import com.example.application.pojo.admin.permission.AdminSysPermissionSaveRequestBody;
 import com.example.application.pojo.admin.permission.AdminSysPermissionUpdateRequestBody;
 import com.example.application.service.admin.AdminSysPermissionService;
-import com.example.commons.constants.RouteConstants;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysPermissionQuery;
 import com.example.commons.web.controller.BaseController;
 import com.example.commons.web.pojo.Result;
@@ -23,7 +22,7 @@ import java.util.List;
  * @create: 2020-04-09 19:43
  */
 @RestController
-@RequestMapping(RouteConstants.AdminPermissionRouteConstants.BASE_URL)
+@RequestMapping("sys/permission")
 @AllArgsConstructor
 @Validated
 public class AdminSysPermissionController extends BaseController {
