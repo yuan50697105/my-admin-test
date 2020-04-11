@@ -14,8 +14,6 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
 
-import static cn.hutool.core.util.ObjectUtil.isNotEmpty;
-
 @Service
 public class SysUserServiceImpl implements SysUserService {
 
@@ -86,7 +84,7 @@ public class SysUserServiceImpl implements SysUserService {
 
     @Override
     public IPageResult<SysUser> selectPageByQuery(SysUserQuery query) {
-        SysUserExample example = createExample(query);
+        SysUserExample example = query.toExample();
         return selectPageByExample(example, query.getPage(), query.getSize());
     }
 
@@ -98,28 +96,8 @@ public class SysUserServiceImpl implements SysUserService {
 
     @Override
     public List<SysUser> selectByQuery(SysUserQuery query) {
-        SysUserExample example = createExample(query);
+        SysUserExample example = query.toExample();
         return selectByExample(example);
-    }
-
-
-    /**
-     * 创建查询条件
-     *
-     * @param query 实体
-     * @return 查询条件
-     */
-    public SysUserExample createExample(SysUserQuery query) {
-        SysUserExample example = new SysUserExample();
-        SysUserExample.Criteria criteria = example.createCriteria();
-        if (isNotEmpty(query.getUsername())) {
-            criteria.andUsernameLike("%" + query.getUsername() + "%");
-        }
-        if (isNotEmpty(query.getName())) {
-            criteria.andNameLike("%" + query.getEnabled() + "%");
-        }
-        example.or(criteria);
-        return example;
     }
 
     @Override

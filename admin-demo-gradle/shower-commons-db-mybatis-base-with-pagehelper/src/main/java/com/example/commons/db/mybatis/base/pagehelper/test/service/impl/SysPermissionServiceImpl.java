@@ -108,13 +108,13 @@ public class SysPermissionServiceImpl implements SysPermissionService {
 
     @Override
     public IPageResult<SysPermission> selectPageByQuery(SysPermissionQuery query) {
-        SysPermissionExample example = createExample(query);
+        SysPermissionExample example = query.toExample();
         return selectPageByExample(example, query.getPage(), query.getSize());
     }
 
     @Override
     public List<SysPermission> selectByQuery(SysPermissionQuery query) {
-        SysPermissionExample example = createExample(query);
+        SysPermissionExample example = query.toExample();
         return selectByExample(example);
     }
 
