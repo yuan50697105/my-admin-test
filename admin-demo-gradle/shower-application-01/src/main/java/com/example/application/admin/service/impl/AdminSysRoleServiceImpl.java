@@ -5,7 +5,6 @@ import com.example.application.admin.pojo.role.AdminSysPermissionUpdateRequestBo
 import com.example.application.admin.pojo.role.AdminSysRoleSaveRequestBody;
 import com.example.application.admin.pojo.role.AdminSysRoleUpdateRequestBody;
 import com.example.application.admin.service.AdminSysRoleService;
-import com.example.application.service.base.impl.BaseServiceImpl;
 import com.example.commons.db.mybatis.base.pagehelper.test.constants.EnableConstants;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysPermission;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysRole;
@@ -35,7 +34,7 @@ import static cn.hutool.core.util.ObjectUtil.isNotEmpty;
  */
 @Service
 @AllArgsConstructor
-public class AdminSysRoleServiceImpl extends BaseServiceImpl implements AdminSysRoleService {
+public class AdminSysRoleServiceImpl implements AdminSysRoleService {
     private SysRoleService sysRoleService;
     private SysPermissionService sysPermissionService;
     private SysRolePermissionService sysRolePermissionService;
@@ -49,7 +48,7 @@ public class AdminSysRoleServiceImpl extends BaseServiceImpl implements AdminSys
         List<SysPermission> sysPermissions = sysPermissionService.selectByIds(requestBody.getPermissionIds());
         List<SysRolePermission> sysRolePermissions = createRolePermissionList(sysRole, sysPermissions);
         sysRolePermissionService.batchInsert(sysRolePermissions);
-        return saveSuccess();
+        return ResultUtils.saveOk();
     }
 
     @Override
@@ -60,7 +59,7 @@ public class AdminSysRoleServiceImpl extends BaseServiceImpl implements AdminSys
             updateRoleFromRequestBody(sysRole, requestBody);
             sysRoleService.updateByPrimaryKeySelective(sysRole);
         }
-        return updateSuccess();
+        return ResultUtils.updateOk();
     }
 
     @Override
@@ -73,7 +72,7 @@ public class AdminSysRoleServiceImpl extends BaseServiceImpl implements AdminSys
         sysRolePermissionService.deleteByRoleId(id);
         List<SysRolePermission> sysRolePermissions = createRolePermissionList(sysRole, sysPermissions);
         sysRolePermissionService.batchInsert(sysRolePermissions);
-        return updateSuccess();
+        return ResultUtils.updateOk();
     }
 
     @Override
@@ -82,7 +81,7 @@ public class AdminSysRoleServiceImpl extends BaseServiceImpl implements AdminSys
         sysRoleService.deleteByPrimaryKey(id);
         sysRolePermissionService.deleteByRoleId(id);
         sysUserRoleService.deleteByRoleId(id);
-        return deleteSuccess();
+        return ResultUtils.deleteOk();
     }
 
     @Override
@@ -91,7 +90,7 @@ public class AdminSysRoleServiceImpl extends BaseServiceImpl implements AdminSys
         sysRoleService.deleteByIds(ids);
         sysRolePermissionService.deleteByRoleIds(ids);
         sysUserRoleService.deleteByRoleIds(ids);
-        return deleteSuccess();
+        return ResultUtils.deleteOk();
     }
 
     @Override

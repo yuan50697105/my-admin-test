@@ -3,7 +3,6 @@ package com.example.application.admin.service.impl;
 import com.example.application.admin.pojo.permission.AdminSysPermissionSaveRequestBody;
 import com.example.application.admin.pojo.permission.AdminSysPermissionUpdateRequestBody;
 import com.example.application.admin.service.AdminSysPermissionService;
-import com.example.application.service.base.impl.BaseServiceImpl;
 import com.example.commons.db.mybatis.base.pagehelper.test.constants.EnableConstants;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysPermission;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysPermissionQuery;
@@ -27,7 +26,7 @@ import java.util.UUID;
  */
 @Service
 @AllArgsConstructor
-public class AdminSysPermissionServiceImpl extends BaseServiceImpl implements AdminSysPermissionService {
+public class AdminSysPermissionServiceImpl implements AdminSysPermissionService {
     private SysPermissionService sysPermissionService;
     private SysRolePermissionService sysRolePermissionService;
 
@@ -36,7 +35,7 @@ public class AdminSysPermissionServiceImpl extends BaseServiceImpl implements Ad
     public Result save(AdminSysPermissionSaveRequestBody requestBody) {
         SysPermission sysPermission = createPermissionFromRequestBody(requestBody);
         sysPermissionService.insert(sysPermission);
-        return saveSuccess();
+        return ResultUtils.saveOk();
     }
 
     @Override
@@ -45,7 +44,7 @@ public class AdminSysPermissionServiceImpl extends BaseServiceImpl implements Ad
         SysPermission sysPermission = sysPermissionService.selectByPrimaryKey(requestBody.getId());
         updateFromRequestBody(sysPermission, requestBody);
         sysPermissionService.updateByPrimaryKeySelective(sysPermission);
-        return updateSuccess();
+        return ResultUtils.updateOk();
     }
 
     @Override
@@ -53,7 +52,7 @@ public class AdminSysPermissionServiceImpl extends BaseServiceImpl implements Ad
     public Result delete(Long id) {
         sysPermissionService.deleteByPrimaryKey(id);
         sysRolePermissionService.deleteByPermissionId(id);
-        return deleteSuccess();
+        return ResultUtils.deleteOk();
     }
 
     @Override
@@ -61,7 +60,7 @@ public class AdminSysPermissionServiceImpl extends BaseServiceImpl implements Ad
     public Result delete(List<Long> ids) {
         sysPermissionService.deleteByIds(ids);
         sysRolePermissionService.deleteByPermissionIds(ids);
-        return deleteSuccess();
+        return ResultUtils.deleteOk();
     }
 
     @Override
