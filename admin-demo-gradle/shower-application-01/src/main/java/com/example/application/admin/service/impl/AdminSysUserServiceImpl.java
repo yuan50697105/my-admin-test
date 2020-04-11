@@ -4,7 +4,6 @@ import com.example.application.admin.pojo.user.AdminSysUserSaveRequestBody;
 import com.example.application.admin.pojo.user.AdminSysUserUpdateRequestBody;
 import com.example.application.admin.pojo.user.AdminUserRoleUpdateRequestBody;
 import com.example.application.admin.service.AdminSysUserService;
-import com.example.application.service.base.impl.BaseServiceImpl;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysRole;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysUser;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysUserRole;
@@ -35,7 +34,7 @@ import static org.springframework.util.ObjectUtils.isEmpty;
  */
 @Service
 @AllArgsConstructor
-public class AdminSysUserServiceImpl extends BaseServiceImpl implements AdminSysUserService {
+public class AdminSysUserServiceImpl implements AdminSysUserService {
     private SysUserService sysUserService;
     private SysUserRoleService sysUserRoleService;
     private SysRoleService sysRoleService;
@@ -58,7 +57,7 @@ public class AdminSysUserServiceImpl extends BaseServiceImpl implements AdminSys
         List<SysRole> sysRoles = sysRoleService.selectByIds(requestBody.getRoleIds());
         List<SysUserRole> userRoles = createUserRoleList(sysUser, sysRoles);
         sysUserRoleService.batchInsert(userRoles);
-        return ResultUtils.ok(SAVE_SUCCESS);
+        return ResultUtils.saveOk();
     }
 
     /**
@@ -76,7 +75,7 @@ public class AdminSysUserServiceImpl extends BaseServiceImpl implements AdminSys
         }
         updateUserInfoFromRequestBody(sysUser, requestBody);
         sysUserService.updateByPrimaryKeySelective(sysUser);
-        return ResultUtils.ok(UPDATE_SUCCESS);
+        return ResultUtils.updateOk();
     }
 
     @Override
@@ -92,7 +91,7 @@ public class AdminSysUserServiceImpl extends BaseServiceImpl implements AdminSys
         sysUserRoleService.deleteByUserId(userId);
         List<SysUserRole> sysUserRoles = createUserRoleList(sysUser, sysRoles);
         sysUserRoleService.batchInsert(sysUserRoles);
-        return ResultUtils.ok(UPDATE_SUCCESS);
+        return ResultUtils.updateOk();
     }
 
     /**
@@ -118,7 +117,7 @@ public class AdminSysUserServiceImpl extends BaseServiceImpl implements AdminSys
     public Result delete(Long id) {
         sysUserService.deleteByPrimaryKey(id);
         sysUserRoleService.deleteByUserId(id);
-        return ResultUtils.ok(DELELE_SUCCESS);
+        return ResultUtils.deleteOk();
     }
 
     @Override
@@ -126,7 +125,7 @@ public class AdminSysUserServiceImpl extends BaseServiceImpl implements AdminSys
     public Result delete(List<Long> ids) {
         sysUserService.deleteByIds(ids);
         sysUserRoleService.deleteByUserIds(ids);
-        return ResultUtils.ok(DELELE_SUCCESS);
+        return ResultUtils.deleteOk();
     }
 
     /**
