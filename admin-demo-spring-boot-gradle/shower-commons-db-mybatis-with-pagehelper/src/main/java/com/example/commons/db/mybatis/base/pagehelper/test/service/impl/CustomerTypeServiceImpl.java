@@ -1,12 +1,18 @@
 package com.example.commons.db.mybatis.base.pagehelper.test.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import com.example.commons.db.mybatis.base.pagehelper.test.pojo.CustomerType;
-import java.util.List;
+import com.example.commons.db.mybatis.base.pagehelper.base.pojo.PageResult;
 import com.example.commons.db.mybatis.base.pagehelper.test.mapper.CustomerTypeMapper;
+import com.example.commons.db.mybatis.base.pagehelper.test.pojo.CustomerType;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.CustomerTypeExample;
+import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.CustomerTypeQuery;
 import com.example.commons.db.mybatis.base.pagehelper.test.service.CustomerTypeService;
+import com.example.db.pojo.IPageResult;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
 @Service
 public class CustomerTypeServiceImpl implements CustomerTypeService{
 
@@ -81,6 +87,24 @@ public class CustomerTypeServiceImpl implements CustomerTypeService{
     @Override
     public int batchInsert(List<CustomerType> list) {
         return customerTypeMapper.batchInsert(list);
+    }
+
+    @Override
+    public IPageResult<CustomerType> selectPageByQuery(CustomerTypeQuery query) {
+        PageHelper.startPage(query.getPage(), query.getSize());
+        return new PageResult<>(new PageInfo<>(selectByExample(query.toExample())));
+    }
+
+    @Override
+    public List<CustomerType> selectByQuery(CustomerTypeQuery query) {
+        return selectByExample(query.toExample());
+    }
+
+    @Override
+    public int deleteByIds(List<Long> ids) {
+        CustomerTypeExample example = new CustomerTypeExample();
+        example.or().andIdIn(ids);
+        return deleteByExample(example);
     }
 
 }

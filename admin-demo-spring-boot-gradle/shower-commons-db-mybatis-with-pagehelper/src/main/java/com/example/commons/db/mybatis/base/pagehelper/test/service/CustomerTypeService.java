@@ -1,8 +1,12 @@
 package com.example.commons.db.mybatis.base.pagehelper.test.service;
 
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.CustomerType;
-import java.util.List;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.CustomerTypeExample;
+import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.CustomerTypeQuery;
+import com.example.db.pojo.IPageResult;
+
+import java.util.List;
+
 public interface CustomerTypeService{
 
 
@@ -34,4 +38,9 @@ public interface CustomerTypeService{
 
     int batchInsert(List<CustomerType> list);
 
+    IPageResult<CustomerType> selectPageByQuery(CustomerTypeQuery query);
+
+    List<CustomerType> selectByQuery(CustomerTypeQuery query);
+
+    int deleteByIds(List<Long> ids);
 }
