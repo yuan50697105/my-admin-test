@@ -104,6 +104,13 @@ public class GoodsTypeServiceImpl implements GoodsTypeService {
         return selectByExample(createExample(query));
     }
 
+    @Override
+    public int deleteByIds(List<Long> ids) {
+        GoodsTypeExample example = new GoodsTypeExample();
+        example.or().andIdIn(ids);
+        return deleteByExample(example);
+    }
+
     public GoodsTypeExample createExample(GoodsTypeQuery query) {
         GoodsTypeExample example = new GoodsTypeExample();
         GoodsTypeExample.Criteria criteria = example.createCriteria();

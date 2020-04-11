@@ -1,8 +1,11 @@
 package com.example.application.goods.service;
 
 import com.example.application.goods.pojo.type.GoodsTypeSaveRequestBody;
+import com.example.application.goods.pojo.type.GoodsTypeUpdateRequestBody;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.GoodsTypeQuery;
 import com.example.commons.web.pojo.Result;
+
+import java.util.List;
 
 /**
  * @program: admin-demo-gradle
@@ -25,5 +28,13 @@ public interface AdminGoodsTypeService {
      */
     Result list(GoodsTypeQuery query);
 
+    Result get(Long id);
+
     Result save(GoodsTypeSaveRequestBody requestBody);
+
+    Result update(GoodsTypeUpdateRequestBody requestBody);
+
+    Result delete(Long id);
+
+    Result delete(List<Long> ids);
 }
