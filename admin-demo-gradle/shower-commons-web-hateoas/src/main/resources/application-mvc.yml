@@ -5,6 +5,8 @@ spring:
     date-format: yyyy-MM-dd HH:mm:ss
     locale: zh_CN
     time-zone: GMT+8
+  hateoas:
+    use-hal-as-default-json-media-type: true
 logging:
   level:
     web: debug
