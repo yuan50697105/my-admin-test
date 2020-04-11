@@ -1,8 +1,8 @@
 package com.example.application.service.impl;
 
-import com.example.application.pojo.admin.user.AdminSysUserSaveRequestBody;
-import com.example.application.pojo.admin.user.AdminSysUserUpdateRequestBody;
-import com.example.application.pojo.admin.user.AdminUserRoleUpdateRequestBody;
+import com.example.application.admin.pojo.user.AdminSysUserSaveRequestBody;
+import com.example.application.admin.pojo.user.AdminSysUserUpdateRequestBody;
+import com.example.application.admin.pojo.user.AdminUserRoleUpdateRequestBody;
 import com.example.application.service.AdminSysUserService;
 import com.example.commons.db.mybatis.mapper.base.sqlhelper.test.pojo.SysRole;
 import com.example.commons.db.mybatis.mapper.base.sqlhelper.test.pojo.SysUser;

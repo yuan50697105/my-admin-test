@@ -1,8 +1,8 @@
 package com.example.application.service.impl;
 
 import cn.hutool.core.util.IdUtil;
-import com.example.application.pojo.admin.role.AdminSysRoleSaveRequestBody;
-import com.example.application.pojo.admin.role.AdminSysRoleUpdateRequestBody;
+import com.example.application.admin.pojo.role.AdminSysRoleSaveRequestBody;
+import com.example.application.admin.pojo.role.AdminSysRoleUpdateRequestBody;
 import com.example.application.service.AdminSysRoleService;
 import com.example.commons.db.mybatis.plus.sqlhelper.test.constants.EnableConstants;
 import com.example.commons.db.mybatis.plus.sqlhelper.test.pojo.SysRole;

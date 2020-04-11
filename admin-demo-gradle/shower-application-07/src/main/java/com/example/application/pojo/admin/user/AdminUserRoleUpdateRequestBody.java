@@ -1,4 +1,4 @@
-package com.example.application.pojo.admin.user;
+package com.example.application.admin.pojo.user;
 
 import lombok.Data;
 

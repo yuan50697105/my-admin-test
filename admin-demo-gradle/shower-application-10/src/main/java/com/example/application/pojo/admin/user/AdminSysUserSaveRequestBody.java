@@ -1,4 +1,4 @@
-package com.example.application.pojo.admin.user;
+package com.example.application.admin.pojo.user;
 
 import com.example.commons.pojo.BaseEntity;
 import lombok.Data;

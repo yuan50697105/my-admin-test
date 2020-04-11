@@ -1,7 +1,7 @@
 package com.example.application.service;
 
-import com.example.application.pojo.admin.user.AdminSysUserSaveRequestBody;
-import com.example.application.pojo.admin.user.AdminSysUserUpdateRequestBody;
+import com.example.application.admin.pojo.user.AdminSysUserSaveRequestBody;
+import com.example.application.admin.pojo.user.AdminSysUserUpdateRequestBody;
 import com.example.commons.db.mybatis.mapper.ext.sqlhelper.test.pojo.query.SysUserQuery;
 import com.example.commons.web.pojo.Result;
 

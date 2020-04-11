@@ -1,4 +1,4 @@
-package com.example.application.pojo.admin.role;
+package com.example.application.admin.pojo.role;
 
 import com.example.commons.db.mybatis.mapper.base.sqlhelper.test.constants.EnableConstants;
 import com.example.commons.pojo.BaseEntity;

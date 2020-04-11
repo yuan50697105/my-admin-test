@@ -1,4 +1,4 @@
-package com.example.application.pojo.admin.permission;
+package com.example.application.admin.pojo.permission;
 
 import com.example.commons.db.mybatis.ext.sqlhelper.test.constants.PermissionConstants;
 import com.example.commons.pojo.BaseEntity;
