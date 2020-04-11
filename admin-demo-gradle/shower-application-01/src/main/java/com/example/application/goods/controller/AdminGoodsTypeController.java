@@ -1,14 +1,14 @@
 package com.example.application.goods.controller;
 
+import com.example.application.goods.pojo.type.GoodsTypeSaveRequestBody;
 import com.example.application.goods.service.AdminGoodsTypeService;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.GoodsTypeQuery;
 import com.example.commons.web.controller.BaseController;
 import com.example.commons.web.pojo.Result;
 import lombok.AllArgsConstructor;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @program: admin-demo-gradle
@@ -31,5 +31,11 @@ public class AdminGoodsTypeController extends BaseController {
     @GetMapping("list")
     public Result list(GoodsTypeQuery query) {
         return adminGoodsTypeService.list(query);
+    }
+
+    @PostMapping({"save", ""})
+    public Result save(@RequestBody @Validated GoodsTypeSaveRequestBody requestBody, BindingResult result) {
+        validate(result);
+        return adminGoodsTypeService.save(requestBody);
     }
 }

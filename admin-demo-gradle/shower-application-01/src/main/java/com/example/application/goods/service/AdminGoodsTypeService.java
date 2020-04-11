@@ -1,5 +1,6 @@
 package com.example.application.goods.service;
 
+import com.example.application.goods.pojo.type.GoodsTypeSaveRequestBody;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.GoodsTypeQuery;
 import com.example.commons.web.pojo.Result;
 
@@ -23,4 +24,6 @@ public interface AdminGoodsTypeService {
      * @return 列表
      */
     Result list(GoodsTypeQuery query);
+
+    Result save(GoodsTypeSaveRequestBody requestBody);
 }

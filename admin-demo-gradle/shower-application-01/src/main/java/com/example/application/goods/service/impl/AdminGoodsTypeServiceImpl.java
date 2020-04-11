@@ -1,5 +1,6 @@
 package com.example.application.goods.service.impl;
 
+import com.example.application.goods.pojo.type.GoodsTypeSaveRequestBody;
 import com.example.application.goods.service.AdminGoodsTypeService;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.GoodsType;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.GoodsTypeQuery;
@@ -33,5 +34,13 @@ public class AdminGoodsTypeServiceImpl implements AdminGoodsTypeService {
     public Result list(GoodsTypeQuery query) {
         List<GoodsType> goodsTypes = goodsTypeService.selectByQuery(query);
         return ResultUtils.data(goodsTypes);
+    }
+
+    @Override
+    public Result save(GoodsTypeSaveRequestBody requestBody) {
+        GoodsType goodsType = new GoodsType();
+        goodsType.copyFrom(requestBody);
+        goodsTypeService.insert(goodsType);
+        return ResultUtils.saveOk();
     }
 }
