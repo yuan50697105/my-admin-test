@@ -1,8 +1,9 @@
-package com.example.application.service.impl;
+package com.example.application.service.admin.impl;
 
 import com.example.application.pojo.admin.permission.AdminSysPermissionSaveRequestBody;
 import com.example.application.pojo.admin.permission.AdminSysPermissionUpdateRequestBody;
-import com.example.application.service.AdminSysPermissionService;
+import com.example.application.service.admin.AdminSysPermissionService;
+import com.example.application.service.base.impl.BaseServiceImpl;
 import com.example.commons.db.mybatis.base.pagehelper.test.constants.EnableConstants;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysPermission;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysPermissionQuery;

@@ -1,9 +1,8 @@
-package com.example.application.controller;
+package com.example.application.controller.goods;
 
 import com.example.application.pojo.goods.GoodsInfoSaveRequestBody;
 import com.example.application.pojo.goods.GoodsInfoUpdateRequestBody;
-import com.example.application.service.AdminGoodsInfoService;
-import com.example.commons.constants.RouteConstants;
+import com.example.application.service.goods.AdminGoodsInfoService;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.GoodsInfoQuery;
 import com.example.commons.web.controller.BaseController;
 import com.example.commons.web.pojo.Result;
@@ -23,7 +22,7 @@ import java.util.List;
  * @create: 2020-04-11 12:52
  */
 @RestController
-@RequestMapping(RouteConstants.AdminGoodsControllerConstants.GOODS)
+@RequestMapping("goods/info")
 @AllArgsConstructor
 @Validated
 public class AdminGoodsInfoController extends BaseController {

@@ -1,9 +1,9 @@
-package com.example.application.controller;
+package com.example.application.controller.admin;
 
 import com.example.application.pojo.admin.role.AdminSysPermissionUpdateRequestBody;
 import com.example.application.pojo.admin.role.AdminSysRoleSaveRequestBody;
 import com.example.application.pojo.admin.role.AdminSysRoleUpdateRequestBody;
-import com.example.application.service.AdminSysRoleService;
+import com.example.application.service.admin.AdminSysRoleService;
 import com.example.commons.constants.RouteConstants;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysRoleQuery;
 import com.example.commons.web.controller.BaseController;

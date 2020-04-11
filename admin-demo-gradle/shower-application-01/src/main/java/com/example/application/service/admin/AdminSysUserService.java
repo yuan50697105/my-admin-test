@@ -1,4 +1,4 @@
-package com.example.application.service;
+package com.example.application.service.admin;
 
 import com.example.application.pojo.admin.user.AdminSysUserSaveRequestBody;
 import com.example.application.pojo.admin.user.AdminSysUserUpdateRequestBody;

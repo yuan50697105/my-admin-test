@@ -1,8 +1,8 @@
-package com.example.application.controller;
+package com.example.application.controller.admin;
 
 import com.example.application.pojo.admin.permission.AdminSysPermissionSaveRequestBody;
 import com.example.application.pojo.admin.permission.AdminSysPermissionUpdateRequestBody;
-import com.example.application.service.AdminSysPermissionService;
+import com.example.application.service.admin.AdminSysPermissionService;
 import com.example.commons.constants.RouteConstants;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysPermissionQuery;
 import com.example.commons.web.controller.BaseController;

@@ -1,4 +1,4 @@
-package com.example.application.service;
+package com.example.application.service.goods;
 
 import com.example.application.pojo.goods.GoodsInfoSaveRequestBody;
 import com.example.application.pojo.goods.GoodsInfoUpdateRequestBody;

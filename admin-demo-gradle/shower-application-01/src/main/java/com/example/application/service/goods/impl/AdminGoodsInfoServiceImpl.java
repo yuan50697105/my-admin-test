@@ -1,9 +1,9 @@
-package com.example.application.service.impl;
+package com.example.application.service.goods.impl;
 
 import cn.hutool.core.util.ObjectUtil;
 import com.example.application.pojo.goods.GoodsInfoSaveRequestBody;
 import com.example.application.pojo.goods.GoodsInfoUpdateRequestBody;
-import com.example.application.service.AdminGoodsInfoService;
+import com.example.application.service.goods.AdminGoodsInfoService;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.GoodsInfo;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.GoodsInfoQuery;
 import com.example.commons.db.mybatis.base.pagehelper.test.service.GoodsInfoService;

@@ -1,9 +1,10 @@
-package com.example.application.service.impl;
+package com.example.application.service.admin.impl;
 
 import com.example.application.pojo.admin.user.AdminSysUserSaveRequestBody;
 import com.example.application.pojo.admin.user.AdminSysUserUpdateRequestBody;
 import com.example.application.pojo.admin.user.AdminUserRoleUpdateRequestBody;
-import com.example.application.service.AdminSysUserService;
+import com.example.application.service.admin.AdminSysUserService;
+import com.example.application.service.base.impl.BaseServiceImpl;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysRole;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysUser;
 import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysUserRole;
