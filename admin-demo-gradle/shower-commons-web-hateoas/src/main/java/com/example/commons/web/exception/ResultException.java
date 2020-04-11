@@ -12,29 +12,29 @@ import lombok.EqualsAndHashCode;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class ResultExceptio extends Exception {
+public class ResultException extends Exception {
     private Result result;
 
-    public ResultExceptio(Result result) {
+    public ResultException(Result result) {
         this.result = result;
     }
 
-    public ResultExceptio(String message, Result result) {
+    public ResultException(String message, Result result) {
         super(message);
         this.result = result;
     }
 
-    public ResultExceptio(String message, Throwable cause, Result result) {
+    public ResultException(String message, Throwable cause, Result result) {
         super(message, cause);
         this.result = result;
     }
 
-    public ResultExceptio(Throwable cause, Result result) {
+    public ResultException(Throwable cause, Result result) {
         super(cause);
         this.result = result;
     }
 
-    public ResultExceptio(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace, Result result) {
+    public ResultException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace, Result result) {
         super(message, cause, enableSuppression, writableStackTrace);
         this.result = result;
     }

@@ -1,6 +1,6 @@
 package com.example.commons.web.exception.handler;
 
-import com.example.commons.web.exception.ResultExceptio;
+import com.example.commons.web.exception.ResultException;
 import com.example.commons.web.exception.ResultRuntimeException;
 import com.example.commons.web.pojo.Result;
 import com.example.commons.web.utils.ResultUtils;
@@ -19,8 +19,8 @@ public class ExceptionHandler {
         return ResultUtils.exceptionError(e.getMessage());
     }
 
-    @org.springframework.web.bind.annotation.ExceptionHandler(ResultExceptio.class)
-    public Result result(ResultExceptio e) {
+    @org.springframework.web.bind.annotation.ExceptionHandler(ResultException.class)
+    public Result result(ResultException e) {
         return e.getResult();
     }
 

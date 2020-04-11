@@ -15,7 +15,6 @@ import java.util.StringJoiner;
  * @create: 2020-03-26 23:26
  */
 public class BaseController {
-
     public void validate(BindingResult result) throws ResultRuntimeException {
         if (result.hasErrors()) {
             StringJoiner joiner = new StringJoiner(",");

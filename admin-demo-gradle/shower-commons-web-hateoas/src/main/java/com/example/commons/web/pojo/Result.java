@@ -1,8 +1,9 @@
 package com.example.commons.web.pojo;
 
-import com.example.commons.pojo.BaseEntity;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.springframework.hateoas.RepresentationModel;
 
 /**
  * @program: admin-demo
@@ -12,14 +13,15 @@ import lombok.EqualsAndHashCode;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class Result extends BaseEntity {
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+public class Result extends RepresentationModel<Result> {
     private Integer code;
     private String message;
     private Object data;
 
-    public Result(Integer code, Object data) {
+    public Result(Integer code, String message) {
         this.code = code;
-        this.data = data;
+        this.message = message;
     }
 
     public Result(Integer code, String message, Object data) {
@@ -27,4 +29,6 @@ public class Result extends BaseEntity {
         this.message = message;
         this.data = data;
     }
+
+
 }
