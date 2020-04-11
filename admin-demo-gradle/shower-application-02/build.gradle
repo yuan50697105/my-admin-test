@@ -5,7 +5,7 @@ plugins {
 
 dependencies {
     compile project(':shower-commons-web')
-    compile project(':shower-commons-db-mybatis-base-with-sqlhelper')
+    compile project(':shower-commons-db-mybatis-with-sqlhelper')
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
