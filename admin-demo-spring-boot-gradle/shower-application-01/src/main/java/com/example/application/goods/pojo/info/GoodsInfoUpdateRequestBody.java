@@ -15,6 +15,11 @@ import java.math.BigDecimal;
 @Data
 public class GoodsInfoUpdateRequestBody {
     /**
+     * 类型ID
+     */
+    @NotNull
+    private Long typeId;
+    /**
      * 主键
      */
     @NotNull

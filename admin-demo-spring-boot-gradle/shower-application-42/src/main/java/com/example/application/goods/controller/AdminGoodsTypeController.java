@@ -25,7 +25,7 @@ import java.util.List;
 @AllArgsConstructor
 @Validated
 public class AdminGoodsTypeController extends BaseController {
-    private AdminGoodsTypeService adminGoodsTypeService;
+    private final AdminGoodsTypeService adminGoodsTypeService;
 
     @GetMapping("data")
     public Result data(GoodsTypeQuery query) {

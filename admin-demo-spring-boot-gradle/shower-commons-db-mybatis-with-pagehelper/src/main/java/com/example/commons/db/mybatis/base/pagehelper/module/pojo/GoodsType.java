@@ -1,9 +1,13 @@
 package com.example.commons.db.mybatis.base.pagehelper.module.pojo;
 
 import com.example.commons.db.mybatis.base.pagehelper.commons.pojo.CommonsEntity;
-import lombok.*;
-
 import java.io.Serializable;
+import java.util.Date;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 /**
  * goods_type
@@ -25,4 +29,8 @@ public class GoodsType extends CommonsEntity implements Serializable {
     private String name;
 
     private static final long serialVersionUID = 1L;
+
+    public static GoodsTypeBuilder builder() {
+        return new GoodsTypeBuilder();
+    }
 }

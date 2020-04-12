@@ -47,5 +47,9 @@ public interface SysRoleService {
     int batchInsert(List<SysRole> list);
 
     List<SysRole> selectByIds(List<Long> ids);
+
+    List<SysRole> selectByPrimaryKeys(List<Long> ids);
 }
+
+
 

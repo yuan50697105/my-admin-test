@@ -27,8 +27,8 @@ import java.util.UUID;
 @Service
 @AllArgsConstructor
 public class AdminSysPermissionServiceImpl implements AdminSysPermissionService {
-    private SysPermissionService sysPermissionService;
-    private SysRolePermissionService sysRolePermissionService;
+    private final SysPermissionService sysPermissionService;
+    private final SysRolePermissionService sysRolePermissionService;
 
     @Override
     @Transactional

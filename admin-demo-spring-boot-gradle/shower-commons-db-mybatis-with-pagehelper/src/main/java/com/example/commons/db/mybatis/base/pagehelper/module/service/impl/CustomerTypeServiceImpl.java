@@ -13,8 +13,9 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+
 @Service
-public class CustomerTypeServiceImpl implements CustomerTypeService{
+public class CustomerTypeServiceImpl implements CustomerTypeService {
 
     @Resource
     private CustomerTypeMapper customerTypeMapper;
@@ -55,13 +56,13 @@ public class CustomerTypeServiceImpl implements CustomerTypeService{
     }
 
     @Override
-    public int updateByExampleSelective(CustomerType record,CustomerTypeExample example) {
-        return customerTypeMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(CustomerType record, CustomerTypeExample example) {
+        return customerTypeMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(CustomerType record,CustomerTypeExample example) {
-        return customerTypeMapper.updateByExample(record,example);
+    public int updateByExample(CustomerType record, CustomerTypeExample example) {
+        return customerTypeMapper.updateByExample(record, example);
     }
 
     @Override
@@ -108,3 +109,4 @@ public class CustomerTypeServiceImpl implements CustomerTypeService{
     }
 
 }
+

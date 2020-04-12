@@ -18,7 +18,7 @@ import java.util.Map;
 @Service
 public class QuartzJobService {
     //Quartz定时任务核心的功能实现类
-    private Scheduler scheduler;
+    private final Scheduler scheduler;
 
     public QuartzJobService(@Autowired SchedulerFactoryBean schedulerFactoryBean) {
         scheduler = schedulerFactoryBean.getScheduler();

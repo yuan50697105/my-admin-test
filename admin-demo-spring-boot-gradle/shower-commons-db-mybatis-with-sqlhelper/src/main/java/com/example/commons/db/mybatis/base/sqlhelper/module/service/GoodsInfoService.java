@@ -44,3 +44,5 @@ public interface GoodsInfoService {
 
     List<GoodsInfo> selectByQuery(GoodsInfoQuery query);
 }
+
+

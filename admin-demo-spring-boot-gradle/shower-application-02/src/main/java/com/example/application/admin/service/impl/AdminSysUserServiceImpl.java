@@ -35,9 +35,9 @@ import static cn.hutool.core.util.ObjectUtil.isNotEmpty;
 @Service
 @AllArgsConstructor
 public class AdminSysUserServiceImpl implements AdminSysUserService {
-    private SysUserService sysUserService;
-    private SysUserRoleService sysUserRoleService;
-    private SysRoleService sysRoleService;
+    private final SysUserService sysUserService;
+    private final SysUserRoleService sysUserRoleService;
+    private final SysRoleService sysRoleService;
 
     /**
      * 保存用户
@@ -54,9 +54,11 @@ public class AdminSysUserServiceImpl implements AdminSysUserService {
         }
         SysUser sysUser = createUserFromRequestBody(requestBody);
         sysUserService.insert(sysUser);
-        List<SysRole> sysRoles = sysRoleService.selectByIds(requestBody.getRoleIds());
+        List<SysRole> sysRoles = sysRoleService.selectByPrimaryKeys(requestBody.getRoleIds());
         List<SysUserRole> userRoles = createUserRoleList(sysUser, sysRoles);
-        sysUserRoleService.batchInsert(userRoles);
+        if (isNotEmpty(userRoles)) {
+            sysUserRoleService.batchInsert(userRoles);
+        }
         return ResultUtils.saveOk();
     }
 
@@ -87,7 +89,7 @@ public class AdminSysUserServiceImpl implements AdminSysUserService {
         if (isEmpty(sysUser)) {
             throw new ResultRuntimeException(ResultUtils.userNotFoundError());
         }
-        List<SysRole> sysRoles = sysRoleService.selectByIds(roleIds);
+        List<SysRole> sysRoles = sysRoleService.selectByPrimaryKeys(roleIds);
         sysUserRoleService.deleteByUserId(userId);
         List<SysUserRole> sysUserRoles = createUserRoleList(sysUser, sysRoles);
         sysUserRoleService.batchInsert(sysUserRoles);

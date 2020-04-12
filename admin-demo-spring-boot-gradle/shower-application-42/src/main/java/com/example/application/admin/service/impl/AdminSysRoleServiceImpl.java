@@ -35,10 +35,10 @@ import static cn.hutool.core.util.ObjectUtil.isNotEmpty;
 @Service
 @AllArgsConstructor
 public class AdminSysRoleServiceImpl implements AdminSysRoleService {
-    private SysRoleService sysRoleService;
-    private SysPermissionService sysPermissionService;
-    private SysRolePermissionService sysRolePermissionService;
-    private SysUserRoleService sysUserRoleService;
+    private final SysRoleService sysRoleService;
+    private final SysPermissionService sysPermissionService;
+    private final SysRolePermissionService sysRolePermissionService;
+    private final SysUserRoleService sysUserRoleService;
 
     @Override
     @Transactional

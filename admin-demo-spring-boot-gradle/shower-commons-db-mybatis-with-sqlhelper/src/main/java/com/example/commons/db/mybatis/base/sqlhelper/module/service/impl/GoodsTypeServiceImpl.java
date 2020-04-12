@@ -121,3 +121,5 @@ public class GoodsTypeServiceImpl implements GoodsTypeService {
     }
 
 }
+
+

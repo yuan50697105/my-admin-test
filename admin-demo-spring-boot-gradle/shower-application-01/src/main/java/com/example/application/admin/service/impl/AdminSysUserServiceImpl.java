@@ -35,9 +35,9 @@ import static org.springframework.util.ObjectUtils.isEmpty;
 @Service
 @AllArgsConstructor
 public class AdminSysUserServiceImpl implements AdminSysUserService {
-    private SysUserService sysUserService;
-    private SysUserRoleService sysUserRoleService;
-    private SysRoleService sysRoleService;
+    private final SysUserService sysUserService;
+    private final SysUserRoleService sysUserRoleService;
+    private final SysRoleService sysRoleService;
 
     /**
      * 保存用户

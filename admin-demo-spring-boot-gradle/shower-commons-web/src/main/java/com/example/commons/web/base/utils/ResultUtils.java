@@ -30,6 +30,7 @@ public class ResultUtils {
      * */
     private static final Integer USER_EXIST_ERROR_CODE = 202;
     private static final String USER_EXIST_ERROR_MESSAGE = "用户已存在";
+    private static final String NOT_IMPLEMNT_ERROR_MESSAGE = "方法未实现";
 
     public static Result result(Integer code, String message) {
         return new Result(code, message);
@@ -100,5 +101,9 @@ public class ResultUtils {
 
     public static Result infoNotExistError() {
         return result(INFO_NOT_EXIST_CODE, INFO_EXIST_MESSAGE);
+    }
+
+    public static Result notImplemntError() {
+        return result(EXCEPTION_ERROR_CODE, NOT_IMPLEMNT_ERROR_MESSAGE);
     }
 }

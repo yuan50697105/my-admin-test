@@ -28,9 +28,9 @@ import java.util.List;
 public class AdminSysPermissionController extends BaseController {
     public static final String ID_NOT_NULL = "id not null";
     public static final String IDS_NOT_EMPTY = "ids not empty";
-    private AdminSysPermissionService adminSysPermissionService;
+    private final AdminSysPermissionService adminSysPermissionService;
 
-    @RequestMapping({"save", ""})
+    @PostMapping({"save", ""})
     public Result save(@RequestBody @Validated AdminSysPermissionSaveRequestBody requestBody, BindingResult result) {
         validate(result);
         return adminSysPermissionService.save(requestBody);

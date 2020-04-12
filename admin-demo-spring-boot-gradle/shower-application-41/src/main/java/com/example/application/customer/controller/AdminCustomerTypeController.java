@@ -24,7 +24,7 @@ import java.util.List;
 @AllArgsConstructor
 @Validated
 public class AdminCustomerTypeController extends BaseController {
-    private AdminCustomerTypeService adminCustomerTypeService;
+    private final AdminCustomerTypeService adminCustomerTypeService;
 
     @GetMapping("data")
     public Result data(CustomerTypeQuery query) {

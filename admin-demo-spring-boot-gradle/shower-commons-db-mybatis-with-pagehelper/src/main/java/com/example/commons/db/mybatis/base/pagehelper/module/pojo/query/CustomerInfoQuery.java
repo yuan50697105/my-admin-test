@@ -19,6 +19,8 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class CustomerInfoQuery extends CommonsQuery implements MybatisExample<CustomerInfoExample> {
+    @AndEqualTo
+    private Long typeId;
     /**
      * 编号
      */

@@ -13,8 +13,9 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+
 @Service
-public class CustomerInfoServiceImpl implements CustomerInfoService{
+public class CustomerInfoServiceImpl implements CustomerInfoService {
 
     @Resource
     private CustomerInfoMapper customerInfoMapper;
@@ -55,13 +56,13 @@ public class CustomerInfoServiceImpl implements CustomerInfoService{
     }
 
     @Override
-    public int updateByExampleSelective(CustomerInfo record,CustomerInfoExample example) {
-        return customerInfoMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(CustomerInfo record, CustomerInfoExample example) {
+        return customerInfoMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(CustomerInfo record,CustomerInfoExample example) {
-        return customerInfoMapper.updateByExample(record,example);
+    public int updateByExample(CustomerInfo record, CustomerInfoExample example) {
+        return customerInfoMapper.updateByExample(record, example);
     }
 
     @Override
@@ -108,3 +109,5 @@ public class CustomerInfoServiceImpl implements CustomerInfoService{
     }
 
 }
+
+

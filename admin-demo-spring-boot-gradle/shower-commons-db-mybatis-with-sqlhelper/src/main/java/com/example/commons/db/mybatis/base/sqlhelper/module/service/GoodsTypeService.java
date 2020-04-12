@@ -7,7 +7,7 @@ import com.example.db.pojo.IPageResult;
 
 import java.util.List;
 
-public interface GoodsTypeService{
+public interface GoodsTypeService {
 
 
     long countByExample(GoodsTypeExample example);
@@ -26,9 +26,9 @@ public interface GoodsTypeService{
 
     GoodsType selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(GoodsType record,GoodsTypeExample example);
+    int updateByExampleSelective(GoodsType record, GoodsTypeExample example);
 
-    int updateByExample(GoodsType record,GoodsTypeExample example);
+    int updateByExample(GoodsType record, GoodsTypeExample example);
 
     int updateByPrimaryKeySelective(GoodsType record);
 
@@ -44,3 +44,5 @@ public interface GoodsTypeService{
 
     List<GoodsType> selectByQuery(GoodsTypeQuery query);
 }
+
+
