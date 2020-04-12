@@ -56,7 +56,9 @@ public class AdminSysUserServiceImpl implements AdminSysUserService {
         sysUserService.insert(sysUser);
         List<SysRole> sysRoles = sysRoleService.selectByPrimaryKeys(requestBody.getRoleIds());
         List<SysUserRole> userRoles = createUserRoleList(sysUser, sysRoles);
-        sysUserRoleService.batchInsert(userRoles);
+        if (isNotEmpty(userRoles)) {
+            sysUserRoleService.batchInsert(userRoles);
+        }
         return ResultUtils.saveOk();
     }
 

@@ -2,6 +2,7 @@ package com.example.commons.db.mybatis.mapper.base.sqlhelper.commons.intercepter
 
 import cn.hutool.core.util.IdUtil;
 import cn.hutool.core.util.ObjectUtil;
+import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.mapping.MappedStatement;
 import org.apache.ibatis.mapping.SqlCommandType;
 import org.apache.ibatis.plugin.Interceptor;
@@ -13,7 +14,6 @@ import tk.mybatis.mapper.genid.GenId;
 
 import java.lang.reflect.Field;
 import java.util.*;
-import java.util.concurrent.Executor;
 
 /**
  * @program: admin-demo-gradle

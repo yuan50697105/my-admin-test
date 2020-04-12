@@ -2,17 +2,19 @@ package com.example.commons.db.mybatis.base.pagehelper.commons.intercepter;
 
 import cn.hutool.core.util.IdUtil;
 import cn.hutool.core.util.ObjectUtil;
+import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.mapping.MappedStatement;
 import org.apache.ibatis.mapping.SqlCommandType;
 import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.plugin.Intercepts;
 import org.apache.ibatis.plugin.Invocation;
 import org.apache.ibatis.plugin.Signature;
-import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Field;
-import java.util.*;
-import java.util.concurrent.Executor;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
 
 /**
  * @program: admin-demo-gradle
@@ -20,7 +22,6 @@ import java.util.concurrent.Executor;
  * @author: yuane
  * @create: 2020-04-06 02:13
  */
-@Component
 @Intercepts({
         @Signature(type = Executor.class, method = "update", args = {MappedStatement.class, Object.class})
 
@@ -66,15 +67,6 @@ public class CustomInterceptor implements Interceptor {
         return invocation.proceed();
     }
 
-    @Override
-    public Object plugin(Object target) {
-        return target;
-    }
-
-    @Override
-    public void setProperties(Properties properties) {
-
-    }
 
     public List<Field> getAllField(Object object) {
         Class<?> objectClass = object.getClass();

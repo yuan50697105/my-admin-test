@@ -3,6 +3,7 @@ package com.example.commons.db.mybatis.plus.sqlhelper.commons.intercepter;
 import cn.hutool.core.util.IdUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.incrementer.IdentifierGenerator;
+import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.mapping.MappedStatement;
 import org.apache.ibatis.mapping.SqlCommandType;
 import org.apache.ibatis.plugin.Interceptor;
@@ -13,7 +14,6 @@ import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Field;
 import java.util.*;
-import java.util.concurrent.Executor;
 
 /**
  * @program: admin-demo-gradle
