@@ -1,12 +1,19 @@
 package com.example.commons.db.mybatis.plus.sqlhelper.module.service;
 
-import java.util.List;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.SysRolePermission;
 import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.SysRolePermissionExample;
-import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.List;
 
 public interface SysRolePermissionService extends IService<SysRolePermission> {
 
+
+    int updateBatch(List<SysRolePermission> list);
+
+    int updateBatchSelective(List<SysRolePermission> list);
+
+    int batchInsert(List<SysRolePermission> list);
 
     long countByExample(SysRolePermissionExample example);
 
@@ -18,11 +25,13 @@ public interface SysRolePermissionService extends IService<SysRolePermission> {
 
     int updateByExample(SysRolePermission record, SysRolePermissionExample example);
 
-    int updateBatch(List<SysRolePermission> list);
+    boolean removeByPermissionId(Long permissionId);
 
-    int updateBatchSelective(List<SysRolePermission> list);
+    boolean removeByPermissionIds(List<Long> permissionIds);
 
-    int batchInsert(List<SysRolePermission> list);
+    boolean removeByRoleId(Long roleId);
 
+    boolean removeByRoleIds(List<Long> roleIds);
 }
+
 

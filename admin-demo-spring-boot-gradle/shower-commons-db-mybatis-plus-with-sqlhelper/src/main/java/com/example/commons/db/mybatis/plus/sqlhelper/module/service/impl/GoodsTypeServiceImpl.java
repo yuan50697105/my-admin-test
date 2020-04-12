@@ -1,16 +1,21 @@
 package com.example.commons.db.mybatis.plus.sqlhelper.module.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import java.util.List;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.example.commons.db.mybatis.plus.sqlhelper.base.pojo.PageResult;
 import com.example.commons.db.mybatis.plus.sqlhelper.module.mapper.GoodsTypeMapper;
-import java.util.List;
 import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.GoodsType;
 import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.GoodsTypeExample;
+import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.query.GoodsTypeQuery;
 import com.example.commons.db.mybatis.plus.sqlhelper.module.service.GoodsTypeService;
+import com.example.db.pojo.IPageResult;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
 @Service
-public class GoodsTypeServiceImpl extends ServiceImpl<GoodsTypeMapper, GoodsType> implements GoodsTypeService{
+public class GoodsTypeServiceImpl extends ServiceImpl<GoodsTypeMapper, GoodsType> implements GoodsTypeService {
 
     @Override
     public long countByExample(GoodsTypeExample example) {
@@ -43,5 +48,16 @@ public class GoodsTypeServiceImpl extends ServiceImpl<GoodsTypeMapper, GoodsType
     @Override
     public int batchInsert(List<GoodsType> list) {
         return baseMapper.batchInsert(list);
+    }
+
+    @Override
+    public IPageResult<GoodsType> selectPageByQuery(GoodsTypeQuery query) {
+        PageHelper.startPage(query.getPage(), query.getSize());
+        return new PageResult<>(new PageInfo<>(baseMapper.selectByExample(query.toExample())));
+    }
+
+    @Override
+    public List<GoodsType> selectByQuery(GoodsTypeQuery query) {
+        return baseMapper.selectByExample(query.toExample());
     }
 }

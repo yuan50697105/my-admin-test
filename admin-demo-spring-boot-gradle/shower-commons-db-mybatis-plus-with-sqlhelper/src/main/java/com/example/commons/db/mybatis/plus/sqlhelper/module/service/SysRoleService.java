@@ -11,6 +11,12 @@ import java.util.List;
 public interface SysRoleService extends IService<SysRole> {
 
 
+    int updateBatch(List<SysRole> list);
+
+    int updateBatchSelective(List<SysRole> list);
+
+    int batchInsert(List<SysRole> list);
+
     long countByExample(SysRoleExample example);
 
     int deleteByExample(SysRoleExample example);
@@ -21,17 +27,11 @@ public interface SysRoleService extends IService<SysRole> {
 
     int updateByExample(SysRole record, SysRoleExample example);
 
-    int updateBatch(List<SysRole> list);
-
-    int updateBatchSelective(List<SysRole> list);
-
-    int batchInsert(List<SysRole> list);
-
-    boolean insert(SysRole sysRole);
+    int insert(SysRole sysRole);
 
     SysRole selectById(Long id);
 
-    boolean deleteById(Long id);
+    int deleteById(Long id);
 
     boolean deleteByIds(List<Long> ids);
 
@@ -39,4 +39,5 @@ public interface SysRoleService extends IService<SysRole> {
 
     List<SysRole> selectByQuery(SysRoleQuery query);
 }
+
 

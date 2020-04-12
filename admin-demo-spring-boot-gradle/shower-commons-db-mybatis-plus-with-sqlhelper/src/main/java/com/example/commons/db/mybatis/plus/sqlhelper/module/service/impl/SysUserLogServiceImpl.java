@@ -1,16 +1,31 @@
 package com.example.commons.db.mybatis.plus.sqlhelper.module.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.example.commons.db.mybatis.plus.sqlhelper.module.mapper.SysUserLogMapper;
+import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.SysUserLog;
+import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.SysUserLogExample;
+import com.example.commons.db.mybatis.plus.sqlhelper.module.service.SysUserLogService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.SysUserLog;
-import com.example.commons.db.mybatis.plus.sqlhelper.module.mapper.SysUserLogMapper;
-import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.SysUserLogExample;
-import com.example.commons.db.mybatis.plus.sqlhelper.module.service.SysUserLogService;
 
 @Service
 public class SysUserLogServiceImpl extends ServiceImpl<SysUserLogMapper, SysUserLog> implements SysUserLogService {
+
+    @Override
+    public int updateBatch(List<SysUserLog> list) {
+        return baseMapper.updateBatch(list);
+    }
+
+    @Override
+    public int updateBatchSelective(List<SysUserLog> list) {
+        return baseMapper.updateBatchSelective(list);
+    }
+
+    @Override
+    public int batchInsert(List<SysUserLog> list) {
+        return baseMapper.batchInsert(list);
+    }
 
     @Override
     public long countByExample(SysUserLogExample example) {
@@ -36,20 +51,6 @@ public class SysUserLogServiceImpl extends ServiceImpl<SysUserLogMapper, SysUser
     public int updateByExample(SysUserLog record, SysUserLogExample example) {
         return baseMapper.updateByExample(record, example);
     }
-
-    @Override
-    public int updateBatch(List<SysUserLog> list) {
-        return baseMapper.updateBatch(list);
-    }
-
-    @Override
-    public int updateBatchSelective(List<SysUserLog> list) {
-        return baseMapper.updateBatchSelective(list);
-    }
-
-    @Override
-    public int batchInsert(List<SysUserLog> list) {
-        return baseMapper.batchInsert(list);
-    }
 }
+
 

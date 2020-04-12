@@ -1,7 +1,7 @@
 package com.example.commons.db.mybatis.plus.sqlhelper.module.service.impl;
 
 import cn.hutool.core.util.ObjectUtil;
-import com.baomidou.mybatisplus.extension.conditions.query.LambdaQueryChainWrapper;
+import com.baomidou.mybatisplus.extension.conditions.query.QueryChainWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.commons.db.mybatis.plus.sqlhelper.base.pojo.PageResult;
@@ -17,6 +17,21 @@ import java.util.List;
 
 @Service
 public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> implements SysRoleService {
+
+    @Override
+    public int updateBatch(List<SysRole> list) {
+        return baseMapper.updateBatch(list);
+    }
+
+    @Override
+    public int updateBatchSelective(List<SysRole> list) {
+        return baseMapper.updateBatchSelective(list);
+    }
+
+    @Override
+    public int batchInsert(List<SysRole> list) {
+        return baseMapper.batchInsert(list);
+    }
 
     @Override
     public long countByExample(SysRoleExample example) {
@@ -44,23 +59,8 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
     }
 
     @Override
-    public int updateBatch(List<SysRole> list) {
-        return baseMapper.updateBatch(list);
-    }
-
-    @Override
-    public int updateBatchSelective(List<SysRole> list) {
-        return baseMapper.updateBatchSelective(list);
-    }
-
-    @Override
-    public int batchInsert(List<SysRole> list) {
-        return baseMapper.batchInsert(list);
-    }
-
-    @Override
-    public boolean insert(SysRole sysRole) {
-        return save(sysRole);
+    public int insert(SysRole sysRole) {
+        return baseMapper.insert(sysRole);
     }
 
     @Override
@@ -70,8 +70,8 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
 
 
     @Override
-    public boolean deleteById(Long id) {
-        return removeById(id);
+    public int deleteById(Long id) {
+        return baseMapper.deleteById(id);
     }
 
     @Override
@@ -81,8 +81,9 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
 
     @Override
     public IPageResult<SysRole> selectPageByQuery(SysRoleQuery query) {
-        LambdaQueryChainWrapper<SysRole> wrapper = createQuery(query);
-        return new PageResult<>(wrapper.page(new Page<>(query.getPage(), query.getSize())));
+        QueryChainWrapper<SysRole> wrapper = createQuery(query);
+        Page<SysRole> page = wrapper.page(new Page<>(query.getPage(), query.getSize()));
+        return new PageResult<>(page);
     }
 
     @Override
@@ -90,13 +91,13 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
         return createQuery(query).list();
     }
 
-    public LambdaQueryChainWrapper<SysRole> createQuery(SysRoleQuery query) {
-        LambdaQueryChainWrapper<SysRole> wrapper = lambdaQuery();
+    public QueryChainWrapper<SysRole> createQuery(SysRoleQuery query) {
+        QueryChainWrapper<SysRole> wrapper = query();
         if (ObjectUtil.isNotEmpty(query.getName())) {
-            wrapper.like(SysRole::getName, query.getName());
+            wrapper.like("name", query.getName());
         }
         return wrapper;
     }
-
 }
+
 

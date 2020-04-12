@@ -1,9 +1,13 @@
 package com.example.commons.db.mybatis.plus.sqlhelper.module.service;
 
-import java.util.List;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.GoodsType;
 import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.GoodsTypeExample;
-import com.baomidou.mybatisplus.extension.service.IService;
+import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.query.GoodsTypeQuery;
+import com.example.db.pojo.IPageResult;
+
+import java.util.List;
+
 public interface GoodsTypeService extends IService<GoodsType>{
 
 
@@ -23,4 +27,7 @@ public interface GoodsTypeService extends IService<GoodsType>{
 
     int batchInsert(List<GoodsType> list);
 
+    IPageResult<GoodsType> selectPageByQuery(GoodsTypeQuery query);
+
+    List<GoodsType> selectByQuery(GoodsTypeQuery query);
 }

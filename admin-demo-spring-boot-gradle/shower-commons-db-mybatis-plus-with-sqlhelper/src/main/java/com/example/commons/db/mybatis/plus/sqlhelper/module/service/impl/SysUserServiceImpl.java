@@ -1,7 +1,7 @@
 package com.example.commons.db.mybatis.plus.sqlhelper.module.service.impl;
 
 import cn.hutool.core.util.ObjectUtil;
-import com.baomidou.mybatisplus.extension.conditions.query.LambdaQueryChainWrapper;
+import com.baomidou.mybatisplus.extension.conditions.query.QueryChainWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.commons.db.mybatis.plus.sqlhelper.base.pojo.PageResult;
@@ -17,6 +17,21 @@ import java.util.List;
 
 @Service
 public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements SysUserService {
+
+    @Override
+    public int updateBatch(List<SysUser> list) {
+        return baseMapper.updateBatch(list);
+    }
+
+    @Override
+    public int updateBatchSelective(List<SysUser> list) {
+        return baseMapper.updateBatchSelective(list);
+    }
+
+    @Override
+    public int batchInsert(List<SysUser> list) {
+        return baseMapper.batchInsert(list);
+    }
 
     @Override
     public long countByExample(SysUserExample example) {
@@ -44,32 +59,17 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     }
 
     @Override
-    public int updateBatch(List<SysUser> list) {
-        return baseMapper.updateBatch(list);
+    public int insert(SysUser sysUser) {
+        return baseMapper.insert(sysUser);
     }
 
     @Override
-    public int updateBatchSelective(List<SysUser> list) {
-        return baseMapper.updateBatchSelective(list);
-    }
-
-    @Override
-    public int batchInsert(List<SysUser> list) {
-        return baseMapper.batchInsert(list);
-    }
-
-    @Override
-    public boolean insert(SysUser sysUser) {
-        return save(sysUser);
-    }
-
-    @Override
-    public SysUser selectById(Long id) {
+    public SysUser selectByPrimaryKey(Long id) {
         return getById(id);
     }
 
     @Override
-    public boolean deleteById(Long id) {
+    public boolean deleteByPrimaryKey(Long id) {
         return removeById(id);
     }
 
@@ -80,7 +80,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
 
     @Override
     public IPageResult<SysUser> selectPageByQuery(SysUserQuery query) {
-        LambdaQueryChainWrapper<SysUser> wrapper = createQuery(query);
+        QueryChainWrapper<SysUser> wrapper = createQuery(query);
         return new PageResult<>(wrapper.page(new Page<>(query.getPage(), query.getSize())));
     }
 
@@ -89,12 +89,18 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         return createQuery(query).list();
     }
 
-    public LambdaQueryChainWrapper<SysUser> createQuery(SysUserQuery query) {
-        LambdaQueryChainWrapper<SysUser> wrapper = lambdaQuery();
-        if (ObjectUtil.isNotEmpty(query.getName())) {
-            wrapper.like(SysUser::getName, query.getName());
+    @Override
+    public boolean existByUsername(String username) {
+        return lambdaQuery().eq(SysUser::getUsername, username).count() > 0;
+    }
+
+    public QueryChainWrapper<SysUser> createQuery(SysUserQuery query) {
+        QueryChainWrapper<SysUser> wrapper = query();
+        if (ObjectUtil.isNotEmpty(query.getEnabled())) {
+            wrapper.like("name", query.getName());
         }
         return wrapper;
     }
 }
+
 

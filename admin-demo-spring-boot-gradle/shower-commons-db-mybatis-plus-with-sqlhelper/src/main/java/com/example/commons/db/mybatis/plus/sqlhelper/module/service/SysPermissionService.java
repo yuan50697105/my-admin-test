@@ -1,12 +1,21 @@
 package com.example.commons.db.mybatis.plus.sqlhelper.module.service;
 
-import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.SysPermissionExample;
-import java.util.List;
-import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.SysPermission;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.SysPermission;
+import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.SysPermissionExample;
+import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.query.SysPermissionQuery;
+import com.example.db.pojo.IPageResult;
+
+import java.util.List;
 
 public interface SysPermissionService extends IService<SysPermission> {
 
+
+    int updateBatch(List<SysPermission> list);
+
+    int updateBatchSelective(List<SysPermission> list);
+
+    int batchInsert(List<SysPermission> list);
 
     long countByExample(SysPermissionExample example);
 
@@ -18,11 +27,9 @@ public interface SysPermissionService extends IService<SysPermission> {
 
     int updateByExample(SysPermission record, SysPermissionExample example);
 
-    int updateBatch(List<SysPermission> list);
+    IPageResult<SysPermission> selectPageByQuery(SysPermissionQuery query);
 
-    int updateBatchSelective(List<SysPermission> list);
-
-    int batchInsert(List<SysPermission> list);
-
+    List<SysPermission> selectByQuery(SysPermissionQuery query);
 }
+
 

@@ -1,9 +1,13 @@
 package com.example.commons.db.mybatis.plus.sqlhelper.module.service;
 
-import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.CustomerInfo;
-import java.util.List;
-import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.CustomerInfoExample;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.CustomerInfo;
+import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.CustomerInfoExample;
+import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.query.CustomerInfoQuery;
+import com.example.db.pojo.IPageResult;
+
+import java.util.List;
+
 public interface CustomerInfoService extends IService<CustomerInfo>{
 
 
@@ -23,4 +27,7 @@ public interface CustomerInfoService extends IService<CustomerInfo>{
 
     int batchInsert(List<CustomerInfo> list);
 
+    IPageResult<CustomerInfo> selectPageByQuery(CustomerInfoQuery query);
+
+    List<CustomerInfo> selectByQuery(CustomerInfoQuery query);
 }

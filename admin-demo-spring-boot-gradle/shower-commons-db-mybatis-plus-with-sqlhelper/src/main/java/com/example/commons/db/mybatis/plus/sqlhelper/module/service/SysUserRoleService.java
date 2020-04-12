@@ -1,12 +1,19 @@
 package com.example.commons.db.mybatis.plus.sqlhelper.module.service;
 
-import java.util.List;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.SysUserRole;
 import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.SysUserRoleExample;
-import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.List;
 
 public interface SysUserRoleService extends IService<SysUserRole> {
 
+
+    int updateBatch(List<SysUserRole> list);
+
+    int updateBatchSelective(List<SysUserRole> list);
+
+    int batchInsert(List<SysUserRole> list);
 
     long countByExample(SysUserRoleExample example);
 
@@ -18,11 +25,13 @@ public interface SysUserRoleService extends IService<SysUserRole> {
 
     int updateByExample(SysUserRole record, SysUserRoleExample example);
 
-    int updateBatch(List<SysUserRole> list);
+    boolean removeByRoleId(Long roleId);
 
-    int updateBatchSelective(List<SysUserRole> list);
+    boolean removeByRoleIds(List<Long> roleIds);
 
-    int batchInsert(List<SysUserRole> list);
+    boolean removeByUserId(Long userId);
 
+    boolean removeByUserIds(List<Long> userIds);
 }
+
 

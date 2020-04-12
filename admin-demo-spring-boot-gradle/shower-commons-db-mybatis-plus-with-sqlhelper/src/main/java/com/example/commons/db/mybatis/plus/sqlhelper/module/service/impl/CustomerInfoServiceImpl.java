@@ -1,16 +1,21 @@
 package com.example.commons.db.mybatis.plus.sqlhelper.module.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import java.util.List;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.CustomerInfo;
-import java.util.List;
+import com.example.commons.db.mybatis.plus.sqlhelper.base.pojo.PageResult;
 import com.example.commons.db.mybatis.plus.sqlhelper.module.mapper.CustomerInfoMapper;
+import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.CustomerInfo;
 import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.CustomerInfoExample;
+import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.query.CustomerInfoQuery;
 import com.example.commons.db.mybatis.plus.sqlhelper.module.service.CustomerInfoService;
+import com.example.db.pojo.IPageResult;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
 @Service
-public class CustomerInfoServiceImpl extends ServiceImpl<CustomerInfoMapper, CustomerInfo> implements CustomerInfoService{
+public class CustomerInfoServiceImpl extends ServiceImpl<CustomerInfoMapper, CustomerInfo> implements CustomerInfoService {
 
     @Override
     public long countByExample(CustomerInfoExample example) {
@@ -43,5 +48,16 @@ public class CustomerInfoServiceImpl extends ServiceImpl<CustomerInfoMapper, Cus
     @Override
     public int batchInsert(List<CustomerInfo> list) {
         return baseMapper.batchInsert(list);
+    }
+
+    @Override
+    public IPageResult<CustomerInfo> selectPageByQuery(CustomerInfoQuery query) {
+        PageHelper.startPage(query.getPage(), query.getSize());
+        return new PageResult<>(new PageInfo<>(baseMapper.selectByExample(query.toExample())));
+    }
+
+    @Override
+    public List<CustomerInfo> selectByQuery(CustomerInfoQuery query) {
+        return baseMapper.selectByExample(query.toExample());
     }
 }

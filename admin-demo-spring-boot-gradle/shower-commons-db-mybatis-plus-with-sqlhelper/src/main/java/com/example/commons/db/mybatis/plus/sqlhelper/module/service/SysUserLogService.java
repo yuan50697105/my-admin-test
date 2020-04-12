@@ -1,12 +1,19 @@
 package com.example.commons.db.mybatis.plus.sqlhelper.module.service;
 
-import java.util.List;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.SysUserLog;
 import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.SysUserLogExample;
-import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.List;
 
 public interface SysUserLogService extends IService<SysUserLog> {
 
+
+    int updateBatch(List<SysUserLog> list);
+
+    int updateBatchSelective(List<SysUserLog> list);
+
+    int batchInsert(List<SysUserLog> list);
 
     long countByExample(SysUserLogExample example);
 
@@ -17,12 +24,6 @@ public interface SysUserLogService extends IService<SysUserLog> {
     int updateByExampleSelective(SysUserLog record, SysUserLogExample example);
 
     int updateByExample(SysUserLog record, SysUserLogExample example);
-
-    int updateBatch(List<SysUserLog> list);
-
-    int updateBatchSelective(List<SysUserLog> list);
-
-    int batchInsert(List<SysUserLog> list);
-
 }
+
 
