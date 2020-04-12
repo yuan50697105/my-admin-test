@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.commons.db.mybatis.mapper.base.pagehelper.test.mapper.SysUserLogMapper">
-  <resultMap id="BaseResultMap" type="com.example.commons.db.mybatis.mapper.base.pagehelper.test.pojo.SysUserLog">
-    <!--@mbg.generated generated on Fri Apr 10 20:12:03 CST 2020.-->
+<mapper namespace="com.example.commons.db.mybatis.mapper.base.pagehelper.module.mapper.SysUserLogMapper">
+  <resultMap id="BaseResultMap" type="com.example.commons.db.mybatis.mapper.base.pagehelper.module.pojo.SysUserLog">
+    <!--@mbg.generated generated on Sun Apr 12 10:52:11 CST 2020.-->
     <!--@Table sys_user_log-->
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="username" jdbcType="VARCHAR" property="username" />
@@ -16,12 +16,12 @@
     <result column="params" jdbcType="VARCHAR" property="params" />
   </resultMap>
   <sql id="Base_Column_List">
-    <!--@mbg.generated generated on Fri Apr 10 20:12:03 CST 2020.-->
+    <!--@mbg.generated generated on Sun Apr 12 10:52:11 CST 2020.-->
     id, username, `name`, `password`, create_time, update_time, `operation`, decription, 
     url, params
   </sql>
   <update id="updateBatch" parameterType="java.util.List">
-    <!--@mbg.generated generated on Fri Apr 10 20:12:03 CST 2020.-->
+    <!--@mbg.generated generated on Sun Apr 12 10:52:11 CST 2020.-->
     update sys_user_log
     <trim prefix="set" suffixOverrides=",">
       <trim prefix="username = case" suffix="end,">
@@ -76,7 +76,7 @@
     </foreach>
   </update>
   <update id="updateBatchSelective" parameterType="java.util.List">
-    <!--@mbg.generated generated on Fri Apr 10 20:12:03 CST 2020.-->
+    <!--@mbg.generated generated on Sun Apr 12 10:52:11 CST 2020.-->
     update sys_user_log
     <trim prefix="set" suffixOverrides=",">
       <trim prefix="username = case" suffix="end,">
@@ -149,7 +149,7 @@
     </foreach>
   </update>
   <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
-    <!--@mbg.generated generated on Fri Apr 10 20:12:03 CST 2020.-->
+    <!--@mbg.generated generated on Sun Apr 12 10:52:11 CST 2020.-->
     insert into sys_user_log
     (username, `name`, `password`, create_time, update_time, `operation`, decription, 
       url, params)

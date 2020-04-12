@@ -10,7 +10,7 @@ import com.example.commons.db.mybatis.plus.pagehelper.test.pojo.SysRole;
 import com.example.commons.db.mybatis.plus.pagehelper.test.pojo.SysRoleExample;
 import com.example.commons.db.mybatis.plus.pagehelper.test.pojo.query.SysRoleQuery;
 import com.example.commons.db.mybatis.plus.pagehelper.test.service.SysRoleService;
-import com.example.commons.db.pojo.IPageResult;
+import com.example.db.pojo.IPageResult;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -68,10 +68,6 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
         return getById(id);
     }
 
-    @Override
-    public int updateById(SysRole sysRole) {
-        return baseMapper.updateById(sysRole);
-    }
 
     @Override
     public int deleteById(Long id) {

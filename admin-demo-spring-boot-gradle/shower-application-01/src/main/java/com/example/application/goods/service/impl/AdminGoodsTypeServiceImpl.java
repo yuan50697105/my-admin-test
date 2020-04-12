@@ -3,10 +3,10 @@ package com.example.application.goods.service.impl;
 import com.example.application.goods.pojo.type.GoodsTypeSaveRequestBody;
 import com.example.application.goods.pojo.type.GoodsTypeUpdateRequestBody;
 import com.example.application.goods.service.AdminGoodsTypeService;
-import com.example.commons.db.mybatis.base.pagehelper.test.pojo.GoodsType;
-import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.GoodsTypeQuery;
-import com.example.commons.db.mybatis.base.pagehelper.test.service.GoodsTypeService;
-import com.example.commons.db.pojo.IPageResult;
+import com.example.commons.db.mybatis.base.pagehelper.module.pojo.GoodsType;
+import com.example.commons.db.mybatis.base.pagehelper.module.pojo.query.GoodsTypeQuery;
+import com.example.commons.db.mybatis.base.pagehelper.module.service.GoodsTypeService;
+import com.example.db.pojo.IPageResult;
 import com.example.commons.web.pojo.Result;
 import com.example.commons.web.utils.ResultUtils;
 import lombok.AllArgsConstructor;
@@ -72,7 +72,7 @@ public class AdminGoodsTypeServiceImpl implements AdminGoodsTypeService {
     @Override
     @Transactional
     public Result delete(List<Long> ids) {
-        goodsTypeService.deleteByIds(ids);
+        goodsTypeService.deleteByPrimaryKeys(ids);
         return ResultUtils.deleteOk();
     }
 }

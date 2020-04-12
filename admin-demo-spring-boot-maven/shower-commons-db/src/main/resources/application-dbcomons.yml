@@ -1,0 +1,4 @@
+spring:
+  jackson:
+    locale: zh_CN
+    time-zone: GMT+8

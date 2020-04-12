@@ -5,6 +5,6 @@ build
 *.iml
 *.ipr
 *.iws
-/admin-demo-gradle/.gradle/
+/admin-demo-spring-boot-gradle/.gradle/
 node_modules
 .next

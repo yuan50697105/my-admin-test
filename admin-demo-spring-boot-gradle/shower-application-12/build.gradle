@@ -1,0 +1,14 @@
+plugins {
+    id 'java'
+}
+
+
+dependencies {
+    compile project(':shower-commons-web')
+    compile project(':shower-commons-db-mybatis-mapper-with-sqlhelper')
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+bootJar {
+    enabled = true
+}

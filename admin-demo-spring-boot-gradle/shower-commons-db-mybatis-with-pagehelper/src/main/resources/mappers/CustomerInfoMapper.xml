@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.commons.db.mybatis.base.pagehelper.test.mapper.CustomerInfoMapper">
-  <resultMap id="BaseResultMap" type="com.example.commons.db.mybatis.base.pagehelper.test.pojo.CustomerInfo">
+<mapper namespace="com.example.commons.db.mybatis.base.pagehelper.module.mapper.CustomerInfoMapper">
+  <resultMap id="BaseResultMap" type="com.example.commons.db.mybatis.base.pagehelper.module.pojo.CustomerInfo">
     <!--@mbg.generated-->
     <!--@Table customer_info-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -77,7 +77,7 @@
     <!--@mbg.generated-->
     id, create_time, update_time, code, `name`, gender, age, phone
   </sql>
-  <select id="selectByExample" parameterType="com.example.commons.db.mybatis.base.pagehelper.test.pojo.CustomerInfoExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.example.commons.db.mybatis.base.pagehelper.module.pojo.CustomerInfoExample" resultMap="BaseResultMap">
     <!--@mbg.generated-->
     select
     <if test="distinct">
@@ -104,14 +104,14 @@
     delete from customer_info
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.example.commons.db.mybatis.base.pagehelper.test.pojo.CustomerInfoExample">
+  <delete id="deleteByExample" parameterType="com.example.commons.db.mybatis.base.pagehelper.module.pojo.CustomerInfoExample">
     <!--@mbg.generated-->
     delete from customer_info
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.example.commons.db.mybatis.base.pagehelper.test.pojo.CustomerInfo" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.example.commons.db.mybatis.base.pagehelper.module.pojo.CustomerInfo" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into customer_info (create_time, update_time, code, 
       `name`, gender, age, 
@@ -120,7 +120,7 @@
       #{name,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, 
       #{phone,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.example.commons.db.mybatis.base.pagehelper.test.pojo.CustomerInfo" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.example.commons.db.mybatis.base.pagehelper.module.pojo.CustomerInfo" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into customer_info
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -170,7 +170,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.example.commons.db.mybatis.base.pagehelper.test.pojo.CustomerInfoExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.example.commons.db.mybatis.base.pagehelper.module.pojo.CustomerInfoExample" resultType="java.lang.Long">
     <!--@mbg.generated-->
     select count(*) from customer_info
     <if test="_parameter != null">
@@ -225,7 +225,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.example.commons.db.mybatis.base.pagehelper.test.pojo.CustomerInfo">
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.commons.db.mybatis.base.pagehelper.module.pojo.CustomerInfo">
     <!--@mbg.generated-->
     update customer_info
     <set>
@@ -253,7 +253,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.example.commons.db.mybatis.base.pagehelper.test.pojo.CustomerInfo">
+  <update id="updateByPrimaryKey" parameterType="com.example.commons.db.mybatis.base.pagehelper.module.pojo.CustomerInfo">
     <!--@mbg.generated-->
     update customer_info
     set create_time = #{createTime,jdbcType=TIMESTAMP},

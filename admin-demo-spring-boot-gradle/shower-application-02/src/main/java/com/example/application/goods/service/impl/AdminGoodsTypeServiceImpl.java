@@ -3,12 +3,12 @@ package com.example.application.goods.service.impl;
 import com.example.application.goods.pojo.type.GoodsTypeSaveRequestBody;
 import com.example.application.goods.pojo.type.GoodsTypeUpdateRequestBody;
 import com.example.application.goods.service.AdminGoodsTypeService;
-import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.GoodsType;
-import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.query.GoodsTypeQuery;
-import com.example.commons.db.mybatis.base.sqlhelper.test.service.GoodsTypeService;
-import com.example.commons.db.pojo.IPageResult;
+import com.example.commons.db.mybatis.base.sqlhelper.module.pojo.GoodsType;
+import com.example.commons.db.mybatis.base.sqlhelper.module.pojo.query.GoodsTypeQuery;
+import com.example.commons.db.mybatis.base.sqlhelper.module.service.GoodsTypeService;
 import com.example.commons.web.pojo.Result;
 import com.example.commons.web.utils.ResultUtils;
+import com.example.db.pojo.IPageResult;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -72,7 +72,7 @@ public class AdminGoodsTypeServiceImpl implements AdminGoodsTypeService {
     @Override
     @Transactional
     public Result delete(List<Long> ids) {
-        goodsTypeService.deleteByIds(ids);
+        goodsTypeService.deleteByPrimaryKeys(ids);
         return ResultUtils.deleteOk();
     }
 }

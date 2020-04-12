@@ -3,14 +3,14 @@ package com.example.application.admin.service.impl;
 import com.example.application.admin.pojo.permission.AdminSysPermissionSaveRequestBody;
 import com.example.application.admin.pojo.permission.AdminSysPermissionUpdateRequestBody;
 import com.example.application.admin.service.AdminSysPermissionService;
-import com.example.commons.db.mybatis.base.sqlhelper.test.constants.EnableConstants;
-import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysPermission;
-import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.query.SysPermissionQuery;
-import com.example.commons.db.mybatis.base.sqlhelper.test.service.SysPermissionService;
-import com.example.commons.db.mybatis.base.sqlhelper.test.service.SysRolePermissionService;
-import com.example.commons.db.pojo.IPageResult;
+import com.example.commons.db.mybatis.base.sqlhelper.module.constants.EnableConstants;
+import com.example.commons.db.mybatis.base.sqlhelper.module.pojo.SysPermission;
+import com.example.commons.db.mybatis.base.sqlhelper.module.pojo.query.SysPermissionQuery;
+import com.example.commons.db.mybatis.base.sqlhelper.module.service.SysPermissionService;
+import com.example.commons.db.mybatis.base.sqlhelper.module.service.SysRolePermissionService;
 import com.example.commons.web.pojo.Result;
 import com.example.commons.web.utils.ResultUtils;
+import com.example.db.pojo.IPageResult;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -58,7 +58,7 @@ public class AdminSysPermissionServiceImpl implements AdminSysPermissionService 
     @Override
     @Transactional
     public Result delete(List<Long> ids) {
-        sysPermissionService.deleteByIds(ids);
+        sysPermissionService.deleteByPrimaryKeys(ids);
         sysRolePermissionService.deleteByPermissionIds(ids);
         return ResultUtils.deleteOk();
     }

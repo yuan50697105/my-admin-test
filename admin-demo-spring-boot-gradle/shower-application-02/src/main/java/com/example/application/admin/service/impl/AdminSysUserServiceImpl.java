@@ -4,17 +4,17 @@ import com.example.application.admin.pojo.user.AdminSysUserSaveRequestBody;
 import com.example.application.admin.pojo.user.AdminSysUserUpdateRequestBody;
 import com.example.application.admin.pojo.user.AdminUserRoleUpdateRequestBody;
 import com.example.application.admin.service.AdminSysUserService;
-import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysRole;
-import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysUser;
-import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysUserRole;
-import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.query.SysUserQuery;
-import com.example.commons.db.mybatis.base.sqlhelper.test.service.SysRoleService;
-import com.example.commons.db.mybatis.base.sqlhelper.test.service.SysUserRoleService;
-import com.example.commons.db.mybatis.base.sqlhelper.test.service.SysUserService;
-import com.example.commons.db.pojo.IPageResult;
+import com.example.commons.db.mybatis.base.sqlhelper.module.pojo.SysRole;
+import com.example.commons.db.mybatis.base.sqlhelper.module.pojo.SysUser;
+import com.example.commons.db.mybatis.base.sqlhelper.module.pojo.SysUserRole;
+import com.example.commons.db.mybatis.base.sqlhelper.module.pojo.query.SysUserQuery;
+import com.example.commons.db.mybatis.base.sqlhelper.module.service.SysRoleService;
+import com.example.commons.db.mybatis.base.sqlhelper.module.service.SysUserRoleService;
+import com.example.commons.db.mybatis.base.sqlhelper.module.service.SysUserService;
 import com.example.commons.web.exception.ResultRuntimeException;
 import com.example.commons.web.pojo.Result;
 import com.example.commons.web.utils.ResultUtils;
+import com.example.db.pojo.IPageResult;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,8 +23,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import static cn.hutool.core.util.ObjectUtil.isEmpty;
 import static cn.hutool.core.util.ObjectUtil.isNotEmpty;
-import static org.springframework.util.ObjectUtils.isEmpty;
 
 /**
  * @program: admin-demo-gradle
@@ -123,7 +123,7 @@ public class AdminSysUserServiceImpl implements AdminSysUserService {
     @Override
     @Transactional
     public Result delete(List<Long> ids) {
-        sysUserService.deleteByIds(ids);
+        sysUserService.deleteByPrimaryKeys(ids);
         sysUserRoleService.deleteByUserIds(ids);
         return ResultUtils.deleteOk();
     }

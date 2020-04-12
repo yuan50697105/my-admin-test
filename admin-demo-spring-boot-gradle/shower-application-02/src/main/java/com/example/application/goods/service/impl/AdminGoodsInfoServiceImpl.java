@@ -4,13 +4,13 @@ import cn.hutool.core.util.ObjectUtil;
 import com.example.application.goods.pojo.info.GoodsInfoSaveRequestBody;
 import com.example.application.goods.pojo.info.GoodsInfoUpdateRequestBody;
 import com.example.application.goods.service.AdminGoodsInfoService;
-import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.GoodsInfo;
-import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.query.GoodsInfoQuery;
-import com.example.commons.db.mybatis.base.sqlhelper.test.service.GoodsInfoService;
-import com.example.commons.db.pojo.IPageResult;
+import com.example.commons.db.mybatis.base.sqlhelper.module.pojo.GoodsInfo;
+import com.example.commons.db.mybatis.base.sqlhelper.module.pojo.query.GoodsInfoQuery;
+import com.example.commons.db.mybatis.base.sqlhelper.module.service.GoodsInfoService;
 import com.example.commons.web.exception.ResultRuntimeException;
 import com.example.commons.web.pojo.Result;
 import com.example.commons.web.utils.ResultUtils;
+import com.example.db.pojo.IPageResult;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -77,7 +77,7 @@ public class AdminGoodsInfoServiceImpl implements AdminGoodsInfoService {
     @Override
     @Transactional
     public Result delete(List<Long> ids) {
-        goodsInfoService.deleteByIds(ids);
+        goodsInfoService.deleteByPrimaryKeys(ids);
         return ResultUtils.deleteOk();
     }
 

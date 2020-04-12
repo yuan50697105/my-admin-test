@@ -10,7 +10,7 @@ import com.example.commons.db.mybatis.plus.pagehelper.test.pojo.SysUser;
 import com.example.commons.db.mybatis.plus.pagehelper.test.pojo.SysUserExample;
 import com.example.commons.db.mybatis.plus.pagehelper.test.pojo.query.SysUserQuery;
 import com.example.commons.db.mybatis.plus.pagehelper.test.service.SysUserService;
-import com.example.commons.db.pojo.IPageResult;
+import com.example.db.pojo.IPageResult;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -66,11 +66,6 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     @Override
     public SysUser selectByPrimaryKey(Long id) {
         return getById(id);
-    }
-
-    @Override
-    public int updateById(SysUser sysUser) {
-        return baseMapper.updateById(sysUser);
     }
 
     @Override

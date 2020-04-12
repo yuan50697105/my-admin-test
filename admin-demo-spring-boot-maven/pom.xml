@@ -4,6 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
+        <module>shower-commons</module>
+        <module>shower-commons-web</module>
+        <module>shower-commons-web-hateoas</module>
+        <module>shower-commons-db</module>
+        <module>shower-commons-db-mybatis-with-pagehelper</module>
+        <module>shower-commons-db-mybatis-with-sqlhelper</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

@@ -4,14 +4,14 @@ import com.example.application.admin.pojo.user.AdminSysUserSaveRequestBody;
 import com.example.application.admin.pojo.user.AdminSysUserUpdateRequestBody;
 import com.example.application.admin.pojo.user.AdminUserRoleUpdateRequestBody;
 import com.example.application.admin.service.AdminSysUserService;
-import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysRole;
-import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysUser;
-import com.example.commons.db.mybatis.base.pagehelper.test.pojo.SysUserRole;
-import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysUserQuery;
-import com.example.commons.db.mybatis.base.pagehelper.test.service.SysRoleService;
-import com.example.commons.db.mybatis.base.pagehelper.test.service.SysUserRoleService;
-import com.example.commons.db.mybatis.base.pagehelper.test.service.SysUserService;
-import com.example.commons.db.pojo.IPageResult;
+import com.example.commons.db.mybatis.base.pagehelper.module.pojo.SysRole;
+import com.example.commons.db.mybatis.base.pagehelper.module.pojo.SysUser;
+import com.example.commons.db.mybatis.base.pagehelper.module.pojo.SysUserRole;
+import com.example.commons.db.mybatis.base.pagehelper.module.pojo.query.SysUserQuery;
+import com.example.commons.db.mybatis.base.pagehelper.module.service.SysRoleService;
+import com.example.commons.db.mybatis.base.pagehelper.module.service.SysUserRoleService;
+import com.example.commons.db.mybatis.base.pagehelper.module.service.SysUserService;
+import com.example.db.pojo.IPageResult;
 import com.example.commons.web.exception.ResultRuntimeException;
 import com.example.commons.web.pojo.Result;
 import com.example.commons.web.utils.ResultUtils;
@@ -54,7 +54,7 @@ public class AdminSysUserServiceImpl implements AdminSysUserService {
         }
         SysUser sysUser = createUserFromRequestBody(requestBody);
         sysUserService.insert(sysUser);
-        List<SysRole> sysRoles = sysRoleService.selectByIds(requestBody.getRoleIds());
+        List<SysRole> sysRoles = sysRoleService.selectByPrimaryKeys(requestBody.getRoleIds());
         List<SysUserRole> userRoles = createUserRoleList(sysUser, sysRoles);
         sysUserRoleService.batchInsert(userRoles);
         return ResultUtils.saveOk();
@@ -87,7 +87,7 @@ public class AdminSysUserServiceImpl implements AdminSysUserService {
         if (isEmpty(sysUser)) {
             throw new ResultRuntimeException(ResultUtils.userNotFoundError());
         }
-        List<SysRole> sysRoles = sysRoleService.selectByIds(roleIds);
+        List<SysRole> sysRoles = sysRoleService.selectByPrimaryKeys(roleIds);
         sysUserRoleService.deleteByUserId(userId);
         List<SysUserRole> sysUserRoles = createUserRoleList(sysUser, sysRoles);
         sysUserRoleService.batchInsert(sysUserRoles);
@@ -123,7 +123,7 @@ public class AdminSysUserServiceImpl implements AdminSysUserService {
     @Override
     @Transactional
     public Result delete(List<Long> ids) {
-        sysUserService.deleteByIds(ids);
+        sysUserService.deleteByPrimaryKeys(ids);
         sysUserRoleService.deleteByUserIds(ids);
         return ResultUtils.deleteOk();
     }

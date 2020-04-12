@@ -5,18 +5,18 @@ import com.example.application.admin.pojo.role.AdminSysPermissionUpdateRequestBo
 import com.example.application.admin.pojo.role.AdminSysRoleSaveRequestBody;
 import com.example.application.admin.pojo.role.AdminSysRoleUpdateRequestBody;
 import com.example.application.admin.service.AdminSysRoleService;
-import com.example.commons.db.mybatis.base.sqlhelper.test.constants.EnableConstants;
-import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysPermission;
-import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysRole;
-import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysRolePermission;
-import com.example.commons.db.mybatis.base.sqlhelper.test.pojo.query.SysRoleQuery;
-import com.example.commons.db.mybatis.base.sqlhelper.test.service.SysPermissionService;
-import com.example.commons.db.mybatis.base.sqlhelper.test.service.SysRolePermissionService;
-import com.example.commons.db.mybatis.base.sqlhelper.test.service.SysRoleService;
-import com.example.commons.db.mybatis.base.sqlhelper.test.service.SysUserRoleService;
-import com.example.commons.db.pojo.IPageResult;
+import com.example.commons.db.mybatis.base.sqlhelper.module.constants.EnableConstants;
+import com.example.commons.db.mybatis.base.sqlhelper.module.pojo.SysPermission;
+import com.example.commons.db.mybatis.base.sqlhelper.module.pojo.SysRole;
+import com.example.commons.db.mybatis.base.sqlhelper.module.pojo.SysRolePermission;
+import com.example.commons.db.mybatis.base.sqlhelper.module.pojo.query.SysRoleQuery;
+import com.example.commons.db.mybatis.base.sqlhelper.module.service.SysPermissionService;
+import com.example.commons.db.mybatis.base.sqlhelper.module.service.SysRolePermissionService;
+import com.example.commons.db.mybatis.base.sqlhelper.module.service.SysRoleService;
+import com.example.commons.db.mybatis.base.sqlhelper.module.service.SysUserRoleService;
 import com.example.commons.web.pojo.Result;
 import com.example.commons.web.utils.ResultUtils;
+import com.example.db.pojo.IPageResult;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -87,7 +87,7 @@ public class AdminSysRoleServiceImpl implements AdminSysRoleService {
     @Override
     @Transactional
     public Result delete(List<Long> ids) {
-        sysRoleService.deleteByIds(ids);
+        sysRoleService.deleteByPrimaryKeys(ids);
         sysRolePermissionService.deleteByRoleIds(ids);
         sysUserRoleService.deleteByRoleIds(ids);
         return ResultUtils.deleteOk();

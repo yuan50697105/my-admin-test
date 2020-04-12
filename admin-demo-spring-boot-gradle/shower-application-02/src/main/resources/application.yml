@@ -5,5 +5,5 @@ server:
 spring:
   profiles:
 #    active: dbc,mvc,mysql
-#    active: dbc,mvc,test
+#    active: dbc,mvc,module
     active: dbc,mvc,local

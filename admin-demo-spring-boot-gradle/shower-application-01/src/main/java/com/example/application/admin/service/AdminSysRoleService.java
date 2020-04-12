@@ -3,7 +3,7 @@ package com.example.application.admin.service;
 import com.example.application.admin.pojo.role.AdminSysPermissionUpdateRequestBody;
 import com.example.application.admin.pojo.role.AdminSysRoleSaveRequestBody;
 import com.example.application.admin.pojo.role.AdminSysRoleUpdateRequestBody;
-import com.example.commons.db.mybatis.base.pagehelper.test.pojo.query.SysRoleQuery;
+import com.example.commons.db.mybatis.base.pagehelper.module.pojo.query.SysRoleQuery;
 import com.example.commons.web.pojo.Result;
 
 import java.util.List;

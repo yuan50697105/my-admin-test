@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.example.commons.db.mybatis.plus.pagehelper.test.pojo.SysUser;
 import com.example.commons.db.mybatis.plus.pagehelper.test.pojo.SysUserExample;
 import com.example.commons.db.mybatis.plus.pagehelper.test.pojo.query.SysUserQuery;
-import com.example.commons.db.pojo.IPageResult;
+import com.example.db.pojo.IPageResult;
 
 import java.util.List;
 

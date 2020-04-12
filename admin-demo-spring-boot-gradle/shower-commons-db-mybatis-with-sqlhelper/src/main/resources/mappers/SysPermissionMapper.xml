@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.commons.db.mybatis.base.sqlhelper.test.mapper.SysPermissionMapper">
-  <resultMap id="BaseResultMap" type="com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysPermission">
+<mapper namespace="com.example.commons.db.mybatis.base.sqlhelper.module.mapper.SysPermissionMapper">
+  <resultMap id="BaseResultMap" type="com.example.commons.db.mybatis.base.sqlhelper.module.pojo.SysPermission">
     <!--@mbg.generated-->
     <!--@Table sys_permission-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -76,7 +76,7 @@
     <!--@mbg.generated-->
     id, create_time, update_time, `name`, code, `type`, enabled
   </sql>
-  <select id="selectByExample" parameterType="com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysPermissionExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.example.commons.db.mybatis.base.sqlhelper.module.pojo.SysPermissionExample" resultMap="BaseResultMap">
     <!--@mbg.generated-->
     select
     <if test="distinct">
@@ -103,14 +103,14 @@
     delete from sys_permission
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysPermissionExample">
+  <delete id="deleteByExample" parameterType="com.example.commons.db.mybatis.base.sqlhelper.module.pojo.SysPermissionExample">
     <!--@mbg.generated-->
     delete from sys_permission
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysPermission" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.example.commons.db.mybatis.base.sqlhelper.module.pojo.SysPermission" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into sys_permission (create_time, update_time, `name`, 
       code, `type`, enabled
@@ -119,7 +119,7 @@
       #{code,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{enabled,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysPermission" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.example.commons.db.mybatis.base.sqlhelper.module.pojo.SysPermission" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into sys_permission
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -163,7 +163,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysPermissionExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.example.commons.db.mybatis.base.sqlhelper.module.pojo.SysPermissionExample" resultType="java.lang.Long">
     <!--@mbg.generated-->
     select count(*) from sys_permission
     <if test="_parameter != null">
@@ -214,7 +214,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysPermission">
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.commons.db.mybatis.base.sqlhelper.module.pojo.SysPermission">
     <!--@mbg.generated-->
     update sys_permission
     <set>
@@ -239,7 +239,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.example.commons.db.mybatis.base.sqlhelper.test.pojo.SysPermission">
+  <update id="updateByPrimaryKey" parameterType="com.example.commons.db.mybatis.base.sqlhelper.module.pojo.SysPermission">
     <!--@mbg.generated-->
     update sys_permission
     set create_time = #{createTime,jdbcType=TIMESTAMP},
