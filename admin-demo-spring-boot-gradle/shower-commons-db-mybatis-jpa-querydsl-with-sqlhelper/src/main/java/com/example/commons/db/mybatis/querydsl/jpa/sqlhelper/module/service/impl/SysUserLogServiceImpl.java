@@ -51,13 +51,13 @@ public class SysUserLogServiceImpl implements SysUserLogService {
     }
 
     @Override
-    public int updateByExampleSelective(SysUserLog record, SysUserLogExample example) {
-        return sysUserLogMapper.updateByExampleSelective(record, example);
+    public int updateByExampleSelective(SysUserLog record,SysUserLogExample example) {
+        return sysUserLogMapper.updateByExampleSelective(record,example);
     }
 
     @Override
-    public int updateByExample(SysUserLog record, SysUserLogExample example) {
-        return sysUserLogMapper.updateByExample(record, example);
+    public int updateByExample(SysUserLog record,SysUserLogExample example) {
+        return sysUserLogMapper.updateByExample(record,example);
     }
 
     @Override
@@ -86,4 +86,3 @@ public class SysUserLogServiceImpl implements SysUserLogService {
     }
 
 }
-

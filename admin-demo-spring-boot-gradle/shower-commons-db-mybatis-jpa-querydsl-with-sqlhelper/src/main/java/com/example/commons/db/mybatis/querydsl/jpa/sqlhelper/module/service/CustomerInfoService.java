@@ -1,12 +1,13 @@
 package com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.module.service;
 
-
 import com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.module.pojo.CustomerInfo;
 import com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.module.pojo.CustomerInfoExample;
+import com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.module.pojo.query.CustomerInfoQuery;
+import com.example.db.pojo.IPageResult;
 
 import java.util.List;
 
-public interface CustomerInfoService {
+public interface CustomerInfoService{
 
 
     long countByExample(CustomerInfoExample example);
@@ -23,9 +24,9 @@ public interface CustomerInfoService {
 
     CustomerInfo selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(CustomerInfo record, CustomerInfoExample example);
+    int updateByExampleSelective(CustomerInfo record,CustomerInfoExample example);
 
-    int updateByExample(CustomerInfo record, CustomerInfoExample example);
+    int updateByExample(CustomerInfo record,CustomerInfoExample example);
 
     int updateByPrimaryKeySelective(CustomerInfo record);
 
@@ -37,5 +38,9 @@ public interface CustomerInfoService {
 
     int batchInsert(List<CustomerInfo> list);
 
-}
+    IPageResult<CustomerInfo> selectPageByQuery(CustomerInfoQuery query);
 
+    List<CustomerInfo> selectByQuery(CustomerInfoQuery query);
+
+    int deleteByPrimaryKeys(List<Long> ids);
+}

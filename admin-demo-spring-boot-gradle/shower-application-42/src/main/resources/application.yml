@@ -1,0 +1,9 @@
+server:
+  servlet:
+    context-path: /admin
+  port: 8081
+spring:
+  profiles:
+#    active: dbc,mvc,mysql
+#    active: dbc,mvc,module
+    active: dbc,mvc,local

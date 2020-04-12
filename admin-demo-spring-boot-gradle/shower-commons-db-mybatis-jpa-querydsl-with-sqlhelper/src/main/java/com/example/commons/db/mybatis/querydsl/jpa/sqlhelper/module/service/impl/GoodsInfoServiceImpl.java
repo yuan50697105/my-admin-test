@@ -1,9 +1,14 @@
 package com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.module.service.impl;
 
+import com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.base.pojo.PageResult;
 import com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.module.mapper.GoodsInfoMapper;
 import com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.module.pojo.GoodsInfo;
 import com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.module.pojo.GoodsInfoExample;
+import com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.module.pojo.query.GoodsInfoQuery;
 import com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.module.service.GoodsInfoService;
+import com.example.db.pojo.IPageResult;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -51,13 +56,13 @@ public class GoodsInfoServiceImpl implements GoodsInfoService {
     }
 
     @Override
-    public int updateByExampleSelective(GoodsInfo record, GoodsInfoExample example) {
-        return goodsInfoMapper.updateByExampleSelective(record, example);
+    public int updateByExampleSelective(GoodsInfo record,GoodsInfoExample example) {
+        return goodsInfoMapper.updateByExampleSelective(record,example);
     }
 
     @Override
-    public int updateByExample(GoodsInfo record, GoodsInfoExample example) {
-        return goodsInfoMapper.updateByExample(record, example);
+    public int updateByExample(GoodsInfo record,GoodsInfoExample example) {
+        return goodsInfoMapper.updateByExample(record,example);
     }
 
     @Override
@@ -85,5 +90,22 @@ public class GoodsInfoServiceImpl implements GoodsInfoService {
         return goodsInfoMapper.batchInsert(list);
     }
 
-}
+    @Override
+    public IPageResult<GoodsInfo> selectPageByQuery(GoodsInfoQuery query) {
+        PageHelper.startPage(query.getPage(), query.getSize());
+        return new PageResult<>(new PageInfo<>(selectByExample(query.toExample())));
+    }
 
+    @Override
+    public List<GoodsInfo> selectByQuery(GoodsInfoQuery query) {
+        return selectByExample(query.toExample());
+    }
+
+    @Override
+    public int deleteByPrimaryKeys(List<Long> ids) {
+        GoodsInfoExample example = new GoodsInfoExample();
+        example.or().andIdIn(ids);
+        return deleteByExample(example);
+    }
+
+}

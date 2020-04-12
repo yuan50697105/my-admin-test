@@ -6,7 +6,7 @@ import com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.module.pojo.SysUser
 
 import java.util.List;
 
-public interface SysUserLogService {
+public interface SysUserLogService{
 
 
     long countByExample(SysUserLogExample example);
@@ -23,9 +23,9 @@ public interface SysUserLogService {
 
     SysUserLog selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(SysUserLog record, SysUserLogExample example);
+    int updateByExampleSelective(SysUserLog record,SysUserLogExample example);
 
-    int updateByExample(SysUserLog record, SysUserLogExample example);
+    int updateByExample(SysUserLog record,SysUserLogExample example);
 
     int updateByPrimaryKeySelective(SysUserLog record);
 
@@ -38,4 +38,3 @@ public interface SysUserLogService {
     int batchInsert(List<SysUserLog> list);
 
 }
-

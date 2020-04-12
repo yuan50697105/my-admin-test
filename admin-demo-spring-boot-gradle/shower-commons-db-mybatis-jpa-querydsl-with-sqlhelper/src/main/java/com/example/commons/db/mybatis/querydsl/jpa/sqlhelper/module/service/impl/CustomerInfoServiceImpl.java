@@ -1,9 +1,14 @@
 package com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.module.service.impl;
 
+import com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.base.pojo.PageResult;
 import com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.module.mapper.CustomerInfoMapper;
 import com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.module.pojo.CustomerInfo;
 import com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.module.pojo.CustomerInfoExample;
+import com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.module.pojo.query.CustomerInfoQuery;
 import com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.module.service.CustomerInfoService;
+import com.example.db.pojo.IPageResult;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -51,13 +56,13 @@ public class CustomerInfoServiceImpl implements CustomerInfoService {
     }
 
     @Override
-    public int updateByExampleSelective(CustomerInfo record, CustomerInfoExample example) {
-        return customerInfoMapper.updateByExampleSelective(record, example);
+    public int updateByExampleSelective(CustomerInfo record,CustomerInfoExample example) {
+        return customerInfoMapper.updateByExampleSelective(record,example);
     }
 
     @Override
-    public int updateByExample(CustomerInfo record, CustomerInfoExample example) {
-        return customerInfoMapper.updateByExample(record, example);
+    public int updateByExample(CustomerInfo record,CustomerInfoExample example) {
+        return customerInfoMapper.updateByExample(record,example);
     }
 
     @Override
@@ -85,5 +90,22 @@ public class CustomerInfoServiceImpl implements CustomerInfoService {
         return customerInfoMapper.batchInsert(list);
     }
 
-}
+    @Override
+    public IPageResult<CustomerInfo> selectPageByQuery(CustomerInfoQuery query) {
+        PageHelper.startPage(query.getPage(), query.getSize());
+        return new PageResult<>(new PageInfo<>(selectByExample(query.toExample())));
+    }
 
+    @Override
+    public List<CustomerInfo> selectByQuery(CustomerInfoQuery query) {
+        return selectByExample(query.toExample());
+    }
+
+    @Override
+    public int deleteByPrimaryKeys(List<Long> ids) {
+        CustomerInfoExample example = new CustomerInfoExample();
+        example.or().andIdIn(ids);
+        return deleteByExample(example);
+    }
+
+}
