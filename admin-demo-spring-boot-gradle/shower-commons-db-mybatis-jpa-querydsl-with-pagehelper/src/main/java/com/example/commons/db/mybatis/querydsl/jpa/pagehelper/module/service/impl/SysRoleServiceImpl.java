@@ -1,9 +1,14 @@
 package com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.service.impl;
 
+import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.base.pojo.PageResult;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.mapper.SysRoleMapper;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.SysRole;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.SysRoleExample;
+import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.query.SysRoleQuery;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.service.SysRoleService;
+import com.example.db.pojo.IPageResult;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -51,13 +56,13 @@ public class SysRoleServiceImpl implements SysRoleService {
     }
 
     @Override
-    public int updateByExampleSelective(SysRole record, SysRoleExample example) {
-        return sysRoleMapper.updateByExampleSelective(record, example);
+    public int updateByExampleSelective(SysRole record,SysRoleExample example) {
+        return sysRoleMapper.updateByExampleSelective(record,example);
     }
 
     @Override
-    public int updateByExample(SysRole record, SysRoleExample example) {
-        return sysRoleMapper.updateByExample(record, example);
+    public int updateByExample(SysRole record,SysRoleExample example) {
+        return sysRoleMapper.updateByExample(record,example);
     }
 
     @Override
@@ -85,6 +90,29 @@ public class SysRoleServiceImpl implements SysRoleService {
         return sysRoleMapper.batchInsert(list);
     }
 
+    @Override
+    public int deleteByPrimaryKeys(List<Long> ids) {
+        SysRoleExample example = new SysRoleExample();
+        example.or().andIdIn(ids);
+        return deleteByExample(example);
+    }
+
+    @Override
+    public IPageResult<SysRole> selectPageByQuery(SysRoleQuery query) {
+        PageHelper.startPage(query.getPage(), query.getSize());
+        return new PageResult<>(new PageInfo<>(selectByExample(query.toExample())));
+    }
+
+    @Override
+    public List<SysRole> selectByQuery(SysRoleQuery query) {
+        return selectByExample(query.toExample());
+    }
+
+    @Override
+    public List<SysRole> selectByPrimaryKeys(List<Long> ids) {
+        SysRoleExample example = new SysRoleExample();
+        example.or().andIdIn(ids);
+        return selectByExample(example);
+    }
+
 }
-
-

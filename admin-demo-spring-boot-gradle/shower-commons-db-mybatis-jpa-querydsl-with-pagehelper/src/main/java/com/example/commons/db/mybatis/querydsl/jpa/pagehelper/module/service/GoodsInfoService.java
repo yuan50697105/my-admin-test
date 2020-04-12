@@ -1,12 +1,13 @@
 package com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.service;
 
-
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.GoodsInfo;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.GoodsInfoExample;
+import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.query.GoodsInfoQuery;
+import com.example.db.pojo.IPageResult;
 
 import java.util.List;
 
-public interface GoodsInfoService {
+public interface GoodsInfoService{
 
 
     long countByExample(GoodsInfoExample example);
@@ -23,9 +24,9 @@ public interface GoodsInfoService {
 
     GoodsInfo selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(GoodsInfo record, GoodsInfoExample example);
+    int updateByExampleSelective(GoodsInfo record,GoodsInfoExample example);
 
-    int updateByExample(GoodsInfo record, GoodsInfoExample example);
+    int updateByExample(GoodsInfo record,GoodsInfoExample example);
 
     int updateByPrimaryKeySelective(GoodsInfo record);
 
@@ -37,6 +38,9 @@ public interface GoodsInfoService {
 
     int batchInsert(List<GoodsInfo> list);
 
+    IPageResult<GoodsInfo> selectPageByQuery(GoodsInfoQuery query);
+
+    List<GoodsInfo> selectByQuery(GoodsInfoQuery query);
+
+    int deleteByPrimaryKeys(List<Long> ids);
 }
-
-

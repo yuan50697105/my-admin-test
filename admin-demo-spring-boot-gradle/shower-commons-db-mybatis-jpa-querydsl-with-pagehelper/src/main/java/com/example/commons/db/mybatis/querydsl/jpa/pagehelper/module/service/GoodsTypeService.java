@@ -1,8 +1,9 @@
 package com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.service;
 
-
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.GoodsType;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.GoodsTypeExample;
+import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.query.GoodsTypeQuery;
+import com.example.db.pojo.IPageResult;
 
 import java.util.List;
 
@@ -37,6 +38,9 @@ public interface GoodsTypeService {
 
     int batchInsert(List<GoodsType> list);
 
+    IPageResult<GoodsType> selectPageByQuery(GoodsTypeQuery query);
+
+    List<GoodsType> selectByQuery(GoodsTypeQuery query);
+
+    int deleteByPrimaryKeys(List<Long> ids);
 }
-
-

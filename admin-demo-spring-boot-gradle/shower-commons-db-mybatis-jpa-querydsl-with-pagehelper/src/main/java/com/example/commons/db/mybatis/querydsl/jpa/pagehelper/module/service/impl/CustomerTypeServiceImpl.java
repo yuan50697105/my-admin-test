@@ -1,9 +1,14 @@
 package com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.service.impl;
 
+import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.base.pojo.PageResult;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.mapper.CustomerTypeMapper;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.CustomerType;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.CustomerTypeExample;
+import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.query.CustomerTypeQuery;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.service.CustomerTypeService;
+import com.example.db.pojo.IPageResult;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -51,13 +56,13 @@ public class CustomerTypeServiceImpl implements CustomerTypeService {
     }
 
     @Override
-    public int updateByExampleSelective(CustomerType record, CustomerTypeExample example) {
-        return customerTypeMapper.updateByExampleSelective(record, example);
+    public int updateByExampleSelective(CustomerType record,CustomerTypeExample example) {
+        return customerTypeMapper.updateByExampleSelective(record,example);
     }
 
     @Override
-    public int updateByExample(CustomerType record, CustomerTypeExample example) {
-        return customerTypeMapper.updateByExample(record, example);
+    public int updateByExample(CustomerType record,CustomerTypeExample example) {
+        return customerTypeMapper.updateByExample(record,example);
     }
 
     @Override
@@ -85,6 +90,22 @@ public class CustomerTypeServiceImpl implements CustomerTypeService {
         return customerTypeMapper.batchInsert(list);
     }
 
+    @Override
+    public IPageResult<CustomerType> selectPageByQuery(CustomerTypeQuery query) {
+        PageHelper.startPage(query.getPage(), query.getSize());
+        return new PageResult<>(new PageInfo<>(selectByExample(query.toExample())));
+    }
+
+    @Override
+    public List<CustomerType> selectByQuery(CustomerTypeQuery query) {
+        return selectByExample(query.toExample());
+    }
+
+    @Override
+    public int deleteByPrimaryKeys(List<Long> ids) {
+        CustomerTypeExample example = new CustomerTypeExample();
+        example.or().andIdIn(ids);
+        return deleteByExample(example);
+    }
+
 }
-
-

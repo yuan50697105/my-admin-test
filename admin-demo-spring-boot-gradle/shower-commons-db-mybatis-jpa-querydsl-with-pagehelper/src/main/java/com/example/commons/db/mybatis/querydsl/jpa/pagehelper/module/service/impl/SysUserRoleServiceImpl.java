@@ -51,13 +51,13 @@ public class SysUserRoleServiceImpl implements SysUserRoleService {
     }
 
     @Override
-    public int updateByExampleSelective(SysUserRole record, SysUserRoleExample example) {
-        return sysUserRoleMapper.updateByExampleSelective(record, example);
+    public int updateByExampleSelective(SysUserRole record,SysUserRoleExample example) {
+        return sysUserRoleMapper.updateByExampleSelective(record,example);
     }
 
     @Override
-    public int updateByExample(SysUserRole record, SysUserRoleExample example) {
-        return sysUserRoleMapper.updateByExample(record, example);
+    public int updateByExample(SysUserRole record,SysUserRoleExample example) {
+        return sysUserRoleMapper.updateByExample(record,example);
     }
 
     @Override
@@ -85,6 +85,32 @@ public class SysUserRoleServiceImpl implements SysUserRoleService {
         return sysUserRoleMapper.batchInsert(list);
     }
 
+    @Override
+    public int deleteByRoleId(Long roleId) {
+        SysUserRoleExample example = new SysUserRoleExample();
+        example.or().andRoleIdEqualTo(roleId);
+        return deleteByExample(example);
+    }
+
+    @Override
+    public int deleteByRoleIds(List<Long> roleIds) {
+        SysUserRoleExample example = new SysUserRoleExample();
+        example.or().andRoleIdIn(roleIds);
+        return deleteByExample(example);
+    }
+
+    @Override
+    public int deleteByUserId(Long userId) {
+        SysUserRoleExample example = new SysUserRoleExample();
+        example.or().andUserIdEqualTo(userId);
+        return deleteByExample(example);
+    }
+
+    @Override
+    public int deleteByUserIds(List<Long> userIds) {
+        SysUserRoleExample example = new SysUserRoleExample();
+        example.or().andUserIdIn(userIds);
+        return deleteByExample(example);
+    }
+
 }
-
-

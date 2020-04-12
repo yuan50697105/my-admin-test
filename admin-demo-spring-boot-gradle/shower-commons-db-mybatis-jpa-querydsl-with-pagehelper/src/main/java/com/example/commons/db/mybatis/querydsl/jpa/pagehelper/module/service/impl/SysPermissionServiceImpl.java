@@ -1,9 +1,14 @@
 package com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.service.impl;
 
+import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.base.pojo.PageResult;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.mapper.SysPermissionMapper;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.SysPermission;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.SysPermissionExample;
+import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.query.SysPermissionQuery;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.service.SysPermissionService;
+import com.example.db.pojo.IPageResult;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -51,13 +56,13 @@ public class SysPermissionServiceImpl implements SysPermissionService {
     }
 
     @Override
-    public int updateByExampleSelective(SysPermission record, SysPermissionExample example) {
-        return sysPermissionMapper.updateByExampleSelective(record, example);
+    public int updateByExampleSelective(SysPermission record,SysPermissionExample example) {
+        return sysPermissionMapper.updateByExampleSelective(record,example);
     }
 
     @Override
-    public int updateByExample(SysPermission record, SysPermissionExample example) {
-        return sysPermissionMapper.updateByExample(record, example);
+    public int updateByExample(SysPermission record,SysPermissionExample example) {
+        return sysPermissionMapper.updateByExample(record,example);
     }
 
     @Override
@@ -85,6 +90,29 @@ public class SysPermissionServiceImpl implements SysPermissionService {
         return sysPermissionMapper.batchInsert(list);
     }
 
+    @Override
+    public int deleteByPrimaryKeys(List<Long> ids) {
+        SysPermissionExample example = new SysPermissionExample();
+        example.or().andIdIn(ids);
+        return deleteByExample(example);
+    }
+
+    @Override
+    public IPageResult<SysPermission> selectPageByQuery(SysPermissionQuery query) {
+        PageHelper.startPage(query.getPage(), query.getSize());
+        return new PageResult<>(new PageInfo<>(selectByExample(query.toExample())));
+    }
+
+    @Override
+    public List<SysPermission> selectByQuery(SysPermissionQuery query) {
+        return selectByExample(query.toExample());
+    }
+
+    @Override
+    public List<SysPermission> selectByPrimaryKeys(List<Long> ids) {
+        SysPermissionExample example = new SysPermissionExample();
+        example.or().andIdIn(ids);
+        return selectByExample(example);
+    }
+
 }
-
-

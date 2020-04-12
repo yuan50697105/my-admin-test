@@ -1,12 +1,13 @@
 package com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.service;
 
-
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.SysUser;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.SysUserExample;
+import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.query.SysUserQuery;
+import com.example.db.pojo.IPageResult;
 
 import java.util.List;
 
-public interface SysUserService {
+public interface SysUserService{
 
 
     long countByExample(SysUserExample example);
@@ -23,9 +24,9 @@ public interface SysUserService {
 
     SysUser selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(SysUser record, SysUserExample example);
+    int updateByExampleSelective(SysUser record,SysUserExample example);
 
-    int updateByExample(SysUser record, SysUserExample example);
+    int updateByExample(SysUser record,SysUserExample example);
 
     int updateByPrimaryKeySelective(SysUser record);
 
@@ -37,6 +38,11 @@ public interface SysUserService {
 
     int batchInsert(List<SysUser> list);
 
+    int deleteByPrimaryKeys(List<Long> ids);
+
+    IPageResult<SysUser> selectPageByQuery(SysUserQuery query);
+
+    List<SysUser> selectByQuery(SysUserQuery query);
+
+    boolean existByUsername(String username);
 }
-
-

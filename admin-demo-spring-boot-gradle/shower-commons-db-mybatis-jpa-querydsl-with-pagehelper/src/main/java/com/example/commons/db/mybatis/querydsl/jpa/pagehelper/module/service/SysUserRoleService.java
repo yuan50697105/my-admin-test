@@ -6,7 +6,7 @@ import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.SysUse
 
 import java.util.List;
 
-public interface SysUserRoleService {
+public interface SysUserRoleService{
 
 
     long countByExample(SysUserRoleExample example);
@@ -23,9 +23,9 @@ public interface SysUserRoleService {
 
     SysUserRole selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(SysUserRole record, SysUserRoleExample example);
+    int updateByExampleSelective(SysUserRole record,SysUserRoleExample example);
 
-    int updateByExample(SysUserRole record, SysUserRoleExample example);
+    int updateByExample(SysUserRole record,SysUserRoleExample example);
 
     int updateByPrimaryKeySelective(SysUserRole record);
 
@@ -37,6 +37,11 @@ public interface SysUserRoleService {
 
     int batchInsert(List<SysUserRole> list);
 
+    int deleteByRoleId(Long roleId);
+
+    int deleteByRoleIds(List<Long> roleIds);
+
+    int deleteByUserId(Long userId);
+
+    int deleteByUserIds(List<Long> userIds);
 }
-
-

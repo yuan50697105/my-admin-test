@@ -51,13 +51,13 @@ public class SysRolePermissionServiceImpl implements SysRolePermissionService {
     }
 
     @Override
-    public int updateByExampleSelective(SysRolePermission record, SysRolePermissionExample example) {
-        return sysRolePermissionMapper.updateByExampleSelective(record, example);
+    public int updateByExampleSelective(SysRolePermission record,SysRolePermissionExample example) {
+        return sysRolePermissionMapper.updateByExampleSelective(record,example);
     }
 
     @Override
-    public int updateByExample(SysRolePermission record, SysRolePermissionExample example) {
-        return sysRolePermissionMapper.updateByExample(record, example);
+    public int updateByExample(SysRolePermission record,SysRolePermissionExample example) {
+        return sysRolePermissionMapper.updateByExample(record,example);
     }
 
     @Override
@@ -85,6 +85,32 @@ public class SysRolePermissionServiceImpl implements SysRolePermissionService {
         return sysRolePermissionMapper.batchInsert(list);
     }
 
+    @Override
+    public int deleteByPermissionId(Long permissionId) {
+        SysRolePermissionExample example = new SysRolePermissionExample();
+        example.or().andPermissionIdEqualTo(permissionId);
+        return deleteByExample(example);
+    }
+
+    @Override
+    public int deleteByPermissionIds(List<Long> permissionIds) {
+        SysRolePermissionExample example = new SysRolePermissionExample();
+        example.or().andPermissionIdIn(permissionIds);
+        return deleteByExample(example);
+    }
+
+    @Override
+    public int deleteByRoleId(Long roleId) {
+        SysRolePermissionExample example = new SysRolePermissionExample();
+        example.or().andRoleIdEqualTo(roleId);
+        return deleteByExample(example);
+    }
+
+    @Override
+    public int deleteByRoleIds(List<Long> roleIds) {
+        SysRolePermissionExample example = new SysRolePermissionExample();
+        example.or().andRoleIdIn(roleIds);
+        return deleteByExample(example);
+    }
+
 }
-
-
