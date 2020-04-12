@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.commons.db.mybatis.plus.sqlhelper.test.mapper.SysRoleMapper">
-  <resultMap id="BaseResultMap" type="com.example.commons.db.mybatis.plus.sqlhelper.test.pojo.SysRole">
+<mapper namespace="com.example.commons.db.mybatis.plus.sqlhelper.module.mapper.SysRoleMapper">
+  <resultMap id="BaseResultMap" type="com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.SysRole">
     <!--@mbg.generated-->
     <!--@Table sys_role-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -75,7 +75,7 @@
     <!--@mbg.generated-->
     id, create_time, update_time, code, `name`, enabled
   </sql>
-  <select id="selectByExample" parameterType="com.example.commons.db.mybatis.plus.sqlhelper.test.pojo.SysRoleExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.SysRoleExample" resultMap="BaseResultMap">
     <!--@mbg.generated-->
     select
     <if test="distinct">
@@ -90,14 +90,14 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByExample" parameterType="com.example.commons.db.mybatis.plus.sqlhelper.test.pojo.SysRoleExample">
+  <delete id="deleteByExample" parameterType="com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.SysRoleExample">
     <!--@mbg.generated-->
     delete from sys_role
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <select id="countByExample" parameterType="com.example.commons.db.mybatis.plus.sqlhelper.test.pojo.SysRoleExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.SysRoleExample" resultType="java.lang.Long">
     <!--@mbg.generated-->
     select count(*) from sys_role
     <if test="_parameter != null">
