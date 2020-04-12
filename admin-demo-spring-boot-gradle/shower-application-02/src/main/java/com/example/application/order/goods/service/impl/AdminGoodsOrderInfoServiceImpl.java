@@ -23,7 +23,7 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class AdminGoodsOrderInfoServiceImpl implements AdminGoodsOrderInfoService {
-    private GoodsOrderInfoService goodsOrderInfoService;
+    private final GoodsOrderInfoService goodsOrderInfoService;
 
     @Override
     public Result data(GoodsOrderInfoQuery query) {
@@ -51,6 +51,7 @@ public class AdminGoodsOrderInfoServiceImpl implements AdminGoodsOrderInfoServic
 
     @Override
     public Result save(AdminGoodsOrderInfoSaveRequestBody requestBody) {
+        // TODO: 2020/4/12 订单添加
         throw new ResultRuntimeException(ResultUtils.notImplemntError());
     }
 }
