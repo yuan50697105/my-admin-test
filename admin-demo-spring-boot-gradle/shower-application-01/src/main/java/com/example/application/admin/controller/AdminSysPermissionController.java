@@ -4,8 +4,8 @@ import com.example.application.admin.pojo.permission.AdminSysPermissionSaveReque
 import com.example.application.admin.pojo.permission.AdminSysPermissionUpdateRequestBody;
 import com.example.application.admin.service.AdminSysPermissionService;
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.query.SysPermissionQuery;
-import com.example.commons.web.controller.BaseController;
-import com.example.commons.web.pojo.Result;
+import com.example.commons.web.base.controller.BaseController;
+import com.example.commons.web.base.pojo.Result;
 import lombok.AllArgsConstructor;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -30,7 +30,7 @@ public class AdminSysPermissionController extends BaseController {
     public static final String IDS_NOT_EMPTY = "ids not empty";
     private AdminSysPermissionService adminSysPermissionService;
 
-    @RequestMapping({"save", ""})
+    @PostMapping({"save", ""})
     public Result save(@RequestBody @Validated AdminSysPermissionSaveRequestBody requestBody, BindingResult result) {
         validate(result);
         return adminSysPermissionService.save(requestBody);

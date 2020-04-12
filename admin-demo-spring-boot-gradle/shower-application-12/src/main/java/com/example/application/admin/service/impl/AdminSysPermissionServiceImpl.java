@@ -8,8 +8,8 @@ import com.example.commons.db.mybatis.mapper.base.sqlhelper.module.pojo.SysPermi
 import com.example.commons.db.mybatis.mapper.base.sqlhelper.module.pojo.query.SysPermissionQuery;
 import com.example.commons.db.mybatis.mapper.base.sqlhelper.module.service.SysPermissionService;
 import com.example.commons.db.mybatis.mapper.base.sqlhelper.module.service.SysRolePermissionService;
-import com.example.commons.web.pojo.Result;
-import com.example.commons.web.utils.ResultUtils;
+import com.example.commons.web.base.pojo.Result;
+import com.example.commons.web.base.utils.ResultUtils;
 import com.example.db.pojo.IPageResult;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -4,8 +4,8 @@ import com.example.application.customer.pojo.type.AdminCustomerTypeSaveRequestBo
 import com.example.application.customer.pojo.type.AdminCustomerTypeUpdateRequestBody;
 import com.example.application.customer.service.AdminCustomerTypeService;
 import com.example.commons.db.mybatis.base.sqlhelper.module.pojo.query.CustomerTypeQuery;
-import com.example.commons.web.controller.BaseController;
-import com.example.commons.web.pojo.Result;
+import com.example.commons.web.base.controller.BaseController;
+import com.example.commons.web.base.pojo.Result;
 import lombok.AllArgsConstructor;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;

@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://mysql:3306/app_01?serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    sql-script-encoding: utf-8
+    initialization-mode: always
+    schema:
+      - classpath*:sqls/*.sql

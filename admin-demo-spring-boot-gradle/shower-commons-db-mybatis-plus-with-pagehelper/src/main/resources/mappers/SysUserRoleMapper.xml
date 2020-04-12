@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.commons.db.mybatis.plus.pagehelper.test.mapper.SysUserRoleMapper">
-  <resultMap id="BaseResultMap" type="com.example.commons.db.mybatis.plus.pagehelper.test.pojo.SysUserRole">
+<mapper namespace="com.example.commons.db.mybatis.plus.pagehelper.module.mapper.SysUserRoleMapper">
+  <resultMap id="BaseResultMap" type="com.example.commons.db.mybatis.plus.pagehelper.module.pojo.SysUserRole">
     <!--@mbg.generated-->
     <!--@Table sys_user_role-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -74,7 +74,7 @@
     <!--@mbg.generated-->
     id, create_time, update_time, user_id, role_id
   </sql>
-  <select id="selectByExample" parameterType="com.example.commons.db.mybatis.plus.pagehelper.test.pojo.SysUserRoleExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.example.commons.db.mybatis.plus.pagehelper.module.pojo.SysUserRoleExample" resultMap="BaseResultMap">
     <!--@mbg.generated-->
     select
     <if test="distinct">
@@ -89,14 +89,14 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByExample" parameterType="com.example.commons.db.mybatis.plus.pagehelper.test.pojo.SysUserRoleExample">
+  <delete id="deleteByExample" parameterType="com.example.commons.db.mybatis.plus.pagehelper.module.pojo.SysUserRoleExample">
     <!--@mbg.generated-->
     delete from sys_user_role
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <select id="countByExample" parameterType="com.example.commons.db.mybatis.plus.pagehelper.test.pojo.SysUserRoleExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.example.commons.db.mybatis.plus.pagehelper.module.pojo.SysUserRoleExample" resultType="java.lang.Long">
     <!--@mbg.generated-->
     select count(*) from sys_user_role
     <if test="_parameter != null">
