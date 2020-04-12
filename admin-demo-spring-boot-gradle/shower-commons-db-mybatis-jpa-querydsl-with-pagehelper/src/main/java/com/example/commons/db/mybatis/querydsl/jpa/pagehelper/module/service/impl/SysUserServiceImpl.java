@@ -5,6 +5,7 @@ import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.mapper.SysU
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.SysUser;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.SysUserExample;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.query.SysUserQuery;
+import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.repository.SysUserRepository;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.service.SysUserService;
 import com.example.db.pojo.IPageResult;
 import com.github.pagehelper.PageHelper;
@@ -16,7 +17,8 @@ import java.util.List;
 
 @Service
 public class SysUserServiceImpl implements SysUserService {
-
+    @Resource
+    private SysUserRepository sysUserRepository;
     @Resource
     private SysUserMapper sysUserMapper;
 

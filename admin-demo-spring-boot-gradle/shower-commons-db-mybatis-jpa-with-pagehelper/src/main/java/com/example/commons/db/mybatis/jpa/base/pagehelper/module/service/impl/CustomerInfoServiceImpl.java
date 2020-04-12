@@ -5,6 +5,7 @@ import com.example.commons.db.mybatis.jpa.base.pagehelper.module.mapper.Customer
 import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.CustomerInfo;
 import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.CustomerInfoExample;
 import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.query.CustomerInfoQuery;
+import com.example.commons.db.mybatis.jpa.base.pagehelper.module.repository.CustomerInfoRepository;
 import com.example.commons.db.mybatis.jpa.base.pagehelper.module.service.CustomerInfoService;
 import com.example.db.pojo.IPageResult;
 import com.github.pagehelper.PageHelper;
@@ -15,7 +16,8 @@ import javax.annotation.Resource;
 import java.util.List;
 @Service
 public class CustomerInfoServiceImpl implements CustomerInfoService{
-
+    @Resource
+    private CustomerInfoRepository customerInfoRepository;
     @Resource
     private CustomerInfoMapper customerInfoMapper;
 

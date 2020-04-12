@@ -3,6 +3,7 @@ package com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.module.service.imp
 import com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.module.mapper.SysRolePermissionMapper;
 import com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.module.pojo.SysRolePermission;
 import com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.module.pojo.SysRolePermissionExample;
+import com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.module.repository.SysRolePermissionRepository;
 import com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.module.service.SysRolePermissionService;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,8 @@ import java.util.List;
 
 @Service
 public class SysRolePermissionServiceImpl implements SysRolePermissionService {
-
+    @Resource
+    private SysRolePermissionRepository sysRolePermissionRepository;
     @Resource
     private SysRolePermissionMapper sysRolePermissionMapper;
 

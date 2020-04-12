@@ -5,6 +5,7 @@ import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.mapper.GoodsType
 import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.GoodsType;
 import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.GoodsTypeExample;
 import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.query.GoodsTypeQuery;
+import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.repository.GoodsTypeRepository;
 import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.service.GoodsTypeService;
 import com.example.db.pojo.IPageResult;
 import com.github.pagehelper.PageHelper;
@@ -16,7 +17,8 @@ import java.util.List;
 
 @Service
 public class GoodsTypeServiceImpl implements GoodsTypeService {
-
+    @Resource
+    private GoodsTypeRepository goodsTypeRepository;
     @Resource
     private GoodsTypeMapper goodsTypeMapper;
 

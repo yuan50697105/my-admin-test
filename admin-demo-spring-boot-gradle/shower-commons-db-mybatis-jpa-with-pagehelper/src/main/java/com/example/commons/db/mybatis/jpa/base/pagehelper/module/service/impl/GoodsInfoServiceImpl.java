@@ -5,6 +5,7 @@ import com.example.commons.db.mybatis.jpa.base.pagehelper.module.mapper.GoodsInf
 import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.GoodsInfo;
 import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.GoodsInfoExample;
 import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.query.GoodsInfoQuery;
+import com.example.commons.db.mybatis.jpa.base.pagehelper.module.repository.GoodsInfoRepository;
 import com.example.commons.db.mybatis.jpa.base.pagehelper.module.service.GoodsInfoService;
 import com.example.db.pojo.IPageResult;
 import com.github.pagehelper.PageHelper;
@@ -15,7 +16,8 @@ import javax.annotation.Resource;
 import java.util.List;
 @Service
 public class GoodsInfoServiceImpl implements GoodsInfoService{
-
+    @Resource
+    private GoodsInfoRepository goodsInfoRepository;
     @Resource
     private GoodsInfoMapper goodsInfoMapper;
 

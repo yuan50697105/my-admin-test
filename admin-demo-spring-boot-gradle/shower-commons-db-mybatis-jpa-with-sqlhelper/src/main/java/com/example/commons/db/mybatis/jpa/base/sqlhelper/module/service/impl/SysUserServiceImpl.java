@@ -1,11 +1,12 @@
 package com.example.commons.db.mybatis.jpa.base.sqlhelper.module.service.impl;
 
-import com.example.commons.db.mybatis.jpa.base.sqlhelper.base.pojo.PageResult;
-import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.mapper.SysUserMapper;
-import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.SysUser;
-import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.SysUserExample;
-import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.query.SysUserQuery;
-import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.service.SysUserService;
+import com.example.commons.db.mybatis.jpa.base.pagehelper.base.pojo.PageResult;
+import com.example.commons.db.mybatis.jpa.base.pagehelper.module.mapper.SysUserMapper;
+import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.SysUser;
+import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.SysUserExample;
+import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.query.SysUserQuery;
+import com.example.commons.db.mybatis.jpa.base.pagehelper.module.repository.SysUserRepository;
+import com.example.commons.db.mybatis.jpa.base.pagehelper.module.service.SysUserService;
 import com.example.db.pojo.IPageResult;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -15,8 +16,9 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Service
-public class SysUserServiceImpl implements SysUserService {
-
+public class SysUserServiceImpl implements SysUserService{
+    @Resource
+    private SysUserRepository sysUserRepository;
     @Resource
     private SysUserMapper sysUserMapper;
 

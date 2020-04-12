@@ -3,6 +3,7 @@ package com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.service.im
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.mapper.SysUserRoleMapper;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.SysUserRole;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.SysUserRoleExample;
+import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.repository.SysUserRoleRepository;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.service.SysUserRoleService;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,8 @@ import java.util.List;
 
 @Service
 public class SysUserRoleServiceImpl implements SysUserRoleService {
-
+    @Resource
+    private SysUserRoleRepository sysUserRoleRepository;
     @Resource
     private SysUserRoleMapper sysUserRoleMapper;
 

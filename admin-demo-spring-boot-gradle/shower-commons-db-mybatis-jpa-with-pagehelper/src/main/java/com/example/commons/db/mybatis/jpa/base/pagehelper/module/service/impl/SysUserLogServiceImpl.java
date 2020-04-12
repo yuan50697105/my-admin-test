@@ -1,5 +1,6 @@
 package com.example.commons.db.mybatis.jpa.base.pagehelper.module.service.impl;
 
+import com.example.commons.db.mybatis.jpa.base.pagehelper.module.repository.SysUserLogRepository;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.SysUserLog;
@@ -9,7 +10,8 @@ import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.SysUserLog
 import com.example.commons.db.mybatis.jpa.base.pagehelper.module.service.SysUserLogService;
 @Service
 public class SysUserLogServiceImpl implements SysUserLogService{
-
+    @Resource
+    private SysUserLogRepository sysUserLogRepository;
     @Resource
     private SysUserLogMapper sysUserLogMapper;
 

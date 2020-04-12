@@ -5,6 +5,7 @@ import com.example.commons.db.mybatis.jpa.base.pagehelper.module.mapper.SysRoleM
 import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.SysRole;
 import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.SysRoleExample;
 import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.query.SysRoleQuery;
+import com.example.commons.db.mybatis.jpa.base.pagehelper.module.repository.SysRoleRepository;
 import com.example.commons.db.mybatis.jpa.base.pagehelper.module.service.SysRoleService;
 import com.example.db.pojo.IPageResult;
 import com.github.pagehelper.PageHelper;
@@ -15,7 +16,8 @@ import javax.annotation.Resource;
 import java.util.List;
 @Service
 public class SysRoleServiceImpl implements SysRoleService{
-
+    @Resource
+    private SysRoleRepository sysRoleRepository;
     @Resource
     private SysRoleMapper sysRoleMapper;
 

@@ -1,17 +1,19 @@
 package com.example.commons.db.mybatis.jpa.base.sqlhelper.module.service.impl;
 
-import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.mapper.SysRolePermissionMapper;
-import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.SysRolePermission;
-import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.SysRolePermissionExample;
-import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.service.SysRolePermissionService;
+import com.example.commons.db.mybatis.jpa.base.pagehelper.module.mapper.SysRolePermissionMapper;
+import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.SysRolePermission;
+import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.SysRolePermissionExample;
+import com.example.commons.db.mybatis.jpa.base.pagehelper.module.repository.SysRolePermissionRepository;
+import com.example.commons.db.mybatis.jpa.base.pagehelper.module.service.SysRolePermissionService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
 
 @Service
-public class SysRolePermissionServiceImpl implements SysRolePermissionService {
-
+public class SysRolePermissionServiceImpl implements SysRolePermissionService{
+    @Resource
+    private SysRolePermissionRepository sysRolePermissionRepository;
     @Resource
     private SysRolePermissionMapper sysRolePermissionMapper;
 

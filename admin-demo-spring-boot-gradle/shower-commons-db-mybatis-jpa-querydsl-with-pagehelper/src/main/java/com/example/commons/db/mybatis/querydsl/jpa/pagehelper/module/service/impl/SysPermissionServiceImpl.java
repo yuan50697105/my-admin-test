@@ -5,6 +5,7 @@ import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.mapper.SysP
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.SysPermission;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.SysPermissionExample;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.query.SysPermissionQuery;
+import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.repository.SysPermissionRepository;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.service.SysPermissionService;
 import com.example.db.pojo.IPageResult;
 import com.github.pagehelper.PageHelper;
@@ -16,7 +17,8 @@ import java.util.List;
 
 @Service
 public class SysPermissionServiceImpl implements SysPermissionService {
-
+    @Resource
+    private SysPermissionRepository sysPermissionRepository;
     @Resource
     private SysPermissionMapper sysPermissionMapper;
 

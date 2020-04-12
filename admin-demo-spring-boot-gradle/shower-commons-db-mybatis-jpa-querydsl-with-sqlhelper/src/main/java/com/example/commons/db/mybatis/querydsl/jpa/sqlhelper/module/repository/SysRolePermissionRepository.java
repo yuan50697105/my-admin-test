@@ -1,7 +1,7 @@
 package com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.module.repository;
 
 import com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.base.repository.BaseRepository;
-import com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.module.pojo.CustomerType;
+import com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.module.pojo.SysRolePermission;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -11,5 +11,5 @@ import org.springframework.stereotype.Repository;
  * @create: 2020-04-12 14:58
  */
 @Repository
-public interface CustomerTypeRepository extends BaseRepository<CustomerType, Long> {
+public interface SysRolePermissionRepository extends BaseRepository<SysRolePermission, Long> {
 }

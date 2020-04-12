@@ -5,6 +5,7 @@ import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.mapper.CustomerT
 import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.CustomerType;
 import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.CustomerTypeExample;
 import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.query.CustomerTypeQuery;
+import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.repository.CustomerTypeRepository;
 import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.service.CustomerTypeService;
 import com.example.db.pojo.IPageResult;
 import com.github.pagehelper.PageHelper;
@@ -16,7 +17,8 @@ import java.util.List;
 
 @Service
 public class CustomerTypeServiceImpl implements CustomerTypeService {
-
+    @Resource
+    private CustomerTypeRepository customerTypeRepository;
     @Resource
     private CustomerTypeMapper customerTypeMapper;
 
