@@ -2,10 +2,9 @@ package com.example.commons.db.mybatis.base.pagehelper.module.mapper;
 
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.MemberInfo;
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.MemberInfoExample;
+import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-
-import java.util.List;
 
 @Mapper
 public interface MemberInfoMapper {

@@ -7,8 +7,9 @@ import com.example.commons.db.mybatis.base.pagehelper.module.mapper.GoodsOrderIn
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.GoodsOrderInfoExample;
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.GoodsOrderInfo;
 import com.example.commons.db.mybatis.base.pagehelper.module.service.GoodsOrderInfoService;
+
 @Service
-public class GoodsOrderInfoServiceImpl implements GoodsOrderInfoService{
+public class GoodsOrderInfoServiceImpl implements GoodsOrderInfoService {
 
     @Resource
     private GoodsOrderInfoMapper goodsOrderInfoMapper;
@@ -49,13 +50,13 @@ public class GoodsOrderInfoServiceImpl implements GoodsOrderInfoService{
     }
 
     @Override
-    public int updateByExampleSelective(GoodsOrderInfo record,GoodsOrderInfoExample example) {
-        return goodsOrderInfoMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(GoodsOrderInfo record, GoodsOrderInfoExample example) {
+        return goodsOrderInfoMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(GoodsOrderInfo record,GoodsOrderInfoExample example) {
-        return goodsOrderInfoMapper.updateByExample(record,example);
+    public int updateByExample(GoodsOrderInfo record, GoodsOrderInfoExample example) {
+        return goodsOrderInfoMapper.updateByExample(record, example);
     }
 
     @Override
@@ -84,3 +85,4 @@ public class GoodsOrderInfoServiceImpl implements GoodsOrderInfoService{
     }
 
 }
+

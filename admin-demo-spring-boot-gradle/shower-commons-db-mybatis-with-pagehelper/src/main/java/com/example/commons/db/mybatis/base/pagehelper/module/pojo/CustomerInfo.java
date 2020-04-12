@@ -2,7 +2,7 @@ package com.example.commons.db.mybatis.base.pagehelper.module.pojo;
 
 import com.example.commons.db.mybatis.base.pagehelper.commons.pojo.CommonsEntity;
 import java.io.Serializable;
-
+import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -44,4 +44,8 @@ public class CustomerInfo extends CommonsEntity implements Serializable {
     private String phone;
 
     private static final long serialVersionUID = 1L;
+
+    public static CustomerInfoBuilder builder() {
+        return new CustomerInfoBuilder();
+    }
 }
