@@ -11,33 +11,37 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /**
-    * goods_order_info
-    */
+ * goods_order_info
+ */
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class GoodsOrderInfo extends CommonsEntity implements Serializable {
     /**
-    * 订单号
-    */
+     * 订单号
+     */
     private String orderNo;
 
     /**
-    * 客户ID
-    */
+     * 客户ID
+     */
     private String customerId;
 
     /**
-    * 客户姓名
-    */
+     * 客户姓名
+     */
     private String customerName;
 
     /**
-    * 总价
-    */
+     * 总价
+     */
     private BigDecimal totalPrice;
 
     private static final long serialVersionUID = 1L;
+
+    public static GoodsOrderInfoBuilder builder() {
+        return new GoodsOrderInfoBuilder();
+    }
 }

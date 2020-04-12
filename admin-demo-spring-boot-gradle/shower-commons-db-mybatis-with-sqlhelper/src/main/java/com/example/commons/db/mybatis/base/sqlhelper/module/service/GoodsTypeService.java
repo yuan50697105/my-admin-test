@@ -45,3 +45,4 @@ public interface GoodsTypeService {
     List<GoodsType> selectByQuery(GoodsTypeQuery query);
 }
 
+

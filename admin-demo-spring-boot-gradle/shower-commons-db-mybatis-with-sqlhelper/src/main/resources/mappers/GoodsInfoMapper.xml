@@ -7,6 +7,7 @@
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="type_id" jdbcType="BIGINT" property="typeId" />
     <result column="code" jdbcType="VARCHAR" property="code" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="price" jdbcType="DECIMAL" property="price" />
@@ -74,7 +75,7 @@
   </sql>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, create_time, update_time, code, `name`, price, num
+    id, create_time, update_time, type_id, code, `name`, price, num
   </sql>
   <select id="selectByExample" parameterType="com.example.commons.db.mybatis.base.sqlhelper.module.pojo.GoodsInfoExample" resultMap="BaseResultMap">
     <!--@mbg.generated-->
@@ -112,10 +113,12 @@
   </delete>
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.example.commons.db.mybatis.base.sqlhelper.module.pojo.GoodsInfo" useGeneratedKeys="true">
     <!--@mbg.generated-->
-    insert into goods_info (create_time, update_time, code, 
-      `name`, price, num)
-    values (#{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{code,jdbcType=VARCHAR}, 
-      #{name,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, #{num,jdbcType=INTEGER})
+    insert into goods_info (create_time, update_time, type_id, 
+      code, `name`, price, 
+      num)
+    values (#{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{typeId,jdbcType=BIGINT}, 
+      #{code,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, 
+      #{num,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.example.commons.db.mybatis.base.sqlhelper.module.pojo.GoodsInfo" useGeneratedKeys="true">
     <!--@mbg.generated-->
@@ -126,6 +129,9 @@
       </if>
       <if test="updateTime != null">
         update_time,
+      </if>
+      <if test="typeId != null">
+        type_id,
       </if>
       <if test="code != null">
         code,
@@ -146,6 +152,9 @@
       </if>
       <if test="updateTime != null">
         #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="typeId != null">
+        #{typeId,jdbcType=BIGINT},
       </if>
       <if test="code != null">
         #{code,jdbcType=VARCHAR},
@@ -181,6 +190,9 @@
       <if test="record.updateTime != null">
         update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="record.typeId != null">
+        type_id = #{record.typeId,jdbcType=BIGINT},
+      </if>
       <if test="record.code != null">
         code = #{record.code,jdbcType=VARCHAR},
       </if>
@@ -204,6 +216,7 @@
     set id = #{record.id,jdbcType=BIGINT},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      type_id = #{record.typeId,jdbcType=BIGINT},
       code = #{record.code,jdbcType=VARCHAR},
       `name` = #{record.name,jdbcType=VARCHAR},
       price = #{record.price,jdbcType=DECIMAL},
@@ -221,6 +234,9 @@
       </if>
       <if test="updateTime != null">
         update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="typeId != null">
+        type_id = #{typeId,jdbcType=BIGINT},
       </if>
       <if test="code != null">
         code = #{code,jdbcType=VARCHAR},
@@ -242,6 +258,7 @@
     update goods_info
     set create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
+      type_id = #{typeId,jdbcType=BIGINT},
       code = #{code,jdbcType=VARCHAR},
       `name` = #{name,jdbcType=VARCHAR},
       price = #{price,jdbcType=DECIMAL},
@@ -260,6 +277,11 @@
       <trim prefix="update_time = case" suffix="end,">
         <foreach collection="list" index="index" item="item">
           when id = #{item.id,jdbcType=BIGINT} then #{item.updateTime,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="type_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.typeId,jdbcType=BIGINT}
         </foreach>
       </trim>
       <trim prefix="code = case" suffix="end,">
@@ -306,6 +328,13 @@
           </if>
         </foreach>
       </trim>
+      <trim prefix="type_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.typeId != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.typeId,jdbcType=BIGINT}
+          </if>
+        </foreach>
+      </trim>
       <trim prefix="code = case" suffix="end,">
         <foreach collection="list" index="index" item="item">
           <if test="item.code != null">
@@ -343,12 +372,12 @@
   <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into goods_info
-    (create_time, update_time, code, `name`, price, num)
+    (create_time, update_time, type_id, code, `name`, price, num)
     values
     <foreach collection="list" item="item" separator=",">
-      (#{item.createTime,jdbcType=TIMESTAMP}, #{item.updateTime,jdbcType=TIMESTAMP}, #{item.code,jdbcType=VARCHAR}, 
-        #{item.name,jdbcType=VARCHAR}, #{item.price,jdbcType=DECIMAL}, #{item.num,jdbcType=INTEGER}
-        )
+      (#{item.createTime,jdbcType=TIMESTAMP}, #{item.updateTime,jdbcType=TIMESTAMP}, #{item.typeId,jdbcType=BIGINT}, 
+        #{item.code,jdbcType=VARCHAR}, #{item.name,jdbcType=VARCHAR}, #{item.price,jdbcType=DECIMAL}, 
+        #{item.num,jdbcType=INTEGER})
     </foreach>
   </insert>
 </mapper>

@@ -20,6 +20,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class GoodsInfo extends CommonsEntity implements Serializable {
     /**
+     * 类型ID
+     */
+    private Long typeId;
+
+    /**
      * 商品编号
      */
     private String code;

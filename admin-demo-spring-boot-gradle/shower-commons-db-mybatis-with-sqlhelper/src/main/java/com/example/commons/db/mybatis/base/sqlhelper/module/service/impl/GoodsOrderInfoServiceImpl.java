@@ -109,3 +109,4 @@ public class GoodsOrderInfoServiceImpl implements GoodsOrderInfoService {
     }
 
 }
+

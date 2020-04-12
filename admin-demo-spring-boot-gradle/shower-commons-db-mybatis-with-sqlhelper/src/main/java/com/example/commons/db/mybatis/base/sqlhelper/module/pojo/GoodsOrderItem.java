@@ -11,48 +11,52 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /**
-    * goods_order_item
-    */
+ * goods_order_item
+ */
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class GoodsOrderItem extends CommonsEntity implements Serializable {
     /**
-    * 订单ID
-    */
+     * 订单ID
+     */
     private Long orderId;
 
     /**
-    * 订单号
-    */
+     * 订单号
+     */
     private String orderNo;
 
     /**
-    * 商品ID
-    */
+     * 商品ID
+     */
     private Long goodsId;
 
     /**
-    * 商品编号
-    */
+     * 商品编号
+     */
     private String goodsCode;
 
     /**
-    * 商品名称
-    */
+     * 商品名称
+     */
     private String goodsName;
 
     /**
-    * 数量
-    */
+     * 数量
+     */
     private Integer num;
 
     /**
-    * 价格
-    */
+     * 价格
+     */
     private BigDecimal price;
 
     private static final long serialVersionUID = 1L;
+
+    public static GoodsOrderItemBuilder builder() {
+        return new GoodsOrderItemBuilder();
+    }
 }

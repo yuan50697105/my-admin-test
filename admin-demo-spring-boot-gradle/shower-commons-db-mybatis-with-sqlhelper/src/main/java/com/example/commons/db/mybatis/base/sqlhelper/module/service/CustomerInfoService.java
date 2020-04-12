@@ -45,3 +45,4 @@ public interface CustomerInfoService {
     List<CustomerInfo> selectByQuery(CustomerInfoQuery query);
 }
 
+

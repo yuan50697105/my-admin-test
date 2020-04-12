@@ -3,7 +3,8 @@ package com.example.commons.db.mybatis.base.sqlhelper.module.service;
 import java.util.List;
 import com.example.commons.db.mybatis.base.sqlhelper.module.pojo.GoodsOrderItem;
 import com.example.commons.db.mybatis.base.sqlhelper.module.pojo.GoodsOrderItemExample;
-public interface GoodsOrderItemService{
+
+public interface GoodsOrderItemService {
 
 
     long countByExample(GoodsOrderItemExample example);
@@ -20,9 +21,9 @@ public interface GoodsOrderItemService{
 
     GoodsOrderItem selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(GoodsOrderItem record,GoodsOrderItemExample example);
+    int updateByExampleSelective(GoodsOrderItem record, GoodsOrderItemExample example);
 
-    int updateByExample(GoodsOrderItem record,GoodsOrderItemExample example);
+    int updateByExample(GoodsOrderItem record, GoodsOrderItemExample example);
 
     int updateByPrimaryKeySelective(GoodsOrderItem record);
 
@@ -35,3 +36,4 @@ public interface GoodsOrderItemService{
     int batchInsert(List<GoodsOrderItem> list);
 
 }
+

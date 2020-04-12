@@ -7,8 +7,9 @@ import java.util.List;
 import com.example.commons.db.mybatis.base.sqlhelper.module.mapper.MemberInfoMapper;
 import com.example.commons.db.mybatis.base.sqlhelper.module.pojo.MemberInfo;
 import com.example.commons.db.mybatis.base.sqlhelper.module.service.MemberInfoService;
+
 @Service
-public class MemberInfoServiceImpl implements MemberInfoService{
+public class MemberInfoServiceImpl implements MemberInfoService {
 
     @Resource
     private MemberInfoMapper memberInfoMapper;
@@ -49,13 +50,13 @@ public class MemberInfoServiceImpl implements MemberInfoService{
     }
 
     @Override
-    public int updateByExampleSelective(MemberInfo record,MemberInfoExample example) {
-        return memberInfoMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(MemberInfo record, MemberInfoExample example) {
+        return memberInfoMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(MemberInfo record,MemberInfoExample example) {
-        return memberInfoMapper.updateByExample(record,example);
+    public int updateByExample(MemberInfo record, MemberInfoExample example) {
+        return memberInfoMapper.updateByExample(record, example);
     }
 
     @Override
@@ -84,3 +85,4 @@ public class MemberInfoServiceImpl implements MemberInfoService{
     }
 
 }
+

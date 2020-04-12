@@ -7,8 +7,9 @@ import com.example.commons.db.mybatis.base.sqlhelper.module.pojo.GoodsOrderItem;
 import com.example.commons.db.mybatis.base.sqlhelper.module.pojo.GoodsOrderItemExample;
 import com.example.commons.db.mybatis.base.sqlhelper.module.mapper.GoodsOrderItemMapper;
 import com.example.commons.db.mybatis.base.sqlhelper.module.service.GoodsOrderItemService;
+
 @Service
-public class GoodsOrderItemServiceImpl implements GoodsOrderItemService{
+public class GoodsOrderItemServiceImpl implements GoodsOrderItemService {
 
     @Resource
     private GoodsOrderItemMapper goodsOrderItemMapper;
@@ -49,13 +50,13 @@ public class GoodsOrderItemServiceImpl implements GoodsOrderItemService{
     }
 
     @Override
-    public int updateByExampleSelective(GoodsOrderItem record,GoodsOrderItemExample example) {
-        return goodsOrderItemMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(GoodsOrderItem record, GoodsOrderItemExample example) {
+        return goodsOrderItemMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(GoodsOrderItem record,GoodsOrderItemExample example) {
-        return goodsOrderItemMapper.updateByExample(record,example);
+    public int updateByExample(GoodsOrderItem record, GoodsOrderItemExample example) {
+        return goodsOrderItemMapper.updateByExample(record, example);
     }
 
     @Override
@@ -84,3 +85,4 @@ public class GoodsOrderItemServiceImpl implements GoodsOrderItemService{
     }
 
 }
+

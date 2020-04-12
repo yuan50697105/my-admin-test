@@ -7,7 +7,7 @@ import com.example.db.pojo.IPageResult;
 
 import java.util.List;
 
-public interface GoodsOrderInfoService{
+public interface GoodsOrderInfoService {
 
 
     long countByExample(GoodsOrderInfoExample example);
@@ -24,9 +24,9 @@ public interface GoodsOrderInfoService{
 
     GoodsOrderInfo selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(GoodsOrderInfo record,GoodsOrderInfoExample example);
+    int updateByExampleSelective(GoodsOrderInfo record, GoodsOrderInfoExample example);
 
-    int updateByExample(GoodsOrderInfo record,GoodsOrderInfoExample example);
+    int updateByExample(GoodsOrderInfo record, GoodsOrderInfoExample example);
 
     int updateByPrimaryKeySelective(GoodsOrderInfo record);
 
@@ -44,3 +44,4 @@ public interface GoodsOrderInfoService{
 
     List<GoodsOrderInfo> selectByPrimaryKeys(List<Long> ids);
 }
+

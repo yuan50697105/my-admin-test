@@ -10,28 +10,32 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /**
-    * member_info
-    */
+ * member_info
+ */
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class MemberInfo extends CommonsEntity implements Serializable {
     /**
-    * 会员编号
-    */
+     * 会员编号
+     */
     private String code;
 
     /**
-    * 会员ID
-    */
+     * 会员ID
+     */
     private Long customerId;
 
     /**
-    * 会员姓名
-    */
+     * 会员姓名
+     */
     private String customerName;
 
     private static final long serialVersionUID = 1L;
+
+    public static MemberInfoBuilder builder() {
+        return new MemberInfoBuilder();
+    }
 }

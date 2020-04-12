@@ -45,3 +45,4 @@ public interface CustomerTypeService {
     List<CustomerType> selectByQuery(CustomerTypeQuery query);
 }
 
+
