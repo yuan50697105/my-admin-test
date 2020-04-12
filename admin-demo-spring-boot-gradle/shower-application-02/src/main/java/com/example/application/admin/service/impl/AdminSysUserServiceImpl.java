@@ -123,7 +123,7 @@ public class AdminSysUserServiceImpl implements AdminSysUserService {
     @Override
     @Transactional
     public Result delete(List<Long> ids) {
-        sysUserService.deleteByIds(ids);
+        sysUserService.deleteByPrimaryKeys(ids);
         sysUserRoleService.deleteByUserIds(ids);
         return ResultUtils.deleteOk();
     }

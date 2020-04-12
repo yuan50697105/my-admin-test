@@ -77,7 +77,7 @@ public class AdminGoodsInfoServiceImpl implements AdminGoodsInfoService {
     @Override
     @Transactional
     public Result delete(List<Long> ids) {
-        goodsInfoService.deleteByIds(ids);
+        goodsInfoService.deleteByPrimaryKeys(ids);
         return ResultUtils.deleteOk();
     }
 

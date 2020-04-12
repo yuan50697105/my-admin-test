@@ -16,6 +16,8 @@ public interface CustomerInfoService {
 
     int deleteByPrimaryKey(Long id);
 
+    int deleteByPrimaryKeys(List<Long> ids);
+
     int insert(CustomerInfo record);
 
     int insertSelective(CustomerInfo record);
@@ -41,6 +43,4 @@ public interface CustomerInfoService {
     IPageResult<CustomerInfo> selectPageByQuery(CustomerInfoQuery query);
 
     List<CustomerInfo> selectByQuery(CustomerInfoQuery query);
-
-    int deleteByIds(List<Long> ids);
 }

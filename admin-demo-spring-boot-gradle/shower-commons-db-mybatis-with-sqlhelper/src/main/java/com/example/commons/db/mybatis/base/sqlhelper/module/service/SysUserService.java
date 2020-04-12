@@ -16,6 +16,8 @@ public interface SysUserService {
 
     int deleteByPrimaryKey(Long id);
 
+    int deleteByPrimaryKeys(List<Long> ids);
+
     int insert(SysUser record);
 
     int insertSelective(SysUser record);
@@ -31,8 +33,6 @@ public interface SysUserService {
     int updateByPrimaryKeySelective(SysUser record);
 
     int updateByPrimaryKey(SysUser record);
-
-    int deleteByIds(List<Long> ids);
 
     IPageResult<SysUser> selectPageByQuery(SysUserQuery query);
 

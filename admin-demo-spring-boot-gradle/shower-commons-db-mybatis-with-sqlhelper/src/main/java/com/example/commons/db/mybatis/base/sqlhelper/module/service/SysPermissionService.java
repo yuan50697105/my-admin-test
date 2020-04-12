@@ -16,6 +16,8 @@ public interface SysPermissionService {
 
     int deleteByPrimaryKey(Long id);
 
+    int deleteByPrimaryKeys(List<Long> ids);
+
     int insert(SysPermission record);
 
     int insertSelective(SysPermission record);
@@ -39,8 +41,6 @@ public interface SysPermissionService {
     int batchInsert(List<SysPermission> list);
 
     List<SysPermission> selectByIds(List<Long> ids);
-
-    int deleteByIds(List<Long> ids);
 
     IPageResult<SysPermission> selectPageByQuery(SysPermissionQuery query);
 

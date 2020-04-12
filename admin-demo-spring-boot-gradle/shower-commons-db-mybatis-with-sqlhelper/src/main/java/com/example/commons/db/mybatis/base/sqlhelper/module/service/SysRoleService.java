@@ -16,6 +16,8 @@ public interface SysRoleService {
 
     int deleteByPrimaryKey(Long id);
 
+    int deleteByPrimaryKeys(List<Long> ids);
+
     int insert(SysRole record);
 
     int insertSelective(SysRole record);
@@ -31,8 +33,6 @@ public interface SysRoleService {
     int updateByPrimaryKeySelective(SysRole record);
 
     int updateByPrimaryKey(SysRole record);
-
-    int deleteByIds(List<Long> ids);
 
     IPageResult<SysRole> selectPageByQuery(SysRoleQuery query);
 

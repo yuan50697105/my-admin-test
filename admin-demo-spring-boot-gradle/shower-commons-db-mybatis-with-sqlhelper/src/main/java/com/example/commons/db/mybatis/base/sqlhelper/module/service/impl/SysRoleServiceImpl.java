@@ -36,7 +36,7 @@ public class SysRoleServiceImpl implements SysRoleService {
     }
 
     @Override
-    public int deleteByIds(List<Long> ids) {
+    public int deleteByPrimaryKeys(List<Long> ids) {
         SysRoleExample example = new SysRoleExample();
         example.or().andIdIn(ids);
         return deleteByExample(example);

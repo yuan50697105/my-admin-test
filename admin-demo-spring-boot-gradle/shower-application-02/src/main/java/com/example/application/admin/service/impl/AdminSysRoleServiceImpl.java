@@ -87,7 +87,7 @@ public class AdminSysRoleServiceImpl implements AdminSysRoleService {
     @Override
     @Transactional
     public Result delete(List<Long> ids) {
-        sysRoleService.deleteByIds(ids);
+        sysRoleService.deleteByPrimaryKeys(ids);
         sysRolePermissionService.deleteByRoleIds(ids);
         sysUserRoleService.deleteByRoleIds(ids);
         return ResultUtils.deleteOk();

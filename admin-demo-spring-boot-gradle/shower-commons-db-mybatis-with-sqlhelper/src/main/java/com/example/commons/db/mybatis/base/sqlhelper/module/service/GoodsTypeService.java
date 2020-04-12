@@ -16,6 +16,8 @@ public interface GoodsTypeService{
 
     int deleteByPrimaryKey(Long id);
 
+    int deleteByPrimaryKeys(List<Long> ids);
+
     int insert(GoodsType record);
 
     int insertSelective(GoodsType record);
@@ -41,6 +43,4 @@ public interface GoodsTypeService{
     IPageResult<GoodsType> selectPageByQuery(GoodsTypeQuery query);
 
     List<GoodsType> selectByQuery(GoodsTypeQuery query);
-
-    int deleteByIds(List<Long> ids);
 }
