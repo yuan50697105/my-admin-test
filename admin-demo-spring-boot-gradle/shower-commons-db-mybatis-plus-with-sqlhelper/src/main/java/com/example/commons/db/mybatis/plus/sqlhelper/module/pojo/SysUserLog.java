@@ -14,21 +14,15 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /**
-    * sys_user_log
-    */
+ * sys_user_log
+ */
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName(value = "sys_user_log")
 public class SysUserLog extends CommonsEntity implements Serializable {
-    /**
-     * 主键
-     */
-    @TableId(value = "id", type = IdType.AUTO)
-    private Long id;
-
     /**
      * 账户
      */
@@ -46,18 +40,6 @@ public class SysUserLog extends CommonsEntity implements Serializable {
      */
     @TableField(value = "password")
     private String password;
-
-    /**
-     * 创建时间
-     */
-    @TableField(value = "create_time")
-    private Date createTime;
-
-    /**
-     * 更新时间
-     */
-    @TableField(value = "update_time")
-    private Date updateTime;
 
     /**
      * 操作
@@ -84,4 +66,8 @@ public class SysUserLog extends CommonsEntity implements Serializable {
     private String params;
 
     private static final long serialVersionUID = 1L;
+
+    public static SysUserLogBuilder builder() {
+        return new SysUserLogBuilder();
+    }
 }

@@ -26,3 +26,4 @@ public interface SysUserRoleService extends IService<SysUserRole> {
     int updateByExample(SysUserRole record, SysUserRoleExample example);
 }
 
+

@@ -40,3 +40,4 @@ public interface SysRoleService extends IService<SysRole> {
     List<SysRole> selectByQuery(SysRoleQuery query);
 }
 
+

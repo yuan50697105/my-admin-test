@@ -14,33 +14,15 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /**
-    * sys_user
-    */
+ * sys_user
+ */
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName(value = "sys_user")
 public class SysUser extends CommonsEntity implements Serializable {
-    /**
-     * 主键
-     */
-    @TableId(value = "id", type = IdType.AUTO)
-    private Long id;
-
-    /**
-     * 创建时间
-     */
-    @TableField(value = "create_time")
-    private Date createTime;
-
-    /**
-     * 更新时间
-     */
-    @TableField(value = "update_time")
-    private Date updateTime;
-
     /**
      * 账户
      */
@@ -60,4 +42,8 @@ public class SysUser extends CommonsEntity implements Serializable {
     private String password;
 
     private static final long serialVersionUID = 1L;
+
+    public static SysUserBuilder builder() {
+        return new SysUserBuilder();
+    }
 }

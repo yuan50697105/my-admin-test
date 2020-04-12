@@ -14,33 +14,15 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /**
-    * sys_user_role
-    */
+ * sys_user_role
+ */
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName(value = "sys_user_role")
 public class SysUserRole extends CommonsEntity implements Serializable {
-    /**
-     * 主键
-     */
-    @TableId(value = "id", type = IdType.AUTO)
-    private Long id;
-
-    /**
-     * 创建时间
-     */
-    @TableField(value = "create_time")
-    private Date createTime;
-
-    /**
-     * 更新时间
-     */
-    @TableField(value = "update_time")
-    private Date updateTime;
-
     /**
      * 用户ID
      */
@@ -54,4 +36,8 @@ public class SysUserRole extends CommonsEntity implements Serializable {
     private Long roleId;
 
     private static final long serialVersionUID = 1L;
+
+    public static SysUserRoleBuilder builder() {
+        return new SysUserRoleBuilder();
+    }
 }

@@ -7,7 +7,8 @@ import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.query.SysRoleQu
 import com.example.db.pojo.IPageResult;
 
 import java.util.List;
-public interface SysRoleService extends IService<SysRole>{
+
+public interface SysRoleService extends IService<SysRole> {
 
 
     long countByExample(SysRoleExample example);
@@ -16,9 +17,9 @@ public interface SysRoleService extends IService<SysRole>{
 
     List<SysRole> selectByExample(SysRoleExample example);
 
-    int updateByExampleSelective(SysRole record,SysRoleExample example);
+    int updateByExampleSelective(SysRole record, SysRoleExample example);
 
-    int updateByExample(SysRole record,SysRoleExample example);
+    int updateByExample(SysRole record, SysRoleExample example);
 
     int updateBatch(List<SysRole> list);
 
@@ -38,3 +39,4 @@ public interface SysRoleService extends IService<SysRole>{
 
     List<SysRole> selectByQuery(SysRoleQuery query);
 }
+

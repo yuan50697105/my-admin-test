@@ -26,3 +26,4 @@ public interface SysRolePermissionService extends IService<SysRolePermission> {
     int updateByExample(SysRolePermission record, SysRolePermissionExample example);
 }
 
+

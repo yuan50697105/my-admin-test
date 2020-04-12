@@ -1,6 +1,10 @@
 package com.example.commons.db.mybatis.plus.pagehelper.module.pojo.query;
 
 import com.example.commons.db.mybatis.plus.pagehelper.commons.pojo.query.CommonsQuery;
+import com.example.commons.db.mybatis.plus.pagehelper.module.pojo.SysUserExample;
+import com.gitee.denger.mybatis.example.ext.MybatisExample;
+import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
+import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -12,8 +16,11 @@ import lombok.EqualsAndHashCode;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class SysUserQuery extends CommonsQuery {
+public class SysUserQuery extends CommonsQuery implements MybatisExample<SysUserExample> {
+    @AndLike
     private String username;
+    @AndLike
     private String name;
+    @AndEqualTo
     private String enabled;
 }

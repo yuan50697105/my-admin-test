@@ -26,3 +26,4 @@ public interface SysPermissionService extends IService<SysPermission> {
     int updateByExample(SysPermission record, SysPermissionExample example);
 }
 
+

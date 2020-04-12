@@ -41,3 +41,4 @@ public interface SysUserService extends IService<SysUser> {
     List<SysUser> selectByQuery(SysUserQuery query);
 }
 
+

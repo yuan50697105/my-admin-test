@@ -14,37 +14,45 @@ import com.example.db.pojo.IPageResult;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
-public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements SysUserService{
+public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements SysUserService {
 
     @Override
     public long countByExample(SysUserExample example) {
         return baseMapper.countByExample(example);
     }
+
     @Override
     public int deleteByExample(SysUserExample example) {
         return baseMapper.deleteByExample(example);
     }
+
     @Override
     public List<SysUser> selectByExample(SysUserExample example) {
         return baseMapper.selectByExample(example);
     }
+
     @Override
-    public int updateByExampleSelective(SysUser record,SysUserExample example) {
-        return baseMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(SysUser record, SysUserExample example) {
+        return baseMapper.updateByExampleSelective(record, example);
     }
+
     @Override
-    public int updateByExample(SysUser record,SysUserExample example) {
-        return baseMapper.updateByExample(record,example);
+    public int updateByExample(SysUser record, SysUserExample example) {
+        return baseMapper.updateByExample(record, example);
     }
+
     @Override
     public int updateBatch(List<SysUser> list) {
         return baseMapper.updateBatch(list);
     }
+
     @Override
     public int updateBatchSelective(List<SysUser> list) {
         return baseMapper.updateBatchSelective(list);
     }
+
     @Override
     public int batchInsert(List<SysUser> list) {
         return baseMapper.batchInsert(list);
@@ -89,3 +97,4 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         return wrapper;
     }
 }
+

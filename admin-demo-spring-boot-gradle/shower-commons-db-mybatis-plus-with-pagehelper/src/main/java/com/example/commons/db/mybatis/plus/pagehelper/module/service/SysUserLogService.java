@@ -26,3 +26,4 @@ public interface SysUserLogService extends IService<SysUserLog> {
     int updateByExample(SysUserLog record, SysUserLogExample example);
 }
 
+

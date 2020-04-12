@@ -4,7 +4,8 @@ import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.SysPermissionEx
 import java.util.List;
 import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.SysPermission;
 import com.baomidou.mybatisplus.extension.service.IService;
-public interface SysPermissionService extends IService<SysPermission>{
+
+public interface SysPermissionService extends IService<SysPermission> {
 
 
     long countByExample(SysPermissionExample example);
@@ -13,9 +14,9 @@ public interface SysPermissionService extends IService<SysPermission>{
 
     List<SysPermission> selectByExample(SysPermissionExample example);
 
-    int updateByExampleSelective(SysPermission record,SysPermissionExample example);
+    int updateByExampleSelective(SysPermission record, SysPermissionExample example);
 
-    int updateByExample(SysPermission record,SysPermissionExample example);
+    int updateByExample(SysPermission record, SysPermissionExample example);
 
     int updateBatch(List<SysPermission> list);
 
@@ -24,3 +25,4 @@ public interface SysPermissionService extends IService<SysPermission>{
     int batchInsert(List<SysPermission> list);
 
 }
+

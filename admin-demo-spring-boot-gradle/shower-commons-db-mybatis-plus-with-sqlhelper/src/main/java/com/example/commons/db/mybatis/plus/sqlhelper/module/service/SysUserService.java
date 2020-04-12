@@ -7,7 +7,8 @@ import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.query.SysUserQu
 import com.example.db.pojo.IPageResult;
 
 import java.util.List;
-public interface SysUserService extends IService<SysUser>{
+
+public interface SysUserService extends IService<SysUser> {
 
 
     long countByExample(SysUserExample example);
@@ -16,9 +17,9 @@ public interface SysUserService extends IService<SysUser>{
 
     List<SysUser> selectByExample(SysUserExample example);
 
-    int updateByExampleSelective(SysUser record,SysUserExample example);
+    int updateByExampleSelective(SysUser record, SysUserExample example);
 
-    int updateByExample(SysUser record,SysUserExample example);
+    int updateByExample(SysUser record, SysUserExample example);
 
     int updateBatch(List<SysUser> list);
 
@@ -38,3 +39,4 @@ public interface SysUserService extends IService<SysUser>{
 
     List<SysUser> selectByQuery(SysUserQuery query);
 }
+
