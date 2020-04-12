@@ -43,3 +43,4 @@ public interface SysUserLogService {
     int batchInsert(List<SysUserLog> list);
 }
 
+

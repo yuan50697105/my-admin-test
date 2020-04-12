@@ -26,9 +26,9 @@ public interface CustomerInfoService {
 
     CustomerInfo selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(CustomerInfo record,CustomerInfoExample example);
+    int updateByExampleSelective(CustomerInfo record, CustomerInfoExample example);
 
-    int updateByExample(CustomerInfo record,CustomerInfoExample example);
+    int updateByExample(CustomerInfo record, CustomerInfoExample example);
 
     int updateByPrimaryKeySelective(CustomerInfo record);
 
@@ -44,3 +44,4 @@ public interface CustomerInfoService {
 
     List<CustomerInfo> selectByQuery(CustomerInfoQuery query);
 }
+

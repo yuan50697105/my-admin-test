@@ -121,7 +121,15 @@ public class SysRoleServiceImpl implements SysRoleService {
         example.or().andIdIn(ids);
         return sysRoleMapper.selectByExample(example);
     }
+
+    @Override
+    public List<SysRole> selectByPrimaryKeys(List<Long> ids) {
+        SysRoleExample example = new SysRoleExample();
+        example.or().andIdIn(ids);
+        return selectByExample(example);
+    }
 }
+
 
 
 

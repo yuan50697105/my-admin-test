@@ -49,3 +49,4 @@ public interface SysPermissionService {
     IPageResult<SysPermission> selectPageByExample(SysPermissionExample example, Integer page, Integer size);
 }
 
+

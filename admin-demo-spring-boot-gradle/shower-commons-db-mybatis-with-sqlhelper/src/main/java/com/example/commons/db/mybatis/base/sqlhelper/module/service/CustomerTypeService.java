@@ -26,9 +26,9 @@ public interface CustomerTypeService {
 
     CustomerType selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(CustomerType record,CustomerTypeExample example);
+    int updateByExampleSelective(CustomerType record, CustomerTypeExample example);
 
-    int updateByExample(CustomerType record,CustomerTypeExample example);
+    int updateByExample(CustomerType record, CustomerTypeExample example);
 
     int updateByPrimaryKeySelective(CustomerType record);
 
@@ -44,3 +44,4 @@ public interface CustomerTypeService {
 
     List<CustomerType> selectByQuery(CustomerTypeQuery query);
 }
+
