@@ -20,6 +20,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ServiceInfo extends CommonsEntity implements Serializable {
     /**
+     * 类型ID
+     */
+    private Long typeId;
+
+    /**
      * 编号
      */
     private String code;
@@ -35,4 +40,8 @@ public class ServiceInfo extends CommonsEntity implements Serializable {
     private BigDecimal price;
 
     private static final long serialVersionUID = 1L;
+
+    public static ServiceInfoBuilder builder() {
+        return new ServiceInfoBuilder();
+    }
 }

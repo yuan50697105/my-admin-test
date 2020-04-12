@@ -2,9 +2,10 @@ package com.example.commons.db.mybatis.base.pagehelper.module.mapper;
 
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.ServiceInfo;
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.ServiceInfoExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 @Mapper
 public interface ServiceInfoMapper {

@@ -7,8 +7,9 @@ import com.example.commons.db.mybatis.base.pagehelper.module.pojo.ServiceInfoExa
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.ServiceInfo;
 import com.example.commons.db.mybatis.base.pagehelper.module.mapper.ServiceInfoMapper;
 import com.example.commons.db.mybatis.base.pagehelper.module.service.impl.ServiceInfoService;
+
 @Service
-public class ServiceInfoServiceImpl implements ServiceInfoService{
+public class ServiceInfoServiceImpl implements ServiceInfoService {
 
     @Resource
     private ServiceInfoMapper serviceInfoMapper;
@@ -49,13 +50,13 @@ public class ServiceInfoServiceImpl implements ServiceInfoService{
     }
 
     @Override
-    public int updateByExampleSelective(ServiceInfo record,ServiceInfoExample example) {
-        return serviceInfoMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(ServiceInfo record, ServiceInfoExample example) {
+        return serviceInfoMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(ServiceInfo record,ServiceInfoExample example) {
-        return serviceInfoMapper.updateByExample(record,example);
+    public int updateByExample(ServiceInfo record, ServiceInfoExample example) {
+        return serviceInfoMapper.updateByExample(record, example);
     }
 
     @Override
@@ -84,3 +85,4 @@ public class ServiceInfoServiceImpl implements ServiceInfoService{
     }
 
 }
+
