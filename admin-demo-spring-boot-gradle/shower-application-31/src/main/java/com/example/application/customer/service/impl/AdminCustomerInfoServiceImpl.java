@@ -24,7 +24,7 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class AdminCustomerInfoServiceImpl implements AdminCustomerInfoService {
-    private CustomerInfoService customerInfoService;
+    private final CustomerInfoService customerInfoService;
 
     @Override
     public Result data(CustomerInfoQuery query) {

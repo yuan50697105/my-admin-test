@@ -1,14 +1,21 @@
 package com.example.commons.db.mybatis.base.sqlhelper.module.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
+import com.example.commons.db.mybatis.base.sqlhelper.base.pojo.PageResult;
 import com.example.commons.db.mybatis.base.sqlhelper.module.mapper.ServiceOrderInfoMapper;
-import java.util.List;
-import com.example.commons.db.mybatis.base.sqlhelper.module.pojo.ServiceOrderInfoExample;
 import com.example.commons.db.mybatis.base.sqlhelper.module.pojo.ServiceOrderInfo;
+import com.example.commons.db.mybatis.base.sqlhelper.module.pojo.ServiceOrderInfoExample;
+import com.example.commons.db.mybatis.base.sqlhelper.module.pojo.query.ServiceOrderInfoQuery;
 import com.example.commons.db.mybatis.base.sqlhelper.module.service.ServiceOrderInfoService;
+import com.example.db.pojo.IPageResult;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
+
 @Service
-public class ServiceOrderInfoServiceImpl implements ServiceOrderInfoService{
+public class ServiceOrderInfoServiceImpl implements ServiceOrderInfoService {
 
     @Resource
     private ServiceOrderInfoMapper serviceOrderInfoMapper;
@@ -49,13 +56,13 @@ public class ServiceOrderInfoServiceImpl implements ServiceOrderInfoService{
     }
 
     @Override
-    public int updateByExampleSelective(ServiceOrderInfo record,ServiceOrderInfoExample example) {
-        return serviceOrderInfoMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(ServiceOrderInfo record, ServiceOrderInfoExample example) {
+        return serviceOrderInfoMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(ServiceOrderInfo record,ServiceOrderInfoExample example) {
-        return serviceOrderInfoMapper.updateByExample(record,example);
+    public int updateByExample(ServiceOrderInfo record, ServiceOrderInfoExample example) {
+        return serviceOrderInfoMapper.updateByExample(record, example);
     }
 
     @Override
@@ -81,6 +88,24 @@ public class ServiceOrderInfoServiceImpl implements ServiceOrderInfoService{
     @Override
     public int batchInsert(List<ServiceOrderInfo> list) {
         return serviceOrderInfoMapper.batchInsert(list);
+    }
+
+    @Override
+    public IPageResult<ServiceOrderInfo> selectPageByQuery(ServiceOrderInfoQuery query) {
+        PageHelper.startPage(query.getPage(), query.getSize());
+        return new PageResult<>(new PageInfo<>(selectByExample(query.toExample())));
+    }
+
+    @Override
+    public List<ServiceOrderInfo> selectByQuery(ServiceOrderInfoQuery query) {
+        return selectByExample(query.toExample());
+    }
+
+    @Override
+    public List<ServiceOrderInfo> selectByPrimaryKeys(List<Long> ids) {
+        ServiceOrderInfoExample example = new ServiceOrderInfoExample();
+        example.or().andIdIn(ids);
+        return selectByExample(example);
     }
 
 }

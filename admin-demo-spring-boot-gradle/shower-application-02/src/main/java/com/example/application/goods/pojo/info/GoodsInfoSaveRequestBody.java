@@ -15,6 +15,11 @@ import java.math.BigDecimal;
 @Data
 public class GoodsInfoSaveRequestBody {
     /**
+     * 类型ID
+     */
+    @NotNull
+    private Long typeId;
+    /**
      * 商品编号
      */
     @NotBlank

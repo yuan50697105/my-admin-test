@@ -1,8 +1,12 @@
 package com.example.commons.db.mybatis.base.pagehelper.module.service.impl;
 
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.ServiceOrderInfo;
-import java.util.List;
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.ServiceOrderInfoExample;
+import com.example.commons.db.mybatis.base.pagehelper.module.pojo.query.ServiceOrderInfoQuery;
+import com.example.db.pojo.IPageResult;
+
+import java.util.List;
+
 public interface ServiceOrderInfoService{
 
 
@@ -34,4 +38,9 @@ public interface ServiceOrderInfoService{
 
     int batchInsert(List<ServiceOrderInfo> list);
 
+    IPageResult<ServiceOrderInfo> selectPageByQuery(ServiceOrderInfoQuery query);
+
+    List<ServiceOrderInfo> selectByQuery(ServiceOrderInfoQuery query);
+
+    List<ServiceOrderInfo> selectByPrimaryKeys(List<Long> ids);
 }

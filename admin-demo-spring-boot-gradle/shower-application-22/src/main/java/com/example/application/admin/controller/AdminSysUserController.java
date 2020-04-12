@@ -29,7 +29,7 @@ import java.util.List;
 public class AdminSysUserController extends BaseController {
     public static final String ID_NOT_NULL = "id not null";
     public static final String IDS_NOT_EMPTY = "ids not empty";
-    private AdminSysUserService adminSysUserService;
+    private final AdminSysUserService adminSysUserService;
 
     @GetMapping("contants")
     public Object constants() {

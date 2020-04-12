@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
 @Component
 @AllArgsConstructor
 public class BaseSenderImpl implements BaseSender {
-    private RabbitTemplate rabbitTemplate;
-    private RabbitMessagingTemplate rabbitMessagingTemplate;
+    private final RabbitTemplate rabbitTemplate;
+    private final RabbitMessagingTemplate rabbitMessagingTemplate;
 
     @Override
     public void send(String routingKey, Object object) {

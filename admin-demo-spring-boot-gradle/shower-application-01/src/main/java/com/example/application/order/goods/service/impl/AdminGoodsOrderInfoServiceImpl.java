@@ -23,7 +23,7 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class AdminGoodsOrderInfoServiceImpl implements AdminGoodsOrderInfoService {
-    private GoodsOrderInfoService goodsOrderInfoService;
+    private final GoodsOrderInfoService goodsOrderInfoService;
 
     @Override
     public Result data(GoodsOrderInfoQuery query) {

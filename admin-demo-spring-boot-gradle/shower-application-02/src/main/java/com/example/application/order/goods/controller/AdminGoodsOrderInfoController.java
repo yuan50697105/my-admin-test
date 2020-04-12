@@ -23,7 +23,7 @@ import java.util.List;
 @AllArgsConstructor
 @Validated
 public class AdminGoodsOrderInfoController extends BaseController {
-    private AdminGoodsOrderInfoService adminGoodsOrderInfoService;
+    private final AdminGoodsOrderInfoService adminGoodsOrderInfoService;
 
     @GetMapping("data")
     public Result data(GoodsOrderInfoQuery query) {

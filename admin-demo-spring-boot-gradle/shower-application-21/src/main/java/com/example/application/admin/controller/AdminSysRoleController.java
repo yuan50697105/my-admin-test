@@ -28,7 +28,7 @@ import java.util.List;
 public class AdminSysRoleController extends BaseController {
     public static final String ID_NOT_NULL = "id not null";
     public static final String IDS_NOT_EMPTY = "ids not empty";
-    private AdminSysRoleService adminSysRoleService;
+    private final AdminSysRoleService adminSysRoleService;
 
     /**
      * 保存用户信息
