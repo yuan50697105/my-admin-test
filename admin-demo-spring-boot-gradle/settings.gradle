@@ -1,6 +1,5 @@
 include 'shower-commons'
 include 'shower-commons-web'
-include 'shower-commons-web-hateoas'
 include 'shower-commons-amqp'
 include 'shower-commons-db'
 include 'shower-commons-db-redis'
