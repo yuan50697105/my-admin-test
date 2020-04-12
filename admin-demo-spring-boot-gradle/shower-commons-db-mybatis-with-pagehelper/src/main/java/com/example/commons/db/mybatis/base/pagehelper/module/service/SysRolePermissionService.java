@@ -18,13 +18,10 @@ public interface SysRolePermissionService {
 
     int deleteByRoleIds(List<Long> roleIds);
 
-<<<<<<< .merge_file_a17376
     int deleteByPermissionId(Long permissinoId);
 
     int deleteByPermissionIds(List<Long> permissionIds);
 
-=======
->>>>>>> .merge_file_a17284
     int insert(SysRolePermission record);
 
     int insertSelective(SysRolePermission record);
@@ -46,12 +43,5 @@ public interface SysRolePermissionService {
     int updateBatchSelective(List<SysRolePermission> list);
 
     int batchInsert(List<SysRolePermission> list);
-<<<<<<< .merge_file_a17376
-=======
-
-    int deleteByPermissionId(Long permissinoId);
-
-    int deleteByPermissionIds(List<Long> permissionIds);
->>>>>>> .merge_file_a17284
 }
 

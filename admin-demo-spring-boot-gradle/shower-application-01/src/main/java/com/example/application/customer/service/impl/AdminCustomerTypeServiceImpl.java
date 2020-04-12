@@ -71,11 +71,7 @@ public class AdminCustomerTypeServiceImpl implements AdminCustomerTypeService {
     @Override
     @Transactional
     public Result delete(List<Long> ids) {
-<<<<<<< .merge_file_a05092
         customerTypeService.deleteByPrimaryKeys(ids);
-=======
-        customerTypeService.deleteByIds(ids);
->>>>>>> .merge_file_a10284
         return ResultUtils.deleteOk();
     }
 

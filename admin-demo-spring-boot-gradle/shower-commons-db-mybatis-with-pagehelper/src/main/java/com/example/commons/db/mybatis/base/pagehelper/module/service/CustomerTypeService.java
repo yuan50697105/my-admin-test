@@ -16,11 +16,8 @@ public interface CustomerTypeService{
 
     int deleteByPrimaryKey(Long id);
 
-<<<<<<< .merge_file_a18864
     int deleteByPrimaryKeys(List<Long> ids);
 
-=======
->>>>>>> .merge_file_a11136
     int insert(CustomerType record);
 
     int insertSelective(CustomerType record);
@@ -46,9 +43,4 @@ public interface CustomerTypeService{
     IPageResult<CustomerType> selectPageByQuery(CustomerTypeQuery query);
 
     List<CustomerType> selectByQuery(CustomerTypeQuery query);
-<<<<<<< .merge_file_a18864
-=======
-
-    int deleteByIds(List<Long> ids);
->>>>>>> .merge_file_a11136
 }

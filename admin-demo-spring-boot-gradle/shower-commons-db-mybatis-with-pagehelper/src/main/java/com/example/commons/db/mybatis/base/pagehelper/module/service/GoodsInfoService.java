@@ -14,11 +14,8 @@ public interface GoodsInfoService {
 
     int deleteByExample(GoodsInfoExample example);
 
-<<<<<<< .merge_file_a08728
     int deleteByPrimaryKeys(List<Long> ids);
 
-=======
->>>>>>> .merge_file_a02276
     int deleteByPrimaryKey(Long id);
 
     int insert(GoodsInfo record);
@@ -46,9 +43,4 @@ public interface GoodsInfoService {
     IPageResult<GoodsInfo> selectPageByQuery(GoodsInfoQuery query);
 
     List<GoodsInfo> selectByQuery(GoodsInfoQuery query);
-<<<<<<< .merge_file_a08728
-=======
-
-    int deleteByIds(List<Long> ids);
->>>>>>> .merge_file_a02276
 }

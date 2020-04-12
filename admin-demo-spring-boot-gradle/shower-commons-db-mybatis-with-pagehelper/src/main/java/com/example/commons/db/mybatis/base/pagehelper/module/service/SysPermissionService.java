@@ -15,11 +15,8 @@ public interface SysPermissionService{
 
     int deleteByPrimaryKey(Long id);
 
-<<<<<<< .merge_file_a17552
     int deleteByPrimaryKeys(List<Long> ids);
 
-=======
->>>>>>> .merge_file_a16492
     int insert(SysPermission record);
 
     int insertSelective(SysPermission record);
@@ -44,11 +41,6 @@ public interface SysPermissionService{
 
     List<SysPermission> selectByIds(List<Long> ids);
 
-<<<<<<< .merge_file_a17552
-=======
-    int deleteByIds(List<Long> ids);
-
->>>>>>> .merge_file_a16492
     IPageResult<SysPermission> selectPageByQuery(SysPermissionQuery query);
 
     List<SysPermission> selectByQuery(SysPermissionQuery query);

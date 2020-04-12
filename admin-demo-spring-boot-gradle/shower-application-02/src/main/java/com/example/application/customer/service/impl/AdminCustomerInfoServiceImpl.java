@@ -71,11 +71,7 @@ public class AdminCustomerInfoServiceImpl implements AdminCustomerInfoService {
     @Override
     @Transactional
     public Result delete(List<Long> ids) {
-<<<<<<< .merge_file_a14600
         customerInfoService.deleteByPrimaryKeys(ids);
-=======
-        customerInfoService.deleteByIds(ids);
->>>>>>> .merge_file_a21280
         return ResultUtils.deleteOk();
     }
 
