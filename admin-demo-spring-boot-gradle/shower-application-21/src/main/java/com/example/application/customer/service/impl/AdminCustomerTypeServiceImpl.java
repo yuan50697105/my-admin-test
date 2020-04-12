@@ -39,7 +39,7 @@ public class AdminCustomerTypeServiceImpl implements AdminCustomerTypeService {
 
     @Override
     public Result get(Long id) {
-        CustomerType customerType = customerTypeService.selectByPrimaryKey(id);
+        CustomerType customerType = customerTypeService.getById(id);
         return ResultUtils.data("customerType", customerType);
     }
 
@@ -48,30 +48,30 @@ public class AdminCustomerTypeServiceImpl implements AdminCustomerTypeService {
     public Result save(AdminCustomerTypeSaveRequestBody requestBody) {
         CustomerType customerType = new CustomerType();
         customerType.copyFrom(requestBody);
-        customerTypeService.insert(customerType);
+        customerTypeService.save(customerType);
         return ResultUtils.saveOk();
     }
 
     @Override
     @Transactional
     public Result update(AdminCustomerTypeUpdateRequestBody requestBody) {
-        CustomerType customerType = customerTypeService.selectByPrimaryKey(requestBody.getId());
+        CustomerType customerType = customerTypeService.getById(requestBody.getId());
         customerType.copyFrom(requestBody);
-        customerTypeService.updateByPrimaryKeySelective(customerType);
+        customerTypeService.updateById(customerType);
         return ResultUtils.updateOk();
     }
 
     @Override
     @Transactional
     public Result delete(Long id) {
-        customerTypeService.deleteByPrimaryKey(id);
+        customerTypeService.removeById(id);
         return ResultUtils.deleteOk();
     }
 
     @Override
     @Transactional
     public Result delete(List<Long> ids) {
-        customerTypeService.deleteByPrimaryKeys(ids);
+        customerTypeService.removeByIds(ids);
         return ResultUtils.deleteOk();
     }
 

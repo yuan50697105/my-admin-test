@@ -39,6 +39,8 @@ public interface SysUserService extends IService<SysUser> {
     IPageResult<SysUser> selectPageByQuery(SysUserQuery query);
 
     List<SysUser> selectByQuery(SysUserQuery query);
+
+    boolean existByUsername(String username);
 }
 
 

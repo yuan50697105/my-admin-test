@@ -54,7 +54,7 @@ public class AdminSysUserServiceImpl implements AdminSysUserService {
         }
         SysUser sysUser = createUserFromRequestBody(requestBody);
         sysUserService.insert(sysUser);
-        List<SysRole> sysRoles = sysRoleService.selectByIds(requestBody.getRoleIds());
+        List<SysRole> sysRoles = sysRoleService.listByIds(requestBody.getRoleIds());
         List<SysUserRole> userRoles = createUserRoleList(sysUser, sysRoles);
         sysUserRoleService.batchInsert(userRoles);
         return ResultUtils.saveOk();
@@ -74,7 +74,7 @@ public class AdminSysUserServiceImpl implements AdminSysUserService {
             throw new ResultRuntimeException(ResultUtils.userNotFoundError());
         }
         updateUserInfoFromRequestBody(sysUser, requestBody);
-        sysUserService.updateByPrimaryKeySelective(sysUser);
+        sysUserService.updateById(sysUser);
         return ResultUtils.updateOk();
     }
 
@@ -87,8 +87,8 @@ public class AdminSysUserServiceImpl implements AdminSysUserService {
         if (isEmpty(sysUser)) {
             throw new ResultRuntimeException(ResultUtils.userNotFoundError());
         }
-        List<SysRole> sysRoles = sysRoleService.selectByIds(roleIds);
-        sysUserRoleService.deleteByUserId(userId);
+        List<SysRole> sysRoles = sysRoleService.listByIds(roleIds);
+        sysUserRoleService.removeByUserId(userId);
         List<SysUserRole> sysUserRoles = createUserRoleList(sysUser, sysRoles);
         sysUserRoleService.batchInsert(sysUserRoles);
         return ResultUtils.updateOk();
@@ -116,7 +116,7 @@ public class AdminSysUserServiceImpl implements AdminSysUserService {
     @Transactional
     public Result delete(Long id) {
         sysUserService.deleteByPrimaryKey(id);
-        sysUserRoleService.deleteByUserId(id);
+        sysUserRoleService.removeByUserId(id);
         return ResultUtils.deleteOk();
     }
 
@@ -124,7 +124,7 @@ public class AdminSysUserServiceImpl implements AdminSysUserService {
     @Transactional
     public Result delete(List<Long> ids) {
         sysUserService.deleteByIds(ids);
-        sysUserRoleService.deleteByUserIds(ids);
+        sysUserRoleService.removeByUserIds(ids);
         return ResultUtils.deleteOk();
     }
 

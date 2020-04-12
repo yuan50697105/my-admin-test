@@ -28,6 +28,10 @@ public interface SysUserRoleService extends IService<SysUserRole> {
     boolean removeByRoleId(Long roleId);
 
     boolean removeByRoleIds(List<Long> roleIds);
+
+    boolean removeByUserId(Long userId);
+
+    boolean removeByUserIds(List<Long> userIds);
 }
 
 

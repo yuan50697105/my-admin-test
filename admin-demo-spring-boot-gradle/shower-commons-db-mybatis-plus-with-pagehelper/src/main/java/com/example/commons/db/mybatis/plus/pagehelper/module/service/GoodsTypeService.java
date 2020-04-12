@@ -4,6 +4,9 @@ import com.example.commons.db.mybatis.plus.pagehelper.module.pojo.GoodsTypeExamp
 import java.util.List;
 import com.example.commons.db.mybatis.plus.pagehelper.module.pojo.GoodsType;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.example.commons.db.mybatis.plus.pagehelper.module.pojo.query.GoodsTypeQuery;
+import com.example.db.pojo.IPageResult;
+
 public interface GoodsTypeService extends IService<GoodsType>{
 
 
@@ -23,4 +26,7 @@ public interface GoodsTypeService extends IService<GoodsType>{
 
     int batchInsert(List<GoodsType> list);
 
+    IPageResult<GoodsType> selectPageByQuery(GoodsTypeQuery query);
+
+    List<GoodsType> selectByQuery(GoodsTypeQuery query);
 }

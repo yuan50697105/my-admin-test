@@ -39,7 +39,7 @@ public class AdminCustomerInfoServiceImpl implements AdminCustomerInfoService {
 
     @Override
     public Result get(Long id) {
-        CustomerInfo customerInfo = customerInfoService.selectByPrimaryKey(id);
+        CustomerInfo customerInfo = customerInfoService.getById(id);
         return ResultUtils.data("CustomerInfo", customerInfo);
     }
 
@@ -48,30 +48,30 @@ public class AdminCustomerInfoServiceImpl implements AdminCustomerInfoService {
     public Result save(AdminCustomerInfoSaveRequestBody requestBody) {
         CustomerInfo customerInfo = new CustomerInfo();
         customerInfo.copyFrom(requestBody);
-        customerInfoService.insert(customerInfo);
+        customerInfoService.save(customerInfo);
         return ResultUtils.saveOk();
     }
 
     @Override
     @Transactional
     public Result update(AdminCustomerInfoUpdateRequestBody requestBody) {
-        CustomerInfo customerInfo = customerInfoService.selectByPrimaryKey(requestBody.getId());
+        CustomerInfo customerInfo = customerInfoService.getById(requestBody.getId());
         customerInfo.copyFrom(customerInfo);
-        customerInfoService.updateByPrimaryKeySelective(customerInfo);
+        customerInfoService.updateById(customerInfo);
         return ResultUtils.updateOk();
     }
 
     @Override
     @Transactional
     public Result delete(Long id) {
-        customerInfoService.deleteByPrimaryKey(id);
+        customerInfoService.removeById(id);
         return ResultUtils.deleteOk();
     }
 
     @Override
     @Transactional
     public Result delete(List<Long> ids) {
-        customerInfoService.deleteByPrimaryKeys(ids);
+        customerInfoService.removeByIds(ids);
         return ResultUtils.deleteOk();
     }
 

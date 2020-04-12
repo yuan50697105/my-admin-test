@@ -3,9 +3,9 @@ package com.example.application.goods.service.impl;
 import com.example.application.goods.pojo.type.GoodsTypeSaveRequestBody;
 import com.example.application.goods.pojo.type.GoodsTypeUpdateRequestBody;
 import com.example.application.goods.service.AdminGoodsTypeService;
-import com.example.commons.db.mybatis.mapper.base.pagehelper.module.pojo.GoodsType;
-import com.example.commons.db.mybatis.mapper.base.pagehelper.module.pojo.query.GoodsTypeQuery;
-import com.example.commons.db.mybatis.mapper.base.pagehelper.module.service.GoodsTypeService;
+import com.example.commons.db.mybatis.plus.pagehelper.module.pojo.GoodsType;
+import com.example.commons.db.mybatis.plus.pagehelper.module.pojo.query.GoodsTypeQuery;
+import com.example.commons.db.mybatis.plus.pagehelper.module.service.GoodsTypeService;
 import com.example.commons.web.pojo.Result;
 import com.example.commons.web.utils.ResultUtils;
 import com.example.db.pojo.IPageResult;
@@ -40,7 +40,7 @@ public class AdminGoodsTypeServiceImpl implements AdminGoodsTypeService {
 
     @Override
     public Result get(Long id) {
-        GoodsType goodsType = goodsTypeService.selectByPrimaryKey(id);
+        GoodsType goodsType = goodsTypeService.getById(id);
         return ResultUtils.data("goodsType",goodsType);
     }
 
@@ -49,30 +49,30 @@ public class AdminGoodsTypeServiceImpl implements AdminGoodsTypeService {
     public Result save(GoodsTypeSaveRequestBody requestBody) {
         GoodsType goodsType = new GoodsType();
         goodsType.copyFrom(requestBody);
-        goodsTypeService.insert(goodsType);
+        goodsTypeService.save(goodsType);
         return ResultUtils.saveOk();
     }
 
     @Override
     @Transactional
     public Result update(GoodsTypeUpdateRequestBody requestBody) {
-        GoodsType goodsType = goodsTypeService.selectByPrimaryKey(requestBody.getId());
+        GoodsType goodsType = goodsTypeService.getById(requestBody.getId());
         goodsType.copyFrom(requestBody);
-        goodsTypeService.updateByPrimaryKeySelective(goodsType);
+        goodsTypeService.updateById(goodsType);
         return ResultUtils.updateOk();
     }
 
     @Override
     @Transactional
     public Result delete(Long id) {
-        goodsTypeService.deleteByPrimaryKey(id);
+        goodsTypeService.removeById(id);
         return ResultUtils.deleteOk();
     }
 
     @Override
     @Transactional
     public Result delete(List<Long> ids) {
-        goodsTypeService.deleteByPrimaryKeys(ids);
+        goodsTypeService.removeByIds(ids);
         return ResultUtils.deleteOk();
     }
 }

@@ -89,6 +89,11 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         return createQuery(query).list();
     }
 
+    @Override
+    public boolean existByUsername(String username) {
+        return lambdaQuery().eq(SysUser::getUsername, username).count() > 0;
+    }
+
     public QueryChainWrapper<SysUser> createQuery(SysUserQuery query) {
         QueryChainWrapper<SysUser> wrapper = query();
         if (ObjectUtil.isNotEmpty(query.getEnabled())) {

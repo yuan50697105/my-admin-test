@@ -54,12 +54,22 @@ public class SysUserRoleServiceImpl extends ServiceImpl<SysUserRoleMapper, SysUs
 
     @Override
     public boolean removeByRoleId(Long roleId) {
-        return remove(lambdaQuery().eq(SysUserRole::getRoleId,roleId));
+        return remove(lambdaQuery().eq(SysUserRole::getRoleId, roleId));
     }
 
     @Override
     public boolean removeByRoleIds(List<Long> roleIds) {
         return remove(lambdaQuery().in(SysUserRole::getRoleId, roleIds));
+    }
+
+    @Override
+    public boolean removeByUserId(Long userId) {
+        return remove(lambdaQuery().eq(SysUserRole::getUserId, userId));
+    }
+
+    @Override
+    public boolean removeByUserIds(List<Long> userIds) {
+        return remove(lambdaQuery().in(SysUserRole::getUserId, userIds));
     }
 }
 
