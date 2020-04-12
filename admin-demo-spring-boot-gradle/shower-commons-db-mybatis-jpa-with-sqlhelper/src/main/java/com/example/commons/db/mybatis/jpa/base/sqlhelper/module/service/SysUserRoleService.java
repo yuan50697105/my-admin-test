@@ -1,8 +1,11 @@
 package com.example.commons.db.mybatis.jpa.base.sqlhelper.module.service;
 
-import java.util.List;
+
 import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.SysUserRole;
 import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.SysUserRoleExample;
+
+import java.util.List;
+
 public interface SysUserRoleService{
 
 
@@ -34,4 +37,11 @@ public interface SysUserRoleService{
 
     int batchInsert(List<SysUserRole> list);
 
+    int deleteByRoleId(Long roleId);
+
+    int deleteByRoleIds(List<Long> roleIds);
+
+    int deleteByUserId(Long userId);
+
+    int deleteByUserIds(List<Long> userIds);
 }

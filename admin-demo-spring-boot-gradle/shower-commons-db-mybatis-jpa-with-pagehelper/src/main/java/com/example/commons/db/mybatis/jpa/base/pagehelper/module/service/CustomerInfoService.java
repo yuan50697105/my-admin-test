@@ -1,8 +1,12 @@
 package com.example.commons.db.mybatis.jpa.base.pagehelper.module.service;
 
-import java.util.List;
-import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.CustomerInfoExample;
 import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.CustomerInfo;
+import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.CustomerInfoExample;
+import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.query.CustomerInfoQuery;
+import com.example.db.pojo.IPageResult;
+
+import java.util.List;
+
 public interface CustomerInfoService{
 
 
@@ -34,4 +38,9 @@ public interface CustomerInfoService{
 
     int batchInsert(List<CustomerInfo> list);
 
+    IPageResult<CustomerInfo> selectPageByQuery(CustomerInfoQuery query);
+
+    List<CustomerInfo> selectByQuery(CustomerInfoQuery query);
+
+    int deleteByPrimaryKeys(List<Long> ids);
 }

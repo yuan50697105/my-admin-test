@@ -1,12 +1,18 @@
 package com.example.commons.db.mybatis.jpa.base.pagehelper.module.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import java.util.List;
+import com.example.commons.db.mybatis.jpa.base.pagehelper.base.pojo.PageResult;
+import com.example.commons.db.mybatis.jpa.base.pagehelper.module.mapper.GoodsTypeMapper;
 import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.GoodsType;
 import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.GoodsTypeExample;
-import com.example.commons.db.mybatis.jpa.base.pagehelper.module.mapper.GoodsTypeMapper;
+import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.query.GoodsTypeQuery;
 import com.example.commons.db.mybatis.jpa.base.pagehelper.module.service.GoodsTypeService;
+import com.example.db.pojo.IPageResult;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
 @Service
 public class GoodsTypeServiceImpl implements GoodsTypeService{
 
@@ -81,6 +87,24 @@ public class GoodsTypeServiceImpl implements GoodsTypeService{
     @Override
     public int batchInsert(List<GoodsType> list) {
         return goodsTypeMapper.batchInsert(list);
+    }
+
+    @Override
+    public IPageResult<GoodsType> selectPageByQuery(GoodsTypeQuery query) {
+        PageHelper.startPage(query.getPage(), query.getSize());
+        return new PageResult<>(new PageInfo<>(selectByExample(query.toExample())));
+    }
+
+    @Override
+    public List<GoodsType> selectByQuery(GoodsTypeQuery query) {
+        return selectByExample(query.toExample());
+    }
+
+    @Override
+    public int deleteByPrimaryKeys(List<Long> ids) {
+        GoodsTypeExample example = new GoodsTypeExample();
+        example.or().andIdIn(ids);
+        return deleteByExample(example);
     }
 
 }

@@ -1,8 +1,9 @@
 package com.example.commons.db.mybatis.jpa.base.pagehelper.module.service;
 
 import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.SysRolePermission;
-import java.util.List;
 import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.SysRolePermissionExample;
+
+import java.util.List;
 public interface SysRolePermissionService{
 
 
@@ -34,4 +35,11 @@ public interface SysRolePermissionService{
 
     int batchInsert(List<SysRolePermission> list);
 
+    int deleteByPermissionId(Long permissionId);
+
+    int deleteByPermissionIds(List<Long> permissionIds);
+
+    int deleteByRoleId(Long roleId);
+
+    int deleteByRoleIds(List<Long> roleIds);
 }

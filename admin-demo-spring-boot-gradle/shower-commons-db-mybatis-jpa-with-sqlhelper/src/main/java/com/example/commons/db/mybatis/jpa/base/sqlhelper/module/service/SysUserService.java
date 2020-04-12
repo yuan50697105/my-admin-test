@@ -1,8 +1,12 @@
 package com.example.commons.db.mybatis.jpa.base.sqlhelper.module.service;
 
-import java.util.List;
-import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.SysUserExample;
 import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.SysUser;
+import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.SysUserExample;
+import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.query.SysUserQuery;
+import com.example.db.pojo.IPageResult;
+
+import java.util.List;
+
 public interface SysUserService{
 
 
@@ -34,4 +38,11 @@ public interface SysUserService{
 
     int batchInsert(List<SysUser> list);
 
+    int deleteByPrimaryKeys(List<Long> ids);
+
+    IPageResult<SysUser> selectPageByQuery(SysUserQuery query);
+
+    List<SysUser> selectByQuery(SysUserQuery query);
+
+    boolean existByUsername(String username);
 }

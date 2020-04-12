@@ -1,8 +1,11 @@
 package com.example.commons.db.mybatis.jpa.base.sqlhelper.module.service;
 
-import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.SysUserLogExample;
-import java.util.List;
+
 import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.SysUserLog;
+import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.SysUserLogExample;
+
+import java.util.List;
+
 public interface SysUserLogService{
 
 

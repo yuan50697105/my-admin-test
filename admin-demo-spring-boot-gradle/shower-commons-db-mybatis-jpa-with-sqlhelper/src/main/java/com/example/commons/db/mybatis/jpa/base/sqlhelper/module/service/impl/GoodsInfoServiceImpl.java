@@ -1,14 +1,21 @@
 package com.example.commons.db.mybatis.jpa.base.sqlhelper.module.service.impl;
 
+import com.example.commons.db.mybatis.jpa.base.sqlhelper.base.pojo.PageResult;
+import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.mapper.GoodsInfoMapper;
+import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.GoodsInfo;
+import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.GoodsInfoExample;
+import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.query.GoodsInfoQuery;
+import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.service.GoodsInfoService;
+import com.example.db.pojo.IPageResult;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
+
 import javax.annotation.Resource;
 import java.util.List;
-import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.GoodsInfo;
-import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.mapper.GoodsInfoMapper;
-import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.GoodsInfoExample;
-import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.service.GoodsInfoService;
+
 @Service
-public class GoodsInfoServiceImpl implements GoodsInfoService{
+public class GoodsInfoServiceImpl implements GoodsInfoService {
 
     @Resource
     private GoodsInfoMapper goodsInfoMapper;
@@ -81,6 +88,24 @@ public class GoodsInfoServiceImpl implements GoodsInfoService{
     @Override
     public int batchInsert(List<GoodsInfo> list) {
         return goodsInfoMapper.batchInsert(list);
+    }
+
+    @Override
+    public IPageResult<GoodsInfo> selectPageByQuery(GoodsInfoQuery query) {
+        PageHelper.startPage(query.getPage(), query.getSize());
+        return new PageResult<>(new PageInfo<>(selectByExample(query.toExample())));
+    }
+
+    @Override
+    public List<GoodsInfo> selectByQuery(GoodsInfoQuery query) {
+        return selectByExample(query.toExample());
+    }
+
+    @Override
+    public int deleteByPrimaryKeys(List<Long> ids) {
+        GoodsInfoExample example = new GoodsInfoExample();
+        example.or().andIdIn(ids);
+        return deleteByExample(example);
     }
 
 }

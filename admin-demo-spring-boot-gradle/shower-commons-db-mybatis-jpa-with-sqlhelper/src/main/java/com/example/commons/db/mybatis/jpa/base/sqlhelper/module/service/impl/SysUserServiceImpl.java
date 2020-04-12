@@ -1,14 +1,21 @@
 package com.example.commons.db.mybatis.jpa.base.sqlhelper.module.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import java.util.List;
-import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.SysUserExample;
+import com.example.commons.db.mybatis.jpa.base.sqlhelper.base.pojo.PageResult;
 import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.mapper.SysUserMapper;
 import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.SysUser;
+import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.SysUserExample;
+import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.query.SysUserQuery;
 import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.service.SysUserService;
+import com.example.db.pojo.IPageResult;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
+
 @Service
-public class SysUserServiceImpl implements SysUserService{
+public class SysUserServiceImpl implements SysUserService {
 
     @Resource
     private SysUserMapper sysUserMapper;
@@ -81,6 +88,29 @@ public class SysUserServiceImpl implements SysUserService{
     @Override
     public int batchInsert(List<SysUser> list) {
         return sysUserMapper.batchInsert(list);
+    }
+
+    @Override
+    public int deleteByPrimaryKeys(List<Long> ids) {
+        SysUserExample example = new SysUserExample();
+        example.or().andIdIn(ids);
+        return deleteByExample(example);
+    }
+
+    @Override
+    public IPageResult<SysUser> selectPageByQuery(SysUserQuery query) {
+        PageHelper.startPage(query.getPage(), query.getSize());
+        return new PageResult<>(new PageInfo<>(selectByExample(query.toExample())));
+    }
+
+    @Override
+    public List<SysUser> selectByQuery(SysUserQuery query) {
+        return selectByExample(query.toExample());
+    }
+
+    @Override
+    public boolean existByUsername(String username) {
+        return false;
     }
 
 }

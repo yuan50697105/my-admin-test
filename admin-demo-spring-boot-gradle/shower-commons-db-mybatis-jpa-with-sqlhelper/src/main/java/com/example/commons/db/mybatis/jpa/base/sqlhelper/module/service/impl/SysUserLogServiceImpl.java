@@ -1,14 +1,16 @@
 package com.example.commons.db.mybatis.jpa.base.sqlhelper.module.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
 import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.mapper.SysUserLogMapper;
-import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.SysUserLogExample;
-import java.util.List;
 import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.SysUserLog;
+import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.SysUserLogExample;
 import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.service.SysUserLogService;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
+
 @Service
-public class SysUserLogServiceImpl implements SysUserLogService{
+public class SysUserLogServiceImpl implements SysUserLogService {
 
     @Resource
     private SysUserLogMapper sysUserLogMapper;
