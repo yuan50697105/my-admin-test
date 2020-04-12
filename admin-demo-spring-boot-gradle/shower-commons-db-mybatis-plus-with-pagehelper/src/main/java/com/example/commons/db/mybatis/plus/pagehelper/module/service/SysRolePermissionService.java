@@ -24,6 +24,14 @@ public interface SysRolePermissionService extends IService<SysRolePermission> {
     int updateByExampleSelective(SysRolePermission record, SysRolePermissionExample example);
 
     int updateByExample(SysRolePermission record, SysRolePermissionExample example);
+
+    boolean removeByPermissionId(Long permissionId);
+
+    boolean removeByPermissionIds(List<Long> permissionIds);
+
+    boolean removeByRoleId(Long roleId);
+
+    boolean removeByRoleIds(List<Long> roleIds);
 }
 
 

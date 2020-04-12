@@ -24,6 +24,10 @@ public interface SysUserRoleService extends IService<SysUserRole> {
     int updateByExampleSelective(SysUserRole record, SysUserRoleExample example);
 
     int updateByExample(SysUserRole record, SysUserRoleExample example);
+
+    boolean removeByRoleId(Long roleId);
+
+    boolean removeByRoleIds(List<Long> roleIds);
 }
 
 

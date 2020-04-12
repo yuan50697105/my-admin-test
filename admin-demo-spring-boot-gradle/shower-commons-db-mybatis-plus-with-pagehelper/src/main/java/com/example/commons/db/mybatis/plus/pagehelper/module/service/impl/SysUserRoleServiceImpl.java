@@ -51,6 +51,16 @@ public class SysUserRoleServiceImpl extends ServiceImpl<SysUserRoleMapper, SysUs
     public int updateByExample(SysUserRole record, SysUserRoleExample example) {
         return baseMapper.updateByExample(record, example);
     }
+
+    @Override
+    public boolean removeByRoleId(Long roleId) {
+        return remove(lambdaQuery().eq(SysUserRole::getRoleId,roleId));
+    }
+
+    @Override
+    public boolean removeByRoleIds(List<Long> roleIds) {
+        return remove(lambdaQuery().in(SysUserRole::getRoleId, roleIds));
+    }
 }
 
 

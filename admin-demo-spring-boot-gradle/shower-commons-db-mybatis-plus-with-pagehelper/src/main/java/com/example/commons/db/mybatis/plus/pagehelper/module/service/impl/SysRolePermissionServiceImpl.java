@@ -51,6 +51,26 @@ public class SysRolePermissionServiceImpl extends ServiceImpl<SysRolePermissionM
     public int updateByExample(SysRolePermission record, SysRolePermissionExample example) {
         return baseMapper.updateByExample(record, example);
     }
+
+    @Override
+    public boolean removeByPermissionId(Long permissionId) {
+        return remove(lambdaQuery().eq(SysRolePermission::getPermissionId, permissionId));
+    }
+
+    @Override
+    public boolean removeByPermissionIds(List<Long> permissionIds) {
+        return remove(lambdaQuery().in(SysRolePermission::getPermissionId, permissionIds));
+    }
+
+    @Override
+    public boolean removeByRoleId(Long roleId) {
+        return remove(lambdaQuery().eq(SysRolePermission::getRoleId, roleId));
+    }
+
+    @Override
+    public boolean removeByRoleIds(List<Long> roleIds) {
+        return remove(lambdaQuery().in(SysRolePermission::getRoleId, roleIds));
+    }
 }
 
 

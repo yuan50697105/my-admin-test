@@ -3,6 +3,8 @@ package com.example.commons.db.mybatis.plus.pagehelper.module.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.example.commons.db.mybatis.plus.pagehelper.module.pojo.SysPermission;
 import com.example.commons.db.mybatis.plus.pagehelper.module.pojo.SysPermissionExample;
+import com.example.commons.db.mybatis.plus.pagehelper.module.pojo.query.SysPermissionQuery;
+import com.example.db.pojo.IPageResult;
 
 import java.util.List;
 
@@ -24,6 +26,10 @@ public interface SysPermissionService extends IService<SysPermission> {
     int updateByExampleSelective(SysPermission record, SysPermissionExample example);
 
     int updateByExample(SysPermission record, SysPermissionExample example);
+
+    IPageResult<SysPermission> selectPageByQuery(SysPermissionQuery query);
+
+    List<SysPermission> selectByQuery(SysPermissionQuery query);
 }
 
 
