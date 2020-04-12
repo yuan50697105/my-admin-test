@@ -1,6 +1,9 @@
 package com.example.commons.db.mybatis.mapper.base.sqlhelper.module.service;
 
-import com.example.commons.db.mybatis.mapper.base.sqlhelper.module.pojo.SysUserLog;import java.util.List;
+
+import com.example.commons.db.mybatis.mapper.base.sqlhelper.module.pojo.SysUserLog;
+
+import java.util.List;
 
 public interface SysUserLogService {
 
@@ -10,6 +13,6 @@ public interface SysUserLogService {
     int updateBatchSelective(List<SysUserLog> list);
 
     int batchInsert(List<SysUserLog> list);
-}
 
+}
 

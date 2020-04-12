@@ -6,14 +6,16 @@ import com.example.commons.db.mybatis.mapper.base.sqlhelper.module.mapper.SysPer
 import com.example.commons.db.mybatis.mapper.base.sqlhelper.module.pojo.SysPermission;
 import com.example.commons.db.mybatis.mapper.base.sqlhelper.module.pojo.query.SysPermissionQuery;
 import com.example.commons.db.mybatis.mapper.base.sqlhelper.module.service.SysPermissionService;
-import com.example.db.pojo.IPageResult;
 import com.example.commons.db.utils.DbUtils;
+import com.example.db.pojo.IPageResult;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
+import tk.mybatis.mapper.weekend.Weekend;
 
-import javax.annotation.Resource;import java.util.List;
+import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class SysPermissionServiceImpl implements SysPermissionService {
@@ -77,7 +79,7 @@ public class SysPermissionServiceImpl implements SysPermissionService {
 
     @Override
     public List<SysPermission> selectByIds(List<Long> ids) {
-        Example example = new Example(SysPermission.class);
+        Weekend<SysPermission> example = new Weekend<>(SysPermission.class);
         example.and().andIn("id", ids);
         return sysPermissionMapper.selectByExample(example);
     }
@@ -89,7 +91,6 @@ public class SysPermissionServiceImpl implements SysPermissionService {
         }
         return example;
     }
+
 }
-
-
 

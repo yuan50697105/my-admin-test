@@ -31,20 +31,6 @@ public class SysRolePermissionServiceImpl implements SysRolePermissionService {
     }
 
     @Override
-    public int deleteByRoleId(Long roleId) {
-        Example example = new Example(SysRolePermission.class);
-        example.and().andEqualTo("roleId", roleId);
-        return sysRolePermissionMapper.deleteByExample(example);
-    }
-
-    @Override
-    public int deleteByRoleIds(List<Long> roleIds) {
-        Example example = new Example(SysRolePermission.class);
-        example.and().andIn("roleId", roleIds);
-        return sysRolePermissionMapper.deleteByExample(example);
-    }
-
-    @Override
     public int deleteByPermissionId(Long permissionId) {
         Example example = new Example(SysRolePermission.class);
         example.and().andEqualTo("permissionId", permissionId);
@@ -58,6 +44,19 @@ public class SysRolePermissionServiceImpl implements SysRolePermissionService {
         return sysRolePermissionMapper.deleteByExample(example);
     }
 
-}
+    @Override
+    public int deleteByRoleId(Long roleId) {
+        Example example = new Example(SysRolePermission.class);
+        example.and().andEqualTo("roleId", roleId);
+        return sysRolePermissionMapper.deleteByExample(example);
+    }
 
+    @Override
+    public int deleteByRoleIds(List<Long> roleIds) {
+        Example example = new Example(SysRolePermission.class);
+        example.and().andIn("roleId", roleIds);
+        return sysRolePermissionMapper.deleteByExample(example);
+    }
+
+}
 

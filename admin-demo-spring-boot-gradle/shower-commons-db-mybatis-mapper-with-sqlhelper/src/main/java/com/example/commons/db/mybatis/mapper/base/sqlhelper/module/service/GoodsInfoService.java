@@ -1,7 +1,11 @@
 package com.example.commons.db.mybatis.mapper.base.sqlhelper.module.service;
 
-import java.util.List;
 import com.example.commons.db.mybatis.mapper.base.sqlhelper.module.pojo.GoodsInfo;
+import com.example.commons.db.mybatis.mapper.base.sqlhelper.module.pojo.query.GoodsInfoQuery;
+import com.example.db.pojo.IPageResult;
+
+import java.util.List;
+
 public interface GoodsInfoService{
 
 
@@ -11,4 +15,17 @@ public interface GoodsInfoService{
 
     int batchInsert(List<GoodsInfo> list);
 
+    IPageResult<GoodsInfo> selectPageByQuery(GoodsInfoQuery query);
+
+    List<GoodsInfo> selectByQuery(GoodsInfoQuery query);
+
+    GoodsInfo selectById(Long id);
+
+    int insert(GoodsInfo goodsInfo);
+
+    int updateByPrimaryKeySelective(GoodsInfo goodsInfo);
+
+    int deleteById(Long id);
+
+    int deleteByIds(List<Long> ids);
 }

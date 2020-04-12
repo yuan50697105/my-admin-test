@@ -9,6 +9,12 @@ import java.util.List;
 public interface SysUserService {
 
 
+    int updateBatch(List<SysUser> list);
+
+    int updateBatchSelective(List<SysUser> list);
+
+    int batchInsert(List<SysUser> list);
+
     int insert(SysUser sysUser);
 
     SysUser selectByPrimaryKey(Long id);
@@ -23,17 +29,6 @@ public interface SysUserService {
 
     List<SysUser> selectByQuery(SysUserQuery query);
 
-    List<SysUser> selectByExample(Object object);
-
-    IPageResult<SysUser> selectPageByExample(Object object, int page, int size);
-
-    int updateBatch(List<SysUser> list);
-
-    int updateBatchSelective(List<SysUser> list);
-
-    int batchInsert(List<SysUser> list);
-
     boolean existByUsername(String username);
 }
-
 

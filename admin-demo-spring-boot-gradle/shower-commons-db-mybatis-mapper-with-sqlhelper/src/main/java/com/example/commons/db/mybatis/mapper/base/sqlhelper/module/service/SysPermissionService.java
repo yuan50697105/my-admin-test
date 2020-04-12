@@ -32,4 +32,3 @@ public interface SysPermissionService {
     List<SysPermission> selectByIds(List<Long> ids);
 }
 
-
