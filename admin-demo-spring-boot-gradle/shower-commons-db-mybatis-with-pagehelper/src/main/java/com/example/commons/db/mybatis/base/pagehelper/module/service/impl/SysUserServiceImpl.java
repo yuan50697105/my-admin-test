@@ -36,7 +36,7 @@ public class SysUserServiceImpl implements SysUserService {
     }
 
     @Override
-    public int deleteByIds(List<Long> ids) {
+    public int deleteByPrimaryKeys(List<Long> ids) {
         SysUserExample example = new SysUserExample();
         example.or().andIdIn(ids);
         return deleteByExample(example);

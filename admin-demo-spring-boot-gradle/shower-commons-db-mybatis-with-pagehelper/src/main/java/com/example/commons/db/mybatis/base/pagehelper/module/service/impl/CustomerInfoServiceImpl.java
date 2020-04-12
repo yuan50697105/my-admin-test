@@ -101,7 +101,7 @@ public class CustomerInfoServiceImpl implements CustomerInfoService{
     }
 
     @Override
-    public int deleteByIds(List<Long> ids) {
+    public int deleteByPrimaryKeys(List<Long> ids) {
         CustomerInfoExample example = new CustomerInfoExample();
         example.or().andIdIn(ids);
         return deleteByExample(example);

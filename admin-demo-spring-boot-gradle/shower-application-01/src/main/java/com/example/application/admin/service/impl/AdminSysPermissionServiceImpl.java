@@ -58,7 +58,7 @@ public class AdminSysPermissionServiceImpl implements AdminSysPermissionService 
     @Override
     @Transactional
     public Result delete(List<Long> ids) {
-        sysPermissionService.deleteByIds(ids);
+        sysPermissionService.deleteByPrimaryKeys(ids);
         sysRolePermissionService.deleteByPermissionIds(ids);
         return ResultUtils.deleteOk();
     }

@@ -105,7 +105,7 @@ public class GoodsInfoServiceImpl implements GoodsInfoService {
     }
 
     @Override
-    public int deleteByIds(List<Long> ids) {
+    public int deleteByPrimaryKeys(List<Long> ids) {
         GoodsInfoExample example = new GoodsInfoExample();
         example.or().andIdIn(ids);
         return deleteByExample(example);

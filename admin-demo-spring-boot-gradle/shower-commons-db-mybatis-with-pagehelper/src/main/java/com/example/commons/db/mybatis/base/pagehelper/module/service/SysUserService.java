@@ -32,7 +32,7 @@ public interface SysUserService{
 
     int updateByPrimaryKey(SysUser record);
 
-    int deleteByIds(List<Long> ids);
+    int deleteByPrimaryKeys(List<Long> ids);
 
     IPageResult<SysUser> selectPageByQuery(SysUserQuery query);
 

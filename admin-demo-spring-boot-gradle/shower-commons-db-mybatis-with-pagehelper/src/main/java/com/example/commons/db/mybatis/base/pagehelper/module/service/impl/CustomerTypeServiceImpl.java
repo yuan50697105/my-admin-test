@@ -101,7 +101,7 @@ public class CustomerTypeServiceImpl implements CustomerTypeService{
     }
 
     @Override
-    public int deleteByIds(List<Long> ids) {
+    public int deleteByPrimaryKeys(List<Long> ids) {
         CustomerTypeExample example = new CustomerTypeExample();
         example.or().andIdIn(ids);
         return deleteByExample(example);

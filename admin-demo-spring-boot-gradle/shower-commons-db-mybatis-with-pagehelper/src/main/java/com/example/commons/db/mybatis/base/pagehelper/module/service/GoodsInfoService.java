@@ -14,6 +14,8 @@ public interface GoodsInfoService {
 
     int deleteByExample(GoodsInfoExample example);
 
+    int deleteByPrimaryKeys(List<Long> ids);
+
     int deleteByPrimaryKey(Long id);
 
     int insert(GoodsInfo record);
@@ -41,6 +43,4 @@ public interface GoodsInfoService {
     IPageResult<GoodsInfo> selectPageByQuery(GoodsInfoQuery query);
 
     List<GoodsInfo> selectByQuery(GoodsInfoQuery query);
-
-    int deleteByIds(List<Long> ids);
 }

@@ -100,7 +100,7 @@ public class SysPermissionServiceImpl implements SysPermissionService {
     }
 
     @Override
-    public int deleteByIds(List<Long> ids) {
+    public int deleteByPrimaryKeys(List<Long> ids) {
         SysPermissionExample example = new SysPermissionExample();
         example.or().andIdIn(ids);
         return deleteByExample(example);
