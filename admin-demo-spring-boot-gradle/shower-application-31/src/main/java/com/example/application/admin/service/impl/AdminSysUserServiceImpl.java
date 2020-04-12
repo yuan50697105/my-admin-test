@@ -11,9 +11,9 @@ import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.query.SysU
 import com.example.commons.db.mybatis.jpa.base.pagehelper.module.service.SysRoleService;
 import com.example.commons.db.mybatis.jpa.base.pagehelper.module.service.SysUserRoleService;
 import com.example.commons.db.mybatis.jpa.base.pagehelper.module.service.SysUserService;
-import com.example.commons.web.exception.ResultRuntimeException;
-import com.example.commons.web.pojo.Result;
-import com.example.commons.web.utils.ResultUtils;
+import com.example.commons.web.base.exception.ResultRuntimeException;
+import com.example.commons.web.base.pojo.Result;
+import com.example.commons.web.base.utils.ResultUtils;
 import com.example.db.pojo.IPageResult;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

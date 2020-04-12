@@ -3,7 +3,7 @@ package com.example.application.goods.service;
 import com.example.application.goods.pojo.info.GoodsInfoSaveRequestBody;
 import com.example.application.goods.pojo.info.GoodsInfoUpdateRequestBody;
 import com.example.commons.db.mybatis.base.sqlhelper.module.pojo.query.GoodsInfoQuery;
-import com.example.commons.web.pojo.Result;
+import com.example.commons.web.base.pojo.Result;
 
 import java.util.List;
 

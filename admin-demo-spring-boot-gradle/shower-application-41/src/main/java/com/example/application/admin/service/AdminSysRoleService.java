@@ -4,7 +4,7 @@ import com.example.application.admin.pojo.role.AdminSysPermissionUpdateRequestBo
 import com.example.application.admin.pojo.role.AdminSysRoleSaveRequestBody;
 import com.example.application.admin.pojo.role.AdminSysRoleUpdateRequestBody;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.query.SysRoleQuery;
-import com.example.commons.web.pojo.Result;
+import com.example.commons.web.base.pojo.Result;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
-package com.example.commons.web.utils;
+package com.example.commons.web.hateoas.utils;
 
 import com.example.db.pojo.IPageResult;
-import com.example.commons.web.pojo.Result;
+import com.example.commons.web.hateoas.pojo.Result;
 
 import java.util.Collections;
 import java.util.Map;
@@ -15,21 +15,15 @@ import java.util.Map;
 public class ResultUtils {
     public static final int USER_NOT_FOUND_ERROR_CODE = 201;
     public static final String USER_NOT_FOUND_ERROR_MESSAGE = "用户不存在";
-    public static final String SAVE_OK_MESSAGE = "保存成功";
-    public static final String UPDATE_OK_MESSAGE = "修改成功";
-    public static final String DELETE_OK_MESSAGE = "删除成功";
     private static final Integer OK_CODE = 0;
     private static final String OK_MESSAGE = "成功";
-
-    private static final Integer EXCEPTION_ERROR_CODE = 101;
-    private static final Integer VALIDATE_ERROR_CODE = 102;
-    private static final Integer INFO_NOT_EXIST_CODE = 103;
-    private static final String INFO_EXIST_MESSAGE = "信息不存在";
     /*
      * 额外内容
      * */
-    private static final Integer USER_EXIST_ERROR_CODE = 202;
+    private static final Integer EXCEPTION_ERROR_CODE = 101;
+    private static final Integer VALIDATE_ERROR_CODE = 102;
     private static final String USER_EXIST_ERROR_MESSAGE = "用户已存在";
+    private static final Integer USER_EXIST_ERROR_CODE = 202;
 
     public static Result result(Integer code, String message) {
         return new Result(code, message);
@@ -47,18 +41,6 @@ public class ResultUtils {
         return result(OK_CODE, message);
     }
 
-    public static Result saveOk() {
-        return result(OK_CODE, SAVE_OK_MESSAGE);
-    }
-
-    public static Result updateOk() {
-        return result(OK_CODE, UPDATE_OK_MESSAGE);
-    }
-
-    public static Result deleteOk() {
-        return result(OK_CODE, DELETE_OK_MESSAGE);
-    }
-
     public static <T> Result data(T data) {
         return result(OK_CODE, OK_MESSAGE, data);
     }
@@ -69,10 +51,6 @@ public class ResultUtils {
 
     public static <K, V> Result data(K key, V value) {
         return data(Collections.singletonMap(key, value));
-    }
-
-    public static <E, T extends Iterable<E>> Result data(T iterable) {
-        return data("list", iterable);
     }
 
     public static <E, T extends IPageResult<E>> Result data(T data) {
@@ -96,9 +74,5 @@ public class ResultUtils {
 
     public static Result userExistError() {
         return result(USER_EXIST_ERROR_CODE, USER_EXIST_ERROR_MESSAGE);
-    }
-
-    public static Result infoNotExistError() {
-        return result(INFO_NOT_EXIST_CODE, INFO_EXIST_MESSAGE);
     }
 }

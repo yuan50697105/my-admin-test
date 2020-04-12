@@ -1,9 +1,9 @@
-package com.example.commons.web.exception.handler;
+package com.example.commons.web.hateoas.exception.handler;
 
-import com.example.commons.web.exception.ResultException;
-import com.example.commons.web.exception.ResultRuntimeException;
-import com.example.commons.web.pojo.Result;
-import com.example.commons.web.utils.ResultUtils;
+import com.example.commons.web.hateoas.exception.ResultException;
+import com.example.commons.web.hateoas.exception.ResultRuntimeException;
+import com.example.commons.web.hateoas.pojo.Result;
+import com.example.commons.web.hateoas.utils.ResultUtils;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /**

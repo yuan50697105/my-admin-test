@@ -1,6 +1,6 @@
-package com.example.commons.web.exception;
+package com.example.commons.web.base.exception;
 
-import com.example.commons.web.pojo.Result;
+import com.example.commons.web.base.pojo.Result;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

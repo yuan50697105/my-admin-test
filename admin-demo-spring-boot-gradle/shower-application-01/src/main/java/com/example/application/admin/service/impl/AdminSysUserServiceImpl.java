@@ -12,9 +12,9 @@ import com.example.commons.db.mybatis.base.pagehelper.module.service.SysRoleServ
 import com.example.commons.db.mybatis.base.pagehelper.module.service.SysUserRoleService;
 import com.example.commons.db.mybatis.base.pagehelper.module.service.SysUserService;
 import com.example.db.pojo.IPageResult;
-import com.example.commons.web.exception.ResultRuntimeException;
-import com.example.commons.web.pojo.Result;
-import com.example.commons.web.utils.ResultUtils;
+import com.example.commons.web.base.exception.ResultRuntimeException;
+import com.example.commons.web.base.pojo.Result;
+import com.example.commons.web.base.utils.ResultUtils;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

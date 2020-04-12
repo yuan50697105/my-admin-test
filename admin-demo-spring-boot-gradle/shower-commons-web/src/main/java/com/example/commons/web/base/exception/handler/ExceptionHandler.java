@@ -1,9 +1,9 @@
-package com.example.commons.web.exception.handler;
+package com.example.commons.web.base.exception.handler;
 
-import com.example.commons.web.exception.ResultException;
-import com.example.commons.web.exception.ResultRuntimeException;
-import com.example.commons.web.pojo.Result;
-import com.example.commons.web.utils.ResultUtils;
+import com.example.commons.web.base.exception.ResultException;
+import com.example.commons.web.base.exception.ResultRuntimeException;
+import com.example.commons.web.base.pojo.Result;
+import com.example.commons.web.base.utils.ResultUtils;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /**

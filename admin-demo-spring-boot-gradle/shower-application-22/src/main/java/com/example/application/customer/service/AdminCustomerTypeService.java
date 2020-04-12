@@ -3,7 +3,7 @@ package com.example.application.customer.service;
 import com.example.application.customer.pojo.type.AdminCustomerTypeSaveRequestBody;
 import com.example.application.customer.pojo.type.AdminCustomerTypeUpdateRequestBody;
 import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.query.CustomerTypeQuery;
-import com.example.commons.web.pojo.Result;
+import com.example.commons.web.base.pojo.Result;
 
 import java.util.List;
 

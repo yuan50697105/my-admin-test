@@ -4,7 +4,7 @@ import com.example.application.admin.pojo.user.AdminSysUserSaveRequestBody;
 import com.example.application.admin.pojo.user.AdminSysUserUpdateRequestBody;
 import com.example.application.admin.pojo.user.AdminUserRoleUpdateRequestBody;
 import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.query.SysUserQuery;
-import com.example.commons.web.pojo.Result;
+import com.example.commons.web.base.pojo.Result;
 
 import java.util.List;
 

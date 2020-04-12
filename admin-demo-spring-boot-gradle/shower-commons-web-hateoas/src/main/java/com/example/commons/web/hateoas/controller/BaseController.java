@@ -1,7 +1,7 @@
-package com.example.commons.web.controller;
+package com.example.commons.web.hateoas.controller;
 
-import com.example.commons.web.exception.ResultRuntimeException;
-import com.example.commons.web.utils.ResultUtils;
+import com.example.commons.web.hateoas.exception.ResultRuntimeException;
+import com.example.commons.web.hateoas.utils.ResultUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 

@@ -4,8 +4,8 @@ import com.example.application.admin.pojo.permission.AdminSysPermissionSaveReque
 import com.example.application.admin.pojo.permission.AdminSysPermissionUpdateRequestBody;
 import com.example.application.admin.service.AdminSysPermissionService;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.query.SysPermissionQuery;
-import com.example.commons.web.controller.BaseController;
-import com.example.commons.web.pojo.Result;
+import com.example.commons.web.base.controller.BaseController;
+import com.example.commons.web.base.pojo.Result;
 import lombok.AllArgsConstructor;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;

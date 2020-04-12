@@ -15,8 +15,8 @@ import com.example.commons.db.mybatis.base.pagehelper.module.service.SysRolePerm
 import com.example.commons.db.mybatis.base.pagehelper.module.service.SysRoleService;
 import com.example.commons.db.mybatis.base.pagehelper.module.service.SysUserRoleService;
 import com.example.db.pojo.IPageResult;
-import com.example.commons.web.pojo.Result;
-import com.example.commons.web.utils.ResultUtils;
+import com.example.commons.web.base.pojo.Result;
+import com.example.commons.web.base.utils.ResultUtils;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

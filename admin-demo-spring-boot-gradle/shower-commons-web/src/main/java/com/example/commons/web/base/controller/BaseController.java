@@ -1,7 +1,7 @@
-package com.example.commons.web.controller;
+package com.example.commons.web.base.controller;
 
-import com.example.commons.web.exception.ResultRuntimeException;
-import com.example.commons.web.utils.ResultUtils;
+import com.example.commons.web.base.utils.ResultUtils;
+import com.example.commons.web.base.exception.ResultRuntimeException;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 
