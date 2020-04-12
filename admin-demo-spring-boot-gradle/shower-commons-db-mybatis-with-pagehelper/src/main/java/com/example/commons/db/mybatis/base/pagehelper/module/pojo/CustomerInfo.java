@@ -19,6 +19,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CustomerInfo extends CommonsEntity implements Serializable {
     /**
+     * 类型ID
+     */
+    private Long typeId;
+
+    /**
      * 编号
      */
     private String code;

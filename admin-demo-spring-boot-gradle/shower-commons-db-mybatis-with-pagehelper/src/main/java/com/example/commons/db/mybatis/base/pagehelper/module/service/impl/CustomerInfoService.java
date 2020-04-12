@@ -3,7 +3,8 @@ package com.example.commons.db.mybatis.base.pagehelper.module.service.impl;
 import java.util.List;
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.CustomerInfo;
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.CustomerInfoExample;
-public interface CustomerInfoService{
+
+public interface CustomerInfoService {
 
 
     long countByExample(CustomerInfoExample example);
@@ -20,9 +21,9 @@ public interface CustomerInfoService{
 
     CustomerInfo selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(CustomerInfo record,CustomerInfoExample example);
+    int updateByExampleSelective(CustomerInfo record, CustomerInfoExample example);
 
-    int updateByExample(CustomerInfo record,CustomerInfoExample example);
+    int updateByExample(CustomerInfo record, CustomerInfoExample example);
 
     int updateByPrimaryKeySelective(CustomerInfo record);
 
@@ -35,3 +36,4 @@ public interface CustomerInfoService{
     int batchInsert(List<CustomerInfo> list);
 
 }
+

@@ -1,9 +1,10 @@
--- auto Generated on 2020-04-11
+-- auto Generated on 2020-04-12
 DROP TABLE IF EXISTS customer_info;
 CREATE TABLE customer_info(
 	id BIGINT (15) NOT NULL AUTO_INCREMENT COMMENT '主键',
 	create_time DATETIME COMMENT '创建时间',
 	update_time TIMESTAMP COMMENT '更新时间',
+	type_id BIGINT (15) COMMENT '类型ID',
 	code VARCHAR (50) COMMENT '编号',
 	`name` VARCHAR (50) COMMENT '姓名',
 	gender VARCHAR (50) COMMENT '性别',
