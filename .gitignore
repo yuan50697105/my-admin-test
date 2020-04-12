@@ -8,3 +8,4 @@ build
 /admin-demo-spring-boot-gradle/.gradle/
 node_modules
 .next
+.gradle
