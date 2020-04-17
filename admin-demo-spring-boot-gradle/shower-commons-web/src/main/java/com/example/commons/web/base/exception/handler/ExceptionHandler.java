@@ -4,6 +4,8 @@ import com.example.commons.web.base.exception.ResultException;
 import com.example.commons.web.base.exception.ResultRuntimeException;
 import com.example.commons.web.base.pojo.Result;
 import com.example.commons.web.base.utils.ResultUtils;
+import com.example.commons.web.base.utils.ValidatorUtils;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /**
@@ -15,7 +17,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class ExceptionHandler {
     @org.springframework.web.bind.annotation.ExceptionHandler(Exception.class)
-    public Result exception(Exception e) {
+    public Result result(Exception e) {
         return ResultUtils.exceptionError(e.getMessage());
     }
 
@@ -27,6 +29,11 @@ public class ExceptionHandler {
     @org.springframework.web.bind.annotation.ExceptionHandler(ResultRuntimeException.class)
     public Result result(ResultRuntimeException e) {
         return e.getResult();
+    }
+
+    @org.springframework.web.bind.annotation.ExceptionHandler(MethodArgumentNotValidException.class)
+    public void result(MethodArgumentNotValidException e) {
+        ValidatorUtils.validate(e.getBindingResult());
     }
 
 
