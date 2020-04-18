@@ -1,6 +1,4 @@
-include 'shower-cloud-eureka-01'
-include 'shower-cloud-eureka-02'
-include 'shower-cloud-eureka-03'
+include 'shower-cloud-eureka'
 include 'shower-cloud-client-01'
 include 'shower-cloud-client-02'
 include 'shower-cloud-zuul'
