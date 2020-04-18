@@ -12,8 +12,8 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
  */
 @EnableHystrix
 @SpringCloudApplication
-public class SpringCloudEurekaClientApplication02 {
+public class SpringCloudEurekaClientApplication013 {
     public static void main(String[] args) {
-        SpringApplication.run(SpringCloudEurekaClientApplication02.class, args);
+        SpringApplication.run(SpringCloudEurekaClientApplication013.class, args);
     }
 }
