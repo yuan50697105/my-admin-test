@@ -3,7 +3,7 @@ package com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.service;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.SysPermission;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.SysPermissionExample;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.query.SysPermissionQuery;
-import com.example.db.pojo.IPageResult;
+import com.example.commons.db.pojo.IPageResult;
 
 import java.util.List;
 

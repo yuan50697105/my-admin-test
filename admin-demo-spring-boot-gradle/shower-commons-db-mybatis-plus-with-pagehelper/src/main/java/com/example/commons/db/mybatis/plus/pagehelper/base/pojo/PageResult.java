@@ -1,7 +1,7 @@
 package com.example.commons.db.mybatis.plus.pagehelper.base.pojo;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.example.db.pojo.IPageResult;
+import com.example.commons.db.pojo.IPageResult;
 import com.github.pagehelper.PageInfo;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

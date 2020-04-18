@@ -1,6 +1,6 @@
 package com.example.commons.db.mybatis.base.pagehelper.commons.pojo.query;
 
-import com.example.db.pojo.BaseDbQuery;
+import com.example.commons.db.pojo.BaseDbQuery;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
 import com.gitee.denger.mybatis.example.ext.annotation.AndGreaterThanOrEqualTo;

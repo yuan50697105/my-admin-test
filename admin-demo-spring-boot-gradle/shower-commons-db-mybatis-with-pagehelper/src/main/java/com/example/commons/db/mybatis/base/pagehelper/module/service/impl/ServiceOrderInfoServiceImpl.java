@@ -6,7 +6,7 @@ import com.example.commons.db.mybatis.base.pagehelper.module.pojo.ServiceOrderIn
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.ServiceOrderInfoExample;
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.query.ServiceOrderInfoQuery;
 import com.example.commons.db.mybatis.base.pagehelper.module.service.ServiceOrderInfoService;
-import com.example.db.pojo.IPageResult;
+import com.example.commons.db.pojo.IPageResult;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;

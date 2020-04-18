@@ -1,6 +1,6 @@
 package com.example.commons.db.mybatis.plus.pagehelper.commons.pojo.query;
 
-import com.example.db.pojo.BaseDbQuery;
+import com.example.commons.db.pojo.BaseDbQuery;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

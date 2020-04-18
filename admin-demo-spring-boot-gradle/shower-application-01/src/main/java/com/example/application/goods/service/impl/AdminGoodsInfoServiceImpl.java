@@ -7,7 +7,7 @@ import com.example.application.goods.service.AdminGoodsInfoService;
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.GoodsInfo;
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.query.GoodsInfoQuery;
 import com.example.commons.db.mybatis.base.pagehelper.module.service.GoodsInfoService;
-import com.example.db.pojo.IPageResult;
+import com.example.commons.db.pojo.IPageResult;
 import com.example.commons.web.base.exception.ResultRuntimeException;
 import com.example.commons.web.base.pojo.Result;
 import com.example.commons.web.base.utils.ResultUtils;

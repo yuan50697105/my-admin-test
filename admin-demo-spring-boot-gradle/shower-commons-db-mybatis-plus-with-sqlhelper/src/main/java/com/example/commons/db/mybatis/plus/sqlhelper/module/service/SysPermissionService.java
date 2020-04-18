@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.SysPermission;
 import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.SysPermissionExample;
 import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.query.SysPermissionQuery;
-import com.example.db.pojo.IPageResult;
+import com.example.commons.db.pojo.IPageResult;
 
 import java.util.List;
 

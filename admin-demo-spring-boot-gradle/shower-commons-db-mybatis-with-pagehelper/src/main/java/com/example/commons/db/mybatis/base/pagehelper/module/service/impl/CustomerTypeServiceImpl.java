@@ -6,7 +6,7 @@ import com.example.commons.db.mybatis.base.pagehelper.module.pojo.CustomerType;
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.CustomerTypeExample;
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.query.CustomerTypeQuery;
 import com.example.commons.db.mybatis.base.pagehelper.module.service.CustomerTypeService;
-import com.example.db.pojo.IPageResult;
+import com.example.commons.db.pojo.IPageResult;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;

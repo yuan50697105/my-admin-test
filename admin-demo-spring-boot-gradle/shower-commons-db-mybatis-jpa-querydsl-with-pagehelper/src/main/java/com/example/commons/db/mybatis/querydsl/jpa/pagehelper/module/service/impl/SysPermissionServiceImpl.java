@@ -7,7 +7,7 @@ import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.SysPer
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.query.SysPermissionQuery;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.repository.SysPermissionRepository;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.service.SysPermissionService;
-import com.example.db.pojo.IPageResult;
+import com.example.commons.db.pojo.IPageResult;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;

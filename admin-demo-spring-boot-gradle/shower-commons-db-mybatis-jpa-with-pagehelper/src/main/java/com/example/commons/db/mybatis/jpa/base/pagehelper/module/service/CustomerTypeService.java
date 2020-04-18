@@ -3,7 +3,7 @@ package com.example.commons.db.mybatis.jpa.base.pagehelper.module.service;
 import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.CustomerType;
 import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.CustomerTypeExample;
 import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.query.CustomerTypeQuery;
-import com.example.db.pojo.IPageResult;
+import com.example.commons.db.pojo.IPageResult;
 
 import java.util.List;
 

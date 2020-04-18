@@ -1,7 +1,7 @@
 package com.example.commons.db.mybatis.mapper.base.pagehelper.commons.pojo;
 
 import com.example.commons.db.mybatis.mapper.base.pagehelper.commons.intercepter.CustomIntercepter;
-import com.example.db.pojo.BaseDbEntity;
+import com.example.commons.db.pojo.BaseDbEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import tk.mybatis.mapper.annotation.KeySql;

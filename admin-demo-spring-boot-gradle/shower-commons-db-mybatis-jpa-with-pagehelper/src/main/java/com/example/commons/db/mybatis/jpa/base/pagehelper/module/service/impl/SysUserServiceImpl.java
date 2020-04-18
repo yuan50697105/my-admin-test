@@ -7,7 +7,7 @@ import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.SysUserExa
 import com.example.commons.db.mybatis.jpa.base.pagehelper.module.pojo.query.SysUserQuery;
 import com.example.commons.db.mybatis.jpa.base.pagehelper.module.repository.SysUserRepository;
 import com.example.commons.db.mybatis.jpa.base.pagehelper.module.service.SysUserService;
-import com.example.db.pojo.IPageResult;
+import com.example.commons.db.pojo.IPageResult;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;

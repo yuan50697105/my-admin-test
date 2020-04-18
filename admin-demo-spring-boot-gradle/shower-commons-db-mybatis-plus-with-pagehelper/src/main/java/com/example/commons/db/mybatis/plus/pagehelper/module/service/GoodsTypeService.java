@@ -5,7 +5,7 @@ import java.util.List;
 import com.example.commons.db.mybatis.plus.pagehelper.module.pojo.GoodsType;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.example.commons.db.mybatis.plus.pagehelper.module.pojo.query.GoodsTypeQuery;
-import com.example.db.pojo.IPageResult;
+import com.example.commons.db.pojo.IPageResult;
 
 public interface GoodsTypeService extends IService<GoodsType>{
 

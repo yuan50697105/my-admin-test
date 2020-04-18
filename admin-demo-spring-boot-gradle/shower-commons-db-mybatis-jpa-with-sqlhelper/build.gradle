@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    compile project(':shower-commons-db')
+    compile project(':shower-commons')
     compile group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '2.1.2'
     compile group: 'com.github.fangjinuo.sqlhelper', name: 'sqlhelper-mybatis-over-pagehelper', version: '3.0.2'
     compile group: 'com.github.fangjinuo.sqlhelper', name: 'sqlhelper-mybatis-spring-boot-starter', version: '3.0.2'

@@ -1,6 +1,6 @@
 package com.example.application.admin.pojo.user;
 
-import com.example.commons.pojo.BaseEntity;
+import com.example.commons.base.pojo.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

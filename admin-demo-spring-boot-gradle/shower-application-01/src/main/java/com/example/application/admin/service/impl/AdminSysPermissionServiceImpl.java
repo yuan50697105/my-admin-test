@@ -8,7 +8,7 @@ import com.example.commons.db.mybatis.base.pagehelper.module.pojo.SysPermission;
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.query.SysPermissionQuery;
 import com.example.commons.db.mybatis.base.pagehelper.module.service.SysPermissionService;
 import com.example.commons.db.mybatis.base.pagehelper.module.service.SysRolePermissionService;
-import com.example.db.pojo.IPageResult;
+import com.example.commons.db.pojo.IPageResult;
 import com.example.commons.web.base.pojo.Result;
 import com.example.commons.web.base.utils.ResultUtils;
 import lombok.AllArgsConstructor;

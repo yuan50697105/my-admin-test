@@ -5,7 +5,7 @@ import com.example.commons.db.mybatis.mapper.base.sqlhelper.module.mapper.Custom
 import com.example.commons.db.mybatis.mapper.base.sqlhelper.module.pojo.CustomerInfo;
 import com.example.commons.db.mybatis.mapper.base.sqlhelper.module.pojo.query.CustomerInfoQuery;
 import com.example.commons.db.mybatis.mapper.base.sqlhelper.module.service.CustomerInfoService;
-import com.example.db.pojo.IPageResult;
+import com.example.commons.db.pojo.IPageResult;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;

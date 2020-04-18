@@ -8,7 +8,7 @@ import com.example.commons.db.mybatis.base.pagehelper.module.service.GoodsOrderI
 import com.example.commons.web.base.exception.ResultRuntimeException;
 import com.example.commons.web.base.pojo.Result;
 import com.example.commons.web.base.utils.ResultUtils;
-import com.example.db.pojo.IPageResult;
+import com.example.commons.db.pojo.IPageResult;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

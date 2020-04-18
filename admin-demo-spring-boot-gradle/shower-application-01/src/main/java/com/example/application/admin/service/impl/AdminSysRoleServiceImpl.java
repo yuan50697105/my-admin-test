@@ -14,7 +14,7 @@ import com.example.commons.db.mybatis.base.pagehelper.module.service.SysPermissi
 import com.example.commons.db.mybatis.base.pagehelper.module.service.SysRolePermissionService;
 import com.example.commons.db.mybatis.base.pagehelper.module.service.SysRoleService;
 import com.example.commons.db.mybatis.base.pagehelper.module.service.SysUserRoleService;
-import com.example.db.pojo.IPageResult;
+import com.example.commons.db.pojo.IPageResult;
 import com.example.commons.web.base.pojo.Result;
 import com.example.commons.web.base.utils.ResultUtils;
 import lombok.AllArgsConstructor;

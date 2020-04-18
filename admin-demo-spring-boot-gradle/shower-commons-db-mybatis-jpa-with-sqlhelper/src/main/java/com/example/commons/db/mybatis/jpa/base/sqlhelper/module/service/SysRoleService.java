@@ -3,7 +3,7 @@ package com.example.commons.db.mybatis.jpa.base.sqlhelper.module.service;
 import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.SysRole;
 import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.SysRoleExample;
 import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.query.SysRoleQuery;
-import com.example.db.pojo.IPageResult;
+import com.example.commons.db.pojo.IPageResult;
 
 import java.util.List;
 

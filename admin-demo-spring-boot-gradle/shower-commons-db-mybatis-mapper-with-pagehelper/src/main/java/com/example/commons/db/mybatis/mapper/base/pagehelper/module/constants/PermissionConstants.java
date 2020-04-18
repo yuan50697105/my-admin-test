@@ -1,7 +1,7 @@
 package com.example.commons.db.mybatis.mapper.base.pagehelper.module.constants;
 
-import com.example.commons.constants.BaseConstants;
-import com.example.commons.utils.annotation.Constants;
+import com.example.commons.base.constants.BaseConstants;
+import com.example.commons.base.utils.annotation.Constants;
 
 /**
  * @program: admin-demo-gradle

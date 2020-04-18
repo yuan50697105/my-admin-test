@@ -10,7 +10,7 @@ import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.service.Sys
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.service.SysRolePermissionService;
 import com.example.commons.web.base.pojo.Result;
 import com.example.commons.web.base.utils.ResultUtils;
-import com.example.db.pojo.IPageResult;
+import com.example.commons.db.pojo.IPageResult;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -6,7 +6,7 @@ import com.example.commons.db.mybatis.mapper.base.pagehelper.module.mapper.SysRo
 import com.example.commons.db.mybatis.mapper.base.pagehelper.module.pojo.SysRole;
 import com.example.commons.db.mybatis.mapper.base.pagehelper.module.pojo.query.SysRoleQuery;
 import com.example.commons.db.mybatis.mapper.base.pagehelper.module.service.SysRoleService;
-import com.example.db.pojo.IPageResult;
+import com.example.commons.db.pojo.IPageResult;
 import com.example.commons.db.utils.DbUtils;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;

@@ -2,7 +2,7 @@ package com.example.commons.db.mybatis.plus.pagehelper.commons.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import com.example.db.pojo.BaseDbEntity;
+import com.example.commons.db.pojo.BaseDbEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

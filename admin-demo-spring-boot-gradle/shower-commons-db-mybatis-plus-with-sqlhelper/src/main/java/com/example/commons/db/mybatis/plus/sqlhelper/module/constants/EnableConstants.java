@@ -1,6 +1,6 @@
 package com.example.commons.db.mybatis.plus.sqlhelper.module.constants;
 
-import com.example.commons.constants.BaseConstants;
+import com.example.commons.base.constants.BaseConstants;
 
 /**
  * @program: admin-demo-gradle

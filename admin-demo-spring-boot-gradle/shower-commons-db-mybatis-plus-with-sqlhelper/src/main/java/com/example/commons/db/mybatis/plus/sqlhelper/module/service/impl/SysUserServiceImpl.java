@@ -10,7 +10,7 @@ import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.SysUser;
 import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.SysUserExample;
 import com.example.commons.db.mybatis.plus.sqlhelper.module.pojo.query.SysUserQuery;
 import com.example.commons.db.mybatis.plus.sqlhelper.module.service.SysUserService;
-import com.example.db.pojo.IPageResult;
+import com.example.commons.db.pojo.IPageResult;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

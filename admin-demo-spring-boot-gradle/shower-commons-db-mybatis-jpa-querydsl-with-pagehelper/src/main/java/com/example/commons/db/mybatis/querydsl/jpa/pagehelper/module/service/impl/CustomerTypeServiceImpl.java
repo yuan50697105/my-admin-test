@@ -7,7 +7,7 @@ import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.Custom
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo.query.CustomerTypeQuery;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.repository.CustomerTypeRepository;
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.service.CustomerTypeService;
-import com.example.db.pojo.IPageResult;
+import com.example.commons.db.pojo.IPageResult;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;

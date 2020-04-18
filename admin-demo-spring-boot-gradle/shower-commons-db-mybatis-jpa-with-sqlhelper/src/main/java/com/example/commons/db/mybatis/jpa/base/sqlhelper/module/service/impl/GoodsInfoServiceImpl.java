@@ -7,7 +7,7 @@ import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.GoodsInfoEx
 import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.query.GoodsInfoQuery;
 import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.repository.GoodsInfoRepository;
 import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.service.GoodsInfoService;
-import com.example.db.pojo.IPageResult;
+import com.example.commons.db.pojo.IPageResult;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;

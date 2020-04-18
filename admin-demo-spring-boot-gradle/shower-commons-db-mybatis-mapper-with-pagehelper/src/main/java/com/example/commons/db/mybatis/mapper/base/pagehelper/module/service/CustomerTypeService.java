@@ -2,7 +2,7 @@ package com.example.commons.db.mybatis.mapper.base.pagehelper.module.service;
 
 import com.example.commons.db.mybatis.mapper.base.pagehelper.module.pojo.CustomerType;
 import com.example.commons.db.mybatis.mapper.base.pagehelper.module.pojo.query.CustomerTypeQuery;
-import com.example.db.pojo.IPageResult;
+import com.example.commons.db.pojo.IPageResult;
 
 import java.util.List;
 public interface CustomerTypeService{

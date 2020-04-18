@@ -7,7 +7,7 @@ import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.CustomerTyp
 import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo.query.CustomerTypeQuery;
 import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.repository.CustomerTypeRepository;
 import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.service.CustomerTypeService;
-import com.example.db.pojo.IPageResult;
+import com.example.commons.db.pojo.IPageResult;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;

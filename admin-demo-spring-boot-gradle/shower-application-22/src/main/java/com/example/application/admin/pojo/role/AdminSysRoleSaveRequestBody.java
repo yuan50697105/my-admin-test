@@ -1,7 +1,7 @@
 package com.example.application.admin.pojo.role;
 
 import com.example.commons.db.mybatis.plus.sqlhelper.module.constants.EnableConstants;
-import com.example.commons.utils.validator.annotation.ConstantsValidater;
+import com.example.commons.base.utils.validator.annotation.ConstantsValidater;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;

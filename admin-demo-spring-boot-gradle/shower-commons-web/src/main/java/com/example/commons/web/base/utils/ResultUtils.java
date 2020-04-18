@@ -1,7 +1,7 @@
 package com.example.commons.web.base.utils;
 
 import com.example.commons.web.base.pojo.Result;
-import com.example.db.pojo.IPageResult;
+import com.example.commons.db.pojo.IPageResult;
 
 import java.util.Collections;
 import java.util.Map;

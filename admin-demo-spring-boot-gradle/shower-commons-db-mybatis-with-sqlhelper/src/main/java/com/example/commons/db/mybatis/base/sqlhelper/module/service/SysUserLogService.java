@@ -3,7 +3,7 @@ package com.example.commons.db.mybatis.base.sqlhelper.module.service;
 import com.example.commons.db.mybatis.base.sqlhelper.module.pojo.SysUserLog;
 import com.example.commons.db.mybatis.base.sqlhelper.module.pojo.SysUserLogExample;
 import com.example.commons.db.mybatis.base.sqlhelper.module.pojo.query.SysUserLogQuery;
-import com.example.db.pojo.IPageResult;
+import com.example.commons.db.pojo.IPageResult;
 
 import java.util.List;
 

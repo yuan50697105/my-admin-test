@@ -1,6 +1,6 @@
 package com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.base.pojo;
 
-import com.example.db.pojo.IPageResult;
+import com.example.commons.db.pojo.IPageResult;
 import com.github.pagehelper.PageInfo;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
