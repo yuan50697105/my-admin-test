@@ -10,15 +10,6 @@ plugins {
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
-allprojects {
-    repositories {
-        maven {
-            url 'https://maven.aliyun.com/repository/public/'
-        }
-    }
-    mavenCentral()
-    jcenter()
-}
 
 allprojects {
 
@@ -28,6 +19,7 @@ allprojects {
     apply plugin: 'io.spring.dependency-management'
     apply plugin: 'com.github.ben-manes.versions'
     apply plugin: 'se.patrikerdes.use-latest-versions'
+
     configurations {
         developmentOnly
         runtimeClasspath {
@@ -37,13 +29,17 @@ allprojects {
             extendsFrom annotationProcessor
         }
     }
-
+    repositories {
+        maven {
+            url 'https://maven.aliyun.com/repository/public/'
+        }
+    }
 //repositories {
 //    mavenCentral()
 //}
 
     dependencies {
-        compile group: 'cn.hutool', name: 'hutool-all', version: '5.2.5'
+        compile group: 'cn.hutool', name: 'hutool-all', version: '5.3.1'
         implementation 'org.springframework.boot:spring-boot-starter'
         compileOnly 'org.projectlombok:lombok'
         developmentOnly 'org.springframework.boot:spring-boot-devtools'
