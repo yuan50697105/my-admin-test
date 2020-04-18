@@ -11,4 +11,8 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class BaseServiceFallBack implements BaseService {
+    @Override
+    public String aaa() {
+        return "aaa fallback";
+    }
 }
