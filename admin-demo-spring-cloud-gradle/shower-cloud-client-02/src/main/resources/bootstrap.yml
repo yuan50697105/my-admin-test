@@ -1,6 +1,6 @@
 spring:
   application:
-    name: spring-cloud-client-02
+    name: spring-cloud-client-01
   cloud:
     config:
       label: master

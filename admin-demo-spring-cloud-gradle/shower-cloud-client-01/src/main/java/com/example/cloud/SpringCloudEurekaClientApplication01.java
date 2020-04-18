@@ -20,8 +20,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableEurekaClient
 @EnableFeignClients
 @SpringCloudApplication
-public class SpringCloudEurekaClientApplication011 {
+public class SpringCloudEurekaClientApplication01 {
     public static void main(String[] args) {
-        SpringApplication.run(SpringCloudEurekaClientApplication011.class, args);
+        SpringApplication.run(SpringCloudEurekaClientApplication01.class, args);
     }
 }

@@ -1,17 +1,5 @@
-server:
-  port: 8081
-
 spring:
-  application:
-    name: spring-cloud-client-01
-  cloud:
-    config:
-      profile: prod
-      discovery:
-        enabled: true
-        service-id: spring-cloud-config
-      label: master
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:10001/eureka/,http://localhost:10002/eureka/,http://localhost:10003/eureka/
+  profiles:
+    active: service01
+#    active: service02
+#    active: service03

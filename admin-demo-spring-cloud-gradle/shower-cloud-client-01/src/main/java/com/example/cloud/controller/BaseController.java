@@ -15,12 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("base")
 public class BaseController {
-    @Autowired
-    private Environment environment;
 
     @RequestMapping("test")
     public String test() {
-        return environment.getProperty("aaa");
+        return "test";
     }
 
 }

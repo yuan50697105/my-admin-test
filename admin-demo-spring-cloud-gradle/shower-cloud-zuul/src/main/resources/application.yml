@@ -13,3 +13,6 @@ zuul:
     spring-cloud-client-01:
       path: /client/01/**
       serviceId: spring-cloud-client-01
+    spring-cloud-client-02:
+      path: /client/02/**
+      serviceId: spring-cloud-client-02
