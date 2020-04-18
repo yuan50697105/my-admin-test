@@ -1,2 +1,7 @@
 include 'shower-cloud-eureka'
+include 'shower-cloud-client-01'
+include 'shower-cloud-client-02'
+include 'shower-cloud-zuul'
+include 'shower-cloud-config'
+include 'spring-cloud-gateway'
 
