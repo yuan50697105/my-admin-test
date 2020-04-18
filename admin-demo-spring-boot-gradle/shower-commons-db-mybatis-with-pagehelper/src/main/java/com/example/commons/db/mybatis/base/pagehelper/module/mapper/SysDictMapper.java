@@ -39,4 +39,5 @@ public interface SysDictMapper {
 
     List<SysDict> selectAll();
 
+    int deleteAll();
 }

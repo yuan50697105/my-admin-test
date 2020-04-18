@@ -315,4 +315,8 @@
         from sys_dict_group;
 
     </select>
+    <delete id="deleteAll">
+        delete
+        from sys_dict_group
+    </delete>
 </mapper>

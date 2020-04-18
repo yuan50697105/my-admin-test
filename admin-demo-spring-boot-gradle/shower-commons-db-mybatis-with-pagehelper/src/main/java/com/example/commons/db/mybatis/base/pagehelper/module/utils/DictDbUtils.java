@@ -20,13 +20,41 @@ import java.util.stream.Collectors;
  * @create: 2020-04-16 22:39
  */
 public class DictDbUtils {
+    public static void setDict(Class<?>... types) {
+        SysDictGroupMapper sysDictGroupMapper = SpringUtil.getBean(SysDictGroupMapper.class);
+        SysDictMapper sysDictMapper = SpringUtil.getBean(SysDictMapper.class);
+        sysDictGroupMapper.deleteAll();
+        sysDictMapper.deleteAll();
+        for (Class<?> type : types) {
+            Map<String, List<Map<String, String>>> dictList = DictUtils.getDictList(type);
+            for (Map.Entry<String, List<Map<String, String>>> entry : dictList.entrySet()) {
+                SysDictGroup sysDictGroup = new SysDictGroup();
+                sysDictGroup.setKey(entry.getKey());
+                sysDictGroup.setValue(entry.getKey());
+                sysDictGroupMapper.insert(sysDictGroup);
+                for (Map<String, String> map : entry.getValue()) {
+                    ArrayList<SysDict> sysDicts = new ArrayList<>();
+                    for (Map.Entry<String, String> stringEntry : map.entrySet()) {
+                        SysDict sysDict = new SysDict();
+                        sysDict.setKey(stringEntry.getKey());
+                        sysDict.setValue(stringEntry.getValue());
+                        sysDict.setGroupId(sysDictGroup.getId().toString());
+                        sysDicts.add(sysDict);
+                    }
+                    sysDictMapper.batchInsert(sysDicts);
+                }
+            }
+        }
+    }
+
     public static void setDict(Class<?> type) {
+        SysDictGroupMapper sysDictGroupMapper = SpringUtil.getBean(SysDictGroupMapper.class);
+        SysDictMapper sysDictMapper = SpringUtil.getBean(SysDictMapper.class);
         Map<String, List<Map<String, String>>> dictList = DictUtils.getDictList(type);
         for (Map.Entry<String, List<Map<String, String>>> entry : dictList.entrySet()) {
             SysDictGroup sysDictGroup = new SysDictGroup();
             sysDictGroup.setKey(entry.getKey());
             sysDictGroup.setValue(entry.getKey());
-            SysDictGroupMapper sysDictGroupMapper = SpringUtil.getBean(SysDictGroupMapper.class);
             sysDictGroupMapper.insert(sysDictGroup);
             for (Map<String, String> map : entry.getValue()) {
                 ArrayList<SysDict> sysDicts = new ArrayList<>();
@@ -37,7 +65,6 @@ public class DictDbUtils {
                     sysDict.setGroupId(sysDictGroup.getId().toString());
                     sysDicts.add(sysDict);
                 }
-                SysDictMapper sysDictMapper = SpringUtil.getBean(SysDictMapper.class);
                 sysDictMapper.batchInsert(sysDicts);
             }
         }
@@ -64,7 +91,23 @@ public class DictDbUtils {
             map.put(key, maps);
         }
         return map;
+    }
 
+    public static List<Map<String, String>> getDictListByKey(String key) {
+        return getAllDict().get(key);
+    }
+
+    public static String getDictValue(String group, String key) {
+        String value = "";
+        List<Map<String, String>> maps = getDictListByKey(group);
+        for (Map<String, String> map : maps) {
+            for (Map.Entry<String, String> entry : map.entrySet()) {
+                if (entry.getKey().equals(key)) {
+                    value = entry.getValue();
+                }
+            }
+        }
+        return value;
     }
 
 

@@ -338,4 +338,7 @@
         <include refid="Base_Column_List"/>
         from sys_dict
     </select>
+    <delete id="deleteAll">
+        delete from sys_dict
+    </delete>
 </mapper>

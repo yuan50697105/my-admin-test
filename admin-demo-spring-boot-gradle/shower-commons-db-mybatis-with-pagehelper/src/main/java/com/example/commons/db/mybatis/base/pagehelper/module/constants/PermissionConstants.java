@@ -10,6 +10,7 @@ import com.example.commons.utils.annotation.Constants;
  * @create: 2020-04-09 19:57
  */
 public class PermissionConstants extends BaseConstants {
+
     public static class PermissionType {
         @Constants(name = "链接", value = PermissionConstants.PermissionType.URL)
         public static final String URL = "url";
@@ -18,5 +19,6 @@ public class PermissionConstants extends BaseConstants {
         @Constants(name = "数据", value = PermissionConstants.PermissionType.DATA)
         public static final String DATA = "data";
     }
+
 
 }

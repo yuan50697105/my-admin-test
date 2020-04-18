@@ -39,4 +39,5 @@ public interface SysDictGroupMapper {
 
     List<SysDictGroup> selectAll();
 
+    int deleteAll();
 }
