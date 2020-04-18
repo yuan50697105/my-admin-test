@@ -2,6 +2,8 @@ server:
   port: 9000
 
 spring:
+  profiles:
+    active: native
   application:
     name: spring-cloud-config
   cloud:
@@ -9,7 +11,11 @@ spring:
       server:
         native:
           search-locations: classpath:properties/**
+          default-label: prod
         bootstrap: true
+      discovery:
+        service-id: spring-cloud-config
+        enabled: true
 
 eureka:
   client:
