@@ -4,6 +4,9 @@ server:
 spring:
   application:
     name: spring-cloud-client-01
+  cloud:
+    config:
+      profile: prod
 eureka:
   client:
     serviceUrl:
