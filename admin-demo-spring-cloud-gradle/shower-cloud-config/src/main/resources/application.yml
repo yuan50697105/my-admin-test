@@ -14,7 +14,7 @@ spring:
           default-label: prod
         bootstrap: true
       discovery:
-        service-id: spring-cloud-config
+        service-id: ${spring.application.name}
         enabled: true
 
 eureka:
