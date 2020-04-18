@@ -1,14 +1,16 @@
 package com.example.commons.db.mybatis.base.pagehelper.module.service.impl;
 
+import com.example.commons.db.mybatis.base.pagehelper.module.mapper.ServiceOrderItemMapper;
+import com.example.commons.db.mybatis.base.pagehelper.module.pojo.ServiceOrderItem;
+import com.example.commons.db.mybatis.base.pagehelper.module.pojo.ServiceOrderItemExample;
+import com.example.commons.db.mybatis.base.pagehelper.module.service.ServiceOrderItemService;
 import org.springframework.stereotype.Service;
+
 import javax.annotation.Resource;
 import java.util.List;
-import com.example.commons.db.mybatis.base.pagehelper.module.pojo.ServiceOrderItem;
-import com.example.commons.db.mybatis.base.pagehelper.module.mapper.ServiceOrderItemMapper;
-import com.example.commons.db.mybatis.base.pagehelper.module.pojo.ServiceOrderItemExample;
-import com.example.commons.db.mybatis.base.pagehelper.module.service.impl.ServiceOrderItemService;
+
 @Service
-public class ServiceOrderItemServiceImpl implements ServiceOrderItemService{
+public class ServiceOrderItemServiceImpl implements ServiceOrderItemService {
 
     @Resource
     private ServiceOrderItemMapper serviceOrderItemMapper;
@@ -49,13 +51,13 @@ public class ServiceOrderItemServiceImpl implements ServiceOrderItemService{
     }
 
     @Override
-    public int updateByExampleSelective(ServiceOrderItem record,ServiceOrderItemExample example) {
-        return serviceOrderItemMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(ServiceOrderItem record, ServiceOrderItemExample example) {
+        return serviceOrderItemMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(ServiceOrderItem record,ServiceOrderItemExample example) {
-        return serviceOrderItemMapper.updateByExample(record,example);
+    public int updateByExample(ServiceOrderItem record, ServiceOrderItemExample example) {
+        return serviceOrderItemMapper.updateByExample(record, example);
     }
 
     @Override
@@ -84,3 +86,4 @@ public class ServiceOrderItemServiceImpl implements ServiceOrderItemService{
     }
 
 }
+

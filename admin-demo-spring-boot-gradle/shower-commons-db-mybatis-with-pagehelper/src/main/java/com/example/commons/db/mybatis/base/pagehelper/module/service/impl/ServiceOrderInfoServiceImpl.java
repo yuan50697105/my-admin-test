@@ -5,6 +5,7 @@ import com.example.commons.db.mybatis.base.pagehelper.module.mapper.ServiceOrder
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.ServiceOrderInfo;
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.ServiceOrderInfoExample;
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.query.ServiceOrderInfoQuery;
+import com.example.commons.db.mybatis.base.pagehelper.module.service.ServiceOrderInfoService;
 import com.example.db.pojo.IPageResult;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -108,3 +109,4 @@ public class ServiceOrderInfoServiceImpl implements ServiceOrderInfoService {
     }
 
 }
+

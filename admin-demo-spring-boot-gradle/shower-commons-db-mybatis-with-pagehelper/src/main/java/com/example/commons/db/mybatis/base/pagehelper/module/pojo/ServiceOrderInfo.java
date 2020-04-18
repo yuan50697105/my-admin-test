@@ -40,4 +40,8 @@ public class ServiceOrderInfo extends CommonsEntity implements Serializable {
     private BigDecimal totalPrice;
 
     private static final long serialVersionUID = 1L;
+
+    public static ServiceOrderInfoBuilder builder() {
+        return new ServiceOrderInfoBuilder();
+    }
 }

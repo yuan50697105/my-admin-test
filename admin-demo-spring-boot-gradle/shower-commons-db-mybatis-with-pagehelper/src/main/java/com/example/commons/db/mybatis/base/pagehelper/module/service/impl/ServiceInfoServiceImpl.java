@@ -1,12 +1,13 @@
 package com.example.commons.db.mybatis.base.pagehelper.module.service.impl;
 
+import com.example.commons.db.mybatis.base.pagehelper.module.mapper.ServiceInfoMapper;
+import com.example.commons.db.mybatis.base.pagehelper.module.pojo.ServiceInfo;
+import com.example.commons.db.mybatis.base.pagehelper.module.pojo.ServiceInfoExample;
+import com.example.commons.db.mybatis.base.pagehelper.module.service.ServiceInfoService;
 import org.springframework.stereotype.Service;
+
 import javax.annotation.Resource;
 import java.util.List;
-import com.example.commons.db.mybatis.base.pagehelper.module.pojo.ServiceInfoExample;
-import com.example.commons.db.mybatis.base.pagehelper.module.pojo.ServiceInfo;
-import com.example.commons.db.mybatis.base.pagehelper.module.mapper.ServiceInfoMapper;
-import com.example.commons.db.mybatis.base.pagehelper.module.service.impl.ServiceInfoService;
 
 @Service
 public class ServiceInfoServiceImpl implements ServiceInfoService {
@@ -85,4 +86,6 @@ public class ServiceInfoServiceImpl implements ServiceInfoService {
     }
 
 }
+
+
 

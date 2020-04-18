@@ -1,7 +1,7 @@
 package com.example.application.service.service.impl;
 
 import com.example.application.service.service.AdminServiceTypeService;
-import com.example.commons.db.mybatis.base.pagehelper.module.service.impl.ServiceTypeService;
+import com.example.commons.db.mybatis.base.pagehelper.module.service.ServiceTypeService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

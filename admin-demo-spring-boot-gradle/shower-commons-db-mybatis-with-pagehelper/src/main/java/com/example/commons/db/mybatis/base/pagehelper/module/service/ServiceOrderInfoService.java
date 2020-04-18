@@ -1,11 +1,10 @@
-package com.example.commons.db.mybatis.base.pagehelper.module.service.impl;
+package com.example.commons.db.mybatis.base.pagehelper.module.service;
 
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.ServiceOrderInfo;
+import java.util.List;
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.ServiceOrderInfoExample;
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.query.ServiceOrderInfoQuery;
 import com.example.db.pojo.IPageResult;
-
-import java.util.List;
 
 public interface ServiceOrderInfoService{
 

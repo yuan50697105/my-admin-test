@@ -2,9 +2,10 @@ package com.example.commons.db.mybatis.base.pagehelper.module.mapper;
 
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.ServiceOrderInfo;
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.ServiceOrderInfoExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 @Mapper
 public interface ServiceOrderInfoMapper {

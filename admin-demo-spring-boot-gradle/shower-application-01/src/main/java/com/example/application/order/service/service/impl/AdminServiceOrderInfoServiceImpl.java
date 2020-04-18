@@ -4,7 +4,7 @@ import com.example.application.order.service.pojo.AdminServiceOrderInfoSaveReque
 import com.example.application.order.service.service.AdminServiceOrderInfoService;
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.ServiceOrderInfo;
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.query.ServiceOrderInfoQuery;
-import com.example.commons.db.mybatis.base.pagehelper.module.service.impl.ServiceOrderInfoService;
+import com.example.commons.db.mybatis.base.pagehelper.module.service.ServiceOrderInfoService;
 import com.example.commons.web.base.exception.ResultRuntimeException;
 import com.example.commons.web.base.pojo.Result;
 import com.example.commons.web.base.utils.ResultUtils;

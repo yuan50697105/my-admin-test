@@ -1,4 +1,4 @@
-package com.example.commons.db.mybatis.base.pagehelper.module.service.impl;
+package com.example.commons.db.mybatis.base.pagehelper.module.service;
 
 import java.util.List;
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.ServiceTypeExample;

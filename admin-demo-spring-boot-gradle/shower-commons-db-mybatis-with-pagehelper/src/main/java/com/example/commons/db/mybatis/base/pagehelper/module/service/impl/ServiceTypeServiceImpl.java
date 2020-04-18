@@ -1,14 +1,16 @@
 package com.example.commons.db.mybatis.base.pagehelper.module.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import java.util.List;
-import com.example.commons.db.mybatis.base.pagehelper.module.pojo.ServiceTypeExample;
 import com.example.commons.db.mybatis.base.pagehelper.module.mapper.ServiceTypeMapper;
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.ServiceType;
-import com.example.commons.db.mybatis.base.pagehelper.module.service.impl.ServiceTypeService;
+import com.example.commons.db.mybatis.base.pagehelper.module.pojo.ServiceTypeExample;
+import com.example.commons.db.mybatis.base.pagehelper.module.service.ServiceTypeService;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
+
 @Service
-public class ServiceTypeServiceImpl implements ServiceTypeService{
+public class ServiceTypeServiceImpl implements ServiceTypeService {
 
     @Resource
     private ServiceTypeMapper serviceTypeMapper;
@@ -49,13 +51,13 @@ public class ServiceTypeServiceImpl implements ServiceTypeService{
     }
 
     @Override
-    public int updateByExampleSelective(ServiceType record,ServiceTypeExample example) {
-        return serviceTypeMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(ServiceType record, ServiceTypeExample example) {
+        return serviceTypeMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(ServiceType record,ServiceTypeExample example) {
-        return serviceTypeMapper.updateByExample(record,example);
+    public int updateByExample(ServiceType record, ServiceTypeExample example) {
+        return serviceTypeMapper.updateByExample(record, example);
     }
 
     @Override
@@ -84,3 +86,5 @@ public class ServiceTypeServiceImpl implements ServiceTypeService{
     }
 
 }
+
+
