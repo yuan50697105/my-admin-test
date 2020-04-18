@@ -49,7 +49,11 @@ allprojects {
             exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
         }
     }
-
+    dependencyManagement {
+        imports {
+            mavenBom "org.minbox.framework:api-boot-dependencies:2.2.3.RELEASE"
+        }
+    }
     test {
         useJUnitPlatform()
     }
