@@ -9,10 +9,10 @@ spring:
   cloud:
     config:
       server:
-        native:
-          search-locations: classpath:properties/**
-          default-label: prod
-        bootstrap: true
+        git:
+          uri: https://github.com/yuan50697105/my-admin-test
+          search-paths: properties
+          default-label: master
       discovery:
         service-id: ${spring.application.name}
         enabled: true
