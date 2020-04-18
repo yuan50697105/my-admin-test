@@ -2,9 +2,10 @@ package com.example.commons.db.mybatis.base.pagehelper.module.mapper;
 
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.SysDict;
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.SysDictExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 @Mapper
 public interface SysDictMapper {
@@ -35,4 +36,7 @@ public interface SysDictMapper {
     int updateBatchSelective(List<SysDict> list);
 
     int batchInsert(@Param("list") List<SysDict> list);
+
+    List<SysDict> selectAll();
+
 }

@@ -1,12 +1,18 @@
 package com.example.commons.db.mybatis.base.pagehelper.module.service.impl;
 
+import com.example.commons.db.mybatis.base.pagehelper.base.pojo.PageResult;
+import com.example.commons.db.mybatis.base.pagehelper.module.mapper.GoodsOrderInfoMapper;
+import com.example.commons.db.mybatis.base.pagehelper.module.pojo.GoodsOrderInfo;
+import com.example.commons.db.mybatis.base.pagehelper.module.pojo.GoodsOrderInfoExample;
+import com.example.commons.db.mybatis.base.pagehelper.module.pojo.query.GoodsOrderInfoQuery;
+import com.example.commons.db.mybatis.base.pagehelper.module.service.GoodsOrderInfoService;
+import com.example.db.pojo.IPageResult;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
+
 import javax.annotation.Resource;
 import java.util.List;
-import com.example.commons.db.mybatis.base.pagehelper.module.mapper.GoodsOrderInfoMapper;
-import com.example.commons.db.mybatis.base.pagehelper.module.pojo.GoodsOrderInfoExample;
-import com.example.commons.db.mybatis.base.pagehelper.module.pojo.GoodsOrderInfo;
-import com.example.commons.db.mybatis.base.pagehelper.module.service.GoodsOrderInfoService;
 
 @Service
 public class GoodsOrderInfoServiceImpl implements GoodsOrderInfoService {
@@ -82,6 +88,24 @@ public class GoodsOrderInfoServiceImpl implements GoodsOrderInfoService {
     @Override
     public int batchInsert(List<GoodsOrderInfo> list) {
         return goodsOrderInfoMapper.batchInsert(list);
+    }
+
+    @Override
+    public IPageResult<GoodsOrderInfo> selectPageByQuery(GoodsOrderInfoQuery query) {
+        PageHelper.startPage(query.getPage(), query.getSize());
+        return new PageResult<>(new PageInfo<>(selectByExample(query.toExample())));
+    }
+
+    @Override
+    public List<GoodsOrderInfo> selectByQuery(GoodsOrderInfoQuery query) {
+        return selectByExample(query.toExample());
+    }
+
+    @Override
+    public List<GoodsOrderInfo> selectByPrimaryKeys(List<Long> ids) {
+        GoodsOrderInfoExample example = new GoodsOrderInfoExample();
+        example.or().andIdIn(ids);
+        return selectByExample(example);
     }
 
 }
