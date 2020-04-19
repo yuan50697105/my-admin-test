@@ -10,8 +10,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @create: 2020-04-06 13:44
  */
 @SpringBootApplication
-public class ShowerApplication02 {
+public class ShowerApplication03 {
     public static void main(String[] args) {
-        SpringApplication.run(ShowerApplication02.class, args);
+        SpringApplication.run(ShowerApplication03.class, args);
     }
 }
