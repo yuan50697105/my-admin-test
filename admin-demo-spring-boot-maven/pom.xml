@@ -31,6 +31,8 @@
         <module>shower-application-32</module>
         <module>shower-application-41</module>
         <module>shower-application-42</module>
+        <module>shower-commons-db-mybatis-with-pageable</module>
+        <module>shower-application-03</module>
     </modules>
 
     <parent>
@@ -54,6 +56,8 @@
                 <groupId>org.minbox.framework</groupId>
                 <artifactId>api-boot-dependencies</artifactId>
                 <version>2.2.3.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
