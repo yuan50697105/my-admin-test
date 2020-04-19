@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.commons.db.mybatis.mapper.base.sqlhelper.module.mapper.SysRolePermissionMapper">
+  <resultMap id="BaseResultMap" type="com.example.commons.db.mybatis.mapper.base.sqlhelper.module.pojo.SysRolePermission">
+    <!--@mbg.generated generated on Sun Apr 12 11:03:12 CST 2020.-->
+    <!--@Table sys_role_permission-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="role_id" jdbcType="BIGINT" property="roleId" />
+    <result column="permission_id" jdbcType="BIGINT" property="permissionId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated generated on Sun Apr 12 11:03:12 CST 2020.-->
+    id, create_time, update_time, role_id, permission_id
+  </sql>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated generated on Sun Apr 12 11:03:12 CST 2020.-->
+    update sys_role_permission
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="create_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.createTime,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="update_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.updateTime,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="role_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.roleId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="permission_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.permissionId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=BIGINT}
+    </foreach>
+  </update>
+  <update id="updateBatchSelective" parameterType="java.util.List">
+    <!--@mbg.generated generated on Sun Apr 12 11:03:12 CST 2020.-->
+    update sys_role_permission
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="create_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.createTime != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.createTime,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="update_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.updateTime != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.updateTime,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="role_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.roleId != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.roleId,jdbcType=BIGINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="permission_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.permissionId != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.permissionId,jdbcType=BIGINT}
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=BIGINT}
+    </foreach>
+  </update>
+  <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
+    <!--@mbg.generated generated on Sun Apr 12 11:03:12 CST 2020.-->
+    insert into sys_role_permission
+    (create_time, update_time, role_id, permission_id)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.createTime,jdbcType=TIMESTAMP}, #{item.updateTime,jdbcType=TIMESTAMP}, #{item.roleId,jdbcType=BIGINT}, 
+        #{item.permissionId,jdbcType=BIGINT})
+    </foreach>
+  </insert>
+</mapper>

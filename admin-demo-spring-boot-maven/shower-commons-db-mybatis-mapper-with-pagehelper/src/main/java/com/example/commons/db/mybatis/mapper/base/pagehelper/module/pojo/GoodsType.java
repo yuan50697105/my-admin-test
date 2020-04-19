@@ -1,0 +1,35 @@
+package com.example.commons.db.mybatis.mapper.base.pagehelper.module.pojo;
+
+import com.example.commons.db.mybatis.mapper.base.pagehelper.commons.pojo.CommonsEntity;
+import java.io.Serializable;
+import javax.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
+/**
+    * goods_type
+    */
+@Data
+@EqualsAndHashCode(callSuper=true)
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "goods_type")
+public class GoodsType extends CommonsEntity implements Serializable {
+    /**
+     * 编号
+     */
+    @Column(name = "code")
+    private String code;
+
+    /**
+     * 名称
+     */
+    @Column(name = "`name`")
+    private String name;
+
+    private static final long serialVersionUID = 1L;
+}

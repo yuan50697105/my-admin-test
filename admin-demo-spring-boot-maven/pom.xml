@@ -1,10 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
         <module>shower-commons</module>
+        <module>shower-commons-web</module>
+        <module>shower-commons-db-mybatis-with-pagehelper</module>
+        <module>shower-commons-db-mybatis-with-sqlhelper</module>
+        <module>shower-commons-db-mybatis-mapper-with-pagehelper</module>
+        <module>shower-commons-db-mybatis-mapper-with-sqlhelper</module>
+        <module>shower-commons-db-mybatis-plus-with-pagehelper</module>
+        <module>shower-commons-db-mybatis-plus-with-sqlhelper</module>
+        <module>shower-commons-db-mybatis-jpa-with-pagehelper</module>
+        <module>shower-commons-db-mybatis-jpa-with-sqlhelper</module>
+        <module>shower-commons-db-mybatis-jpa-querydsl-with-pagehelper</module>
+        <module>shower-commons-db-mybatis-jpa-querydsl-with-sqlhelper</module>
+        <module>shower-commons-amqp</module>
+        <module>shower-commons-db-redis</module>
+        <module>shower-commons-task-batch</module>
+        <module>shower-commons-task-quartz</module>
+        <module>shower-commons-task-quartz-batch</module>
+        <module>shower-application-01</module>
+        <module>shower-application-02</module>
+        <module>shower-application-11</module>
+        <module>shower-application-12</module>
+        <module>shower-application-21</module>
+        <module>shower-application-22</module>
+        <module>shower-application-31</module>
+        <module>shower-application-32</module>
+        <module>shower-application-41</module>
+        <module>shower-application-42</module>
     </modules>
 
     <parent>
@@ -57,7 +83,11 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>1.3.1.Final</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
