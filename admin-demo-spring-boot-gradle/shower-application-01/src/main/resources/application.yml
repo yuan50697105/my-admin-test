@@ -6,4 +6,4 @@ spring:
   profiles:
 #    active: dbc,mvc,mysql
 #    active: dbc,mvc,module
-    active: dbc,mvc,local,redis
+    active: dbc,mvc,local,redis,amqp
