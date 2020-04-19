@@ -1,0 +1,9 @@
+group = 'org.yuan.admin.application'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+dependencies {
+    compile project(':my-admin-commons')
+    compile project(':my-admin-db')
+    compile project(':my-admin-web')
+}
