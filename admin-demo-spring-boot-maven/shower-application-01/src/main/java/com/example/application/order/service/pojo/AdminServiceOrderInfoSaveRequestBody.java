@@ -1,6 +1,5 @@
 package com.example.application.order.service.pojo;
 
-import com.example.application.order.goods.pojo.AdminGoodsOrderInfoSaveRequestBody;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -33,11 +32,11 @@ public class AdminServiceOrderInfoSaveRequestBody {
      * 总价
      */
     private BigDecimal totalPrice;
-    private List<AdminGoodsOrderInfoSaveRequestBody.AdminGoodsOrderItem> items;
+    private List<AdminServiceOrderItem> items;
 
     @Data
     public static class AdminServiceOrderItem {
         private Long serviceId;
-        private String serviceNum;
+        private Integer serviceNum;
     }
 }

@@ -37,7 +37,7 @@ public class AdminGoodsOrderInfoSaveRequestBody {
     @Data
     public static class AdminGoodsOrderItem {
         private Long goodsId;
-        private String goodsNum;
+        private Integer goodsNum;
     }
 
 }
