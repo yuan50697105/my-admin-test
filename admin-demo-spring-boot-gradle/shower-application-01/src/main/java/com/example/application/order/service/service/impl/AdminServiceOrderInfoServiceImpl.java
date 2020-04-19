@@ -67,6 +67,19 @@ public class AdminServiceOrderInfoServiceImpl implements AdminServiceOrderInfoSe
         ServiceOrderInfo serviceOrderInfo = new ServiceOrderInfo();
         serviceOrderInfo.copyFrom(requestBody);
         serviceOrderInfoService.insert(serviceOrderInfo);
+        ArrayList<ServiceOrderItem> serviceOrderItems = createItem(requestBody, serviceOrderInfo);
+        serviceOrderItemService.batchInsert(serviceOrderItems);
+        return ResultUtils.saveOk();
+//        throw new ResultRuntimeException(ResultUtils.notImplemntError());
+    }
+
+    @Async
+    public Future<ServiceInfo> getServiceInfoById(Long goodsId) {
+        ServiceInfo serviceInfo = serviceInfoService.selectByPrimaryKey(goodsId);
+        return new AsyncResult<>(serviceInfo);
+    }
+
+    public ArrayList<ServiceOrderItem> createItem(AdminServiceOrderInfoSaveRequestBody requestBody, ServiceOrderInfo serviceOrderInfo) throws InterruptedException, java.util.concurrent.ExecutionException {
         ArrayList<ServiceOrderItem> serviceOrderItems = new ArrayList<>(requestBody.getItems().size());
         for (AdminServiceOrderInfoSaveRequestBody.AdminServiceOrderItem item : requestBody.getItems()) {
             Future<ServiceInfo> future = getServiceInfoById(item.getServiceId());
@@ -81,14 +94,6 @@ public class AdminServiceOrderInfoServiceImpl implements AdminServiceOrderInfoSe
             serviceOrderItem.setPrice(serviceInfo.getPrice());
             serviceOrderItems.add(serviceOrderItem);
         }
-        serviceOrderItemService.batchInsert(serviceOrderItems);
-        return ResultUtils.saveOk();
-//        throw new ResultRuntimeException(ResultUtils.notImplemntError());
-    }
-
-    @Async
-    public Future<ServiceInfo> getServiceInfoById(Long goodsId) {
-        ServiceInfo serviceInfo = serviceInfoService.selectByPrimaryKey(goodsId);
-        return new AsyncResult<>(serviceInfo);
+        return serviceOrderItems;
     }
 }

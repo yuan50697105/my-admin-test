@@ -66,6 +66,14 @@ public class AdminGoodsOrderInfoServiceImpl implements AdminGoodsOrderInfoServic
         GoodsOrderInfo goodsOrderInfo = new GoodsOrderInfo();
         goodsOrderInfo.copyFrom(requestBody);
         goodsOrderInfoService.insert(goodsOrderInfo);
+        ArrayList<GoodsOrderItem> goodsOrderItems = createItem(requestBody, goodsOrderInfo);
+        goodsOrderItemService.batchInsert(goodsOrderItems);
+
+        return ResultUtils.saveOk();
+//        throw new ResultRuntimeException(ResultUtils.notImplemntError());
+    }
+
+    public ArrayList<GoodsOrderItem> createItem(AdminGoodsOrderInfoSaveRequestBody requestBody, GoodsOrderInfo goodsOrderInfo) throws InterruptedException, java.util.concurrent.ExecutionException {
         ArrayList<GoodsOrderItem> goodsOrderItems = new ArrayList<>(requestBody.getItems().size());
         for (AdminGoodsOrderInfoSaveRequestBody.AdminGoodsOrderItem item : requestBody.getItems()) {
             Future<GoodsInfo> goods = getGoodsById(item.getGoodsId());
@@ -80,10 +88,7 @@ public class AdminGoodsOrderInfoServiceImpl implements AdminGoodsOrderInfoServic
             goodsOrderItem.setPrice(goodsInfo.getPrice());
             goodsOrderItems.add(goodsOrderItem);
         }
-        goodsOrderItemService.batchInsert(goodsOrderItems);
-
-        return ResultUtils.saveOk();
-//        throw new ResultRuntimeException(ResultUtils.notImplemntError());
+        return goodsOrderItems;
     }
 
     @Async
