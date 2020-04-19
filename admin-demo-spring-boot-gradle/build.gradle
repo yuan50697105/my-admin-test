@@ -7,9 +7,6 @@ plugins {
     id 'se.patrikerdes.use-latest-versions' version '0.2.13'
 }
 
-group = 'com.example'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
 
 allprojects {
 
@@ -19,6 +16,10 @@ allprojects {
     apply plugin: 'io.spring.dependency-management'
     apply plugin: 'com.github.ben-manes.versions'
     apply plugin: 'se.patrikerdes.use-latest-versions'
+
+    group = 'com.example'
+    version = '0.0.1-SNAPSHOT'
+    sourceCompatibility = '1.8'
 
     configurations {
         developmentOnly
@@ -34,9 +35,6 @@ allprojects {
             url 'https://maven.aliyun.com/repository/public/'
         }
     }
-//repositories {
-//    mavenCentral()
-//}
 
     dependencies {
         compile group: 'cn.hutool', name: 'hutool-all', version: '5.3.1'
