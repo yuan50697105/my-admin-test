@@ -1,13 +1,9 @@
 package com.example.commons.db.mybatis.base.pagehelper.module.pojo;
 
 import com.example.commons.db.mybatis.base.pagehelper.commons.pojo.CommonsEntity;
+import lombok.*;
+
 import java.io.Serializable;
-import java.util.Date;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 
 /**
  * sys_permission
@@ -40,7 +36,4 @@ public class SysPermission extends CommonsEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public static SysPermissionBuilder builder() {
-        return new SysPermissionBuilder();
-    }
 }

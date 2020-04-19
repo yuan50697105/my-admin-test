@@ -1,14 +1,10 @@
 package com.example.commons.db.mybatis.base.pagehelper.module.pojo;
 
 import com.example.commons.db.mybatis.base.pagehelper.commons.pojo.CommonsEntity;
+import lombok.*;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Date;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 
 /**
  * goods_order_item
@@ -56,7 +52,4 @@ public class GoodsOrderItem extends CommonsEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public static GoodsOrderItemBuilder builder() {
-        return new GoodsOrderItemBuilder();
-    }
 }

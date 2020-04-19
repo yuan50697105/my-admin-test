@@ -42,7 +42,4 @@ public class GoodsInfo extends CommonsEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public static GoodsInfoBuilder builder() {
-        return new GoodsInfoBuilder();
-    }
 }

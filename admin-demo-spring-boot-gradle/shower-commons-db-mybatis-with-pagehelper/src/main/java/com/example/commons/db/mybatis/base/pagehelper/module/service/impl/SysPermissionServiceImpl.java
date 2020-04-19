@@ -1,6 +1,5 @@
 package com.example.commons.db.mybatis.base.pagehelper.module.service.impl;
 
-import cn.hutool.core.util.ObjectUtil;
 import com.example.commons.db.mybatis.base.pagehelper.base.pojo.PageResult;
 import com.example.commons.db.mybatis.base.pagehelper.module.mapper.SysPermissionMapper;
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.SysPermission;
@@ -8,7 +7,6 @@ import com.example.commons.db.mybatis.base.pagehelper.module.pojo.SysPermissionE
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.query.SysPermissionQuery;
 import com.example.commons.db.mybatis.base.pagehelper.module.service.SysPermissionService;
 import com.example.commons.db.pojo.IPageResult;
-import com.example.commons.db.utils.DbUtils;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
@@ -124,14 +122,6 @@ public class SysPermissionServiceImpl implements SysPermissionService {
         return new PageResult<>(new PageInfo<>(selectByExample(example)));
     }
 
-    private SysPermissionExample createExample(SysPermissionQuery query) {
-        SysPermissionExample example = new SysPermissionExample();
-        SysPermissionExample.Criteria criteria = example.createCriteria();
-        if (ObjectUtil.isNotEmpty(query.getName())) {
-            criteria.andNameLike(DbUtils.likeContains(query.getName()));
-        }
-        return example;
-    }
 }
 
 

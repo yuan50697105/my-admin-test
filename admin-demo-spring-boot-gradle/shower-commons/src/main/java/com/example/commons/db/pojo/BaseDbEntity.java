@@ -3,6 +3,8 @@ package com.example.commons.db.pojo;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import javax.persistence.MappedSuperclass;
+
 /**
  * @program: admin-demo
  * @description:
@@ -11,5 +13,6 @@ import lombok.EqualsAndHashCode;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
+@MappedSuperclass
 public abstract class BaseDbEntity extends com.example.commons.base.pojo.BaseEntity {
 }

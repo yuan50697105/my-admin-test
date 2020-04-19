@@ -1,6 +1,5 @@
 package com.example.commons.db.mybatis.base.pagehelper.module.service.impl;
 
-import cn.hutool.core.util.ObjectUtil;
 import com.example.commons.db.mybatis.base.pagehelper.base.pojo.PageResult;
 import com.example.commons.db.mybatis.base.pagehelper.module.mapper.GoodsInfoMapper;
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.GoodsInfo;
@@ -8,7 +7,6 @@ import com.example.commons.db.mybatis.base.pagehelper.module.pojo.GoodsInfoExamp
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.query.GoodsInfoQuery;
 import com.example.commons.db.mybatis.base.pagehelper.module.service.GoodsInfoService;
 import com.example.commons.db.pojo.IPageResult;
-import com.example.commons.db.utils.DbUtils;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
@@ -111,15 +109,6 @@ public class GoodsInfoServiceImpl implements GoodsInfoService {
         return deleteByExample(example);
     }
 
-
-    public GoodsInfoExample createEample(GoodsInfoQuery query) {
-        GoodsInfoExample example = new GoodsInfoExample();
-        GoodsInfoExample.Criteria criteria = example.createCriteria();
-        if (ObjectUtil.isNotEmpty(query.getName())) {
-            criteria.andNameLike(DbUtils.likeContains(query.getName()));
-        }
-        return example;
-    }
 
 }
 

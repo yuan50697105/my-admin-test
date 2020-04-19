@@ -1,6 +1,5 @@
 package com.example.commons.db.mybatis.base.pagehelper.module.service.impl;
 
-import cn.hutool.core.util.ObjectUtil;
 import com.example.commons.db.mybatis.base.pagehelper.base.pojo.PageResult;
 import com.example.commons.db.mybatis.base.pagehelper.module.mapper.GoodsTypeMapper;
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.GoodsType;
@@ -8,7 +7,6 @@ import com.example.commons.db.mybatis.base.pagehelper.module.pojo.GoodsTypeExamp
 import com.example.commons.db.mybatis.base.pagehelper.module.pojo.query.GoodsTypeQuery;
 import com.example.commons.db.mybatis.base.pagehelper.module.service.GoodsTypeService;
 import com.example.commons.db.pojo.IPageResult;
-import com.example.commons.db.utils.DbUtils;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
@@ -95,13 +93,13 @@ public class GoodsTypeServiceImpl implements GoodsTypeService {
     @Override
     public IPageResult<GoodsType> selectPageByQuery(GoodsTypeQuery query) {
         PageHelper.startPage(query.getPage(), query.getSize());
-        GoodsTypeExample example = createExample(query);
+        GoodsTypeExample example = query.toExample();
         return new PageResult<>(new PageInfo<>(selectByExample(example)));
     }
 
     @Override
     public List<GoodsType> selectByQuery(GoodsTypeQuery query) {
-        return selectByExample(createExample(query));
+        return selectByExample(query.toExample());
     }
 
     @Override
@@ -109,15 +107,6 @@ public class GoodsTypeServiceImpl implements GoodsTypeService {
         GoodsTypeExample example = new GoodsTypeExample();
         example.or().andIdIn(ids);
         return deleteByExample(example);
-    }
-
-    public GoodsTypeExample createExample(GoodsTypeQuery query) {
-        GoodsTypeExample example = new GoodsTypeExample();
-        GoodsTypeExample.Criteria criteria = example.createCriteria();
-        if (ObjectUtil.isNotEmpty(query.getName())) {
-            criteria.andNameLike(DbUtils.likeContains(query.getName()));
-        }
-        return example;
     }
 
 }
