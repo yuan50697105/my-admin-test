@@ -11,7 +11,7 @@ import lombok.Data;
  * @create: 2020-03-26 23:29
  */
 @Data
-public class BaseEntity {
+public abstract class AbstractCommonsEntity {
     public void copyFrom(Object object, String... ignoreProperties) {
         BeanUtil.copyProperties(object, this, ignoreProperties);
     }

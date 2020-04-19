@@ -1,6 +1,5 @@
 package com.example.commons.db.mybatis.jpa.base.sqlhelper.commons.pojo;
 
-import com.example.commons.db.pojo.BaseDbEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -18,7 +17,7 @@ import java.util.Date;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @MappedSuperclass
-public class CommonsEntity extends BaseDbEntity {
+public class CommonsEntity extends com.example.commons.db.pojo.CommonsEntity {
     /**
      * 主键
      */

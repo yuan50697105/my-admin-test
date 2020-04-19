@@ -1,6 +1,6 @@
 package com.example.commons.db.pojo;
 
-import com.example.commons.base.pojo.BaseEntity;
+import com.example.commons.base.pojo.AbstractCommonsEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -12,7 +12,7 @@ import lombok.EqualsAndHashCode;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public abstract class BaseDbQuery extends BaseEntity {
+public abstract class CommonsQuery extends AbstractCommonsEntity {
     private Integer page = 1;
     private Integer size = 20;
 }

@@ -1,6 +1,5 @@
 package com.example.commons.db.mybatis.mapper.base.pagehelper.commons.pojo.query;
 
-import com.example.commons.db.pojo.BaseDbQuery;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -16,7 +15,7 @@ import java.util.Date;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class CommonsQuery extends BaseDbQuery {
+public class CommonsQuery extends com.example.commons.db.pojo.CommonsQuery {
     private Long id;
     @JsonFormat(pattern = "yyyy-MM-dd")
     @DateTimeFormat(pattern = "yyyy-MM-dd")

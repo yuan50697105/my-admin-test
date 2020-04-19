@@ -1,6 +1,6 @@
 package com.example.application.admin.pojo.user;
 
-import com.example.commons.base.pojo.BaseEntity;
+import com.example.commons.base.pojo.AbstractCommonsEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -17,7 +17,7 @@ import javax.validation.constraints.NotNull;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class AdminSysUserUpdateRequestBody extends BaseEntity {
+public class AdminSysUserUpdateRequestBody extends AbstractCommonsEntity {
     public static final String ID_NOT_NULL = "id not null";
     public static final String NAME_NOT_BLANK = "name not blank";
     /**

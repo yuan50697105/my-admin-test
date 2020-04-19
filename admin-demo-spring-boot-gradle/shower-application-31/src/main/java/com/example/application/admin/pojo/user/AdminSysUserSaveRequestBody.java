@@ -1,6 +1,6 @@
 package com.example.application.admin.pojo.user;
 
-import com.example.commons.base.pojo.BaseEntity;
+import com.example.commons.base.pojo.AbstractCommonsEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -16,7 +16,7 @@ import java.util.List;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class AdminSysUserSaveRequestBody extends BaseEntity {
+public class AdminSysUserSaveRequestBody extends AbstractCommonsEntity {
     public static final String USERNAME_NOT_BLANK = "username not blank";
     public static final String NAME_NOT_BLANK = "name not blank";
     public static final String PASSWORD_NOT_BLANK = "password not blank";

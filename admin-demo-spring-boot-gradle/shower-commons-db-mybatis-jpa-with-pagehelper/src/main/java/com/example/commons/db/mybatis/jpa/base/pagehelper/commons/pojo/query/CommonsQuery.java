@@ -1,6 +1,5 @@
 package com.example.commons.db.mybatis.jpa.base.pagehelper.commons.pojo.query;
 
-import com.example.commons.db.pojo.BaseDbQuery;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
 import com.gitee.denger.mybatis.example.ext.annotation.AndGreaterThanOrEqualTo;
@@ -19,7 +18,7 @@ import java.util.Date;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class CommonsQuery extends BaseDbQuery {
+public class CommonsQuery extends com.example.commons.db.pojo.CommonsQuery {
     @AndEqualTo
     private Long id;
     @JsonFormat(pattern = "yyyy-MM-dd")
