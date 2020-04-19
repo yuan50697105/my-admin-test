@@ -1,0 +1,11 @@
+group = 'org.yuan.admin.db'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+dependencies {
+    compile project(':my-admin-commons')
+    compile group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '2.1.2'
+    compile group: 'com.github.pagehelper', name: 'pagehelper-spring-boot-starter', version: '1.2.13'
+    compile 'com.gitee.denger:mybatis-example-ext:1.0.1'
+    compile group: 'mysql', name: 'mysql-connector-java'
+}
