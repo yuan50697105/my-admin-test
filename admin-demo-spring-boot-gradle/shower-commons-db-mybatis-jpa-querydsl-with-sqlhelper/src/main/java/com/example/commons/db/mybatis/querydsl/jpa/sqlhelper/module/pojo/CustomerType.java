@@ -1,13 +1,10 @@
 package com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.module.pojo;
 
 import com.example.commons.db.mybatis.querydsl.jpa.sqlhelper.commons.pojo.CommonsEntity;
+import lombok.*;
+
+import javax.persistence.Entity;
 import java.io.Serializable;
-import java.util.Date;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 
 /**
  * customer_type
@@ -17,6 +14,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class CustomerType extends CommonsEntity implements Serializable {
     /**
      * 编号

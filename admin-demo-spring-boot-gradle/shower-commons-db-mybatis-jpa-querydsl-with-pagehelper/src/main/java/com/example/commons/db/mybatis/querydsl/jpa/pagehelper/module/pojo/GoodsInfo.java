@@ -1,14 +1,11 @@
 package com.example.commons.db.mybatis.querydsl.jpa.pagehelper.module.pojo;
 
 import com.example.commons.db.mybatis.querydsl.jpa.pagehelper.commons.pojo.CommonsEntity;
+import lombok.*;
+
+import javax.persistence.Entity;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Date;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 
 /**
  * goods_info
@@ -18,6 +15,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class GoodsInfo extends CommonsEntity implements Serializable {
     /**
      * 商品编号
