@@ -51,7 +51,7 @@ allprojects {
     }
     dependencyManagement {
         imports {
-            mavenBom "org.minbox.framework:api-boot-dependencies:2.2.3.RELEASE"
+            mavenBom 'org.minbox.framework:api-boot-dependencies:2.2.3.RELEASE'
         }
     }
     test {

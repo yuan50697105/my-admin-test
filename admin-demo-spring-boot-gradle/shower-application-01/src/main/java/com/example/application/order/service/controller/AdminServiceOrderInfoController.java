@@ -45,7 +45,7 @@ public class AdminServiceOrderInfoController extends BaseController {
     }
 
     @GetMapping({"get/{id}", "{id}"})
-    public Result get2(Long id) {
+    public Result get2( @PathVariable("id") Long id) {
         return adminServiceOrderInfoService.get(id);
     }
 

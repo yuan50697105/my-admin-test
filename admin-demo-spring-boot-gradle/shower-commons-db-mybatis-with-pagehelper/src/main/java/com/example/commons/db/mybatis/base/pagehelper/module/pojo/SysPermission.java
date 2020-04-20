@@ -1,6 +1,8 @@
 package com.example.commons.db.mybatis.base.pagehelper.module.pojo;
 
 import com.example.commons.db.mybatis.base.pagehelper.commons.pojo.CommonsEntity;
+import com.example.commons.db.mybatis.base.pagehelper.module.constants.EnableConstants;
+import com.example.commons.db.mybatis.base.pagehelper.module.constants.PermissionConstants;
 import lombok.*;
 
 import java.io.Serializable;

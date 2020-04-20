@@ -1,6 +1,8 @@
 package com.example.commons.db.mybatis.jpa.base.sqlhelper.module.pojo;
 
 import com.example.commons.db.mybatis.jpa.base.sqlhelper.commons.pojo.CommonsEntity;
+import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.constants.EnableConstants;
+import com.example.commons.db.mybatis.jpa.base.sqlhelper.module.constants.PermissionConstants;
 import lombok.*;
 
 import javax.persistence.Entity;

@@ -24,6 +24,7 @@ import java.util.List;
 @Validated
 public class AdminServiceOrderInfoController extends BaseController {
     private final AdminServiceOrderInfoService adminServiceOrderInfoService;
+
     @GetMapping("data")
     public Result data(ServiceOrderInfoQuery query) {
         return adminServiceOrderInfoService.data(query);
@@ -45,7 +46,7 @@ public class AdminServiceOrderInfoController extends BaseController {
     }
 
     @GetMapping({"get/{id}", "{id}"})
-    public Result get2(Long id) {
+    public Result get2(@PathVariable("id") Long id) {
         return adminServiceOrderInfoService.get(id);
     }
 
