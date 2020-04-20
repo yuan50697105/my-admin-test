@@ -10,7 +10,6 @@
         <module>shower-commons-db-mybatis-with-sqlhelper</module>
         <module>shower-commons-db-mybatis-mapper-with-pagehelper</module>
         <module>shower-commons-db-mybatis-mapper-with-sqlhelper</module>
-        <module>shower-commons-db-mybatis-with-pageable</module>
         <module>shower-commons-db-mybatis-plus-with-pagehelper</module>
         <module>shower-commons-db-mybatis-plus-with-sqlhelper</module>
         <module>shower-commons-db-mybatis-jpa-with-pagehelper</module>
@@ -24,7 +23,6 @@
         <module>shower-commons-task-quartz-batch</module>
         <module>shower-application-01</module>
         <module>shower-application-02</module>
-        <module>shower-application-03</module>
         <module>shower-application-11</module>
         <module>shower-application-12</module>
         <module>shower-application-21</module>
