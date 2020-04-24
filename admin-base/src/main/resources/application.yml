@@ -1,0 +1,8 @@
+spring:
+  mvc:
+    locale: zh_CN
+    date-format: yyyy-MM-dd HH:mm:ss
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    locale: zh_CN
+    default-property-inclusion: non_empty
