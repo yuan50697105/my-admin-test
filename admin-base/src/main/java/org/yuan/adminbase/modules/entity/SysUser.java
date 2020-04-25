@@ -1,28 +1,37 @@
 package org.yuan.adminbase.modules.entity;
 
+import java.util.Date;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import org.yuan.adminbase.commons.entity.BaseEntity;
 
 /**
- * @program: admin-base
- * @description: 系统用户
- * @author: yuane
- * @create: 2020-04-24 22:48
+ * sys_user
  */
-@EqualsAndHashCode(callSuper = true)
 @Data
+@EqualsAndHashCode(callSuper = true)
+@AllArgsConstructor
+@NoArgsConstructor
 public class SysUser extends BaseEntity {
     /**
      * 用户名
      */
     private String username;
+
     /**
      * 姓名
      */
     private String name;
+
     /**
      * 密码
      */
     private String password;
+
+    /**
+     * 启用状态
+     */
+    private String enabled;
 }

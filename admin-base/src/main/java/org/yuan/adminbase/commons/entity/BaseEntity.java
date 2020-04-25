@@ -17,5 +17,5 @@ public class BaseEntity {
     private String updateUser;
     private Date createTime;
     private Date updateTime;
-
+    private String deleted;
 }

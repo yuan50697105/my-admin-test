@@ -8,5 +8,5 @@ import org.yuan.adminbase.commons.mapper.BaseMapper;
  * @author: yuane
  * @create: 2020-04-24 22:43
  */
-public interface BaseService<T, M extends BaseMapper<T>> {
+public interface BaseService {
 }
