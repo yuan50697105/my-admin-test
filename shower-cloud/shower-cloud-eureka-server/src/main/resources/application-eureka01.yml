@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: shower-cloud-eureka-server
+  cloud:
+    discovery:
+      client:
+        health-indicator:
+          enabled: true
+
+eureka:
+  instance:
+    hostname: ${spring.application.name}
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka,http://localhost:8002/eureka,http://localhost:8003/eureka
+server:
+  port: 8001
