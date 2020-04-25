@@ -12,6 +12,10 @@
     <artifactId>shower-cloud-mybatis-plus</artifactId>
     <dependencies>
         <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.gitee.denger</groupId>
             <artifactId>mybatis-example-ext</artifactId>
             <version>1.0.1</version>
