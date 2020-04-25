@@ -1,6 +1,12 @@
 spring:
   application:
     name: spring-cloud-eureka-server
+  cloud:
+    discovery:
+      client:
+        health-indicator:
+          enabled: true
+          include-description: true
 eureka:
   client:
     service-url:
