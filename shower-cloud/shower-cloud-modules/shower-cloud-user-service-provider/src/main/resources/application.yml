@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: user-service-provider
+  cloud:
+    discovery:
+      client:
+        health-indicator:
+          enabled: true
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka,http://localhost:8002/eureka,http://localhost:8003/eureka
+server:
+  port: 9001

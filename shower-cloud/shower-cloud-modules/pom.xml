@@ -12,7 +12,8 @@
     <artifactId>shower-cloud-modules</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>shower-cloud-user-service-api</module>
+        <module>shower-cloud-user-service-provider</module>
+        <module>shower-cloud-user-service-consumer</module>
     </modules>
     <dependencies>
         <dependency>

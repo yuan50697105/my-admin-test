@@ -9,6 +9,7 @@
         <module>shower-cloud-eureka-server</module>
         <module>shower-cloud-admin</module>
         <module>shower-cloud-modules</module>
+        <module>shower-cloud-rpc-modules</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
