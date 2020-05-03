@@ -11,6 +11,8 @@
     <modules>
         <module>aliyun-iot-client</module>
         <module>aliyun-iot-server</module>
+        <module>aliyun-iot-server-02</module>
+        <module>aliyun-iot-client-02</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
