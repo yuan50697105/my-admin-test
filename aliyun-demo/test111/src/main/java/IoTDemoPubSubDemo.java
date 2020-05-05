@@ -1,3 +1,5 @@
+import com.google.gson.Gson;
+import com.google.gson.JsonNull;
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
@@ -23,7 +25,7 @@ public class IoTDemoPubSubDemo {
 
     private static MqttClient mqttClient;
 
-    public static void main(String [] args){
+    public static void main(String [] args) throws MqttException {
 
         initAliyunIoTClient();
 //        ScheduledExecutorService scheduledThreadPool = new ScheduledThreadPoolExecutor(1,
@@ -39,7 +41,16 @@ public class IoTDemoPubSubDemo {
             e.printStackTrace();
         }
 
-        // 设置订阅监听
+        mqttClient.subscribe("/a12mkmuZtyi/test_1/user/work", new IMqttMessageListener() {
+            @Override
+            public void messageArrived(String s, MqttMessage mqttMessage) throws Exception {
+                System.out.println("s = " + s);
+                Gson gson = new Gson();
+                System.out.println("gson.toJson(mqttMessage) = " + gson.toJson(mqttMessage));
+            }
+        });
+        mqttClient.publish(subTopic,new MqttMessage());
+// 设置订阅监听
         mqttClient.setCallback(new MqttCallback() {
             @Override
             public void connectionLost(Throwable throwable) {
@@ -60,7 +71,6 @@ public class IoTDemoPubSubDemo {
 
             }
         });
-
     }
 
     /**
@@ -120,7 +130,7 @@ public class IoTDemoPubSubDemo {
             String payloadJson = "{1234,57}";
             MqttMessage message = new MqttMessage(payloadJson.getBytes("utf-8"));
             message.setQos(1);
-            mqttClient.publish(pubTopic, message);
+            mqttClient.publish(subTopic, message);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
