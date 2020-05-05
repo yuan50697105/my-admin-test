@@ -36,9 +36,9 @@ public class AmqpJavaClientDemo {
 
     public static void main(String[] args) throws Exception {
         //参数说明，请参见上一篇文档：AMQP客户端接入说明。
-        String accessKey = "LTAI4FkQ95YXibFPqXNYEfAS";
-        String accessSecret = "CljbqsAeC3p6lROXLNoUeWBJkRO66D";
-        String consumerGroupId = "DEFAULT_GROUP";
+        String accessKey = "LTAI4G1NSa1oinSKH6xwBcgm";
+        String accessSecret = "sMWMGOTnC0Pebux3tW3BSwUN4Cb6IY";
+        String consumerGroupId = "P3cswVgmUE5zwq53V6YI000100";
         String iotInstanceId = "${iotInstanceId}";
         long timeStamp = System.currentTimeMillis();
         //签名方法：支持hmacmd5，hmacsha1和hmacsha256
@@ -59,7 +59,7 @@ public class AmqpJavaClientDemo {
         String signContent = "authId=" + accessKey + "&timestamp=" + timeStamp;
         String password = doSign(signContent,accessSecret, signMethod);
         //按照qpid-jms的规范，组装连接URL。
-        String connectionUrl = "failover:(amqps://1281832148848013.iot-amqp.cn-shanghai.aliyuncs.com:5671?amqp.idleTimeout=80000)"
+        String connectionUrl = "failover:(amqps://278838153679110135.iot-amqp.cn-shanghai.aliyuncs.com:5671?amqp.idleTimeout=80000)"
                 + "?failover.reconnectDelay=30";
 
         Hashtable<String, String> hashtable = new Hashtable<>();
@@ -92,6 +92,7 @@ public class AmqpJavaClientDemo {
                 // message.acknowledge();
                 //2.建议异步处理收到的消息，确保onMessage函数里没有耗时逻辑。
                 // 如果业务处理耗时过程过长阻塞住线程，可能会影响SDK收到消息后的正常回调。
+                processMessage(message);
                 executorService.submit(() -> processMessage(message));
             } catch (Exception e) {
                 logger.error("submit task occurs exception ", e);
@@ -109,6 +110,10 @@ public class AmqpJavaClientDemo {
             String topic = message.getStringProperty("topic");
             String messageId = message.getStringProperty("messageId");
             logger.info("receive message"
+                    + ", topic = " + topic
+                    + ", messageId = " + messageId
+                    + ", content = " + content);
+            System.out.println("receive message"
                     + ", topic = " + topic
                     + ", messageId = " + messageId
                     + ", content = " + content);
