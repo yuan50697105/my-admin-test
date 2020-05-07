@@ -1,7 +1,8 @@
-package com.example.commons.db.mybatis.base.pagehelper.commons.intercepter;
+package com.example.commons.db.mybatis.mapper.plus.sqlhelper.commons.intercepter;
 
 import cn.hutool.core.util.IdUtil;
 import cn.hutool.core.util.ObjectUtil;
+import com.baomidou.mybatisplus.core.incrementer.IdentifierGenerator;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.mapping.MappedStatement;
 import org.apache.ibatis.mapping.SqlCommandType;
@@ -9,14 +10,11 @@ import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.plugin.Intercepts;
 import org.apache.ibatis.plugin.Invocation;
 import org.apache.ibatis.plugin.Signature;
-import org.minbox.framework.api.boot.autoconfigure.sequence.ApiBootSequenceContext;
 import org.springframework.stereotype.Component;
+import tk.mybatis.mapper.genid.GenId;
 
 import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * @program: admin-demo-gradle
@@ -29,7 +27,7 @@ import java.util.List;
         @Signature(type = Executor.class, method = "update", args = {MappedStatement.class, Object.class})
 
 })
-public class CustomInterceptor implements Interceptor {
+public class CustomIntercepter implements Interceptor, IdentifierGenerator, GenId<Long> {
 
     public static final String ID = "id";
     public static final String CREATE_TIME = "createTime";
@@ -38,12 +36,11 @@ public class CustomInterceptor implements Interceptor {
     @Override
     public Object intercept(Invocation invocation) throws Throwable {
         MappedStatement statement = ((MappedStatement) invocation.getArgs()[0]);
-        SqlCommandType sqlCommandType = statement.getSqlCommandType();
         Object object = invocation.getArgs()[1];
         List<Field> fields = getAllField(object);
         for (Field field : fields) {
             if (field.getName().equals(ID)) {
-                if (sqlCommandType.equals(SqlCommandType.INSERT)) {
+                if (statement.getSqlCommandType().equals(SqlCommandType.INSERT)) {
                     field.setAccessible(true);
                     if (ObjectUtil.isEmpty(field.get(object))) {
                         field.set(object, getId());
@@ -51,18 +48,18 @@ public class CustomInterceptor implements Interceptor {
                 }
             }
             if (field.getName().equals(CREATE_TIME)) {
-                if (sqlCommandType.equals(SqlCommandType.INSERT) || sqlCommandType.equals(SqlCommandType.UPDATE)) {
+                if (statement.getSqlCommandType().equals(SqlCommandType.INSERT)) {
                     field.setAccessible(true);
                     if (ObjectUtil.isEmpty(field.get(object))) {
-                        field.set(object, new Date());
+                        field.set(object,new Date());
                     }
                 }
             }
             if (field.getName().equals(UPDATE_TIME)) {
-                if (sqlCommandType.equals(SqlCommandType.UPDATE)) {
+                if (statement.getSqlCommandType().equals(SqlCommandType.UPDATE)) {
                     field.setAccessible(true);
                     if (ObjectUtil.isEmpty(field.get(object))) {
-                        field.set(object, new Date());
+                        field.set(object,new Date());
                     }
                 }
             }
@@ -70,10 +67,15 @@ public class CustomInterceptor implements Interceptor {
         return invocation.proceed();
     }
 
-    private long getId() {
-        return IdUtil.getSnowflake(1, 1).nextId();
+    @Override
+    public Object plugin(Object target) {
+        return target;
     }
 
+    @Override
+    public void setProperties(Properties properties) {
+
+    }
 
     public List<Field> getAllField(Object object) {
         Class<?> objectClass = object.getClass();
@@ -84,4 +86,18 @@ public class CustomInterceptor implements Interceptor {
         return fields;
     }
 
+    public long getId() {
+        return IdUtil.getSnowflake(1, 1).nextId();
+    }
+
+    @Override
+    public Number nextId(Object entity) {
+        return getId();
+    }
+
+    @Override
+    public Long genId(String s, String s1) {
+        
+        return getId();
+    }
 }

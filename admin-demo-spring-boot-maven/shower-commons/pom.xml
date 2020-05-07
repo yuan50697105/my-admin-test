@@ -19,6 +19,14 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.minbox.framework</groupId>
+            <artifactId>api-boot-starter-sequence</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ai.ylyue</groupId>
+            <artifactId>yue-library-base</artifactId>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
