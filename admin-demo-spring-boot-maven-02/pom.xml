@@ -15,6 +15,7 @@
         <module>shower-mq-amqp</module>
         <module>shower-mq-rockectmq</module>
         <module>shower-kafak</module>
+        <module>shower-mybatis-plus-sqlhelper</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
