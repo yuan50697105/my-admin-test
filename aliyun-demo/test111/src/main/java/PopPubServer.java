@@ -9,8 +9,8 @@ public class PopPubServer {
 
     public static void main(String[] args) {
         final String productKey = "a12mkmuZtyi";
-        final String deviceName = "test_2";
-        final String deviceSecret = "w0SMRBb0Qh1khAbwLrPRNTJoDJtRZdfX";
+        final String deviceName = "test_1";
+        final String deviceSecret = "BQ4k3KQXt2ceNY032zxJ2hXjc6YBtvOX";
         String regionId = "cn-shanghai";
         String accessKey = "LTAI4G1NSa1oinSKH6xwBcgm";
         String accessSecret = "sMWMGOTnC0Pebux3tW3BSwUN4Cb6IY";
@@ -24,7 +24,7 @@ public class PopPubServer {
         request.setTopicFullName("/" + productKey + "/" + deviceName + "/user/control");
         request.setProductKey(productKey);
         //设置消息的内容，一定要用base64编码，否则乱码
-        request.setMessageContent(Base64.encode("{1234,56}"));
+        request.setMessageContent(Base64.encode("{1234,57}"));
         try {
             PubResponse response = client.getAcsResponse(request);
             System.out.println("pub success?:" + response.getSuccess());

@@ -19,7 +19,7 @@ public class LinkkitPubClient {
 
     public static void main(String[] args) {
         final String productKey = "a12mkmuZtyi";
-        final String deviceName = "test_1";
+        final String deviceName = "test_2";
         final String deviceSecret = "w0SMRBb0Qh1khAbwLrPRNTJoDJtRZdfX";
         final String region = "cn-shanghai";
 
