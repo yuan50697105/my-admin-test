@@ -9,21 +9,20 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>shower-commons</artifactId>
+    <artifactId>shower-mvc</artifactId>
     <dependencies>
         <dependency>
-            <groupId>ai.ylyue</groupId>
-            <artifactId>yue-library-base</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>cn.hutool</groupId>
-                    <artifactId>hutool-core</artifactId>
-                </exclusion>
-            </exclusions>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
             <groupId>org.minbox.framework</groupId>
-            <artifactId>api-boot-starter-http-converter</artifactId>
+            <artifactId>api-boot-plugin-http-converter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.yuan</groupId>
+            <artifactId>shower-commons</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

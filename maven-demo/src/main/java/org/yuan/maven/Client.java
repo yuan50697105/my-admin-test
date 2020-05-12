@@ -1,12 +1,5 @@
 package org.yuan.maven;
 
-import cn.hutool.core.convert.Convert;
-import cn.hutool.core.lang.Validator;
-import cn.hutool.json.JSONUtil;
-import com.google.common.util.concurrent.RateLimiter;
-
-import java.time.Duration;
-
 /**
  * @program: maven-demo
  * @description:
@@ -15,5 +8,11 @@ import java.time.Duration;
  */
 public class Client {
     public static void main(String[] args) {
+        Long a = 1L;
+        Long b = 2L;
+        System.out.println("a.compareTo(b) = " + a.compareTo(b));
+        System.out.println("a>b = " + (a > b));
+        System.out.println("b.compareTo(a) = " + b.compareTo(a));
+
     }
 }
